@@ -167,7 +167,8 @@ class Google_Maps_Builder {
 			'capability_type'    => 'post',
 			'has_archive'        => isset($has_archive) ? $has_archive : true,
 			'hierarchical'       => false,
-			'menu_position'      => ! empty( $menu_position ) ? intval($menu_position) : 25,
+			//'menu_position'      => ! empty( $menu_position ) ? intval($menu_position) : 25,
+			'menu_position'      => 15,
 			'supports'           => array( 'title' )
 		);
 

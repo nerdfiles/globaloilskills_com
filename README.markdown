@@ -22,6 +22,7 @@
 2. Theme Development
 3. Schema.org Data Modeling for Employee Acquisition Plugin
 4. Custom Taxonomy Permalinks
+5. Automate creation of Google Maps and correlation of IDs to Employee Data
 
 ## Domain
 
