@@ -188,7 +188,6 @@ scraper = () ->
       #this.thenClick input
     #@wait 3000
     #@captureSelector 'post.png', '#stripe-market-modal-button'
-    #@capture 'stripe-payouts-test.png'
 
   ###
   Store discoveries
