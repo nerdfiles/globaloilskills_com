@@ -150,8 +150,27 @@ class EmployeePostType {
 	  </p>
 
 		<p>
+    <label for="data[currency]">Currency</label>
+    <input
+      type="text"
+      id= "data[currency]"
+      name="data[currency]"
+      value="<?php echo $currency[0] ?>"
+      placeholder="USD"
+      size="10"
+    />
+	  </p>
+
+		<p>
     <label for="data[salary]">Salary</label>
-	  <input type="number" step="any" min="0" id= "data[salary]" name="data[salary]" value="<?php echo $salary[0] ?>"  placeholder="USD" size="25" />
+    <input
+      type="number"
+      id= "data[salary]"
+      name="data[salary]"
+      value="<?php echo $salary[0] ?>"
+      placeholder="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
+      size="25"
+    />
 	  </p>
 
 		<p>

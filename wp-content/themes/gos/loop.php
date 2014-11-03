@@ -46,6 +46,29 @@
     <?php if ( is_front_page() || is_category() || is_archive() || is_search() ) : ?>
 
       <?php the_excerpt(); ?>
+
+      <h2>Employee Financial Summary</h2>
+
+      <dl>
+        <dt>
+          Salary
+        </dt>
+        <dd>
+        <span class="value">
+        <?php
+            $salary = get_post_meta(get_the_ID(), 'salary', true);
+            echo $salary;
+        ?>
+        </span>
+        <span class="currency">
+          <?php
+            $currency = get_post_meta(get_the_ID(), 'currency', true);
+            echo $currency;
+          ?>
+        </span>
+        </dd>
+      </dl>
+
       <a href="<?php the_permalink(); ?>"><?php _e( 'Read more &raquo;', 'gos' ); ?></a>
 
     <?php else : ?>
