@@ -112,7 +112,7 @@ scraper = () ->
       document.querySelector sel
     ), 'body'
   , ->
-    @captureSelector 'stripe-connect-test.png', 'div'
+    @captureSelector 'page-test.png', 'div'
 
   casper.nameComposite = () ->
     @log '/////////////////////////'
