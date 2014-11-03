@@ -5,8 +5,8 @@
 }
 
 body {
-  background: #222222;
-  color: #efefef;
+  /*background: $color3;*/
+  /*color: $color2;*/
 }
 
 body.custom-background {
@@ -18,7 +18,7 @@ body.custom-background {
 }
 
 a {
-  color: #75d9c6;
+  color: #fba919;
   text-decoration: none;
 }
 
@@ -32,10 +32,10 @@ img {
 }
 
 input, textarea {
-  border: 1px solid #222222;
+  border: 1px solid #222;
   background: #efefef;
   padding: 0.3em 0.4em;
-  box-shadow: inset -1px -1px 6px #222222;
+  box-shadow: inset -1px -1px 6px #222;
 }
 
 .site {
@@ -87,7 +87,7 @@ html {
 	Standard font styling
 \******************************************************************************/
 body {
-  font-family: "Verdana", sans-serif;
+  font-family: "Raleway";
   line-height: 1.5;
   font-weight: 400;
 }
@@ -130,7 +130,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Georgia", serif;
+  font-family: "Raleway";
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -222,3 +222,5 @@ html .mceContentBody {
   font-size: 100%;
   max-width: 650px;
 }
+
+/*# sourceMappingURL=wp-editor-style.css.map */
