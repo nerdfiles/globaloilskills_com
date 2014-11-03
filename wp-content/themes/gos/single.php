@@ -16,6 +16,27 @@ get_header(); ?>
 
 				get_template_part( 'loop', get_post_format() ); ?>
 
+        <?php
+          $salary = get_post_meta(get_the_ID(), 'salary', true);
+          $currency = get_post_meta(get_the_ID(), 'currency', true);
+          if ( '' != $salary ) {
+        ?>
+          <h2>Employee Financial Summary</h2>
+          <dl>
+            <dt>
+              Salary
+            </dt>
+            <dd>
+            <span class="value">
+            <?php echo $salary; ?>
+            </span>
+            <span class="currency">
+              <?php echo $currency; ?>
+            </span>
+            </dd>
+          </dl>
+        <?php } ?>
+
 				<aside class="post-aside">
 
 					<div class="post-links">

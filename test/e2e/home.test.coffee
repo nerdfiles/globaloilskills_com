@@ -90,7 +90,8 @@ scraper = () ->
       request.abort()
   )
 
-  server = 'http://local.globaloilskills.com/?s=EUR'
+  #server = 'http://local.globaloilskills.com/?s=EUR'
+  server = 'http://local.globaloilskills.com/employees/carter-selfsame/'
   report = undefined
 
   ###
@@ -110,7 +111,7 @@ scraper = () ->
       document.querySelector sel
     ), 'body'
   , ->
-    @captureSelector 'currency-test.png', 'div'
+    @captureSelector 'employee-test.png', 'div'
 
   casper.nameComposite = () ->
     @log '/////////////////////////'

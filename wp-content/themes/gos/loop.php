@@ -53,7 +53,6 @@
         if ( '' != $salary ) {
       ?>
         <h2>Employee Financial Summary</h2>
-
         <dl>
           <dt>
             Salary

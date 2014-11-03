@@ -407,7 +407,7 @@ body.custom-background {
 }
 
 a {
-  color: #fba919;
+  color: #51955B;
   text-decoration: none;
 }
 
@@ -607,6 +607,18 @@ p ~ h1 {
   margin-top: 3rem;
 }
 
+body.home .widget_search {
+  float: left;
+  display: block;
+  margin-right: 3.06748%;
+  width: 100%;
+  font-size: 12.8px;
+  font-size: 0.8rem;
+}
+body.home .widget_search:last-child {
+  margin-right: 0;
+}
+
 .sticky {
   background: none;
 }
@@ -706,7 +718,7 @@ p ~ h1 {
   padding: 0.3em 0.4em;
   border: 1px solid #222;
   margin-top: 0.2em;
-  background-color: #fba919;
+  background-color: #51955B;
   color: #222;
   box-shadow: none;
 }
@@ -757,7 +769,7 @@ p ~ h1 {
 }
 
 .byuser .comment-author {
-  background-color: #fba919;
+  background-color: #51955B;
   color: #222;
 }
 .byuser .comment-author a {
@@ -1081,7 +1093,7 @@ article:after {
 }
 
 .format-quote .date {
-  border-color: #fba919;
+  border-color: #51955B;
 }
 
 .format-status .post-title {
