@@ -116,10 +116,10 @@ class EmployeePostType {
 	  	array(
 		    'hierarchical' => true,
 		    'labels' => array(
-		    	'name' => __( 'Employee' ),
-		    	'singular_name' => __( 'Employees' ),
-		    	'all_items' => __( 'All Employees' ),
-		    	'add_new_item' => __( 'Add Employee' )
+		    	'name' => __( 'Department' ),
+		    	'singular_name' => __( 'Departments' ),
+		    	'all_items' => __( 'All Departments' ),
+		    	'add_new_item' => __( 'Add Department' )
 		  	),
 		  	'public' => true,
 		    'query_var' => true,
@@ -174,7 +174,7 @@ class EmployeePostType {
 	  </p>
 
 		<p>
-	  <label for="data[menu_item_url]">Employee Item Recipe URL</label>
+	  <label for="data[menu_item_url]">Employee Website</label>
 	  <input type="url" id= "data[menu_item_url]" name="data[menu_item_url]" value="<?php echo $menu_item_url[0] ?>"  placeholder="http://allrecipes.com/recipe/pumpkin-ginger-cupcakes/" size="75" />
 	  </p>
 	  <style type="text/css">
