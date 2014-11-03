@@ -86,7 +86,7 @@ add_action( 'init', 'gos_editor_style' );
  * @return void
  */
 function gos_enqueue_scripts() {
-  wp_enqueue_style( 'gos-fonts-raleway', 'http://fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900', array(), '0.0.1', true);
+  wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
   wp_enqueue_style( 'gos-styles', get_stylesheet_uri(), array(), '1.0' );
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0', true );

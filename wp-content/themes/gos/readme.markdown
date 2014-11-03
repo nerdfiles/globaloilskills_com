@@ -8,3 +8,7 @@ See ``../../../README.markdown``.
 
     $ wp plugin list | pbcopy
     $ cat .requirements | grep '' | cut -f1 | pbcopy
+
+### Requirements Iterate
+
+See ``.requirements.iterate.sh``.
