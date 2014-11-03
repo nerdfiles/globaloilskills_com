@@ -92,6 +92,7 @@ scraper = () ->
 
   #server = 'http://local.globaloilskills.com/?s=EUR'
   server = 'http://local.globaloilskills.com/employees/carter-selfsame/'
+  #server = 'http://local.globaloilskills.com/connect'
   report = undefined
 
   ###
@@ -111,7 +112,7 @@ scraper = () ->
       document.querySelector sel
     ), 'body'
   , ->
-    @captureSelector 'employee-test.png', 'div'
+    @captureSelector 'stripe-connect-test.png', 'div'
 
   casper.nameComposite = () ->
     @log '/////////////////////////'
@@ -174,21 +175,20 @@ scraper = () ->
     #@emit('page.loaded')
     return
 
-  ###
-  Results
-  ###
-  #casper.on 'page.loaded', () ->
-  casper.wait 3000
-  #@thenClick 'input'
-  casper.waitFor (->
-    @evaluate ((sel) ->
-      results = document.querySelector sel
-    ), 'input'
-  ), ->
+  ####
+  #Results
+  ####
+  #casper.waitFor (->
+    #@evaluate ((sel) ->
+      #results = document.querySelector sel
+    #), '#stripe-market-modal-button'
+  #), ->
     #@thenEvaluate () ->
-      #input = document.querySelector 'input'
+      #input = document.querySelector '#stripe-market-modal-button'
       #this.thenClick input
-    #@captureSelector 'post.png', 'input'
+    #@wait 3000
+    #@captureSelector 'post.png', '#stripe-market-modal-button'
+    #@capture 'stripe-payouts-test.png'
 
   ###
   Store discoveries

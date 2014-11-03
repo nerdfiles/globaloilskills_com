@@ -250,8 +250,11 @@ class Featured_Employee extends WP_Widget {
         $args = array(
             'p' => $featured_employee,
             'post_type' => 'employee');
-        $featured_employee = new WP_Query( $args);
-		echo $before_widget;
+        $featured_employee = new WP_Query( $args );
+        echo $before_widget;
+        ?>
+        <h2>Featured Employee</h2>
+        <?php
         if ($featured_employee->have_posts()) : while ($featured_employee->have_posts()) : $featured_employee->the_post();?>
         <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></h3>
         <?php the_excerpt(); ?>
