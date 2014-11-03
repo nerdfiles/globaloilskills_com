@@ -25,8 +25,8 @@ scraper = () ->
       width  : 1176
       height : 806
     pageSettings:
-      loadImages         : false
-      loadPlugins        : false
+      loadImages         : true
+      loadPlugins        : true
       userAgent          : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv: 22.0) Gecko/20100101 Firefox/22.0'
       webSecurityEnabled : false
       ignoreSslErrors    : true
@@ -108,6 +108,7 @@ scraper = () ->
   Wait for pnlSearch form
   ###
   casper.waitFor ->
+    @wait 3000
     @evaluate ((sel) ->
       document.querySelector sel
     ), 'body'
