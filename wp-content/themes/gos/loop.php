@@ -8,7 +8,16 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article
+  id="post-<?php the_ID(); ?>"
+  <?php
+  /*
+   *itemscope
+   *itemtype="https://schema.org/employee"
+   */
+  ?>
+  <?php post_class(); ?>
+>
 
   <h1 class="post-title"><?php
 

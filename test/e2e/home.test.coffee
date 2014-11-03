@@ -3,15 +3,15 @@ utils     = require('utils')
 #cache    = require('./cache')
 #mimetype = require('mimetype')
 
-process = require 'process'
-filename = seed = undefined
+#process = require 'process'
+#filename = seed = undefined
 
-process.argv.forEach((arg, index) ->
-  if index == 2
-    filename = arg
-  if index == 3
-    seed = arg
-)
+#process.argv.forEach((arg, index) ->
+  #if index == 2
+    #filename = arg
+  #if index == 3
+    #seed = arg
+#)
 
 scraper = () ->
   casper = require('casper').create {
@@ -90,7 +90,7 @@ scraper = () ->
       request.abort()
   )
 
-  server = filename
+  server = 'http://local.globaloilskills.com/?s=Sam'
   report = undefined
 
   ###
