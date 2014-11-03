@@ -110,3 +110,4 @@ wp-content/themes/twentyfourteen/
 # ignore node/grunt dependency directories
 node_modules/
 
+tags
