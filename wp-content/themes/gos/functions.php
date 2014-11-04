@@ -21,7 +21,7 @@ $custom_header_args = array(
   'height'        => 300,
   'default-image' => get_template_directory_uri() . '/images/header.png',
 );
-add_theme_support( 'custom-header', $custom_header_args );
+//add_theme_support( 'custom-header', $custom_header_args );
 
 /**
  * Print custom header styles

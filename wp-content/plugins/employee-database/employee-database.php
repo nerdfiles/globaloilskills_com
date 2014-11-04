@@ -77,10 +77,11 @@ class EmployeePostType {
       'show_ui' => true,
       'query_var' => true,
       'rewrite' => array('slug' => strtolower($this->plural)),
-      'capability_type' => 'post',
+      'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
       'menu_position' => 20,
+      'show_in_nav_menus' => true,
       'taxonomies' => array( 'post_tag' ),
       'supports' => array(
         'title',
