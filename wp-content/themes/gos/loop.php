@@ -47,26 +47,30 @@
 
       <?php the_excerpt(); ?>
 
-      <?php
-        $salary = get_post_meta(get_the_ID(), 'salary', true);
-        $currency = get_post_meta(get_the_ID(), 'currency', true);
-        if ( '' != $salary ) {
-      ?>
-        <h2>Employee Financial Summary</h2>
-        <dl>
-          <dt>
-            Salary
-          </dt>
-          <dd>
-          <span class="value">
-          <?php echo $salary; ?>
-          </span>
-          <span class="currency">
-            <?php echo $currency; ?>
-          </span>
-          </dd>
-        </dl>
-      <?php } ?>
+      <aside class="module--employee--financial-summary">
+        <?php
+          $salary = get_post_meta(get_the_ID(), 'salary', true);
+          $currency = get_post_meta(get_the_ID(), 'currency', true);
+          if ( '' != $salary ) {
+        ?>
+          <div class="inner">
+            <h2>Employee Financial Summary</h2>
+            <dl>
+              <dt>
+                Salary
+              </dt>
+              <dd>
+              <span class="value">
+              <?php echo $salary; ?>
+              </span>
+              <span class="currency">
+                <?php echo $currency; ?>
+              </span>
+              </dd>
+            </dl>
+          </div>
+        <?php } ?>
+      </aside>
 
       <a href="<?php the_permalink(); ?>"><?php _e( 'Read more &raquo;', 'gos' ); ?></a>
 
