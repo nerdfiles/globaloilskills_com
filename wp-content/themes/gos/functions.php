@@ -48,6 +48,15 @@ add_theme_support( 'custom-background', $custom_bg_args );
 register_nav_menu( 'main-menu', __( 'Your sites main menu', 'gos' ) );
 
 if ( function_exists( 'register_sidebars' ) ) {
+
+  register_sidebar(
+    array(
+      'id' => 'home-search-sidebar',
+      'name' => __( 'Home Search widgets', 'gos' ),
+      'description' => __( 'Shows on home page', 'gos' )
+    )
+  );
+
   register_sidebar(
     array(
       'id' => 'home-sidebar',

@@ -9,10 +9,20 @@
 
 get_header(); ?>
 
-  <div class="home-widgets"><?php
-    if ( function_exists( 'dynamic_sidebar' ) ) :
-      dynamic_sidebar( 'home-sidebar' );
-    endif; ?>
+  <div class="home-search-widgets">
+    <ul>
+      <?php if ( function_exists( 'dynamic_sidebar' ) ) :
+        dynamic_sidebar( 'home-search-sidebar' );
+      endif; ?>
+    </ul>
+  </div>
+
+  <div class="home-widgets">
+    <ul>
+      <?php if ( function_exists( 'dynamic_sidebar' ) ) :
+        dynamic_sidebar( 'home-sidebar' );
+      endif; ?>
+    </ul>
   </div>
 
   <section class="page-content primary" role="main">

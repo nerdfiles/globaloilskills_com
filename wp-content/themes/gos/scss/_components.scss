@@ -1,7 +1,19 @@
 body.home {
-  .widget_search {
-    @include span-columns(12);
-    @include font-size(0.8);
+  .home-widgets,
+  .home-search-widgets {
+    ul {
+      @include row();
+      @include clearfix;
+      padding-left: 0;
+    }
+  }
+  .home-search-widgets {
+    .widget_search {
+      @include span-columns(12);
+      @include font-size(0.8);
+    }
+  }
+  .home-widgets {
+    li { }
   }
 }
-

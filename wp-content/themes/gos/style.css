@@ -608,7 +608,34 @@ p ~ h1 {
   margin-top: 3rem;
 }
 
-body.home .widget_search {
+body.home .home-widgets ul,
+body.home .home-search-widgets ul {
+  *zoom: 1;
+  display: block;
+  *zoom: 1;
+  padding-left: 0;
+}
+body.home .home-widgets ul:before, body.home .home-widgets ul:after,
+body.home .home-search-widgets ul:before,
+body.home .home-search-widgets ul:after {
+  content: " ";
+  display: table;
+}
+body.home .home-widgets ul:after,
+body.home .home-search-widgets ul:after {
+  clear: both;
+}
+body.home .home-widgets ul:before, body.home .home-widgets ul:after,
+body.home .home-search-widgets ul:before,
+body.home .home-search-widgets ul:after {
+  content: " ";
+  display: table;
+}
+body.home .home-widgets ul:after,
+body.home .home-search-widgets ul:after {
+  clear: both;
+}
+body.home .home-search-widgets .widget_search {
   float: left;
   display: block;
   margin-right: 3.06748%;
@@ -616,7 +643,7 @@ body.home .widget_search {
   font-size: 12.8px;
   font-size: 0.8rem;
 }
-body.home .widget_search:last-child {
+body.home .home-search-widgets .widget_search:last-child {
   margin-right: 0;
 }
 
