@@ -96,9 +96,11 @@ scraper = (server) ->
   Init
   ###
   casper.start server, ->
+    @wait 2000
+
   casper.thenEvaluate(() ->
     console.log("Page Title: " + document.title)
-    console.log("Found frame: " + document.querySelector('body') )
+    #console.log("Found frame: " + document.querySelector('body') )
   )
 
   ###
@@ -114,7 +116,6 @@ scraper = (server) ->
     p = pageName.pop()
     p = p.replace('?s=', 'search')
     p = if p == '' then 'base' else p
-    console.log p
     @captureSelector 'page-' + p + '.png', 'div'
 
   casper.nameComposite = () ->
