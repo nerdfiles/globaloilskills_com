@@ -155,8 +155,7 @@ class EmployeePostType {
       type="text"
       id= "data[currency]"
       name="data[currency]"
-      value="<?php echo $currency[0] ?>"
-      placeholder="USD"
+      value="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
       size="10"
     />
     </p>
