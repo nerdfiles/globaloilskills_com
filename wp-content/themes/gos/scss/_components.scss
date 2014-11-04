@@ -12,8 +12,64 @@ body.home {
       @include span-columns(12);
       @include font-size(0.8);
     }
+    #s {
+      @include span-columns(10);
+      padding: 1rem;
+      opacity: .4;
+      @include transition (all .5s ease-in-out);
+      &:hover {
+        opacity: 1;
+        & + #searchsubmit {
+          opacity: 1;
+        }
+        /*
+         *@extend .pulse !optional;
+         *@extend .animated !optional;
+         */
+      }
+    }
+    #searchsubmit {
+      opacity: .4;
+      @include span-columns(2);
+      @include transition (all .5s ease-in-out);
+      padding: 1rem;
+    }
   }
   .home-widgets {
+    text-align: left;
     li { }
+  }
+}
+
+.module--employee--financial-summary {
+  @include span-columns(10);
+  @include shift(1);
+  .inner {
+  }
+  dl {
+    @include row;
+    @include clearfix;
+  }
+  dt {
+    @include span-columns(5);
+  }
+  dd {
+    @include span-columns(5);
+  }
+}
+
+.screen-reader-text {
+  position: absolute;
+  left: -9999px;
+}
+
+.search-title {
+  opacity: .4;
+  &:hover {
+    @include transition (all .5s ease-in-out);
+    opacity: 1;
+  }
+  input[type="text"] {
+    border-bottom: 1px solid #111;
   }
 }

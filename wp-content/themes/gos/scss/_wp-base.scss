@@ -58,7 +58,6 @@
 
   h2 {
     @include font-size(1.1);
-    text-align: center;
     margin-top: 0;
     margin-bottom: 0.5em;
     border-bottom: 0.1em solid $color2;
@@ -89,17 +88,17 @@
   }
 
   input {
-    width: 100%;
+    /*width: 100%;*/
   }
 
 }
 
 #searchsubmit, #submit {
-  padding: 0.3em 0.4em;
+  /*padding: 0.3em 0.4em;*/
   /*border: 1px solid $color1;*/
-  margin-top: 0.2em;
-  background-color: $color3;
-  color: $color1;
+  /*margin-top: 0.2em;*/
+  /*background-color: $color3;*/
+  /*color: $color1;*/
   box-shadow: none;
 }
 
@@ -108,7 +107,7 @@
   @include shift(1);
   @include font-size(0.9);
 
-  background-color: $color1;
+  /*background-color: $color1;*/
   margin-bottom: 3em;
   padding: 2em;
 
