@@ -85,7 +85,7 @@ Thumbs.db
 # "themes" directory
 wp-content/*
 !wp-content/mu-plugins/
-!wp-content/plugins/
+#!wp-content/plugins/
 !wp-content/themes/
 
 # ADVANCED OPTION (disabled by default)
@@ -110,5 +110,8 @@ wp-content/themes/twentyfourteen/
 # ignore node/grunt dependency directories
 node_modules/
 
+<<<<<<< HEAD
+=======
 tags
 stripe-market
+>>>>>>> ae7ead71aff6099ae3a61a4e50c2b2fbba4c7ce2
