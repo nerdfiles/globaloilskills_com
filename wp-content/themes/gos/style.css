@@ -421,17 +421,18 @@ img {
 }
 
 input, textarea {
-  border: 1px solid #222;
+  /*border: 1px solid $color1;*/
+  border: none;
   background: #efefef;
   padding: 0.3em 0.4em;
-  box-shadow: inset -1px -1px 6px #222;
+  /*box-shadow: inset -1px -1px 6px $color1;*/
 }
 
 .site {
   overflow: hidden;
-  background: rgba(34, 34, 34, 0.85);
+  /*background: rgba($color1, 0.85);*/
   *zoom: 1;
-  max-width: 980px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -716,7 +717,7 @@ body.home .widget_search:last-child {
 
 #searchsubmit, #submit {
   padding: 0.3em 0.4em;
-  border: 1px solid #222;
+  /*border: 1px solid $color1;*/
   margin-top: 0.2em;
   background-color: #51955B;
   color: #222;
@@ -991,7 +992,7 @@ article:after {
 \******************************************************************************/
 .page-content .widgets {
   *zoom: 1;
-  max-width: 980px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
