@@ -1,0 +1,7 @@
+body.home {
+  .widget_search {
+    @include span-columns(12);
+    @include font-size(0.8);
+  }
+}
+

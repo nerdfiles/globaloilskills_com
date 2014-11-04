@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Łukasz Korecki	/lukasz@coffeesounds.com/
+!_TAG_PROGRAM_NAME	CoffeeTags	//
+!_TAG_PROGRAM_URL	https://github.com/lukaszkorecki/CoffeeTags	/GitHub repository/
+!_TAG_PROGRAM_VERSION	0.5.0	//
+@evaluate	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    @evaluate = () ->$/;"	f	line:168	language:coffee	object:scraper.nameComposite
+do	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^      document.querySelector 'body'$/;"	b	line:169	language:coffee
+do	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^      document.querySelector sel$/;"	b	line:113	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('ad') != -1$/;"	b	line:85	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('adnxs') != -1$/;"	b	line:79	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('advertising') != -1$/;"	b	line:67	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('bing') != -1$/;"	b	line:69	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('doubleclick') != -1$/;"	b	line:73	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('facebook') != -1$/;"	b	line:87	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('googleads') != -1$/;"	b	line:89	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('googlesyndication') != -1$/;"	b	line:83	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('openx') != -1$/;"	b	line:77	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('ru4') != -1$/;"	b	line:75	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('rubiconproject') != -1$/;"	b	line:81	language:coffee
+if	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    if requestData.url.indexOf('turn') != -1$/;"	b	line:71	language:coffee
+nameComposite	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^  casper.nameComposite = () ->$/;"	f	line:118	language:coffee	object:scraper
+onStepTimeout	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    onStepTimeout: (timeout, step) ->$/;"	f	line:37	language:coffee	object:scraper
+onWaitTimeout	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    onWaitTimeout: () ->$/;"	f	line:33	language:coffee	object:scraper
+pageSettings	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    pageSettings:$/;"	v	line:27	language:coffee
+scraper	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^scraper = () ->$/;"	f	line:16	language:coffee	object:window
+viewportSize	/Users/nerdfiles/Projects/globaloilskills_com/test/e2e/home.test.coffee	/^    viewportSize:$/;"	v	line:24	language:coffee

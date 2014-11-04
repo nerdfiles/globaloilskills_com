@@ -1,0 +1,36 @@
+# BEGIN Genesis WordPress
+<IfModule mod_rewrite.c>
+  # 404 error prevention for non-existing redirected folders
+  Options -MultiViews -Indexes
+
+  RewriteEngine On
+  RewriteBase /
+  Options +FollowSymlinks
+
+  # Prevent spidering of non-canonical URLs,
+  # such as `[*.]staging.*` and `production.*`.
+  #RewriteCond %{HTTP_HOST} (^local|staging|^production)
+  RewriteRule ^robots.txt$ no_robots.txt [L]
+  RewriteRule ^wp-admin/includes/ - [F,L]
+  RewriteRule !^wp-includes/ - [S=3]
+  RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+  RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+  RewriteRule ^wp-includes/theme-compat/ - [F,L]
+</IfModule>
+# END Genesis WordPress
+
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
