@@ -255,7 +255,7 @@ class Featured_Employee extends WP_Widget {
         <h2>Featured Employee</h2>
         <?php
         if ($featured_employee->have_posts()) : while ($featured_employee->have_posts()) : $featured_employee->the_post();?>
-        <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></h3>
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
         <?php the_excerpt(); ?>
         <?php endwhile; endif; ?>
     <?php
