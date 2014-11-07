@@ -6,5 +6,17 @@
 	padding: 1.5em 0;
 	list-style: none;
 	margin: 0;
-
+  .home--base-menu {
+    @include span-columns(12);
+    .menu-base-container {
+      ul.menu {
+        @include clearfix;
+        padding-left:  0;
+        li {
+          text-align: center;
+          @include span-columns(2);
+        }
+      }
+    }
+  }
 }

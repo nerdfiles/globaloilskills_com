@@ -24,8 +24,7 @@ get_header(); ?>
       endif; ?>
     </ul>
   </div>
-
-  <section class="page-content primary" role="main">
+  <!--section class="page-content primary" role="main">
     <?php
       if ( have_posts() ) :
 
@@ -46,6 +45,6 @@ get_header(); ?>
       <?php get_template_part( 'template-part', 'pagination' ); ?>
 
     </div>
-  </section>
+  </section-->
 
 <?php get_footer(); ?>

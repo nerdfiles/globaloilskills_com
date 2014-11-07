@@ -27,8 +27,11 @@
   }
 
   div.menu {
-    @include span-columns(10);
-    @include shift(1);
+    @include span-columns(12);
+    /*
+     *@include span-columns(10);
+     *@include shift(1);
+     */
   }
   .menu .main-menu .menu {
     margin: 0;

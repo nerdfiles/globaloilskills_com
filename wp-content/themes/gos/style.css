@@ -959,8 +959,11 @@ body.home .home-widgets {
   float: left;
   display: block;
   margin-right: 3.06748%;
-  width: 82.82209%;
-  margin-left: 8.58896%;
+  width: 100%;
+  /*
+   *@include span-columns(10);
+   *@include shift(1);
+   */
 }
 .site-header div.menu:last-child {
   margin-right: 0;
@@ -1243,6 +1246,13 @@ article:after {
   border: 1px solid #333;
 }
 
+.home-widgets .widget {
+  background-color: #fff;
+}
+.home-widgets .widget p {
+  text-align: left;
+}
+
 .format-status .date, .format-link .date, .format-quote .date {
   width: 100%;
   padding: 5px 0 0;
@@ -1291,6 +1301,36 @@ article:after {
   clear: both;
 }
 .footer-widgets:last-child {
+  margin-right: 0;
+}
+.footer-widgets .home--base-menu {
+  float: left;
+  display: block;
+  margin-right: 3.06748%;
+  width: 100%;
+}
+.footer-widgets .home--base-menu:last-child {
+  margin-right: 0;
+}
+.footer-widgets .home--base-menu .menu-base-container ul.menu {
+  *zoom: 1;
+  padding-left: 0;
+}
+.footer-widgets .home--base-menu .menu-base-container ul.menu:before, .footer-widgets .home--base-menu .menu-base-container ul.menu:after {
+  content: " ";
+  display: table;
+}
+.footer-widgets .home--base-menu .menu-base-container ul.menu:after {
+  clear: both;
+}
+.footer-widgets .home--base-menu .menu-base-container ul.menu li {
+  text-align: center;
+  float: left;
+  display: block;
+  margin-right: 3.06748%;
+  width: 14.11043%;
+}
+.footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
   margin-right: 0;
 }
 
