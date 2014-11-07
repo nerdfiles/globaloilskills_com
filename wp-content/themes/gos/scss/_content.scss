@@ -180,3 +180,10 @@ article {
 		&:hover { border-bottom: 2px solid #fff; }
 	}
 }
+
+.wpcf7-form {
+  input,
+  textarea {
+    border: 1px solid #333;
+  }
+}

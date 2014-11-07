@@ -981,7 +981,7 @@ body.home .home-widgets {
   float: left;
   display: block;
   margin-right: 3.06748%;
-  width: 48.46626%;
+  width: 14.11043%;
   text-align: center;
 }
 .site-header .menu .main-menu .menu li:last-child {
@@ -1236,6 +1236,11 @@ article:after {
 }
 .page-content .widgets .read-more:hover {
   border-bottom: 2px solid #fff;
+}
+
+.wpcf7-form input,
+.wpcf7-form textarea {
+  border: 1px solid #333;
 }
 
 .format-status .date, .format-link .date, .format-quote .date {
