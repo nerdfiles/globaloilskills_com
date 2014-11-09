@@ -7,6 +7,7 @@ Author URI: http://nerdfiles.net
 Description: A custom post type that adds employees and custom taxonomies.
 Version: 1.0
 */
+include_once('recruiter.php');
 new EmployeePostType; // Initial call
 
 class EmployeePostType {
@@ -173,8 +174,15 @@ class EmployeePostType {
     </p>
 
     <p>
-    <label for="data[menu_item_url]">Employee Website</label>
-    <input type="url" id= "data[menu_item_url]" name="data[menu_item_url]" value="<?php echo $menu_item_url[0] ?>"  placeholder="http://allrecipes.com/recipe/pumpkin-ginger-cupcakes/" size="75" />
+    <label for="data[employee_url]">Employee Website</label>
+    <input
+      type="url"
+      id= "data[employee_url]"
+      name="data[employee_url]"
+      value="<?php echo $employee_url[0] ?>"
+      placeholder="http://www.shell.com/"
+      size="75"
+    />
     </p>
     <style type="text/css">
       #metabox1 label {
