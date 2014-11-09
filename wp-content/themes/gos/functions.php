@@ -95,11 +95,20 @@ add_action( 'init', 'gos_editor_style' );
  * @return void
  */
 function gos_enqueue_scripts() {
+  // Presentation Layer
   wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
   wp_enqueue_style( 'gos-styles', get_stylesheet_uri(), array(), '1.0' );
+
+  // Dependencies
   wp_enqueue_script( 'jquery' );
+
+  // Default Front End
   wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0', true );
+
+  // CMS Taxonomy
   if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+
+  // Testing Scenarios
   if (strpos($_SERVER['SERVER_NAME'],'local') !== false) {
     wp_enqueue_script( '', 'http://localhost:35729/livereload.js', array(), '0.0.1', true);
   }
