@@ -20,6 +20,14 @@ and Pages. Users who log in will review:
    to create Recruiters and Employees, yet Job Postings will be irrelevant 
    to their daily workflows.
 
+## API
+
+Review https://wordpress.org/plugins/json-api/other_notes/.
+
+✓ http://globaloilskills.com/api/get_page_index/?post_type=employee
+✓ http://globaloilskills.com/api/get_page_index/?post_type=recruiter
+✓ http://globaloilskills.com/api/get_page_index/?post_type=post
+
 ## Inspiration
 
 1. http://www.evinspersonnelconsultants.com/search-jobs/
