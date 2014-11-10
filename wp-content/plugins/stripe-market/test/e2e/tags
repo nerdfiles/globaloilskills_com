@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Łukasz Korecki	/lukasz@coffeesounds.com/
+!_TAG_PROGRAM_NAME	CoffeeTags	//
+!_TAG_PROGRAM_URL	https://github.com/lukaszkorecki/CoffeeTags	/GitHub repository/
+!_TAG_PROGRAM_VERSION	0.5.0	//
+DOMClick	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^      DOMClick = ( element ) ->$/;"	f	line:126	language:coffee	object:getStripeMarketExpiryYear..SMB
+SMB	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^    SMB = @evaluate () ->$/;"	f	line:125	language:coffee	object:getStripeMarketExpiryYear.
+getStripeMarketCardNumber	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^getStripeMarketCardNumber = () ->$/;"	f	line:70	language:coffee	object:window
+getStripeMarketComment	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^getStripeMarketComment = () ->$/;"	f	line:63	language:coffee	object:window
+getStripeMarketCvcNumber	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^getStripeMarketCvcNumber = () ->$/;"	f	line:77	language:coffee	object:window
+getStripeMarketEmail	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^getStripeMarketEmail = () ->$/;"	f	line:56	language:coffee	object:window
+getStripeMarketExpiry	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^getStripeMarketExpiry = () ->$/;"	f	line:84	language:coffee	object:window
+getStripeMarketExpiryYear	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^getStripeMarketExpiryYear = () ->$/;"	f	line:92	language:coffee	object:window
+getStripeMarketName	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^getStripeMarketName = () ->$/;"	f	line:49	language:coffee	object:window
+if	/Users/nerdfiles/Projects/thecoinsultants_com/wp-content/plugins/stripe-market/test/e2e/stripe-market.coffee	/^  if msg.url.indexOf('admin-ajax') != -1$/;"	b	line:35	language:coffee

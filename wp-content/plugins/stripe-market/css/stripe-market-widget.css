@@ -1,0 +1,41 @@
+.stripe-market-recent {
+
+}
+
+.stripe-market-recent .stripe-item {
+    min-height:70px;
+    position:relative;
+    margin:5px 0;
+}
+
+.stripe-market-recent .stripe-item img.avatar {
+    position:absolute;
+    top:0;
+    left:0;
+    width:50px;
+    height:50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.stripe-market-recent .stripe-item .stripe-recent-comment {
+    padding-left:60px;
+}
+
+.stripe-market-recent .stripe-item .stripe-recent-content:before {
+    content:'\2018';
+}
+
+.stripe-market-recent .stripe-item .stripe-recent-content:after {
+    content:'\2019';
+}
+
+.stripe-market-recent .stripe-item .stripe-recent-name {
+    margin: 0 0 0.5em 0;
+    font-weight:bold;
+}
+
+.stripe-market-recent .stripe-item .stripe-recent-content {
+    color:#777;
+}
