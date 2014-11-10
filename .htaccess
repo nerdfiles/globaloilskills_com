@@ -1,4 +1,4 @@
-AddHandler application/x-httpd-php54 .php
+#AddHandler application/x-httpd-php54 .php
 #AddHandler application/x-httpd-php .php .htm
 
 # BEGIN Genesis WordPress
