@@ -8,10 +8,23 @@ body.home {
     }
   }
   .home-search-widgets {
+
     .widget_search {
+
+      /**
+       * Default Cases
+       */
       @include span-columns(12);
       @include font-size(0.8);
+
+      @include media($small) {
+        @include span-columns(12);
+        @include font-size(0.8);
+      }
+
+
     }
+
     #s {
       @include span-columns(10);
       padding: 1rem;
@@ -28,12 +41,14 @@ body.home {
          */
       }
     }
+
     #searchsubmit {
       opacity: .4;
       @include span-columns(2);
       @include transition (all .5s ease-in-out);
       padding: 1rem;
     }
+
   }
   .home-widgets {
     text-align: left;
@@ -63,6 +78,13 @@ body.home {
   left: -9999px;
 }
 
+/**
+ * Search
+ *
+ * Technically a module from any front end framework's ontology. It's nothing 
+ * more than a subtype of a button, which is obviously a module, or at least 
+ * it must be built in a modular way.
+ */
 .search-title {
   opacity: .4;
   &:hover {
@@ -73,3 +95,4 @@ body.home {
     border-bottom: 1px solid #111;
   }
 }
+

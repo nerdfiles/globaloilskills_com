@@ -352,6 +352,18 @@ input, textarea {
   padding: 0.3em 0.4em;
   /*box-shadow: inset -1px -1px 6px $color1;*/ }
 
+/**
+ * Contact Form 7
+ * @extends gos
+ */
+.wpcf7-form input, .wpcf7-form textarea {
+  width: 100%;
+  border: 1px #b8b452 solid; }
+
+/**
+ * @note Think Framework7 implementation.
+ * @note Think of this as the <head> of the Document.
+ */
 .site {
   overflow: hidden;
   /*background: rgba($color1, 0.85);*/
@@ -484,6 +496,9 @@ body.home .home-widgets ul, body.home .home-search-widgets ul {
   body.home .home-widgets ul:after, body.home .home-search-widgets ul:after {
     clear: both; }
 body.home .home-search-widgets .widget_search {
+  /**
+       * Default Cases
+       */
   float: left;
   display: block;
   margin-right: 3.06748%;
@@ -492,6 +507,16 @@ body.home .home-search-widgets .widget_search {
   font-size: 0.8rem; }
   body.home .home-search-widgets .widget_search:last-child {
     margin-right: 0; }
+  @media screen and (max-width: screen) {
+    body.home .home-search-widgets .widget_search {
+      float: left;
+      display: block;
+      margin-right: 3.06748%;
+      width: 100%;
+      font-size: 12.8px;
+      font-size: 0.8rem; }
+      body.home .home-search-widgets .widget_search:last-child {
+        margin-right: 0; } }
 body.home .home-search-widgets #s {
   float: left;
   display: block;
@@ -568,6 +593,13 @@ body.home .home-widgets {
   position: absolute;
   left: -9999px; }
 
+/**
+ * Search
+ *
+ * Technically a module from any front end framework's ontology. It's nothing 
+ * more than a subtype of a button, which is obviously a module, or at least 
+ * it must be built in a modular way.
+ */
 .search-title {
   opacity: 0.4; }
   .search-title:hover {
@@ -616,6 +648,13 @@ body.home .home-widgets {
 .linked-page-nav {
   margin-top: 1em; }
 
+/**
+ * Widget Specification — "All widgets are navigational properties of the content area."
+ * Every widget is a kind of navigation element; many of the core WordPress 
+ * widgets are nothing more than lists of various parts of the natural taxonomy.
+ *
+ * @extends https://schema.org/SiteNavigationElement
+ */
 .widget {
   float: left;
   display: block;
@@ -970,8 +1009,6 @@ article {
     .page-content .widgets .read-more:hover {
       border-bottom: 2px solid white; }
 
-.wpcf7-form input, .wpcf7-form textarea {
-  border: 1px solid #333333; }
 
 .home-widgets .widget {
   background-color: white; }
