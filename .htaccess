@@ -1,3 +1,6 @@
+#AddHandler application/x-httpd-php54 .php
+#AddHandler application/x-httpd-php .php .htm
+
 # BEGIN Genesis WordPress
 <IfModule mod_rewrite.c>
   # 404 error prevention for non-existing redirected folders
