@@ -66,7 +66,7 @@ function stripe_market_oauth_redirect() {
 
   // Redirect w/ code
   $url = $oauth->getAuthorizeUri();
-  echo "<a href='$url'>Connect with Stripe</a>";
+  return "<a href='$url'>Connect with Stripe</a>";
 }
 add_shortcode( 'stripe-connect', 'stripe_market_oauth_redirect' );
 

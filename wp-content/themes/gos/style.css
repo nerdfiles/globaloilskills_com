@@ -480,77 +480,103 @@ p, h2, h3 {
 p ~ h1 {
   margin-top: 3rem; }
 
-body.home .home-widgets ul, body.home .home-search-widgets ul {
-  *zoom: 1;
-  display: block;
-  *zoom: 1;
-  padding-left: 0; }
-  body.home .home-widgets ul:before, body.home .home-widgets ul:after, body.home .home-search-widgets ul:before, body.home .home-search-widgets ul:after {
-    content: " ";
-    display: table; }
-  body.home .home-widgets ul:after, body.home .home-search-widgets ul:after {
-    clear: both; }
-  body.home .home-widgets ul:before, body.home .home-widgets ul:after, body.home .home-search-widgets ul:before, body.home .home-search-widgets ul:after {
-    content: " ";
-    display: table; }
-  body.home .home-widgets ul:after, body.home .home-search-widgets ul:after {
-    clear: both; }
-body.home .home-search-widgets .widget_search {
+body.home {
   /**
-       * Default Cases
-       */
-  float: left;
-  display: block;
-  margin-right: 3.06748%;
-  width: 100%;
-  font-size: 12.8px;
-  font-size: 0.8rem; }
-  body.home .home-search-widgets .widget_search:last-child {
-    margin-right: 0; }
-  @media screen and (max-width: screen) {
-    body.home .home-search-widgets .widget_search {
+   * Home Widgets Case for All Users
+   * Uses media queries for responsive cases, based on Bourbon Neat.
+   */ }
+  body.home .home-widgets ul, body.home .home-search-widgets ul {
+    *zoom: 1;
+    display: block;
+    *zoom: 1;
+    padding-left: 0; }
+    body.home .home-widgets ul:before, body.home .home-widgets ul:after, body.home .home-search-widgets ul:before, body.home .home-search-widgets ul:after {
+      content: " ";
+      display: table; }
+    body.home .home-widgets ul:after, body.home .home-search-widgets ul:after {
+      clear: both; }
+    body.home .home-widgets ul:before, body.home .home-widgets ul:after, body.home .home-search-widgets ul:before, body.home .home-search-widgets ul:after {
+      content: " ";
+      display: table; }
+    body.home .home-widgets ul:after, body.home .home-search-widgets ul:after {
+      clear: both; }
+  body.home .home-widgets {
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%; }
+    body.home .home-widgets:last-child {
+      margin-right: 0; }
+    body.home .home-widgets .widget {
       float: left;
       display: block;
-      margin-right: 3.06748%;
-      width: 100%;
-      font-size: 12.8px;
-      font-size: 0.8rem; }
-      body.home .home-search-widgets .widget_search:last-child {
-        margin-right: 0; } }
-body.home .home-search-widgets #s {
-  float: left;
-  display: block;
-  margin-right: 3.06748%;
-  width: 82.82209%;
-  padding: 1rem;
-  opacity: 0.4;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-  body.home .home-search-widgets #s:last-child {
-    margin-right: 0; }
-  body.home .home-search-widgets #s:hover {
-    opacity: 1;
-    /*
+      width: 103.06748%; }
+      body.home .home-widgets .widget:last-child {
+        width: 100%; }
+    @media screen and (min-width: 769px) {
+      body.home .home-widgets .widget {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 31.28834%; }
+        body.home .home-widgets .widget:last-child {
+          margin-right: 0; } }
+  body.home .home-search-widgets .widget_search {
+    /**
+       * Default Cases
+       */
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%;
+    font-size: 12.8px;
+    font-size: 0.8rem; }
+    body.home .home-search-widgets .widget_search:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: screen) {
+      body.home .home-search-widgets .widget_search {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%;
+        font-size: 12.8px;
+        font-size: 0.8rem; }
+        body.home .home-search-widgets .widget_search:last-child {
+          margin-right: 0; } }
+  body.home .home-search-widgets #s {
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 82.82209%;
+    padding: 1rem;
+    opacity: 0.4;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    body.home .home-search-widgets #s:last-child {
+      margin-right: 0; }
+    body.home .home-search-widgets #s:hover {
+      opacity: 1;
+      /*
          *@extend .pulse !optional;
          *@extend .animated !optional;
          */ }
-    body.home .home-search-widgets #s:hover + #searchsubmit {
-      opacity: 1; }
-body.home .home-search-widgets #searchsubmit {
-  opacity: 0.4;
-  float: left;
-  display: block;
-  margin-right: 3.06748%;
-  width: 14.11043%;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  padding: 1rem; }
-  body.home .home-search-widgets #searchsubmit:last-child {
-    margin-right: 0; }
-body.home .home-widgets {
-  text-align: left; }
+      body.home .home-search-widgets #s:hover + #searchsubmit {
+        opacity: 1; }
+  body.home .home-search-widgets #searchsubmit {
+    opacity: 0.4;
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 14.11043%;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    padding: 1rem; }
+    body.home .home-search-widgets #searchsubmit:last-child {
+      margin-right: 0; }
+  body.home .home-widgets {
+    text-align: left; }
 
 .module--employee--financial-summary {
   float: left;
@@ -815,7 +841,7 @@ body.home .home-widgets {
     color: #efefef; }
 
 /******************************************************************************\
-	General
+  General
 \******************************************************************************/
 article {
   *zoom: 1; }
@@ -855,7 +881,7 @@ article {
     box-shadow: none; }
 
 /******************************************************************************\
-	Standard-page
+  Standard-page
 \******************************************************************************/
 .post-title {
   float: left;
@@ -893,8 +919,8 @@ article {
   width: 82.82209%;
   margin-left: 8.58896%;
   position: relative;
-  background: #efefef;
-  color: #222222;
+  /*background: $color2;*/
+  /*color: $color1;*/
   padding: 1.5em;
   margin-top: 1.5em; }
   .post-content:last-child {
@@ -904,7 +930,7 @@ article {
   margin-bottom: 3.5em; }
 
 /******************************************************************************\
-	Front-page and archives
+  Front-page and archives
 \******************************************************************************/
 .home .post-content, .archive .post-content, .search .post-content, .author .post-content {
   float: left;
@@ -938,7 +964,7 @@ article {
     margin: 0 0.5em; }
 
 /******************************************************************************\
-	Widgets
+  Widgets
 \******************************************************************************/
 .page-content .widgets {
   *zoom: 1;

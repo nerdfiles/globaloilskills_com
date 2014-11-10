@@ -1,4 +1,5 @@
 body.home {
+
   .home-widgets,
   .home-search-widgets {
     ul {
@@ -7,6 +8,23 @@ body.home {
       padding-left: 0;
     }
   }
+
+  /**
+   * Home Widgets Case for All Users
+   * Uses media queries for responsive cases, based on Bourbon Neat.
+   */
+  .home-widgets {
+    @include span-columns(12);
+    .widget {
+      @include span-columns(12, block-collapse);
+    }
+    @include media($large) {
+      .widget {
+        @include span-columns(4);
+      }
+    }
+  }
+
   .home-search-widgets {
 
     .widget_search {

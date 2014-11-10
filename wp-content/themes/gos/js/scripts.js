@@ -8,6 +8,11 @@
   // If we need to use custom DOM library, let's save it to $$ variable:
   //var $$ = D7;
 
+  // API
+  // http://local.globaloilskills.com/api/get_page_index/?post_type=employee
+  // http://local.globaloilskills.com/api/get_page_index/?post_type=recruiter
+  // http://local.globaloilskills.com/api/get_page_index/?post_type=post
+
   // Add view
   /*
    *var mainView = goss.addView('.view-main', {

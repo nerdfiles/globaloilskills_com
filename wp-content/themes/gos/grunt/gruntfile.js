@@ -134,6 +134,10 @@ module.exports = function(grunt) {
 			}
 		},
 
+    exec: {
+      test: "npm test"
+    },
+
 		copyto: {
 			dist: {
 				files: [
@@ -153,6 +157,13 @@ module.exports = function(grunt) {
 
 	// Load NPM's via matchdep
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+
+  //grunt.registerTask "test", ["exec:test"]
+  grunt.registerTask("lint", [
+    "exec:jshint",
+    "exec:csslint"
+  ]);
 
 	// Development task
 	grunt.registerTask('default', [
