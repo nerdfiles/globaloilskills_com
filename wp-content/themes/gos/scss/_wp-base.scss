@@ -49,6 +49,13 @@
   margin-top: 1em;
 }
 
+/**
+ * Widget Specification — "All widgets are navigational properties of the content area."
+ * Every widget is a kind of navigation element; many of the core WordPress 
+ * widgets are nothing more than lists of various parts of the natural taxonomy.
+ *
+ * @extends https://schema.org/SiteNavigationElement
+ */
 .widget {
   @include span-columns(4);
   @include font-size(0.8);

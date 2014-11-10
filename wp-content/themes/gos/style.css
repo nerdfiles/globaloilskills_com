@@ -496,6 +496,9 @@ body.home .home-widgets ul, body.home .home-search-widgets ul {
   body.home .home-widgets ul:after, body.home .home-search-widgets ul:after {
     clear: both; }
 body.home .home-search-widgets .widget_search {
+  /**
+       * Default Cases
+       */
   float: left;
   display: block;
   margin-right: 3.06748%;
@@ -504,6 +507,16 @@ body.home .home-search-widgets .widget_search {
   font-size: 0.8rem; }
   body.home .home-search-widgets .widget_search:last-child {
     margin-right: 0; }
+  @media screen and (max-width: screen) {
+    body.home .home-search-widgets .widget_search {
+      float: left;
+      display: block;
+      margin-right: 3.06748%;
+      width: 100%;
+      font-size: 12.8px;
+      font-size: 0.8rem; }
+      body.home .home-search-widgets .widget_search:last-child {
+        margin-right: 0; } }
 body.home .home-search-widgets #s {
   float: left;
   display: block;
@@ -635,6 +648,13 @@ body.home .home-widgets {
 .linked-page-nav {
   margin-top: 1em; }
 
+/**
+ * Widget Specification — "All widgets are navigational properties of the content area."
+ * Every widget is a kind of navigation element; many of the core WordPress 
+ * widgets are nothing more than lists of various parts of the natural taxonomy.
+ *
+ * @extends https://schema.org/SiteNavigationElement
+ */
 .widget {
   float: left;
   display: block;
