@@ -24,12 +24,14 @@ module.exports = function(grunt) {
 				"undef": true,
 				"globals": {
 					"jQuery": true,
-					"alert": true
+					"alert": true,
+					"Framework7": true,
+					"Dom7": true
 				}
 			},
 			all: [
 				'gruntfile.js',
-				'../js/script.js'
+				'../js/scripts.js'
 			]
 		},
 

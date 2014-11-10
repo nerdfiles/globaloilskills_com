@@ -103,7 +103,8 @@ function gos_enqueue_scripts() {
   wp_enqueue_script( 'jquery' );
 
   // Default Front End
-  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0', true );
+  wp_enqueue_script( 'f7', get_template_directory_uri() . '/grunt/bower_components/framework7/dist/js/framework7.min.js', array(), '1.0', true );
+  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.min.js', array('f7'), '1.0', true );
 
   // CMS Taxonomy
   if ( is_singular() ) wp_enqueue_script( 'comment-reply' );

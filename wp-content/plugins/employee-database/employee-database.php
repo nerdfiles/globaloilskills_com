@@ -8,6 +8,8 @@ Description: A custom post type that adds employees and custom taxonomies.
 Version: 1.0
 */
 include_once('recruiter.php');
+//include_once('job.php');
+
 new EmployeePostType; // Initial call
 
 class EmployeePostType {
