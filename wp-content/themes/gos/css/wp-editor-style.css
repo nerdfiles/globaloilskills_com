@@ -33,6 +33,18 @@ input, textarea {
   padding: 0.3em 0.4em;
   /*box-shadow: inset -1px -1px 6px $color1;*/ }
 
+/**
+ * Contact Form 7
+ * @extends gos
+ */
+.wpcf7-form input, .wpcf7-form textarea {
+  width: 100%;
+  border: 1px #b8b452 solid; }
+
+/**
+ * @note Think Framework7 implementation.
+ * @note Think of this as the <head> of the Document.
+ */
 .site {
   overflow: hidden;
   /*background: rgba($color1, 0.85);*/

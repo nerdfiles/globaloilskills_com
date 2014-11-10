@@ -352,6 +352,18 @@ input, textarea {
   padding: 0.3em 0.4em;
   /*box-shadow: inset -1px -1px 6px $color1;*/ }
 
+/**
+ * Contact Form 7
+ * @extends gos
+ */
+.wpcf7-form input, .wpcf7-form textarea {
+  width: 100%;
+  border: 1px #b8b452 solid; }
+
+/**
+ * @note Think Framework7 implementation.
+ * @note Think of this as the <head> of the Document.
+ */
 .site {
   overflow: hidden;
   /*background: rgba($color1, 0.85);*/
@@ -568,6 +580,13 @@ body.home .home-widgets {
   position: absolute;
   left: -9999px; }
 
+/**
+ * Search
+ *
+ * Technically a module from any front end framework's ontology. It's nothing 
+ * more than a subtype of a button, which is obviously a module, or at least 
+ * it must be built in a modular way.
+ */
 .search-title {
   opacity: 0.4; }
   .search-title:hover {
@@ -970,8 +989,6 @@ article {
     .page-content .widgets .read-more:hover {
       border-bottom: 2px solid white; }
 
-.wpcf7-form input, .wpcf7-form textarea {
-  border: 1px solid #333333; }
 
 .home-widgets .widget {
   background-color: white; }
