@@ -14,7 +14,7 @@ $grid-columns: 12;
 $max-width: 100%;
 
 // Define your breakpoints
-$small: new-breakpoint(max-width 480px and media screen);
+$small: new-breakpoint(max-width 480px and screen);
 $medium: new-breakpoint(min-width 481px);
 $large: new-breakpoint(min-width 769px);
 $xlarge: new-breakpoint(min-width 1025px);
