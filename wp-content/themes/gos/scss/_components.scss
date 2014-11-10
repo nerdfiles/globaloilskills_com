@@ -14,15 +14,30 @@ body.home {
    * Uses media queries for responsive cases, based on Bourbon Neat.
    */
   .home-widgets {
+
     @include span-columns(12);
+
     .widget {
-      @include span-columns(12, block-collapse);
     }
+
+    @include media($small) {
+      .widget {
+        @include span-columns(12);
+      }
+    }
+
+    @include media($medium) {
+      .widget {
+        @include span-columns(12);
+      }
+    }
+
     @include media($large) {
       .widget {
         @include span-columns(4);
       }
     }
+
   }
 
   .home-search-widgets {

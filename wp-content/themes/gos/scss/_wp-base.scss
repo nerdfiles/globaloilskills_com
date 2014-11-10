@@ -57,7 +57,7 @@
  * @extends https://schema.org/SiteNavigationElement
  */
 .widget {
-  @include span-columns(4);
+  /*@include span-columns(4);*/
   @include font-size(0.8);
   padding: 2em 1.8em;
 

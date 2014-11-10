@@ -507,12 +507,22 @@ body.home {
     width: 100%; }
     body.home .home-widgets:last-child {
       margin-right: 0; }
-    body.home .home-widgets .widget {
-      float: left;
-      display: block;
-      width: 103.06748%; }
-      body.home .home-widgets .widget:last-child {
+    @media screen and (max-width: screen) {
+      body.home .home-widgets .widget {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
         width: 100%; }
+        body.home .home-widgets .widget:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 481px) {
+      body.home .home-widgets .widget {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%; }
+        body.home .home-widgets .widget:last-child {
+          margin-right: 0; } }
     @media screen and (min-width: 769px) {
       body.home .home-widgets .widget {
         float: left;
@@ -682,16 +692,11 @@ body.home {
  * @extends https://schema.org/SiteNavigationElement
  */
 .widget {
-  float: left;
-  display: block;
-  margin-right: 3.06748%;
-  width: 31.28834%;
+  /*@include span-columns(4);*/
   font-size: 12.8px;
   font-size: 0.8rem;
   padding: 2em 1.8em;
   position: relative; }
-  .widget:last-child {
-    margin-right: 0; }
   .widget h2 {
     font-size: 17.6px;
     font-size: 1.1rem;
