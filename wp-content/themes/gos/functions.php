@@ -37,13 +37,13 @@ function gos_custom_header() {
        '</style>';
   }
 }
-add_action( 'wp_head', 'gos_custom_header', 11 );
+//add_action( 'wp_head', 'gos_custom_header', 11 );
 
 $custom_bg_args = array(
   'default-color' => 'fba919',
   'default-image' => '',
 );
-add_theme_support( 'custom-background', $custom_bg_args );
+//add_theme_support( 'custom-background', $custom_bg_args );
 
 register_nav_menu( 'main-menu', __( 'Your sites main menu', 'gos' ) );
 
