@@ -699,12 +699,28 @@ if ( !class_exists( "RavenSchema" ) ) :
         'phone'				=> '',
         'fax'				=> '',
 
-        'hiring_organization' => '',
-        'skills'              => '',
-        'industry'            => '',
+        // JobPosting
+        'baseSalary'             => '',
+        'benefits'               => '',
+        'datePosted'             => '',
+        'educationRequirements'  => '',
+        'employmentType'         => '',
+        'experienceRequirements' => '',
+        'hiringOrganization'     => '',
+        'incentives'             => '',
+        'industry'               => '',
+        'jobLocation'            => '',
+        'occupationalCategory'   => '',
+        'qualifications'         => '',
+        'responsibilities'       => '',
+        'salaryCurrency'         => '',
+        'skills'                 => '',
+        'specialCommitments'     => '',
+        'title'                  => '',
+        'workHours'              => '',
 
+        // Product
         'brand'				=> '',
-
         'manfu'				=> '',
         'model'				=> '',
         'single_rating'		=> '',
@@ -862,16 +878,61 @@ if ( !class_exists( "RavenSchema" ) ) :
         if(!empty($description))
           $sc_build .= '<div class="schema_description" itemprop="description">'.esc_attr($description).'</div>';
 
-        if(!empty($hiring_organization))
-          $sc_build .= '<div class="hiring_organization" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
-            <span class="desc_type">'._x('Hiring Organization:', 'job_posting', 'schema' ).'</span> <span itemprop="name">'.$hiring_organization.'</span>
+        if(!empty($baseSalary))
+          $sc_build .= '<div class="baseSalary"><span class="desc_type">'.__('baseSalary:', 'job_posting', 'schema' ).'</span> <span itemprop="baseSalary">'.$baseSalary.'</span></div>';
+
+        if(!empty($benefits))
+          $sc_build .= '<div class="benefits"><span class="desc_type">'.__('benefits:', 'job_posting', 'schema' ).'</span> <span itemprop="benefits">'.$benefits.'</span></div>';
+
+        if(!empty($datePosted))
+          $sc_build .= '<div class="datePosted"><span class="desc_type">'.__('datePosted:', 'job_posting', 'schema' ).'</span> <span itemprop="datePosted">'.$datePosted.'</span></div>';
+
+        if(!empty($educationRequirements))
+          $sc_build .= '<div class="educationRequirements"><span class="desc_type">'.__('educationRequirements:', 'job_posting', 'schema' ).'</span> <span itemprop="educationRequirements">'.$educationRequirements.'</span></div>';
+
+        if(!empty($employmentType))
+          $sc_build .= '<div class="employmentType"><span class="desc_type">'.__('employmentType:', 'job_posting', 'schema' ).'</span> <span itemprop="employmentType">'.$employmentType.'</span></div>';
+
+        if(!empty($experienceRequirements))
+          $sc_build .= '<div class="experienceRequirements"><span class="desc_type">'.__('experienceRequirements:', 'job_posting', 'schema' ).'</span> <span itemprop="experienceRequirements">'.$experienceRequirements.'</span></div>';
+
+        if(!empty($hiringOrganization))
+          $sc_build .= '<div class="hiringOrganization" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
+          <span class="desc_type">'._x('Hiring Organization:', 'job_posting', 'schema' ).'</span> <span itemprop="name">'.$hiring_organization.'</span>
           </div>';
+
+        if(!empty($incentives))
+          $sc_build .= '<div class="incentives"><span class="desc_type">'.__('incentives:', 'job_posting', 'schema' ).'</span> <span itemprop="incentives">'.$incentives.'</span></div>';
+
+        if(!empty($industry))
+          $sc_build .= '<div class="industry"><span class="desc_type">'.__('Industry:', 'job_posting', 'schema' ).'</span> <span itemprop="industry">'.$industry.'</span></div>';
+
+        if(!empty($jobLocation))
+          $sc_build .= '<div class="jobLocation"><span class="desc_type">'.__('jobLocation:', 'job_posting', 'schema' ).'</span> <span itemprop="jobLocation">'.$jobLocation.'</span></div>';
+
+        if(!empty($occupationalCategory))
+          $sc_build .= '<div class="occupationalCategory"><span class="desc_type">'.__('occupationalCategory:', 'job_posting', 'schema' ).'</span> <span itemprop="occupationalCategory">'.$occupationalCategory.'</span></div>';
+
+        if(!empty($qualifications))
+          $sc_build .= '<div class="qualifications"><span class="desc_type">'.__('qualifications:', 'job_posting', 'schema' ).'</span> <span itemprop="qualifications">'.$qualifications.'</span></div>';
+
+        if(!empty($responsibilities))
+          $sc_build .= '<div class="responsibilities"><span class="desc_type">'.__('responsibilities:', 'job_posting', 'schema' ).'</span> <span itemprop="responsibilities">'.$responsibilities.'</span></div>';
+
+        if(!empty($salaryCurrency))
+          $sc_build .= '<div class="salaryCurrency"><span class="desc_type">'.__('salaryCurrency:', 'job_posting', 'schema' ).'</span> <span itemprop="salaryCurrency">'.$salaryCurrency.'</span></div>';
 
         if(!empty($skills))
           $sc_build .= '<div class="skills"><span class="desc_type">'._x('Skills:', 'job_posting', 'schema' ).'</span> <span itemprop="skills">'.$skills.'</span></div>';
 
-        if(!empty($industry))
-          $sc_build .= '<div class="industry"><span class="desc_type">'.__('Industry:', 'job_posting', 'schema' ).'</span> <span itemprop="industry">'.$industry.'</span></div>';
+        if(!empty($specialCommitments))
+          $sc_build .= '<div class="specialCommitments"><span class="desc_type">'.__('specialCommitments:', 'job_posting', 'schema' ).'</span> <span itemprop="specialCommitments">'.$specialCommitments.'</span></div>';
+
+        if(!empty($title))
+          $sc_build .= '<div class="title"><span class="desc_type">'.__('title:', 'job_posting', 'schema' ).'</span> <span itemprop="title">'.$title.'</span></div>';
+
+        if(!empty($workHours))
+          $sc_build .= '<div class="workHours"><span class="desc_type">'.__('workHours:', 'job_posting', 'schema' ).'</span> <span itemprop="workHours">'.$workHours.'</span></div>';
 
         // close it up
         $sc_build .= '</div>';
