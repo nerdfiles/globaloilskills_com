@@ -145,9 +145,29 @@ jQuery(document).ready(function($) {
 			$('div#sc_name').show();
 			$('div#sc_url').show();
 			$('div#sc_description').show();
-			$('div#sc_hiring_organization').show();
-			$('div#sc_skills').show();
-			$('div#sc_industry').show();
+
+      $('div#sc_skills').show();
+      $('div#sc_industry').show();
+
+      $('div#sc_hiringOrganization').show();
+      $('div#baseSalary').show();
+      $('div#benefits').show();
+      $('div#datePosted').show();
+      $('div#educationRequirements').show();
+      $('div#employmentType').show();
+      $('div#experienceRequirements').show();
+      $('div#hiringOrganization').show();
+      $('div#incentives').show();
+      $('div#industry').show();
+      $('div#jobLocation').show();
+      $('div#occupationalCategory').show();
+      $('div#qualifications').show();
+      $('div#responsibilities').show();
+      $('div#salaryCurrency').show();
+      $('div#skills').show();
+      $('div#specialCommitments').show();
+      $('div#title').show();
+      $('div#workHours').show();
 
 			// not needed
 			$('div#sc_orgtype').hide();
