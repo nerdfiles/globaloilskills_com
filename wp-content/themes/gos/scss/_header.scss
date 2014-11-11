@@ -1,9 +1,9 @@
 .site-header {
-  overflow: hidden;
-  padding: 3em 0;
+  /*overflow: hidden;*/
+  /*padding: 3em 0;*/
   position:relative;
-  height: 300px;
   border-bottom: 3px solid $color2;
+  @include clearfix;
 
   .logo {
     @include span-columns(10);
@@ -12,13 +12,24 @@
     position: relative;
     z-index: 2;
 
-    .blog-name {
+    .site-name {
+      text-indent: -9999px;
+      text-align: left;
+      background-image: url('./images/logo-idea-02.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       margin-bottom: 0.2em;
+      @include span-columns(6);
+      @include shift(3);
       text-align: center;
       text-shadow: 0 0 .5em $color1;
+      height: 150px;
     }
 
-    .blog-description {
+    .site-description {
+      position: absolute;
+      left: -9999px;
       margin-bottom: 1.5em;
       text-align: center;
       font-style: italic;

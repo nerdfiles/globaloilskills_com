@@ -57,8 +57,8 @@
         <?php endif; ?>
 
         <a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>">
-          <h1 class="blog-name"><?php bloginfo( 'name' ); ?></h1>
-          <div class="blog-description"><?php bloginfo( 'description' ); ?></div>
+          <h1 class="site-name"><?php bloginfo( 'name' ); ?></h1>
+          <div class="site-description"><?php bloginfo( 'description' ); ?></div>
         </a>
 
         <div class="menu"><?php

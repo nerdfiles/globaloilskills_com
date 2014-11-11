@@ -323,7 +323,7 @@ table {
   box-sizing: border-box; }
 
 body {
-  background-color: #222222;
+  background-color: #c9dedb;
   /*background: $color3;*/
   /*color: $color2;*/ }
 
@@ -815,11 +815,16 @@ body.login #login form, body.login #lostpasswordform form {
   margin-top: 0; }
 
 .site-header {
-  overflow: hidden;
-  padding: 3em 0;
+  /*overflow: hidden;*/
+  /*padding: 3em 0;*/
   position: relative;
-  height: 300px;
-  border-bottom: 3px solid #efefef; }
+  border-bottom: 3px solid #efefef;
+  *zoom: 1; }
+  .site-header:before, .site-header:after {
+    content: " ";
+    display: table; }
+  .site-header:after {
+    clear: both; }
   .site-header .logo {
     float: left;
     display: block;
@@ -831,11 +836,27 @@ body.login #login form, body.login #lostpasswordform form {
     z-index: 2; }
     .site-header .logo:last-child {
       margin-right: 0; }
-    .site-header .logo .blog-name {
+    .site-header .logo .site-name {
+      text-indent: -9999px;
+      text-align: left;
+      background-image: url('./images/logo-idea-02.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       margin-bottom: 0.2em;
+      float: left;
+      display: block;
+      margin-right: 3.06748%;
+      width: 48.46626%;
+      margin-left: 25.76687%;
       text-align: center;
-      text-shadow: 0 0 0.5em #222222; }
-    .site-header .logo .blog-description {
+      text-shadow: 0 0 0.5em #222222;
+      height: 150px; }
+      .site-header .logo .site-name:last-child {
+        margin-right: 0; }
+    .site-header .logo .site-description {
+      position: absolute;
+      left: -9999px;
       margin-bottom: 1.5em;
       text-align: center;
       font-style: italic;

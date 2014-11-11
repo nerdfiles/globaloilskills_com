@@ -3,9 +3,11 @@ $color1: #222;
 $color2: #efefef;
 $color3: #51955B;
 
+$bgColor1: #C9DEDB;
+
 // default styling
 body {
-  background-color: #222;
+  background-color: $bgColor1;
 	/*background: $color3;*/
 	/*color: $color2;*/
 }
