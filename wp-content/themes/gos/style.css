@@ -647,29 +647,35 @@ body.home {
     border-bottom: 1px solid #111111; }
 
 body.login {
-  background: #666666; }
+  background: #c9dedb; }
+  body.login a {
+    color: white !important;
+    text-shadow: 0 0 1px #444444; }
 
 
-body.login {
-  background-color: #222222; }
+body.login, body.login input {
+  font-family: 'Open Sans', sans-serif; }
 
 body.login #login .button, body.login #lostpasswordform .button {
-  background-color: #f0c214;
-  border: 1px #222222 solid;
-  color: #111111; }
+  background-color: #cccccc;
+  border: 1px #cccccc solid;
+  color: white;
+  text-shadow: 0 0 1px #444444;
+  box-shadow: none !important; }
 body.login #login h1 a, body.login #lostpasswordform h1 a {
   background-image: url('./images/logo.png'); }
 body.login #login .message, body.login #lostpasswordform .message {
-  background-color: #666666;
+  background-color: #f1f1f1;
   opacity: 0.4;
   color: white; }
 body.login #login .input, body.login #lostpasswordform .input {
-  background-color: #111111;
-  border: 1px solid #111111;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+  box-shadow: none;
   color: white; }
-body.login #login, body.login #login form, body.login #lostpasswordform, body.login #lostpasswordform form {
-  background-color: #666666; }
-  body.login #login label, body.login #login form label, body.login #lostpasswordform label, body.login #lostpasswordform form label {
+body.login #login form, body.login #lostpasswordform form {
+  background-color: #f1f1f1; }
+  body.login #login form label, body.login #lostpasswordform form label {
     color: #111111; }
 
 .sticky {

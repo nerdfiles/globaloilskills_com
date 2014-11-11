@@ -132,21 +132,28 @@ body.home {
 
 
 body.login {
-  background: #666;
+  background: #C9DEDB;
+  a {
+    color: #fff !important;
+    text-shadow: 0 0 1px #444;
+  }
 }
 .login #backtoblog {
 }
 
-body.login { 
-  background-color: #222; 
+body.login,
+body.login input {
+  font-family: 'Open Sans', sans-serif;
 }
 body.login #login,
 body.login #lostpasswordform {
 
   .button { 
-    background-color: #f0c214;
-    border: 1px #222 solid;
-    color: #111;
+    background-color: #ccc;
+    border: 1px #ccc solid;
+    color: #fff;
+    text-shadow: 0 0 1px #444;
+    box-shadow: none !important;
   }
   .button-primary {
   }
@@ -159,17 +166,18 @@ body.login #lostpasswordform {
     }
   }
   .message {
-    background-color: #666;
+    background-color: #f1f1f1;
     opacity: .4;
     color: #fff;
   }
   .input {
-    background-color: #111;
-    border: 1px solid #111;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    box-shadow: none;
     color: #fff;
   }
-  &, & form {
-    background-color: #666;
+  & form {
+    background-color: #f1f1f1;
     label {
       color: #111; 
     }
