@@ -2,7 +2,7 @@
 
   testEmail = (email, handleData) ->
     $.ajax
-      url: "//local.globaloilskills.com/api/make/user/?email=#{email}"
+      url: "//#{window.location.hostname}/api/make/user/?email=#{email}"
       success: (data) ->
         handleData data
         return
@@ -10,13 +10,13 @@
 
   $button = $ '.wpcf7-submit'
   $button.on 'click.checkEmail', (e) ->
-    e.preventDefault()
+    #e.preventDefault()
     # We're actually checking for the e-mail 
     # address here from Contact Form 7.
     $emailEntry = $button.closest('form').find('input[name="your-email"]')
     email = $emailEntry.val()
     testEmail email, (data) ->
-      console.log data
+      console.log "Creating User: #{data}"
 
   #//(function($) {
     #// jquery goodness
