@@ -36,9 +36,24 @@ return;
     var brand			= jQuery('#schema_builder input#schema_brand').val();
     var manfu			= jQuery('#schema_builder input#schema_manfu').val();
 
-    var hiring_organization			= jQuery('#schema_builder input#schema_hiring_organization').val();
+    var hiringOrganization			= jQuery('#schema_builder input#schema_hiringOrganization').val();
     var skills			= jQuery('#schema_builder input#schema_skills').val();
     var industry			= jQuery('#schema_builder input#schema_industry').val();
+    var baseSalary			= jQuery('#schema_builder input#schema_baseSalary').val();
+    var benefits			= jQuery('#schema_builder input#schema_benefits').val();
+    var datePosted			= jQuery('#schema_builder input#schema_datePosted').val();
+    var educationRequirements			= jQuery('#schema_builder input#schema_educationRequirements').val();
+    var employmentType			= jQuery('#schema_builder input#schema_employmentType').val();
+    var experienceRequirements			= jQuery('#schema_builder input#schema_experienceRequirements').val();
+    var incentives			= jQuery('#schema_builder input#schema_incentives').val();
+    var jobLocation			= jQuery('#schema_builder input#schema_jobLocation').val();
+    var occupationalCategory			= jQuery('#schema_builder input#schema_occupationalCategory').val();
+    var qualifications			= jQuery('#schema_builder input#schema_qualifications').val();
+    var responsibilities			= jQuery('#schema_builder input#schema_responsibilities').val();
+    var salaryCurrency			= jQuery('#schema_builder input#schema_salaryCurrency').val();
+    var specialCommitments			= jQuery('#schema_builder input#schema_specialCommitments').val();
+    var title			= jQuery('#schema_builder input#schema_title').val();
+    var workHours			= jQuery('#schema_builder input#schema_workHours').val();
 
     var model			= jQuery('#schema_builder input#schema_model').val();
     var prod_id			= jQuery('#schema_builder input#schema_prod_id').val();
@@ -155,8 +170,55 @@ return;
         output += 'hiring_organization="' + hiring_organization + '" ';
       if(skills)
         output += 'skills="' + industry + '" ';
+
       if(industry)
         output += 'industry="' + industry + '" ';
+
+      if(baseSalary)
+        output += 'baseSalary="' + baseSalary + '" ';
+
+      if(benefits)
+        output += 'benefits="' + benefits + '" ';
+
+      if(datePosted)
+        output += 'datePosted="' + datePosted + '" ';
+
+      if(educationRequirements)
+        output += 'educationRequirements="' + educationRequirements + '" ';
+
+      if(employmentType)
+        output += 'employmentType="' + employmentType + '" ';
+
+      if(experienceRequirements)
+        output += 'experienceRequirements="' + experienceRequirements + '" ';
+
+      if(incentives)
+        output += 'incentives="' + incentives + '" ';
+
+      if(jobLocation)
+        output += 'jobLocation="' + jobLocation + '" ';
+
+      if(occupationalCategory)
+        output += 'occupationalCategory="' + occupationalCategory + '" ';
+
+      if(qualifications)
+        output += 'qualifications="' + qualifications + '" ';
+
+      if(responsibilities)
+        output += 'responsibilities="' + responsibilities + '" ';
+
+      if(salaryCurrency)
+        output += 'salaryCurrency="' + salaryCurrency + '" ';
+
+      if(specialCommitments)
+        output += 'specialCommitments="' + specialCommitments + '" ';
+
+      if(title)
+        output += 'title="' + title + '" ';
+
+      if(workHours)
+        output += 'workHours="' + workHours + '" ';
+
     }
 
     // event
@@ -789,9 +851,46 @@ return;
     </div>
 
     <!-- https://schema.org/JobPosting -->
-    <div id="sc_hiring_organization" class="sc_option" style="display:none">
-      <label for="schema_hiring_organization"><?php _e('Hiring Organization', 'schema'); ?></label>
-      <input type="text" name="schema_hiring_organization" class="form_full" value="" id="schema_hiring_organization" />
+
+
+    <div id="sc_baseSalary" class="sc_option" style="display:none">
+      <label for="schema_baseSalary"><?php _e('baseSalary', 'schema'); ?></label>
+      <input type="text" name="schema_baseSalary" class="form_full" value="" id="schema_baseSalary" />
+    </div>
+
+    <div id="sc_benefits" class="sc_option" style="display:none">
+      <label for="schema_benefits"><?php _e('benefits', 'schema'); ?></label>
+      <input type="text" name="schema_benefits" class="form_full" value="" id="schema_benefits" />
+    </div>
+
+    <div id="sc_datePosted" class="sc_option" style="display:none">
+      <label for="schema_datePosted"><?php _e('datePosted', 'schema'); ?></label>
+      <input type="text" name="schema_datePosted" class="form_full" value="" id="schema_datePosted" />
+    </div>
+
+    <div id="sc_educationRequirements" class="sc_option" style="display:none">
+      <label for="schema_educationRequirements"><?php _e('educationRequirements', 'schema'); ?></label>
+      <input type="text" name="schema_educationRequirements" class="form_full" value="" id="schema_educationRequirements" />
+    </div>
+
+    <div id="sc_employmentType" class="sc_option" style="display:none">
+      <label for="schema_employmentType"><?php _e('employmentType', 'schema'); ?></label>
+      <input type="text" name="schema_employmentType" class="form_full" value="" id="schema_employmentType" />
+    </div>
+
+    <div id="sc_experienceRequirements" class="sc_option" style="display:none">
+      <label for="schema_experienceRequirements"><?php _e('experienceRequirements', 'schema'); ?></label>
+      <input type="text" name="schema_experienceRequirements" class="form_full" value="" id="schema_experienceRequirements" />
+    </div>
+
+    <div id="sc_hiringOrganization" class="sc_option" style="display:none">
+      <label for="schema_hiringOrganization"><?php _e('Hiring Organization', 'schema'); ?></label>
+      <input type="text" name="schema_hiringOrganization" class="form_full" value="" id="schema_hiringOrganization" />
+    </div>
+
+    <div id="sc_incentives" class="sc_option" style="display:none">
+      <label for="schema_incentives"><?php _e('incentives', 'schema'); ?></label>
+      <input type="text" name="schema_incentives" class="form_full" value="" id="schema_incentives" />
     </div>
 
     <div id="sc_industry" class="sc_option" style="display:none">
@@ -799,9 +898,49 @@ return;
       <input type="text" name="schema_industry" class="form_full" value="" id="schema_industry" />
     </div>
 
+    <div id="sc_jobLocation" class="sc_option" style="display:none">
+      <label for="schema_jobLocation"><?php _e('jobLocation', 'schema'); ?></label>
+      <input type="text" name="schema_jobLocation" class="form_full" value="" id="schema_jobLocation" />
+    </div>
+
+    <div id="sc_occupationalCategory" class="sc_option" style="display:none">
+      <label for="schema_occupationalCategory"><?php _e('occupationalCategory', 'schema'); ?></label>
+      <input type="text" name="schema_occupationalCategory" class="form_full" value="" id="schema_occupationalCategory" />
+    </div>
+
+    <div id="sc_qualifications" class="sc_option" style="display:none">
+      <label for="schema_qualifications"><?php _e('qualifications', 'schema'); ?></label>
+      <input type="text" name="schema_qualifications" class="form_full" value="" id="schema_qualifications" />
+    </div>
+
+    <div id="sc_responsibilities" class="sc_option" style="display:none">
+      <label for="schema_responsibilities"><?php _e('responsibilities', 'schema'); ?></label>
+      <input type="text" name="schema_responsibilities" class="form_full" value="" id="schema_responsibilities" />
+    </div>
+
+    <div id="sc_salaryCurrency" class="sc_option" style="display:none">
+      <label for="schema_salaryCurrency"><?php _e('salaryCurrency', 'schema'); ?></label>
+      <input type="text" name="schema_salaryCurrency" class="form_full" value="" id="schema_salaryCurrency" />
+    </div>
+
     <div id="sc_skills" class="sc_option" style="display:none">
       <label for="schema_skills"><?php _e('Skills', 'schema'); ?></label>
       <input type="text" name="schema_skills" class="form_full" value="" id="schema_skills" />
+    </div>
+
+    <div id="sc_specialCommitments" class="sc_option" style="display:none">
+      <label for="schema_specialCommitments"><?php _e('specialCommitments', 'schema'); ?></label>
+      <input type="text" name="schema_specialCommitments" class="form_full" value="" id="schema_specialCommitments" />
+    </div>
+
+    <div id="sc_title" class="sc_option" style="display:none">
+      <label for="schema_title"><?php _e('title', 'schema'); ?></label>
+      <input type="text" name="schema_title" class="form_full" value="" id="schema_title" />
+    </div>
+
+    <div id="sc_workHours" class="sc_option" style="display:none">
+      <label for="schema_workHours"><?php _e('workHours', 'schema'); ?></label>
+      <input type="text" name="schema_workHours" class="form_full" value="" id="schema_workHours" />
     </div>
 
     <!-- https://schema.org/Product -->

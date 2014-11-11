@@ -148,26 +148,26 @@ jQuery(document).ready(function($) {
 
       $('div#sc_skills').show();
       $('div#sc_industry').show();
-
       $('div#sc_hiringOrganization').show();
-      $('div#baseSalary').show();
-      $('div#benefits').show();
-      $('div#datePosted').show();
-      $('div#educationRequirements').show();
-      $('div#employmentType').show();
-      $('div#experienceRequirements').show();
-      $('div#hiringOrganization').show();
-      $('div#incentives').show();
-      $('div#industry').show();
-      $('div#jobLocation').show();
-      $('div#occupationalCategory').show();
-      $('div#qualifications').show();
-      $('div#responsibilities').show();
-      $('div#salaryCurrency').show();
-      $('div#skills').show();
-      $('div#specialCommitments').show();
-      $('div#title').show();
-      $('div#workHours').show();
+
+      $('div#sc_baseSalary').show();
+      $('div#sc_benefits').show();
+      $('div#sc_datePosted').show();
+      $('div#sc_educationRequirements').show();
+      $('div#sc_employmentType').show();
+      $('div#sc_experienceRequirements').show();
+      $('div#sc_hiringOrganization').show();
+      $('div#sc_incentives').show();
+      $('div#sc_industry').show();
+      $('div#sc_jobLocation').show();
+      $('div#sc_occupationalCategory').show();
+      $('div#sc_qualifications').show();
+      $('div#sc_responsibilities').show();
+      $('div#sc_salaryCurrency').show();
+      $('div#sc_skills').show();
+      $('div#sc_specialCommitments').show();
+      $('div#sc_title').show();
+      $('div#sc_workHours').show();
 
 			// not needed
 			$('div#sc_orgtype').hide();
