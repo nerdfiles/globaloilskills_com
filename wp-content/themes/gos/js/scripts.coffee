@@ -1,4 +1,23 @@
-((F7, D7) ->
+(($, F7, D7) ->
+
+  testEmail = (email, handleData) ->
+    $.ajax
+      url: "//local.globaloilskills.com/api/make/user/?email=#{email}"
+      success: (data) ->
+        handleData data
+        return
+    return
+
+  $button = $ '.wpcf7-submit'
+  $button.on 'click.checkEmail', (e) ->
+    e.preventDefault()
+    # We're actually checking for the e-mail 
+    # address here from Contact Form 7.
+    $emailEntry = $button.closest('form').find('input[name="your-email"]')
+    email = $emailEntry.val()
+    testEmail email, (data) ->
+      console.log data
+
   #//(function($) {
     #// jquery goodness
   #//})(jQuery);
@@ -20,4 +39,4 @@
    #*  dynamicNavbar: true
    #*});
    #*/
-)(Framework7, Dom7)
+)(jQuery, Framework7, Dom7)
