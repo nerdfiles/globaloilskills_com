@@ -541,6 +541,13 @@ body.home {
     width: 100%;
     font-size: 12.8px;
     font-size: 0.8rem; }
+    body.home .home-search-widgets .widget_search:before {
+      content: "\f095";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 50px; }
     body.home .home-search-widgets .widget_search:last-child {
       margin-right: 0; }
     @media screen and (max-width: screen) {
@@ -582,7 +589,8 @@ body.home {
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    padding: 1rem; }
+    padding: 1rem;
+    text-indent: -9999px; }
     body.home .home-search-widgets #searchsubmit:last-child {
       margin-right: 0; }
   body.home .home-widgets {
@@ -885,10 +893,34 @@ body.login #login form, body.login #lostpasswordform form {
       float: left;
       display: block;
       margin-right: 3.06748%;
-      width: 14.11043%;
+      width: 48.46626%;
       text-align: center; }
       .site-header .menu .main-menu .menu li:last-child {
         margin-right: 0; }
+      .site-header .menu .main-menu .menu li:nth-child(2n) {
+        margin-right: 0; }
+      .site-header .menu .main-menu .menu li:nth-child(2n+1) {
+        clear: left; }
+      @media screen and (min-width: 481px) {
+        .site-header .menu .main-menu .menu li {
+          float: left;
+          display: block;
+          margin-right: 3.06748%;
+          width: 48.46626%; }
+          .site-header .menu .main-menu .menu li:last-child {
+            margin-right: 0; }
+          .site-header .menu .main-menu .menu li:nth-child(2n) {
+            margin-right: 0; }
+          .site-header .menu .main-menu .menu li:nth-child(2n+1) {
+            clear: left; } }
+      @media screen and (min-width: 769px) {
+        .site-header .menu .main-menu .menu li {
+          float: left;
+          display: block;
+          margin-right: 3.06748%;
+          width: 14.11043%; }
+          .site-header .menu .main-menu .menu li:last-child {
+            margin-right: 0; } }
 
 .main-menu {
   padding-top: 20px; }
@@ -948,8 +980,10 @@ article {
   margin-right: 3.06748%;
   width: 82.82209%;
   margin-left: 8.58896%;
-  border-top: 0.03em solid #efefef;
-  border-bottom: 0.03em solid #efefef;
+  /*
+   *border-top: 0.03em solid $color2;
+   *border-bottom: 0.03em solid $color2;
+   */
   text-align: center;
   margin-bottom: 0.2em;
   color: white; }

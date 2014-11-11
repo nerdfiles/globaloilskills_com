@@ -1,0 +1,19 @@
+{
+  "name": "scss",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nerdfiles/globaloilskills_com",
+  "authors": [
+    "nerdfiles <nerdfiles@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.2.0"
+  }
+}

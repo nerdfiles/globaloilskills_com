@@ -97,6 +97,7 @@ add_action( 'init', 'gos_editor_style' );
 function gos_enqueue_scripts() {
   // Presentation Layer
   wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
+  wp_enqueue_style( 'gos-fonts-fontawesome', esc_url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'), array(), '0.0.1');
   wp_enqueue_style( 'gos-styles', get_stylesheet_uri(), array(), '1.0' );
 
   // Dependencies

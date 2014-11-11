@@ -52,8 +52,10 @@ article {
   @include span-columns(10);
   @include shift(1);
 
-  border-top: 0.03em solid $color2;
-  border-bottom: 0.03em solid $color2;
+  /*
+   *border-top: 0.03em solid $color2;
+   *border-bottom: 0.03em solid $color2;
+   */
   text-align: center;
   margin-bottom: 0.2em;
   color: #fff;
