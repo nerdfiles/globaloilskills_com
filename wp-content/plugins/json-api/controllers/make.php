@@ -6,6 +6,7 @@ class JSON_API_Make_Controller {
 
     global $json_api;
     $email = $json_api->query->email;
+    $fileToUpload = $json_api->query-fileToUpload;
 
     if ( email_exists($email) == false ) {
 

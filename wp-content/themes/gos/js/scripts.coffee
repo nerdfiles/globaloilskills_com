@@ -1,21 +1,25 @@
 (($, F7, D7) ->
 
-  testEmail = (email, handleData) ->
+  testEmail = (email, resumeFile, handleData) ->
     $.ajax
-      url: "//#{window.location.hostname}/api/make/user/?email=#{email}"
+      url: "//#{window.location.hostname}/api/make/user/?email=#{email}&fileToUpload=#{resumeFile}"
       success: (data) ->
         handleData data
         return
     return
 
   $button = $ '.wpcf7-submit'
+
   $button.on 'click.checkEmail', (e) ->
     #e.preventDefault()
     # We're actually checking for the e-mail 
     # address here from Contact Form 7.
     $emailEntry = $button.closest('form').find('input[name="your-email"]')
+    $resumeEntry = $button.closest('form').find('#resume')
     email = $emailEntry.val()
-    testEmail email, (data) ->
+    resumeFile = $resumeEntry.val()
+    console.log resumeFile
+    testEmail email, resumeFile, (data) ->
       console.log "Creating User: #{data}"
 
   #//(function($) {
