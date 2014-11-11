@@ -46,6 +46,7 @@ body.home {
     .widget_search {
 
       &:before {
+        font-family: FontAwesome;
         content: "\f095";
         position: absolute;
         right: 0;
