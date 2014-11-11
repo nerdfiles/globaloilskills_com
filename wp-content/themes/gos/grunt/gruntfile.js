@@ -4,6 +4,21 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
+    coffee: {
+      "coffee_to_js": {
+        options: {
+          bare: true,
+          sourceMap: true
+        },
+        expand: true,
+        flatten: false,
+        //cwd: "../dist",
+        src: ["../js/**/*.coffee"],
+        dest: '../js',
+        ext: ".js"
+      }
+    },
+
 		// chech our JS
 		jshint: {
 			options: {
@@ -29,6 +44,9 @@ module.exports = function(grunt) {
 					"Dom7": true
 				}
 			},
+      coffee: [
+				'../js/scripts.coffee'
+      ],
 			all: [
 				'gruntfile.js',
 				'../js/scripts.js'
@@ -83,10 +101,11 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'<%= jshint.all %>'
+          '<%= jshint.coffee %>'
 				],
 				tasks: [
-					'jshint',
+          'coffee',
+					'jshint:all',
 					'uglify',
 					'notify:js'
 				]
@@ -167,7 +186,7 @@ module.exports = function(grunt) {
 
 	// Development task
 	grunt.registerTask('default', [
-		'jshint',
+		'jshint:all',
 		'uglify',
 		'sass:dev',
 		'sass:editorstyles'
@@ -176,7 +195,7 @@ module.exports = function(grunt) {
 	// Production task
 	grunt.registerTask('dist', function() {
 		grunt.task.run([
-			'jshint',
+			'jshint:all',
 			'uglify',
 			'sass:prod',
 			'sass:editorstyles',
@@ -185,4 +204,13 @@ module.exports = function(grunt) {
 			'notify:dist'
 		]);
 	});
+
+  grunt.registerTask('compile', [
+    'coffee',
+    'jshint:all',
+    'uglify',
+    'clean:dist',
+    'copyto:dist',
+    'notify:dist'
+  ]);
 };

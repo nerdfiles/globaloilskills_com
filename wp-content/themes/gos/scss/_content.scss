@@ -193,7 +193,14 @@ article {
   p { text-align: left; }
 }
 
-.page-content { 
-  color: #fff;
+/**
+ *
+ */
+body.search-results {
+  .type-employee {
+    @include span-columns(3, block-collapse);
+  }
+  .page-content {
+    color: #fff;
+  }
 }
-
