@@ -4,6 +4,7 @@
 
 article {
   @include clearfix;
+  color: #fff;
 }
 
 .archive-title, .search-title h1 {
@@ -55,6 +56,7 @@ article {
   border-bottom: 0.03em solid $color2;
   text-align: center;
   margin-bottom: 0.2em;
+  color: #fff;
 
   &:first-child {
     margin-top: 1em;
@@ -203,4 +205,14 @@ body.search-results {
   .page-content {
     color: #fff;
   }
+}
+
+#schema_block {
+  background-color: transparent;
+  color: #fff;
+}
+
+.wpcf7 {
+  color: #fff;
+  input { color: #000; }
 }

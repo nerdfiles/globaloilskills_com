@@ -849,7 +849,8 @@ body.home {
   General
 \******************************************************************************/
 article {
-  *zoom: 1; }
+  *zoom: 1;
+  color: white; }
   article:before, article:after {
     content: " ";
     display: table; }
@@ -897,7 +898,8 @@ article {
   border-top: 0.03em solid #efefef;
   border-bottom: 0.03em solid #efefef;
   text-align: center;
-  margin-bottom: 0.2em; }
+  margin-bottom: 0.2em;
+  color: white; }
   .post-title:last-child {
     margin-right: 0; }
   .post-title:first-child {
@@ -1046,8 +1048,26 @@ article {
   .home-widgets .widget p {
     text-align: left; }
 
-.page-content {
+/**
+ *
+ */
+body.search-results .type-employee {
+  float: left;
+  display: block;
+  width: 25.76687%; }
+  body.search-results .type-employee:last-child {
+    width: 22.69939%; }
+body.search-results .page-content {
   color: white; }
+
+#schema_block {
+  background-color: transparent;
+  color: white; }
+
+.wpcf7 {
+  color: white; }
+  .wpcf7 input {
+    color: black; }
 
 .format-status .date, .format-link .date, .format-quote .date {
   width: 100%;
