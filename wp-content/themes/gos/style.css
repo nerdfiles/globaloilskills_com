@@ -646,6 +646,32 @@ body.home {
   .search-title input[type="text"] {
     border-bottom: 1px solid #111111; }
 
+body.login {
+  background: #666666; }
+
+
+body.login {
+  background-color: #222222; }
+
+body.login #login .button, body.login #lostpasswordform .button {
+  background-color: #f0c214;
+  border: 1px #222222 solid;
+  color: #111111; }
+body.login #login h1 a, body.login #lostpasswordform h1 a {
+  background-image: url('./images/logo.png'); }
+body.login #login .message, body.login #lostpasswordform .message {
+  background-color: #666666;
+  opacity: 0.4;
+  color: white; }
+body.login #login .input, body.login #lostpasswordform .input {
+  background-color: #111111;
+  border: 1px solid #111111;
+  color: white; }
+body.login #login, body.login #login form, body.login #lostpasswordform, body.login #lostpasswordform form {
+  background-color: #666666; }
+  body.login #login label, body.login #login form label, body.login #lostpasswordform label, body.login #lostpasswordform form label {
+    color: #111111; }
+
 .sticky {
   background: none; }
 
