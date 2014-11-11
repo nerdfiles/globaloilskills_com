@@ -55,8 +55,8 @@ article {
   /*
    *border-top: 0.03em solid $color2;
    *border-bottom: 0.03em solid $color2;
+   *text-align: center;
    */
-  text-align: center;
   margin-bottom: 0.2em;
   color: #fff;
 
@@ -72,10 +72,10 @@ article {
 }
 
 .post-meta {
-  @include span-columns(8);
-  @include shift(2);
+  @include span-columns(10);
+  @include shift(1);
 
-  text-align: center;
+  /*text-align: center;*/
   font-style: italic;
 }
 
@@ -86,7 +86,7 @@ article {
   position: relative;
   /*background: $color2;*/
   /*color: $color1;*/
-  padding: 1.5em;
+  /*padding: 1.5em;*/
   margin-top: 1.5em;
 }
 
@@ -211,6 +211,8 @@ body.search-results {
 
 #schema_block {
   background-color: transparent;
+  padding: 0;
+  border: none;
   color: #fff;
 }
 

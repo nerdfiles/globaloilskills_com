@@ -2473,6 +2473,14 @@ body.login #login form, body.login #lostpasswordform form {
      */ }
     .site-header div.menu:last-child {
       margin-right: 0; }
+  .site-header .main-menu {
+    *zoom: 1;
+    padding-bottom: 20px; }
+    .site-header .main-menu:before, .site-header .main-menu:after {
+      content: " ";
+      display: table; }
+    .site-header .main-menu:after {
+      clear: both; }
   .site-header .menu .main-menu .menu {
     margin: 0;
     padding: 0;
@@ -2589,8 +2597,8 @@ article {
   /*
    *border-top: 0.03em solid $color2;
    *border-bottom: 0.03em solid $color2;
+   *text-align: center;
    */
-  text-align: center;
   margin-bottom: 0.2em;
   color: white; }
   .post-title:last-child {
@@ -2605,9 +2613,9 @@ article {
   float: left;
   display: block;
   margin-right: 3.06748%;
-  width: 65.64417%;
-  margin-left: 17.17791%;
-  text-align: center;
+  width: 82.82209%;
+  margin-left: 8.58896%;
+  /*text-align: center;*/
   font-style: italic; }
   .post-meta:last-child {
     margin-right: 0; }
@@ -2621,7 +2629,7 @@ article {
   position: relative;
   /*background: $color2;*/
   /*color: $color1;*/
-  padding: 1.5em;
+  /*padding: 1.5em;*/
   margin-top: 1.5em; }
   .post-content:last-child {
     margin-right: 0; }
@@ -2755,6 +2763,8 @@ body.search-results .page-content {
 
 #schema_block {
   background-color: transparent;
+  padding: 0;
+  border: none;
   color: white; }
 
 .wpcf7 {
