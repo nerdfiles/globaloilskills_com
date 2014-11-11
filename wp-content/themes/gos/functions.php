@@ -175,3 +175,28 @@ function disable_author_index() {
   // Stop execution
   exit;
 }
+
+add_action('wpcf7_contact_form', 'priv_contact');
+
+function priv_contact() {
+  global $current_user;
+  $all_roles = $current_user->roles;
+  $show = false;
+  foreach ($all_roles as $role) {
+    if ($role == 'employee') {
+      $show = true;
+    }
+  }
+
+  if ($show == false) {
+    ob_start();
+    ?>
+    <style>
+    .wpcf7 { display: none; }
+    </style>
+    <?php
+    $html = ob_get_clean();
+    echo $html;
+    //exit;
+  }
+}

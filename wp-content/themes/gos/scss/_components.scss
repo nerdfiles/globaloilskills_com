@@ -45,16 +45,6 @@ body.home {
 
     .widget_search {
 
-      &:before {
-        font-family: FontAwesome;
-        content: "\f095";
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 50px;
-        height: 50px;
-      }
-
       /**
        * Default Cases
        */
@@ -92,6 +82,17 @@ body.home {
       @include transition (all .5s ease-in-out);
       padding: 1rem;
       text-indent: -9999px;
+      position: relative;
+      &:before {
+        font-family: FontAwesome;
+        content: "\f095";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+      }
+
     }
 
   }
@@ -178,8 +179,7 @@ body.login #lostpasswordform {
   }
   .message {
     background-color: #f1f1f1;
-    opacity: .4;
-    color: #fff;
+    color: #333;
   }
   .input {
     background-color: #ccc;

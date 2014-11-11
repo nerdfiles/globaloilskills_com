@@ -48,17 +48,28 @@
     margin: 0;
     padding: 0;
     @include clearfix;
+    @include span-columns(12);
     li {
-      @include span-columns(6);
-      @include omega(2n);
-      @include media($medium) {
-        @include span-columns(6);
-        @include omega(2n);
+      list-style: none;
+      text-align: center;
+
+      @include media($xlarge) {
+        @include span-columns(2);
       }
+
       @include media($large) {
         @include span-columns(2);
       }
-      text-align: center;
+
+      @include media($medium) {
+        @include span-columns(2);
+      }
+
+      @include media($small) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+
     }
     .menu-item { }
     .menu-item-type-post_type { }
