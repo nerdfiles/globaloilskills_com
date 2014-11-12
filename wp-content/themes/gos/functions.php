@@ -14,6 +14,7 @@
 
 add_theme_support( 'post-formats', array( 'image', 'quote', 'status', 'link' ) );
 add_theme_support( 'post-thumbnails' );
+//set_post_thumbnail_size( 300, 300 );
 add_theme_support( 'automatic-feed-links' );
 
 $custom_header_args = array(
@@ -169,6 +170,11 @@ function gos_post_meta() {
  *add_filter('json_api_create_user_controller_path', 'set_create_user_controller_path');
  */
 
+/**
+ * Disable Author Index
+ *
+ * @depends JSON_API
+ */
 // Disable get_author_index method (e.g., for security reasons)
 add_action('json_api-core-get_author_index', 'disable_author_index');
 function disable_author_index() {
@@ -176,19 +182,32 @@ function disable_author_index() {
   exit;
 }
 
+/**
+ * Conditional Logic for Employee Signup
+ *
+ * @TODO Enable pass of uploaded file(s) to User Profile API.
+ */
 add_action('wpcf7_contact_form', 'priv_contact');
-
 function priv_contact() {
   global $current_user;
   $all_roles = $current_user->roles;
   $show = false;
   foreach ($all_roles as $role) {
-    if ($role == 'employee') {
+    if ( $role == 'employee' || $role == 'administrator' || $role == 'recruiter' ) {
       $show = true;
+      ob_start();
+      ?>
+        <div class="user--role">
+          <p>View as <?php echo $role; ?></p>
+        </div>
+      <?php
+      $logLabel = ob_get_clean();
+      echo $logLabel;
     }
   }
 
-  if ($show == false) {
+  // Check for post_type to prevent from mucking up API call
+  if ($show == false && ! $_GET['post_type']) {
     ob_start();
     ?>
     <style>

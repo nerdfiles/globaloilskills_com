@@ -10,11 +10,30 @@
     @include span-columns(12);
     .menu-base-container {
       ul.menu {
-        @include clearfix;
         padding-left:  0;
+        list-style: none;
+        @include clearfix;
+        @include span-columns(12);
         li {
           text-align: center;
-          @include span-columns(2);
+
+          @include media($xlarge) {
+            @include span-columns(2);
+          }
+
+          @include media($large) {
+            @include span-columns(2);
+          }
+
+          @include media($medium) {
+            @include span-columns(2);
+          }
+
+          @include media($small) {
+            @include span-columns(6);
+            @include omega(2n);
+          }
+
         }
       }
     }

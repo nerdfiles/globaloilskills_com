@@ -39,9 +39,12 @@
 
   <div class="post-content"><?php
 
-    if ( '' != get_the_post_thumbnail() ) : ?>
-      <?php the_post_thumbnail(); ?><?php
-    endif; ?>
+    if ( '' != get_the_post_thumbnail() ) :
+    ?>
+      <?php
+      the_post_thumbnail('full');
+      ?>
+    <?php endif; ?>
 
     <?php if ( is_front_page() || is_category() || is_archive() || is_search() ) : ?>
 

@@ -166,8 +166,8 @@ return;
         output += 'name="' + name + '" ';
       if(description)
         output += 'description="' + description + '" ';
-      if(hiring_organization)
-        output += 'hiring_organization="' + hiring_organization + '" ';
+      if(hiringOrganization)
+        output += 'hiringOrganization="' + hiringOrganization + '" ';
       if(skills)
         output += 'skills="' + industry + '" ';
 

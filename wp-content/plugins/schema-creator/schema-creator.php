@@ -898,7 +898,7 @@ if ( !class_exists( "RavenSchema" ) ) :
 
         if(!empty($hiringOrganization))
           $sc_build .= '<div class="hiringOrganization" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
-          <span class="desc_type">'._x('Hiring Organization:', 'job_posting', 'schema' ).'</span> <span itemprop="name">'.$hiring_organization.'</span>
+          <span class="desc_type">'._x('Hiring Organization:', 'job_posting', 'schema' ).'</span> <span itemprop="name">'.$hiringOrganization.'</span>
           </div>';
 
         if(!empty($incentives))
