@@ -2321,6 +2321,29 @@ body.login #login form, body.login #lostpasswordform form {
   body.login #login form label, body.login #lostpasswordform form label {
     color: #111111; }
 
+/*
+ * Circle Extender
+ * @depnds css3
+ *
+ * :: Scholia to namespacing involves the idea that syntactical 
+ *    classmogrifications exist everywhere.
+ *
+ * Primarily for narratological taxonomies that may sprite up within 
+ * the network.
+ *
+ * We have demonstrated a reduction in the general interactive case an 
+ * interface to a simple modality of on-click surface area.
+ */
+.circle, .comments input, .comments textarea {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: white;
+  line-height: 500px;
+  text-align: center;
+  background: black; }
+
 .sticky {
   background: none; }
 
@@ -2394,30 +2417,59 @@ body.login #login form, body.login #lostpasswordform form {
   padding: 0.2em 0; }
 
 #searchsubmit, #submit {
-  /*padding: 0.3em 0.4em;*/
-  /*border: 1px solid $color1;*/
-  /*margin-top: 0.2em;*/
-  /*background-color: $color3;*/
-  /*color: $color1;*/
+  /*padding                  : 0.3em 0.4em;*/
+  /*border                   : 1px solid $color1;*/
+  /*margin-top               : 0.2em;*/
+  /*background-color         : $color3;*/
+  /*color                    : $color1;*/
   box-shadow: none; }
 
+/*
+ *#comment-nav-above {
+ *  .navigation {
+ *  }
+ *  &.comment-navigation {
+ *  }
+ *}
+ */
 .comments {
+  background-image: url();
   float: left;
   display: block;
   margin-right: 3.06748%;
-  width: 82.82209%;
-  margin-left: 8.58896%;
+  width: 100%;
+  /*@include shift(1);*/
   font-size: 14.4px;
   font-size: 0.9rem;
-  /*background-color: $color1;*/
+  /*background-color          : $color1;*/
   margin-bottom: 3em;
-  padding: 2em; }
+  /*padding                   : 2em;*/ }
   .comments:last-child {
     margin-right: 0; }
   .comments ol {
     list-style: none;
     margin: 0;
     padding: 0; }
+  .comments .form-allowed-tags {
+    display: none; }
+  .comments label {
+    position: absolute;
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 31.28834%; }
+    .comments label:last-child {
+      margin-right: 0; }
+  .comments input, .comments textarea {
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 65.64417%;
+    max-width: 100%;
+    position: absolute;
+    z-index: 9001; }
+    .comments input:last-child, .comments textarea:last-child {
+      margin-right: 0; }
 
 .comment-body {
   margin-bottom: 1.5em; }

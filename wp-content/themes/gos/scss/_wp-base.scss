@@ -1,3 +1,27 @@
+/*
+ * Circle Extender
+ * @depnds css3
+ *
+ * :: Scholia to namespacing involves the idea that syntactical 
+ *    classmogrifications exist everywhere.
+ *
+ * Primarily for narratological taxonomies that may sprite up within 
+ * the network.
+ *
+ * We have demonstrated a reduction in the general interactive case an 
+ * interface to a simple modality of on-click surface area.
+ */
+.circle {
+  width         : 500px;
+  height        : 500px;
+  border-radius : 50%;
+  font-size     : 50px;
+  color         : #fff;
+  line-height   : 500px;
+  text-align    : center;
+  background    : #000
+}
+
 .sticky {
 
   background: none;
@@ -84,90 +108,117 @@
 }
 
 .widget:nth-child(3n+1) {
-  clear: left;
+  clear                      : left;
 }
 
 .widget_search {
 
   label {
-    display: block;
-    padding: 0.2em 0;
+    display                  : block;
+    padding                  : 0.2em 0;
   }
 
   input {
-    /*width: 100%;*/
+    /*width                  : 100%;*/
   }
 
 }
 
 #searchsubmit, #submit {
-  /*padding: 0.3em 0.4em;*/
-  /*border: 1px solid $color1;*/
-  /*margin-top: 0.2em;*/
-  /*background-color: $color3;*/
-  /*color: $color1;*/
-  box-shadow: none;
+  /*padding                  : 0.3em 0.4em;*/
+  /*border                   : 1px solid $color1;*/
+  /*margin-top               : 0.2em;*/
+  /*background-color         : $color3;*/
+  /*color                    : $color1;*/
+  box-shadow                 : none;
 }
 
+/*
+ *#comment-nav-above {
+ *  .navigation {
+ *  }
+ *  &.comment-navigation {
+ *  }
+ *}
+ */
+
 .comments {
-  @include span-columns(10);
-  @include shift(1);
+  background-image           : url();
+  @include span-columns(12);
+  /*@include shift(1);*/
   @include font-size(0.9);
 
-  /*background-color: $color1;*/
-  margin-bottom: 3em;
-  padding: 2em;
+  /*background-color          : $color1;*/
+  margin-bottom               : 3em;
+  /*padding                   : 2em;*/
 
   ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    list-style                : none;
+    margin                    : 0;
+    padding                   : 0;
+  }
+
+  .form-allowed-tags {
+    display                   : none;
+  }
+  label {
+    position                  : absolute;
+    @include span-columns(4);
+  }
+
+  input,textarea {
+    @include span-columns(8);
+    max-width                 : 100%;
+    position                  : absolute;
+    z-index                   : 9001;
+    @extend .circle;
+
   }
 }
 
 .comment-body {
-  margin-bottom: 1.5em;
+  margin-bottom            : 1.5em;
 }
 
 .children .comment-body {
-  padding-left: 2em;
+  padding-left             : 2em;
 }
 
 .comment-author {
-  border-top: 0.1em solid $color2;
-  border-bottom: 0.1em solid $color2;
-  text-align: center;
-  padding: 0.6em 0;
-  position:relative;
+  border-top               : 0.1em solid $color2;
+  border-bottom            : 0.1em solid $color2;
+  text-align               : center;
+  padding                  : 0.6em 0;
+  position                 : relative;
 
   img {
-    position:absolute;
-    top: 0;
-    bottom:0;
-    left:0;
-    height:100%;
-    width:auto;
+    position               : absolute;
+    top                    : 0;
+    bottom                 : 0;
+    left                   : 0;
+    height                 : 100%;
+    width                  : auto;
   }
 }
 
 .byuser .comment-author {
-  background-color: $color3;
-  color: $color1;
+  background-color         : $color3;
+  color                    : $color1;
 
   a {
-    color: $color1;
-    text-decoration: underline;
+    color                  : $color1;
+    text-decoration        : underline;
   }
 }
 
 .comment-meta {
-  text-align: center;
-  margin-top:0.2em;
-  margin-bottom: 0.8em;
+  text-align               : center;
+  margin-top               : 0.2em;
+  margin-bottom            : 0.8em;
 }
 
 .comments-title {
   @include font-size(1.1);
-  text-align:center;
-  margin-top: 0;
+  text-align               : center;
+  margin-top               : 0;
 }

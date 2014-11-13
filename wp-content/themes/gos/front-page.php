@@ -9,6 +9,21 @@
 
 get_header(); ?>
 
+  <!--
+
+  (_)   (_)                     / _____)                      | |
+   _______  ___  ____  _____   ( (____  _____ _____  ____ ____| |__
+  |  ___  |/ _ \|    \| ___ |   \____ \| ___ (____ |/ ___) ___)  _ \
+  | |   | | |_| | | | | ____|   _____) ) ____/ ___ | |  ( (___| | | |
+  |_|   |_|\___/|_|_|_|_____)  (______/|_____)_____|_|   \____)_| |_|
+    ______ _     _       _
+   / _____|_)   | |     | |
+  ( (____  _  __| |_____| |__  _____  ____
+   \____ \| |/ _  | ___ |  _ \(____ |/ ___)
+   _____) ) ( (_| | ____| |_) ) ___ | |
+  (______/|_|\____|_____)____/\_____|_|
+
+  -->
   <div class="home-search-widgets">
     <ul>
       <?php if ( function_exists( 'dynamic_sidebar' ) ) :
@@ -16,6 +31,14 @@ get_header(); ?>
       endif; ?>
     </ul>
   </div>
+
+  <!--
+    (_)   (_)                     / _____|_)   | |     | |
+     _______  ___  ____  _____   ( (____  _  __| |_____| |__  _____  ____
+    |  ___  |/ _ \|    \| ___ |   \____ \| |/ _  | ___ |  _ \(____ |/ ___)
+    | |   | | |_| | | | | ____|   _____) ) ( (_| | ____| |_) ) ___ | |
+    |_|   |_|\___/|_|_|_|_____)  (______/|_|\____|_____)____/\_____|_|
+  -->
 
   <div class="home-widgets">
     <ul>
@@ -25,27 +48,20 @@ get_header(); ?>
     </ul>
   </div>
 
-  <!--section class="page-content primary view-main" role="main">
-    <?php
-      if ( have_posts() ) :
+  <!--
+    (____  \                     / __|_)  _
+     ____)  )_____ ____  _____ _| |__ _ _| |_  ___
+    |  __  (| ___ |  _ \| ___ (_   __) (_   _)/___)
+    | |__)  ) ____| | | | ____| | |  | | | |_|___ |
+    |______/|_____)_| |_|_____) |_|  |_|  \__|___/
+  -->
 
-        while ( have_posts() ) : the_post();
-
-          get_template_part( 'loop', get_post_format() );
-
-        endwhile;
-
-      else :
-
-        get_template_part( 'loop', 'empty' );
-
-      endif;
-    ?>
-    <div class="pagination">
-
-      <?php get_template_part( 'template-part', 'pagination' ); ?>
-
-    </div>
-  </section-->
+  <div class="home-benefits">
+    <ul>
+      <?php if ( function_exists( 'dynamic_sidebar' ) ) :
+        dynamic_sidebar( 'home-benefits-sidebar' );
+      endif; ?>
+    </ul>
+  </div>
 
 <?php get_footer(); ?>

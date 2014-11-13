@@ -60,6 +60,14 @@ if ( function_exists( 'register_sidebars' ) ) {
 
   register_sidebar(
     array(
+      'id' => 'home-benefits-sidebar',
+      'name' => __( 'Home Benefits widgets', 'gos' ),
+      'description' => __( 'Shows on home page', 'gos' )
+    )
+  );
+
+  register_sidebar(
+    array(
       'id' => 'home-sidebar',
       'name' => __( 'Home widgets', 'gos' ),
       'description' => __( 'Shows on home page', 'gos' )
@@ -219,3 +227,39 @@ function priv_contact() {
     //exit;
   }
 }
+
+/*
+ * A whole API of junk for interacting with social networks.
+ */
+/*
+ *add_action('init', 'API');
+ *class API {
+ *  function __construct() {
+ *    return [];
+ *  }
+ *  function priv_contact() {
+ *    return priv_contact();
+ *  }
+ *}
+ *
+ */
+/*
+ * @namespace Amiright?*
+ */
+
+/*
+ * @namespace Amiright?*
+ */
+
+/*
+ * @namespace Amiright?*
+ */
+
+/*
+ * @namespace Amiright?*
+ */
+
+/*
+ * @namespace Amiright?
+ */
+

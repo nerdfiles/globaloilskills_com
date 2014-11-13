@@ -47,8 +47,20 @@ function stripe_market_shortcode( $atts ) {
 	if ( $cards === 'true' )  {
 		$payments = '<div id="stripe-market-types"></div>';
 	}
+  ob_start();
+  ?>
+  <a
+    class="thickbox"
+    id="stripe-market-modal-button"
+    title="<?php echo $header; ?>"
+    href="<?php echo esc_url( $url ); ?>"
+  >
+    <span><?php echo $header; ?></span>
+  </a><?php echo $payments; ?>
+  <?php
+  $html = ob_get_clean();
 
-  return '<a class="thickbox" id="stripe-market-modal-button" title="' . $header . '" href="' . esc_url( $url ) . '"><span>' . $header . '</span></a>' . $payments;
+  return $html;
 
 }
 add_shortcode( 'stripe-market', 'stripe_market_shortcode' );
@@ -66,7 +78,12 @@ function stripe_market_oauth_redirect() {
 
   // Redirect w/ code
   $url = $oauth->getAuthorizeUri();
-  return "<a href='$url'>Connect with Stripe</a>";
+  ob_start();
+  ?>
+    <a href="<?php echo $url; ?>">Connect with Stripe</a>
+  <?php
+  $html = ob_get_clean();
+  return $html;
 }
 add_shortcode( 'stripe-connect', 'stripe_market_oauth_redirect' );
 
