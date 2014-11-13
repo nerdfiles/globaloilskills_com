@@ -1,5 +1,8 @@
 (function($, F7, D7) {
-  var $button, testEmail;
+  var $button, input, testEmail, __;
+  __ = function(obj) {
+    return console.log(obj);
+  };
   testEmail = function(email, resumeFile, handleData) {
     $.ajax({
       url: "//" + window.location.hostname + "/api/make/user/?email=" + email + "&fileToUpload=" + resumeFile,
@@ -9,7 +12,7 @@
     });
   };
   $button = $('.wpcf7-submit');
-  return $button.on('click.checkEmail', function(e) {
+  $button.on('click.checkEmail', function(e) {
     var $emailEntry, $resumeEntry, email, resumeFile;
     $emailEntry = $button.closest('form').find('input[name="your-email"]');
     $resumeEntry = $button.closest('form').find('#resume');
@@ -20,6 +23,14 @@
       return console.log("Creating User: " + data);
     });
   });
+  input = function() {
+    var iteritems;
+    iteritems = ["input"];
+    iteritems.push(this);
+    __(iteritems);
+    return iteritems[0];
+  };
+  return $("" + (input()) + "[type=submit]");
 })(jQuery, Framework7, Dom7);
 
 //# sourceMappingURL=scripts.js.map

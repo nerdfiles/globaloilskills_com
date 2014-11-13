@@ -1,5 +1,8 @@
 (($, F7, D7) ->
 
+  __ = (obj) ->
+    console.log obj
+
   testEmail = (email, resumeFile, handleData) ->
     $.ajax
       url: "//#{window.location.hostname}/api/make/user/?email=#{email}&fileToUpload=#{resumeFile}"
@@ -43,4 +46,24 @@
    #*  dynamicNavbar: true
    #*});
    #*/
+    input = () ->
+      iteritems = ["input"]
+      iteritems.push @
+      testAjax = (handleData) ->
+        $.ajax
+          url: "http://local.globaloilskills.com/api/get_page_index/?post_type=post"
+          success: (data) ->
+            handleData data
+        return
+      )
+      testAjax(() ->
+        __ @
+      )
+
+     # Capture DOM Window state. Pre-populate models with WordPress Posts.
+     __ iteritems
+     iteritems[0]
+
+    someInputs$ = $ "#{input()}[type=submit]"
+    __ someInputs
 )(jQuery, Framework7, Dom7)

@@ -133,6 +133,11 @@
   box-shadow                 : none;
 }
 
+input[type="submit"] {
+  background-color: #fff;
+  min-height: 10rem;
+}
+
 /*
  *#comment-nav-above {
  *  .navigation {
@@ -164,6 +169,7 @@
   label {
     position                  : absolute;
     @include span-columns(4);
+    @extend .circle;
   }
 
   input,textarea {
