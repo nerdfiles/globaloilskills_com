@@ -1916,7 +1916,7 @@ table {
   box-sizing: border-box; }
 
 body {
-  background-color: #c9dedb;
+  background-color: white;
   /*background: $color3;*/
   /*color: $color2;*/ }
 
@@ -2096,6 +2096,7 @@ body.home {
   body.home .home-widgets .widget {
     background-color: white; }
     body.home .home-widgets .widget article {
+      *zoom: 1;
       /*
        *&:before {
        *  background-image: url('./images/test-bg-1.jpg'); 
@@ -2108,8 +2109,13 @@ body.home {
        *  margin-bottom: 1rem;
        *}
        */
-      margin-bottom: 0;
-      border-bottom: none; }
+      margin-bottom: 1rem;
+      border-bottom: 1px #cccccc solid; }
+      body.home .home-widgets .widget article:before, body.home .home-widgets .widget article:after {
+        content: " ";
+        display: table; }
+      body.home .home-widgets .widget article:after {
+        clear: both; }
       body.home .home-widgets .widget article .published {
         padding-left: 0.5rem;
         color: #111111; }
@@ -2118,14 +2124,49 @@ body.home {
           color: green; }
       body.home .home-widgets .widget article h4 {
         margin: 0;
-        padding: 0.5rem 0.5rem; }
+        padding: 0 0.5rem; }
       body.home .home-widgets .widget article a {
         color: #111111;
         text-decoration: none; }
+      body.home .home-widgets .widget article header {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%; }
+        body.home .home-widgets .widget article header:last-child {
+          margin-right: 0; }
       body.home .home-widgets .widget article .entry-image {
-        text-align: center; }
+        text-align: center;
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 31.28834%; }
+        body.home .home-widgets .widget article .entry-image:last-child {
+          margin-right: 0; }
         body.home .home-widgets .widget article .entry-image img {
           max-width: 50%; }
+      body.home .home-widgets .widget article .entry-meta {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 65.64417%; }
+        body.home .home-widgets .widget article .entry-meta:last-child {
+          margin-right: 0; }
+      body.home .home-widgets .widget article .entry-title {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 65.64417%;
+        margin-right: 0; }
+        body.home .home-widgets .widget article .entry-title:last-child {
+          margin-right: 0; }
+      body.home .home-widgets .widget article .entry-summary {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%; }
+        body.home .home-widgets .widget article .entry-summary:last-child {
+          margin-right: 0; }
       body.home .home-widgets .widget article .entry-summary p {
         margin: 0;
         padding: 0 0.5rem;
@@ -2426,7 +2467,7 @@ body.login #login form, body.login #lostpasswordform form {
 
 input[type="submit"] {
   background-color: white;
-  min-height: 10rem; }
+  /*min-height: 10rem;*/ }
 
 /*
  *#comment-nav-above {
@@ -2664,7 +2705,7 @@ input[type="submit"] {
 \******************************************************************************/
 article {
   *zoom: 1;
-  color: white; }
+  color: #222222; }
   article:before, article:after {
     content: " ";
     display: table; }
@@ -2715,9 +2756,11 @@ article {
    *text-align: center;
    */
   margin-bottom: 0.2em;
-  color: white; }
+  color: #222222; }
   .post-title:last-child {
     margin-right: 0; }
+  .post-title a {
+    color: #222222; }
   .post-title:first-child {
     margin-top: 1em; }
 
@@ -2800,7 +2843,7 @@ article {
   .page-content .widgets:after {
     clear: both; }
   .page-content .widgets .widgettitle {
-    color: white;
+    color: #222222;
     margin-top: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2853,10 +2896,8 @@ article {
     -webkit-transition: padding 0.25s ease-in-out;
     -moz-transition: padding 0.25s ease-in-out;
     transition: padding 0.25s ease-in-out;
-    border-bottom: 2px solid white;
+    /*border-bottom: 2px solid #fff;*/
     padding-bottom: 0.25em; }
-    .page-content .widgets .read-more:hover {
-      border-bottom: 2px solid white; }
 
 
 /**
@@ -2869,16 +2910,17 @@ body.search-results .type-employee {
   body.search-results .type-employee:last-child {
     width: 22.69939%; }
 body.search-results .page-content {
-  color: white; }
+  color: #222222; }
 
 #schema_block {
   background-color: transparent;
+  margin-top: 1rem;
   padding: 0;
   border: none;
-  color: white; }
+  color: #222222; }
 
 .wpcf7 {
-  color: white; }
+  color: #222222; }
   .wpcf7 input {
     color: black; }
 

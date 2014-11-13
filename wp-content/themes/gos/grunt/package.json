@@ -18,7 +18,8 @@
     "grunt-phpcs": "~0.2.1",
     "grunt-rm": "0.0.4",
     "grunt-sass": "~0.8.1",
-    "matchdep": "~0.1.2"
+    "matchdep": "~0.1.2",
+    "plato": "^1.2.2"
   },
   "dependencies": {
     "grunt-exec": "^0.4.6"

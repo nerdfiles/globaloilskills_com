@@ -13,6 +13,7 @@ body.home {
   .home-widgets .widget {
     background-color: #fff;
     article {
+      @include clearfix;
       /*
        *&:before {
        *  background-image: url('./images/test-bg-1.jpg'); 
@@ -26,20 +27,37 @@ body.home {
        *}
        */
 
-      margin-bottom: 0;
-      border-bottom: none;
+      margin-bottom: 1rem;
+      border-bottom: 1px #ccc solid;
       header { }
       .published {
         padding-left: .5rem;
         &:before { content: 'Posted '; color: green; }
         color: #111; }
-      h4 { margin: 0; padding: .5rem .5rem; }
+      h4 { margin: 0; padding: 0 .5rem; }
       a { color: #111; text-decoration: none; }
+      header {
+        @include span-columns(12);
+      }
       .entry-image {
         text-align: center;
+        @include span-columns(4);
         img { max-width: 50%; }
       }
-      .entry-summary p { margin: 0; padding: 0 .5rem; text-align: right; }
+      .entry-meta {
+        @include span-columns(8);
+      }
+      .entry-title {
+        @include span-columns(8);
+        @include omega();
+      }
+      .entry-summary {
+        @include span-columns(12);
+      }
+      .entry-summary p {
+        margin: 0;
+        padding: 0 .5rem;
+        text-align: right; }
     }
 
     p { text-align: left; }

@@ -339,4 +339,7 @@ module.exports = function(grunt) {
     'copyto:dist',
     'notify:dist'
   ]);
+  grunt.registerTask('codeAnalysis', [
+    'plato'
+  ]);
 };
