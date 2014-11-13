@@ -203,7 +203,7 @@ scraper = (server) ->
     #@debugPage()
     @exit()
 
-base = 'http://globaloilstaffing.services/'
+base = 'http://local.globaloilstaffing.services/'
 pages = [
   "#{base}?s=EUR"
   "#{base}"
