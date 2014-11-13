@@ -113,8 +113,15 @@ function gos_enqueue_scripts() {
   wp_enqueue_script( 'jquery' );
 
   // Default Front End
-  wp_enqueue_script( 'f7', get_template_directory_uri() . '/grunt/bower_components/framework7/dist/js/framework7.min.js', array(), '1.0', true );
-  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.min.js', array('f7'), '1.0', true );
+
+  // Is this necessary at dev?
+  //wp_enqueue_script( 'f7', get_template_directory_uri() . '/grunt/bower_components/framework7/dist/js/framework7.min.js', array(), '1.0', true );
+  wp_enqueue_script( 'angular', get_template_directory_uri() . '/grunt/bower_components/angular/angular.js', array(), '1.0', true );
+  wp_enqueue_script( 'angular-route', get_template_directory_uri() . '/grunt/bower_components/angular-route/angular-route.js', array(), '1.0', true );
+  wp_enqueue_script( 'angular-sanitize', get_template_directory_uri() . '/grunt/bower_components/angular-sanitize/angular-sanitize.js', array(), '1.0', true );
+  wp_enqueue_script( 'angular-animate', get_template_directory_uri() . '/grunt/bower_components/angular-animate/angular-animate.js', array(), '1.0', true );
+  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.dev.js', array('angular'), '1.0', true );
+  //wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.dev.js', array('f7'), '1.0', true );
 
   // CMS Taxonomy
   if ( is_singular() ) wp_enqueue_script( 'comment-reply' );

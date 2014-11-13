@@ -19,98 +19,139 @@ module.exports = function(grunt) {
       }
     },
 
-		// chech our JS
-		jshint: {
-			options: {
-				"bitwise": true,
-				"browser": true,
-				"curly": true,
-				"eqeqeq": true,
-				"eqnull": true,
-				"esnext": true,
-				"immed": true,
-				"jquery": true,
-				"latedef": true,
-				"newcap": true,
-				"noarg": true,
-				"node": true,
-				"strict": false,
-				"trailing": true,
-				"undef": true,
-				"globals": {
-					"jQuery": true,
-					"alert": true,
-					"Framework7": true,
-					"Dom7": true
-				}
-			},
+
+    /*
+      (_)    | |   (_)       _
+       _  ___| |__  _ ____ _| |_
+      | |/___)  _ \| |  _ (_   _)
+      | |___ | | | | | | | || |_
+     _| (___/|_| |_|_|_| |_| \__)
+    (__/
+    chech our JS
+    */
+
+    jshint: {
+      options: {
+        "bitwise": true,
+        "browser": true,
+        "curly": true,
+        "eqeqeq": true,
+        "eqnull": true,
+        "esnext": true,
+        "immed": true,
+        "jquery": true,
+        "latedef": true,
+        "newcap": true,
+        "noarg": true,
+        "node": true,
+        "strict": false,
+        "trailing": true,
+        "undef": true,
+        "globals": {
+          "jQuery": true,
+          "angular": true,
+          "alert": true,
+          "Framework7": true,
+          "Dom7": true
+        }
+      },
       coffee: [
-				'../js/scripts.coffee'
+        '../js/scripts.coffee'
       ],
-			all: [
-				'gruntfile.js',
-				'../js/scripts.js'
-			]
-		},
+      all: [
+        'gruntfile.js',
+        '../js/scripts.js'
+      ]
+    },
 
-		// concat and minify our JS
-		uglify: {
-			dist: {
-				files: {
-					'../js/scripts.min.js': [
-						'../js/scripts.js'
-					]
-				}
-			}
-		},
+    /*
+                | |(_)  / __)
+     _   _  ____| | _ _| |__ _   _
+    | | | |/ _  | || (_   __) | | |
+    | |_| ( (_| | || | | |  | |_| |
+    |____/ \___ |\_)_| |_|   \__  |
+          (_____|           (____/
 
-		// compile your sass
-		sass: {
-			dev: {
-				options: {
-					style: 'expanded'
-				},
-				src: ['../scss/style.scss'],
-				dest: '../style.css'
-			},
-			prod: {
-				options: {
-					style: 'compressed'
-				},
-				src: ['../scss/style.scss'],
-				dest: '../style.css'
-			},
-			editorstyles: {
-				options: {
-					style: 'expanded'
-				},
-				src: ['../scss/wp-editor-style.scss'],
-				dest: '../css/wp-editor-style.css'
-			}
-		},
+    concat and minify our JS
 
-		// watch for changes
-		watch: {
-			scss: {
-				files: ['../scss/**/*.scss'],
-				tasks: [
-					'sass:dev',
-					'sass:editorstyles',
-					'notify:scss'
-				]
-			},
-			js: {
-				files: [
+    */
+
+    uglify: {
+      options: {
+        mangle: false,
+        expand: true
+      },
+      dist: {
+        files: {
+          '../js/scripts.min.js': [
+            '../js/scripts.js'
+          ]
+        }
+      },
+      dev: {
+        files: {
+          '../js/scripts.dev.js': [
+            '../js/scripts.js'
+          ]
+        }
+      }
+    },
+
+    /*
+
+      ___ _____  ___  ___
+     /___|____ |/___)/___)
+    |___ / ___ |___ |___ |
+    (___/\_____(___/(___/
+
+                     */
+    // compile your sass
+    sass: {
+      dev: {
+        options: {
+          style: 'expanded'
+        },
+        src: ['../scss/style.scss'],
+        dest: '../style.css'
+      },
+      prod: {
+        options: {
+          style: 'compressed'
+        },
+        src: ['../scss/style.scss'],
+        dest: '../style.css'
+      },
+      editorstyles: {
+        options: {
+          style: 'expanded'
+        },
+        src: ['../scss/wp-editor-style.scss'],
+        dest: '../css/wp-editor-style.css'
+      }
+    },
+
+    // watch for changes
+    watch: {
+      scss: {
+        files: ['../scss/**/*.scss'],
+        tasks: [
+          'sass:dev',
+          'sass:editorstyles',
+          'notify:scss'
+        ]
+      },
+      js: {
+        files: [
           '<%= jshint.coffee %>'
-				],
-				tasks: [
+        ],
+        tasks: [
           'coffee',
-					'jshint:all',
-					'uglify',
-					'notify:js'
-				]
-			}
-		},
+          'jshint:all',
+          'uglify',
+          'notify:js'
+        ]
+      }
+    },
 
     cordovacli: {
         options: {
@@ -186,67 +227,79 @@ module.exports = function(grunt) {
         }
     },
 
-		// check your php
-		phpcs: {
-			application: {
-				dir: '../*.php'
-			},
-			options: {
-				bin: '/usr/bin/phpcs'
-			}
-		},
+    // check your php
+    phpcs: {
+      application: {
+        dir: '../*.php'
+      },
+      options: {
+        bin: '/usr/bin/phpcs'
+      }
+    },
 
-		// notify cross-OS
-		notify: {
-			scss: {
-				options: {
-					title: 'Grunt, grunt!',
-					message: 'SCSS is all gravy'
-				}
-			},
-			js: {
-				options: {
-					title: 'Grunt, grunt!',
-					message: 'JS is all good'
-				}
-			},
-			dist: {
-				options: {
-					title: 'Grunt, grunt!',
-					message: 'Theme ready for production'
-				}
-			}
-		},
+    // notify cross-OS
+    notify: {
+      scss: {
+        options: {
+          title: 'Grunt, grunt!',
+          message: 'SCSS is all gravy'
+        }
+      },
+      js: {
+        options: {
+          title: 'Grunt, grunt!',
+          message: 'JS is all good'
+        }
+      },
+      dist: {
+        options: {
+          title: 'Grunt, grunt!',
+          message: 'Theme ready for production'
+        }
+      }
+    },
 
-		clean: {
-			dist: {
-				src: ['../dist'],
-				options: {
-					force: true
-				}
-			}
-		},
+    clean: {
+      dist: {
+        src: ['../dist'],
+        options: {
+          force: true
+        }
+      }
+    },
 
     exec: {
       test: "npm test"
     },
 
-		copyto: {
-			dist: {
-				files: [
-					{cwd: '../', src: ['**/*'], dest: '../dist/'}
-				],
-				options: {
-					ignore: [
-						'../dist{,/**/*}',
-						'../doc{,/**/*}',
-						'../grunt{,/**/*}',
-						'../scss{,/**/*}'
-					]
-				}
-			}
-		}
-	});
+    /*
+                              _
+      ____ ___  ____  _   _ _| |_ ___
+     / ___) _ \|  _ \| | | (_   _) _ \
+    ( (__| |_| | |_| | |_| | | || |_| |
+     \____)___/|  __/ \__  |  \__)___/
+               |_|   (____/
+    */
+    copyto: {
+      dist: {
+        files: [
+          {
+            cwd: '../',
+            src: ['**/*'],
+            dest: '../dist/'
+          }
+        ],
+        options: {
+          ignore: [
+            '../dist{,/**/*}',
+            '../doc{,/**/*}',
+            '../grunt{,/**/*}',
+            '../scss{,/**/*}'
+          ]
+        }
+      }
+    }
+  });
 
 	// Load NPM's via matchdep
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);

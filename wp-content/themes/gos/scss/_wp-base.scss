@@ -166,10 +166,35 @@ input[type="submit"] {
   .form-allowed-tags {
     display                   : none;
   }
+
+  #reply {
+
+    position: relative;
+  }
   label {
     position                  : absolute;
     @include span-columns(4);
     @extend .circle;
+  }
+
+  label:nth-of-type(1) {
+    position: absolute;
+    left: 2rem;
+  }
+
+  label:nth-of-type(2) {
+    position: absolute;
+    left: 4rem;
+  }
+
+  label:nth-of-type(3) {
+    position: absolute;
+    left: 6rem;
+  }
+
+  label:nth-of-type(4) {
+    position: absolute;
+    left: 8rem;
   }
 
   input,textarea {
@@ -179,6 +204,10 @@ input[type="submit"] {
     z-index                   : 9001;
     @extend .circle;
 
+    &:nth-of-type(1) {
+      outline: 1px solid gold;
+      z-index: -1;
+    }
   }
 }
 
