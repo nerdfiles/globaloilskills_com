@@ -101,10 +101,12 @@ body.home {
 
       &:before {
         font-family: FontAwesome;
-        content: "\f095";
+        /*content: "\f095";*/
+        content: "\f0c9";
         position: absolute;
-        right: 0;
-        top: 0;
+        /*right: 0;*/
+        @include shift(10);
+        top: 2.5rem;
         width: 50px;
         height: 50px;
       }

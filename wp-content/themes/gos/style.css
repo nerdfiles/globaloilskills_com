@@ -2218,10 +2218,12 @@ body.home {
     font-size: 0.8rem; }
     body.home .home-search-widgets .widget_search:before {
       font-family: FontAwesome;
-      content: "\f095";
+      /*content: "\f095";*/
+      content: "\f0c9";
       position: absolute;
-      right: 0;
-      top: 0;
+      /*right: 0;*/
+      margin-left: 85.88957%;
+      top: 2.5rem;
       width: 50px;
       height: 50px; }
     body.home .home-search-widgets .widget_search:last-child {

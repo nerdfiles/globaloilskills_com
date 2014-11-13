@@ -12,3 +12,9 @@ See ``../../../README.markdown``.
 ### Requirements Iterate
 
 See ``.requirements.iterate.sh``.
+
+## Features
+
+1. Free Member Employees (extends MemberMouse)
+2. Free Member Recruiters (extends MemberMouse)
+3. Subscription Series?
