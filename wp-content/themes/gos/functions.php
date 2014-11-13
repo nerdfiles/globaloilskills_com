@@ -200,6 +200,7 @@ function disable_author_index() {
 /**
  * Conditional Logic for Employee Signup
  *
+ * @see http://support.membermouse.com/knowledgebase/articles/319064-api-documentation
  * @TODO Enable pass of uploaded file(s) to User Profile API.
  */
 add_action('wpcf7_contact_form', 'priv_contact');
