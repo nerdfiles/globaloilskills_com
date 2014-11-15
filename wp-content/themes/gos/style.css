@@ -3023,3 +3023,15 @@ body.search-results .page-content {
               margin-right: 0; }
             .footer-widgets .home--base-menu .menu-base-container ul.menu li:nth-child(2n+1) {
               clear: left; } }
+
+body.wp-admin {
+  font-size: 0.9rem;
+  /*
+   *#footer-thankyou {
+   *  display: none;
+   *}
+   */ }
+  body.wp-admin #footer-left {
+    display: none; }
+  body.wp-admin #footer-upgrade {
+    display: none; }

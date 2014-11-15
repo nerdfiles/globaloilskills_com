@@ -140,6 +140,13 @@ function login_stylesheet() {
 }
 add_action( 'login_enqueue_scripts', 'login_stylesheet' );
 
+function admin_stylesheet() {
+    wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
+    wp_enqueue_style( 'custom-admin', get_template_directory_uri() . '/style.css' );
+    //wp_enqueue_script( 'custom-admin', get_template_directory_uri() . '/grunt/dist/require.js', array('jquery'), '1.0', true );
+}
+add_action( 'admin_enqueue_scripts', 'admin_stylesheet' );
+
 /******************************************************************************\
   Content functions
 \******************************************************************************/
@@ -221,13 +228,10 @@ function MM__Create() {
 /**
  * Conditional Logic for Employee Signup
  *
-<<<<<<< Updated upstream
- * @see http://support.membermouse.com/knowledgebase/articles/319064-api-documentation
-=======
  * Basic MemberMouse implementation involves the creation of Members with Employee Schemas
  *
+ * @see http://support.membermouse.com/knowledgebase/articles/319064-api-documentation
  *
->>>>>>> Stashed changes
  * @TODO Enable pass of uploaded file(s) to User Profile API.
  */
 add_action('wpcf7_contact_form', 'priv_contact');
