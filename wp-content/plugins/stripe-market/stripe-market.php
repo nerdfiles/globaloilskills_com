@@ -55,6 +55,7 @@ define( 'STRIPE_MARKET_AUTHORIZE_URI', 'https://connect.stripe.com/oauth/authori
 // Load PHP Lib - https://github.com/stripe/stripe-php
 // -----------------------------------------------------
 
+print_r(Stripe);
 if ( ! class_exists( 'Stripe' ) ) {
 	require_once( STRIPE_MARKET_PATH . 'vendor/stripe-php/lib/Stripe.php' );
 }

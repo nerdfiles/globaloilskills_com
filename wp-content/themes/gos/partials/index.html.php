@@ -1,14 +1,13 @@
 <?php
 /**
- * gos template for displaying an empty Loop
- *
- * @package WordPress
- * @subpackage gos
- * @since gos 1.0
+ * Partials are restricts to WordPress template implementations.
  */
 ?>
+<script id="CoreCtrl.directives.inputHistory.WPHeader">
 
-<article
+</script>
+
+<!--article
   id="post-none"
   class="post empty"
 >
@@ -43,4 +42,4 @@
 
   </div>
 
-</article>
+</article-->

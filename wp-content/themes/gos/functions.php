@@ -197,14 +197,41 @@ function disable_author_index() {
   exit;
 }
 
+/*
+ * Conditions for Recruiter
+ *
+ * Basic MemberMouse implementation involves the creation of Members with Employee Schemas
+ */
+//add_action('wpcf7_contact_form', 'MM__Create');
+function MM__Create() {
+
+  /*
+   *  var user = Membership.GetUser(username);
+   *  var email = null;
+   *
+   *  if (user != null)
+   *  {
+   *      email = user.Email;
+   *  }
+   */
+  return '';
+
+}
+
 /**
  * Conditional Logic for Employee Signup
  *
+<<<<<<< Updated upstream
  * @see http://support.membermouse.com/knowledgebase/articles/319064-api-documentation
+=======
+ * Basic MemberMouse implementation involves the creation of Members with Employee Schemas
+ *
+ *
+>>>>>>> Stashed changes
  * @TODO Enable pass of uploaded file(s) to User Profile API.
  */
 add_action('wpcf7_contact_form', 'priv_contact');
-function priv_contact() {
+function priv_contact () {
   global $current_user;
   $all_roles = $current_user->roles;
   $show = false;

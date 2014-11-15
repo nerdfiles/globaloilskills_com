@@ -48,7 +48,10 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <div class="site view-main" ng-controller="CoreCtrl">
+    <div
+      class="site view-main"
+      ng-controller="CoreCtrl"
+    >
 
       <header class="site-header">
 

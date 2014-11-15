@@ -9,7 +9,10 @@
 
 get_header(); ?>
 
-  <section class="page-content primary" role="main">
+  <section
+    class="page-content primary"
+    role="main"
+  >
     <?php
       if ( have_posts() ):
 
