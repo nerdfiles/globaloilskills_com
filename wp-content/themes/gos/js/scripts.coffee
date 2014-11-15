@@ -35,6 +35,43 @@
   __ = (obj) ->
     console.log obj
 
+  #// API
+  #// http://local.globaloilskills.com/api/get_page_index/?post_type=employee
+  #// http://local.globaloilskills.com/api/get_page_index/?post_type=recruiter
+  #// http://local.globaloilskills.com/api/get_page_index/?post_type=post
+
+  #// Add view
+  #/*
+  #*var mainView = goss.addView('.view-main', {
+  #*  // Because we want to use dynamic navbar, we need to enable it for this view:
+  #*  dynamicNavbar: true
+  #*});
+  #*/
+
+  ###
+     / _____)                 (_)                 
+    ( (____  _____  ____ _   _ _  ____ _____  ___ 
+     \____ \| ___ |/ ___) | | | |/ ___) ___ |/___)
+     _____) ) ____| |    \ V /| ( (___| ____|___ |
+    (______/|_____)_|     \_/ |_|\____)_____|___/ 
+  ###
+  angular.module('GOSS.services', []).service 'pageService', [
+    '$http'
+    ($http) ->
+      serviceInterface = {}
+      serviceInterface.testAjax = (handleData) ->
+        $http.get("//local.globaloilstaffing.services/api/get_page_index/?post_type=post")
+          .success((data) ->
+            handleData data
+            return
+          )
+          .error((data) ->
+            console.log data
+          )
+        return
+      serviceInterface
+  ]
+
   ###
   Service for JSON API data from WordPress.
   ###
@@ -56,9 +93,12 @@
     serviceInterface
 
   ###
-  Lazy shit.
+    (______)(_)                    _  (_)                 
+     _     _ _  ____ _____  ____ _| |_ _ _   _ _____  ___ 
+    | |   | | |/ ___) ___ |/ ___|_   _) | | | | ___ |/___)
+    | |__/ /| | |   | ____( (___  | |_| |\ V /| ____|___ |
+    |_____/ |_|_|   |_____)\____)  \__)_| \_/ |_____|___/ 
   ###
-  #$button = $ '.wpcf7-submit'
 
   angular.module('GOSS.directives', []).directive "checkEmail", [
     'commentsService'
@@ -79,57 +119,6 @@
       }
   ]
 
-  #$button.on 'click.checkEmail', (e) ->
-    ##e.preventDefault()
-    ## We're actually checking for the e-mail
-    ## address here from Contact Form 7.
-    #$emailEntry = $button.closest('form').find('input[name="your-email"]')
-    #$resumeEntry = $button.closest('form').find('#resume')
-    #email = $emailEntry.val()
-    #resumeFile = $resumeEntry.val()
-    #console.log resumeFile
-    #testEmail email, resumeFile, (data) ->
-      #console.log "Creating User: #{data}"
-
-  #//(function($) {
-    #// jquery goodness
-  #//})(jQuery);
-
-  #// Initialize app
-  #//var goss = new F7();
-  #// If we need to use custom DOM library, let's save it to $$ variable:
-  #//var $$ = D7;
-
-  #// API
-  #// http://local.globaloilskills.com/api/get_page_index/?post_type=employee
-  #// http://local.globaloilskills.com/api/get_page_index/?post_type=recruiter
-  #// http://local.globaloilskills.com/api/get_page_index/?post_type=post
-
-  #// Add view
-  #/*
-  #*var mainView = goss.addView('.view-main', {
-  #*  // Because we want to use dynamic navbar, we need to enable it for this view:
-  #*  dynamicNavbar: true
-  #*});
-  #*/
-
-  angular.module('GOSS.services', []).service 'pageService', [
-    '$http'
-    ($http) ->
-      serviceInterface = {}
-      serviceInterface.testAjax = (handleData) ->
-        $http.get("//local.globaloilstaffing.services/api/get_page_index/?post_type=post")
-          .success((data) ->
-            handleData data
-            return
-          )
-          .error((data) ->
-            console.log data
-          )
-        return
-      serviceInterface
-  ]
-
   angular.module('GOSS.directives', []).directive("inputRoster", [
     'pageService'
     (pageService) ->
@@ -148,9 +137,29 @@
       }
   ])
 
+  ###
+    (_______)            _             | | |
+     _       ___  ____ _| |_  ____ ___ | | | _____  ____ ___
+    | |     / _ \|  _ (_   _)/ ___) _ \| | || ___ |/ ___)___)
+    | |____| |_| | | | || |_| |  | |_| | | || ____| |  |___ |
+     \______)___/|_| |_| \__)_|   \___/ \_)_)_____)_|  (___/
+
+  @depends define
+  ###
   angular.module('GOSS.controllers', []).controller 'CoreCtrl', ($scope) ->
     $scope.dataData = []
+    #$scope.submitResume = () ->
+      #testAjax (dataContext) ->
+        #return dataContext
     return
+
+  ###
+  | |     (_)  _
+  | |____  _ _| |_
+  | |  _ \| (_   _)
+  | | | | | | | |_
+  |_|_| |_|_|  \__)
+  ###
 
   applicationScaffolding = [
     'ngRoute'
@@ -163,19 +172,35 @@
   # Initialize application space.
   app = angular.module('GOSS', applicationScaffolding)
 
+  ###
+  (_______)            / __|_)
+   _       ___  ____ _| |__ _  ____
+  | |     / _ \|  _ (_   __) |/ _  |
+  | |____| |_| | | | || |  | ( (_| |
+   \______)___/|_| |_||_|  |_|\___ |
+                             (_____|
+  ###
   app.config(($routeProvider, $locationProvider, $logProvider) ->
     $logProvider.debugEnabled(true)
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/main',
+        templateUrl: 'partials/index',
         controller: 'CoreCtrl'
       })
-      #.when('/login', {
-        #templateUrl: 'login',
-        #controller: 'LoginCtrl'
-      #})
+      .when('/login', {
+        templateUrl: 'login',
+        controller: 'LoginCtrl'
+      })
       .otherwise('/')
   )
+
+  ###
+  (______)(_______|_______)   / _____) |   (_)  _
+   _     _ _     _ _  _  _   ( (____ | |__  _ _| |_ 
+  | |   | | |   | | ||_|| |   \____ \|  _ \| (_   _)
+  | |__/ /| |___| | |   | |   _____) ) | | | | | |_ 
+  |_____/  \_____/|_|   |_|  (______/|_| |_|_|  \__)
+  ###
   angular.bootstrap doc.body, ['GOSS']
 
 )(angular, document)

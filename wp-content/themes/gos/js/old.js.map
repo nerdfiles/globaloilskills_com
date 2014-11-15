@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "old.js",
+  "sourceRoot": "",
+  "sources": [
+    "old.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAC,SAAC,OAAD,EAAU,GAAV,GAAA;AACC;AAAA;;;;;;;;;;;;;;;;;;;;;;KADD;AAAA,CAAD,CAAA,CAwBE,OAxBF,EAwBW,QAxBX,CAAA,CAAA"
+}
