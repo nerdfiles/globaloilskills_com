@@ -3025,12 +3025,13 @@ body.search-results .page-content {
               clear: left; } }
 
 body.wp-admin {
-  font-size: 0.9rem;
   /*
    *#footer-thankyou {
    *  display: none;
    *}
    */ }
+  body.wp-admin ul, body.wp-admin ol {
+    margin-bottom: 0; }
   body.wp-admin #footer-left {
     display: none; }
   body.wp-admin #footer-upgrade {
