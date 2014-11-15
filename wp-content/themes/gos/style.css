@@ -3025,3 +3025,16 @@ body.search-results .page-content {
               margin-right: 0; }
             .footer-widgets .home--base-menu .menu-base-container ul.menu li:nth-child(2n+1) {
               clear: left; } }
+
+body.wp-admin {
+  /*
+   *#footer-thankyou {
+   *  display: none;
+   *}
+   */ }
+  body.wp-admin ul, body.wp-admin ol {
+    margin-bottom: 0; }
+  body.wp-admin #footer-left {
+    display: none; }
+  body.wp-admin #footer-upgrade {
+    display: none; }
