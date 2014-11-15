@@ -1,7 +1,0 @@
-{
-  "name": "stripe-market",
-  "version": "1.0.0",
-  "dependencies": {
-    "casperjs": "^1.1.0-beta3"
-  }
-}
