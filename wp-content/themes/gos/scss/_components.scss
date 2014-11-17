@@ -76,11 +76,14 @@ body.home {
         padding-left: .5rem;
         &:before { content: 'Posted '; color: green; }
         color: #111; }
+      a { @include pad(0 default); display: block; color: #111; text-decoration: none; }
       h4 {
         margin: 0;
         padding: 0;
+        a {
+          @include pad(.35rem 0);
+        }
       }
-      a { @include pad(0 default); display: block; color: #111; text-decoration: none; }
       header {
         @include span-columns(12);
       }
