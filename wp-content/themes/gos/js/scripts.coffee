@@ -30,7 +30,29 @@
 
   someInputs$ = doc.querySelector "#{input()}[type=submit]"
   someInputs$.setAttribute 'data-input-roster', ''
-  console.log someInputs$
+
+  uPosts = document.getElementsByClassName('widget_ultimate_posts')
+  clicker = () ->
+    elem = @
+    c = elem.getAttribute 'class'
+    t = undefined
+    if c.indexOf('enabled') == -1
+      # isn't present
+      elem.removeAttribute 'class', 'disabled'
+      elem.setAttribute 'class', 'enabled'
+    else
+      elem.removeAttribute 'class', 'enabled'
+      elem.setAttribute 'class', 'disabled'
+
+  ###
+  for i in uPosts
+    h = i.getElementsByTagName 'h4'
+    for j in h
+      #j.setAttribute 'ng-mouseover', 'clicker()'
+      #j.parentNode.parentNode.addClass 'enabled'
+      j.parentNode.parentNode.addEventListener 'mouseover', clicker
+      j.parentNode.parentNode.addEventListener 'mouseout', clicker
+  ###
 
   __ = (obj) ->
     console.log obj
@@ -75,22 +97,23 @@
   ###
   Service for JSON API data from WordPress.
   ###
-  angular.module('GOSS.services', []).service 'commentsService', [
+  angular.module('GOSS.services').service 'commentsService', [
     '$http'
-    CommentsService
+    ($http) ->
+      serviceInterface = {}
+      serviceInterface.testEmail = (email, resumeFile, handleData) ->
+        $http.get("//#{window.location.hostname}/api/make/user/?email=#{email}&fileToUpload=#{resumeFile}")
+          .success((data) ->
+            handleData data
+            return
+          )
+          .error((data) ->
+            console.log data
+          )
+        return
+      serviceInterface
   ]
 
-  CommentsService = ($http) ->
-    serviceInterface = {}
-    serviceInterface.testEmail = (email, resumeFile, handleData) ->
-      $http.get {
-        url: "//#{window.location.hostname}/api/make/user/?email=#{email}&fileToUpload=#{resumeFile}"
-        success: (data) ->
-          handleData data
-          return
-      }
-      return
-    serviceInterface
 
   ###
     (______)(_)                    _  (_)                 
@@ -100,7 +123,7 @@
     |_____/ |_|_|   |_____)\____)  \__)_| \_/ |_____|___/ 
   ###
 
-  angular.module('GOSS.directives', []).directive "checkEmail", [
+  angular.module('GOSS.directives', []).directive("checkEmail", [
     'commentsService'
     (commentsService) ->
       return {
@@ -117,9 +140,9 @@
             console.log "Creating User: #{data}"
           )
       }
-  ]
+  ])
 
-  angular.module('GOSS.directives', []).directive("inputRoster", [
+  angular.module('GOSS.directives').directive("inputRoster", [
     'pageService'
     (pageService) ->
       return {
@@ -146,12 +169,15 @@
 
   @depends define
   ###
-  angular.module('GOSS.controllers', []).controller 'CoreCtrl', ($scope) ->
+  angular.module('GOSS.controllers', []).controller('CoreCtrl', ($scope) ->
     $scope.dataData = []
+    #$scope.clicker = () ->
+      #console.log $scope
     #$scope.submitResume = () ->
       #testAjax (dataContext) ->
         #return dataContext
     return
+  )
 
   ###
   | |     (_)  _
@@ -165,8 +191,8 @@
     'ngRoute'
     'ngSanitize'
     'ngAnimate'
-    'GOSS.directives'
     'GOSS.services'
+    'GOSS.directives'
     'GOSS.controllers'
   ]
   # Initialize application space.

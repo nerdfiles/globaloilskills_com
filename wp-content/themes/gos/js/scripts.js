@@ -4,7 +4,7 @@
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
   for caching the history of elements on the page. This is a change tracking strategy for A/B tests.
    */
-  var $email, CommentsService, app, applicationScaffolding, input, someInputs$, __;
+  var $email, app, applicationScaffolding, clicker, input, someInputs$, uPosts, __;
   input = function() {
     var iteritems;
     iteritems = ["input"];
@@ -30,7 +30,30 @@
   $email.setAttribute('data-check-email', '');
   someInputs$ = doc.querySelector("" + (input()) + "[type=submit]");
   someInputs$.setAttribute('data-input-roster', '');
-  console.log(someInputs$);
+  uPosts = document.getElementsByClassName('widget_ultimate_posts');
+  clicker = function() {
+    var c, elem, t;
+    elem = this;
+    c = elem.getAttribute('class');
+    t = void 0;
+    if (c.indexOf('enabled') === -1) {
+      elem.removeAttribute('class', 'disabled');
+      return elem.setAttribute('class', 'enabled');
+    } else {
+      elem.removeAttribute('class', 'enabled');
+      return elem.setAttribute('class', 'disabled');
+    }
+  };
+
+  /*
+  for i in uPosts
+    h = i.getElementsByTagName 'h4'
+    for j in h
+       *j.setAttribute 'ng-mouseover', 'clicker()'
+       *j.parentNode.parentNode.addClass 'enabled'
+      j.parentNode.parentNode.addEventListener 'mouseover', clicker
+      j.parentNode.parentNode.addEventListener 'mouseout', clicker
+   */
   __ = function(obj) {
     return console.log(obj);
   };
@@ -60,20 +83,20 @@
   /*
   Service for JSON API data from WordPress.
    */
-  angular.module('GOSS.services', []).service('commentsService', ['$http', CommentsService]);
-  CommentsService = function($http) {
-    var serviceInterface;
-    serviceInterface = {};
-    serviceInterface.testEmail = function(email, resumeFile, handleData) {
-      $http.get({
-        url: "//" + window.location.hostname + "/api/make/user/?email=" + email + "&fileToUpload=" + resumeFile,
-        success: function(data) {
+  angular.module('GOSS.services').service('commentsService', [
+    '$http', function($http) {
+      var serviceInterface;
+      serviceInterface = {};
+      serviceInterface.testEmail = function(email, resumeFile, handleData) {
+        $http.get("//" + window.location.hostname + "/api/make/user/?email=" + email + "&fileToUpload=" + resumeFile).success(function(data) {
           handleData(data);
-        }
-      });
-    };
-    return serviceInterface;
-  };
+        }).error(function(data) {
+          return console.log(data);
+        });
+      };
+      return serviceInterface;
+    }
+  ]);
 
   /*
     (______)(_)                    _  (_)                 
@@ -103,7 +126,7 @@
       };
     }
   ]);
-  angular.module('GOSS.directives', []).directive("inputRoster", [
+  angular.module('GOSS.directives').directive("inputRoster", [
     'pageService', function(pageService) {
       return {
         restrict: "A",
@@ -142,7 +165,7 @@
   | | | | | | | |_
   |_|_| |_|_|  \__)
    */
-  applicationScaffolding = ['ngRoute', 'ngSanitize', 'ngAnimate', 'GOSS.directives', 'GOSS.services', 'GOSS.controllers'];
+  applicationScaffolding = ['ngRoute', 'ngSanitize', 'ngAnimate', 'GOSS.services', 'GOSS.directives', 'GOSS.controllers'];
   app = angular.module('GOSS', applicationScaffolding);
 
   /*
