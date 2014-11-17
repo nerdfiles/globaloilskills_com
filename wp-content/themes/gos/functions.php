@@ -222,7 +222,6 @@ function MM__Create() {
    *  }
    */
   return '';
-
 }
 
 /**
@@ -236,35 +235,40 @@ function MM__Create() {
  */
 add_action('wpcf7_contact_form', 'priv_contact');
 function priv_contact () {
+
   global $current_user;
-  $all_roles = $current_user->roles;
-  $show = false;
-  foreach ($all_roles as $role) {
-    if ( $role == 'employee' || $role == 'administrator' || $role == 'recruiter' ) {
-      $show = true;
+
+  if (is_page()) :
+    $all_roles = $current_user->roles;
+    $show = false;
+    foreach ($all_roles as $role) {
+      if ( $role == 'employee' || $role == 'administrator' || $role == 'recruiter' ) {
+        $show = true;
+        ob_start();
+        ?>
+          <div class="user--role">
+            <p>Viewing as <?php echo $role; ?></p>
+          </div>
+        <?php
+        $logLabel = ob_get_clean();
+        echo $logLabel;
+      }
+    }
+
+    // Check for post_type to prevent from mucking up API call
+    if ($show == false && ! $_GET['post_type']) {
       ob_start();
       ?>
-        <div class="user--role">
-          <p>View as <?php echo $role; ?></p>
-        </div>
+      <style>
+      .wpcf7 { display: none; }
+      </style>
       <?php
-      $logLabel = ob_get_clean();
-      echo $logLabel;
+      $html = ob_get_clean();
+      echo $html;
+      //exit;
     }
-  }
+  endif;
 
-  // Check for post_type to prevent from mucking up API call
-  if ($show == false && ! $_GET['post_type']) {
-    ob_start();
-    ?>
-    <style>
-    .wpcf7 { display: none; }
-    </style>
-    <?php
-    $html = ob_get_clean();
-    echo $html;
-    //exit;
-  }
 }
 
 /*

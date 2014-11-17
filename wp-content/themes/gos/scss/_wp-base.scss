@@ -54,17 +54,20 @@
 }
 
 .post-links {
+  @include span-columns(12);
 
-  @include clearfix;
-  width: 70%;
-  margin: 1em auto;
+  /*@include clearfix;*/
+  /*
+   *width: 70%;
+   *margin: 1em auto;
+   */
 
   a {
-    float: right;
+    display: inline-block;
   }
 
   a:first-child {
-    float: left;
+    display: inline-block;
   }
 
 }

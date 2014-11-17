@@ -91,6 +91,12 @@
             console.log data
           )
         return
+      serviceInterface.getRecruiters = () ->
+      serviceInterface.getManagers = () ->
+      serviceInterface.getEmployees = () ->
+      serviceInterface.getAdministrators = () ->
+        console.log $http
+      serviceInterface.getPostings = () ->
       serviceInterface
   ]
 
@@ -142,6 +148,28 @@
       }
   ])
 
+  ###
+  Page.Loader Directive
+  ###
+  angular.module('GOSS.directives').directive("pageLoader", [
+    '$http'
+    'pageService'
+    ($http, pageService) ->
+      return {
+        restrict: "A"
+        scope:
+          placeholder: '@'
+        link: (scope, element, attrs) ->
+          pageService.testAjax (resp) ->
+            element.on 'hover', (e) ->
+              return
+            return
+      }
+  ])
+
+  ###
+  Form.InputRoster
+  ###
   angular.module('GOSS.directives').directive("inputRoster", [
     'pageService'
     (pageService) ->
@@ -169,6 +197,7 @@
 
   @depends define
   ###
+
   angular.module('GOSS.controllers', []).controller('CoreCtrl', ($scope) ->
     $scope.dataData = []
     #$scope.clicker = () ->

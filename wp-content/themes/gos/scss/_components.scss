@@ -45,8 +45,11 @@ body.home {
 
       @include disabled();
 
+      &:hover,
       &.enabled {
+        /*position: absolute;*/
         min-height: 10rem;
+        @include span-columns(12);
         @include transition (all .5s ease-in-out);
         @extend .fade-in;
         @extend .animated;
@@ -61,11 +64,15 @@ body.home {
 
         }
         .entry-title {
-          margin-top: -4.5rem;
+          position: absolute;
+          /*margin-top: -4.5rem;*/
         }
         .entry-meta {}
         .schema_job_posting {
-          /*display: block;*/
+          padding: 1rem !important;
+          display: block !important;
+          max-height: 5rem !important;
+          overflow: auto !important;
         }
 
       }
@@ -74,7 +81,19 @@ body.home {
         display: none;
       }
       .schema_job_posting {
-        display: none;
+        & > div > div {
+          display: none;
+        }
+        .schema_url {
+          position: absolute;
+          left: -9999px;
+        }
+        .schema_description {
+          display: block;
+        }
+        display: none !important;
+        background-color: transparent !important;
+        border: none !important;
       }
       .wpcf7 {
         display: none;
@@ -329,3 +348,4 @@ body.login #lostpasswordform {
   #nav { }
   #backtoblog { }
 }
+

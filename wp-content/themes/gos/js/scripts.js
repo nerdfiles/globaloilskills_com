@@ -76,6 +76,13 @@
           return console.log(data);
         });
       };
+      serviceInterface.getRecruiters = function() {};
+      serviceInterface.getManagers = function() {};
+      serviceInterface.getEmployees = function() {};
+      serviceInterface.getAdministrators = function() {
+        return console.log($http);
+      };
+      serviceInterface.getPostings = function() {};
       return serviceInterface;
     }
   ]);
@@ -126,6 +133,29 @@
       };
     }
   ]);
+
+  /*
+  Page.Loader Directive
+   */
+  angular.module('GOSS.directives').directive("pageLoader", [
+    '$http', 'pageService', function($http, pageService) {
+      return {
+        restrict: "A",
+        scope: {
+          placeholder: '@'
+        },
+        link: function(scope, element, attrs) {
+          return pageService.testAjax(function(resp) {
+            element.on('hover', function(e) {});
+          });
+        }
+      };
+    }
+  ]);
+
+  /*
+  Form.InputRoster
+   */
   angular.module('GOSS.directives').directive("inputRoster", [
     'pageService', function(pageService) {
       return {
