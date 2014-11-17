@@ -1,4 +1,12 @@
 
+@mixin disabled () {
+  .entry-summary,
+  .entry-meta,
+  .entry-image {
+    position: absolute;
+    left: -9999px;
+  }
+}
 body.home {
 
   .home-widgets,
@@ -35,7 +43,9 @@ body.home {
        *}
        */
 
-      &:hover {
+      @include disabled();
+
+      &.enabled {
         min-height: 10rem;
         @include transition (all .5s ease-in-out);
         @extend .fade-in;
@@ -51,11 +61,11 @@ body.home {
 
         }
         .entry-title {
-          margin-top: -4rem;
+          margin-top: -4.5rem;
         }
         .entry-meta {}
         .schema_job_posting {
-          display: block;
+          /*display: block;*/
         }
 
       }
@@ -89,9 +99,11 @@ body.home {
       .entry-image {
         text-align: left;
         @include span-columns(4);
-        position: absolute;
-        top: 2rem;
-        left: -9999px;
+        /*
+         *position: absolute;
+         *top: 2rem;
+         *left: -9999px;
+         */
         @include pad(0 default);
         img { max-width: 50%; }
       }
@@ -99,8 +111,10 @@ body.home {
         /*
          *@include span-columns(8);
          */
-        position: absolute;
-        left: -9999px;
+        /*
+         *position: absolute;
+         *left: -9999px;
+         */
       }
       .entry-title {
         @include span-columns(12);
@@ -110,13 +124,16 @@ body.home {
 
       }
       .entry-summary {
-        position: absolute;
-        left: -9999px;
+        /*
+         *position: absolute;
+         *left: -9999px;
+         */
       }
       .entry-summary p {
         margin: 0;
         padding: 0 .5rem;
-        text-align: right; }
+        text-align: right;
+      }
     }
 
     p { text-align: left; }

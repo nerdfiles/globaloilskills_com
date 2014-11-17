@@ -4,7 +4,7 @@
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
   for caching the history of elements on the page. This is a change tracking strategy for A/B tests.
    */
-  var $email, CommentsService, app, applicationScaffolding, input, someInputs$, __;
+  var $email, app, applicationScaffolding, input, someInputs$, __;
   input = function() {
     var iteritems;
     iteritems = ["input"];
@@ -60,20 +60,20 @@
   /*
   Service for JSON API data from WordPress.
    */
-  angular.module('GOSS.services', []).service('commentsService', ['$http', CommentsService]);
-  CommentsService = function($http) {
-    var serviceInterface;
-    serviceInterface = {};
-    serviceInterface.testEmail = function(email, resumeFile, handleData) {
-      $http.get({
-        url: "//" + window.location.hostname + "/api/make/user/?email=" + email + "&fileToUpload=" + resumeFile,
-        success: function(data) {
+  angular.module('GOSS.services').service('commentsService', [
+    '$http', function($http) {
+      var serviceInterface;
+      serviceInterface = {};
+      serviceInterface.testEmail = function(email, resumeFile, handleData) {
+        $http.get("//" + window.location.hostname + "/api/make/user/?email=" + email + "&fileToUpload=" + resumeFile).success(function(data) {
           handleData(data);
-        }
-      });
-    };
-    return serviceInterface;
-  };
+        }).error(function(data) {
+          return console.log(data);
+        });
+      };
+      return serviceInterface;
+    }
+  ]);
 
   /*
     (______)(_)                    _  (_)                 
@@ -103,7 +103,7 @@
       };
     }
   ]);
-  angular.module('GOSS.directives', []).directive("inputRoster", [
+  angular.module('GOSS.directives').directive("inputRoster", [
     'pageService', function(pageService) {
       return {
         restrict: "A",
@@ -133,6 +133,7 @@
    */
   angular.module('GOSS.controllers', []).controller('CoreCtrl', function($scope) {
     $scope.dataData = [];
+    console.log($scope);
   });
 
   /*
@@ -142,7 +143,7 @@
   | | | | | | | |_
   |_|_| |_|_|  \__)
    */
-  applicationScaffolding = ['ngRoute', 'ngSanitize', 'ngAnimate', 'GOSS.directives', 'GOSS.services', 'GOSS.controllers'];
+  applicationScaffolding = ['ngRoute', 'ngSanitize', 'ngAnimate', 'GOSS.services', 'GOSS.directives', 'GOSS.controllers'];
   app = angular.module('GOSS', applicationScaffolding);
 
   /*

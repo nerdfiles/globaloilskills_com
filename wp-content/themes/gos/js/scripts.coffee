@@ -75,22 +75,23 @@
   ###
   Service for JSON API data from WordPress.
   ###
-  angular.module('GOSS.services', []).service 'commentsService', [
+  angular.module('GOSS.services').service 'commentsService', [
     '$http'
-    CommentsService
+    ($http) ->
+      serviceInterface = {}
+      serviceInterface.testEmail = (email, resumeFile, handleData) ->
+        $http.get("//#{window.location.hostname}/api/make/user/?email=#{email}&fileToUpload=#{resumeFile}")
+          .success((data) ->
+            handleData data
+            return
+          )
+          .error((data) ->
+            console.log data
+          )
+        return
+      serviceInterface
   ]
 
-  CommentsService = ($http) ->
-    serviceInterface = {}
-    serviceInterface.testEmail = (email, resumeFile, handleData) ->
-      $http.get {
-        url: "//#{window.location.hostname}/api/make/user/?email=#{email}&fileToUpload=#{resumeFile}"
-        success: (data) ->
-          handleData data
-          return
-      }
-      return
-    serviceInterface
 
   ###
     (______)(_)                    _  (_)                 
@@ -100,7 +101,7 @@
     |_____/ |_|_|   |_____)\____)  \__)_| \_/ |_____|___/ 
   ###
 
-  angular.module('GOSS.directives', []).directive "checkEmail", [
+  angular.module('GOSS.directives', []).directive("checkEmail", [
     'commentsService'
     (commentsService) ->
       return {
@@ -117,9 +118,9 @@
             console.log "Creating User: #{data}"
           )
       }
-  ]
+  ])
 
-  angular.module('GOSS.directives', []).directive("inputRoster", [
+  angular.module('GOSS.directives').directive("inputRoster", [
     'pageService'
     (pageService) ->
       return {
@@ -146,12 +147,14 @@
 
   @depends define
   ###
-  angular.module('GOSS.controllers', []).controller 'CoreCtrl', ($scope) ->
+  angular.module('GOSS.controllers', []).controller('CoreCtrl', ($scope) ->
     $scope.dataData = []
+    console.log $scope
     #$scope.submitResume = () ->
       #testAjax (dataContext) ->
         #return dataContext
     return
+  )
 
   ###
   | |     (_)  _
@@ -165,8 +168,8 @@
     'ngRoute'
     'ngSanitize'
     'ngAnimate'
-    'GOSS.directives'
     'GOSS.services'
+    'GOSS.directives'
     'GOSS.controllers'
   ]
   # Initialize application space.
