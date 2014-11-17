@@ -247,7 +247,7 @@ function priv_contact () {
         ob_start();
         ?>
           <div class="user--role">
-            <p>Viewing as <?php echo $role; ?></p>
+            <p>Viewing as an [<?php echo $role; ?>].</p>
           </div>
         <?php
         $logLabel = ob_get_clean();

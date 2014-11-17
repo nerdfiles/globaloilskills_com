@@ -25,13 +25,12 @@
     |_|   |_|\___/ \___/|_| \_|___/
 
   ###
-  $email = doc.querySelector('#search-2')
-  $email.setAttribute 'data-check-email', ''
+  ###
+  Utility Functions
+  ###
+  disabler = (e) ->
+    e.preventDefault()
 
-  someInputs$ = doc.querySelector "#{input()}[type=submit]"
-  someInputs$.setAttribute 'data-input-roster', ''
-
-  uPosts = document.getElementsByClassName('widget_ultimate_posts')
   clicker = () ->
     elem = @
     c = elem.getAttribute 'class'
@@ -43,6 +42,33 @@
     else
       elem.removeAttribute 'class', 'enabled'
       elem.setAttribute 'class', 'disabled'
+
+  abbrevText = (obj) ->
+    o = obj.split ' '
+    _o = []
+    for d, i in o
+      if i < 100
+        _o.push d
+    return _o.join(' ')
+
+  $email = doc.querySelector('#search-2')
+  $email.setAttribute 'data-check-email', ''
+
+  someInputs$ = doc.querySelector "#{input()}[type=submit]"
+  someInputs$.setAttribute 'data-input-roster', ''
+
+  uPosts = document.getElementsByClassName('widget_ultimate_posts')
+  for j in uPosts
+    uPostsAnchors = j.getElementsByTagName('a')
+    for k in uPostsAnchors
+      k.addEventListener 'click', disabler
+
+    uPostsDivs = j.getElementsByTagName('div')
+    for z in uPosts
+      _stored_text = z.textContent
+      __abbrev_text = abbrevText _stored_text
+      console.log z
+      #z.textContent = __abbrev_text
 
   ###
   for i in uPosts

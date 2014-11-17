@@ -27,9 +27,13 @@ body.home {
       padding-bottom: 0 !important;
       padding-top: 0 !important;
       margin-bottom: 0 !important;
+      border-top: none;
+      border-bottom: 1px #d1d1d1 solid;
     }
     article {
+
       @include clearfix;
+
       /*
        *&:before {
        *  background-image: url('./images/test-bg-1.jpg'); 
@@ -43,6 +47,24 @@ body.home {
        *}
        */
 
+      /*
+       *&.has-post-thumbnail {
+       *  .schema_job_posting {
+       *    max-height: 10rem !important;
+       *  }
+       *}
+       */
+
+      /*
+       *.entry-meta {}
+       *.schema_job_posting {
+       *  padding: 1rem !important;
+       *  display: block !important;
+       *  max-height: 5rem !important;
+       *  overflow: auto !important;
+       *}
+       */
+
       @include disabled();
 
       &:hover,
@@ -50,11 +72,11 @@ body.home {
         /*position: absolute;*/
         min-height: 10rem;
         @include span-columns(12);
-        @include transition (all .5s ease-in-out);
+        @include transition (min-height .5s ease-in-out);
         @extend .fade-in;
         @extend .animated;
         .entry-image {
-          position: relative;
+          position: absolute;
           @include shift(9);
           margin-top: 2rem;
           left: auto;
@@ -64,17 +86,44 @@ body.home {
 
         }
         .entry-title {
+          background-color: #069CC8;
+          a { color: #fff; }
           position: absolute;
           /*margin-top: -4.5rem;*/
         }
-        .entry-meta {}
-        .schema_job_posting {
-          padding: 1rem !important;
-          display: block !important;
-          max-height: 5rem !important;
-          overflow: auto !important;
+
+        &.has-post-thumbnail {
+          .entry-meta {}
+          .schema_job_posting {
+            /*max-height: 10rem !important;*/
+          }
         }
 
+        .entry-meta {}
+        .schema_job_posting {
+          display: block !important;
+          /*max-height: 5rem !important;*/
+          /*overflow: auto !important;*/
+        }
+
+        .entry-content {
+          margin-top: 2rem;
+        }
+
+        .entry-title:after {
+          display: block;
+          height: 100px;
+          width: 100px;
+          content: " ";
+          background-image: url('http://placehold.it/100x100');
+          position: absolute;
+          right: 0;
+          top: 100%;
+        }
+
+        .entry-image + .entry-title:after {
+          display: none;
+        }
       }
 
       .user--role {
@@ -91,6 +140,7 @@ body.home {
         .schema_description {
           display: block;
         }
+        padding: 1rem !important;
         display: none !important;
         background-color: transparent !important;
         border: none !important;
@@ -115,15 +165,19 @@ body.home {
       header {
         @include span-columns(12);
       }
+      /**
+       *
+       */
       .entry-image {
         text-align: left;
+        position: absolute;
         @include span-columns(4);
         /*
          *position: absolute;
          *top: 2rem;
          *left: -9999px;
          */
-        @include pad(0 default);
+        @include pad(.5rem default 0);
         img { max-width: 50%; }
       }
       .entry-meta {
@@ -138,9 +192,15 @@ body.home {
       .entry-title {
         @include span-columns(12);
         @include omega();
+        a {
+          padding: .35rem .5rem;
+        }
       }
       .entry-meta {
-
+      }
+      .entry-content {
+        padding-top: .5rem;
+        @include span-columns(8);
       }
       .entry-summary {
         /*
