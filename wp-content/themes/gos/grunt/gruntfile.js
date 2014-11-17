@@ -137,6 +137,7 @@ module.exports = function(grunt) {
         tasks: [
           'sass:dev',
           'sass:editorstyles',
+          //'exec:page_runner',
           'notify:scss'
         ]
       },
@@ -145,7 +146,11 @@ module.exports = function(grunt) {
           '<%= jshint.coffee %>'
         ],
         tasks: [
+          // Compile
           'coffee',
+          // DOM Test
+          //'exec:page_runner',
+          // Linter/Syntax Checker
           'jshint:all',
           'uglify',
           'notify:js'
@@ -269,7 +274,23 @@ module.exports = function(grunt) {
     },
 
     exec: {
-      test: "npm test"
+      remove_logs: {
+        command: 'rm -f *.log',
+        stdout: false,
+        stderr: false
+      },
+      list_files: {
+        cmd: 'ls -l **'
+      },
+      list_all_files: 'ls -la',
+      echo_grunt_version: {
+        cmd: function() { return 'echo ' + this.version; }
+      },
+      page_runner: {
+        command: "/usr/local/bin/casperjs /Users/nerdfiles/Projects/globaloilskills_com/test/e2e/scraper.coffee",
+        stdout: true,
+        stderr: false
+      }
     },
 
     /*
@@ -339,6 +360,12 @@ module.exports = function(grunt) {
     'copyto:dist',
     'notify:dist'
   ]);
+
+  grunt.registerTask('pageRunner', [
+    'exec:echo_grunt_version',
+    'exec:page_runner'
+  ]);
+
   grunt.registerTask('codeAnalysis', [
     'plato'
   ]);

@@ -1,13 +1,14 @@
 .site-header {
+  padding-bottom: 1rem;
   /*overflow: hidden;*/
   /*padding: 3em 0;*/
   position:relative;
-  border-bottom: 3px solid $color2;
+  /*border-bottom: 3px solid $color2;*/
   @include clearfix;
 
   .logo {
-    @include span-columns(10);
-    @include shift(1);
+    @include span-columns(4);
+    /*@include shift(1);*/
     color: $color2;
     position: relative;
     z-index: 2;
@@ -19,12 +20,13 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      margin-bottom: 0.2em;
-      @include span-columns(6);
-      @include shift(3);
-      text-align: center;
-      text-shadow: 0 0 .5em $color1;
-      height: 150px;
+      margin: 0;
+      /*margin-bottom: 0.2em;*/
+      /*@include span-columns(3);*/
+      /*@include shift(3);*/
+      /*text-align: center;*/
+      /*text-shadow: 0 0 .5em $color1;*/
+      height: 70px;
     }
 
     .site-description {
@@ -38,7 +40,7 @@
   }
 
   div.menu {
-    @include span-columns(12);
+    @include span-columns(8);
     /*
      *@include span-columns(10);
      *@include shift(1);
@@ -46,7 +48,8 @@
   }
   .main-menu {
     @include clearfix;
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
+    padding-top: 0;
   }
   .menu .main-menu .menu {
     margin: 0;

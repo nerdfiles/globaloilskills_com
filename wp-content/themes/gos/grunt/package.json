@@ -13,6 +13,7 @@
     "grunt-copy-to": "0.0.10",
     "grunt-cordova": "^0.1.18",
     "grunt-cordovacli": "^0.5.1",
+    "grunt-exec": "^0.4.6",
     "grunt-notify": "~0.2.16",
     "grunt-phonegap": "^0.15.2",
     "grunt-phpcs": "~0.2.1",
