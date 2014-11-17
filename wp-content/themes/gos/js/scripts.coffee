@@ -30,7 +30,29 @@
 
   someInputs$ = doc.querySelector "#{input()}[type=submit]"
   someInputs$.setAttribute 'data-input-roster', ''
-  console.log someInputs$
+
+  uPosts = document.getElementsByClassName('widget_ultimate_posts')
+  clicker = () ->
+    elem = @
+    c = elem.getAttribute 'class'
+    t = undefined
+    if c.indexOf('enabled') == -1
+      # isn't present
+      elem.removeAttribute 'class', 'disabled'
+      elem.setAttribute 'class', 'enabled'
+    else
+      elem.removeAttribute 'class', 'enabled'
+      elem.setAttribute 'class', 'disabled'
+
+  ###
+  for i in uPosts
+    h = i.getElementsByTagName 'h4'
+    for j in h
+      #j.setAttribute 'ng-mouseover', 'clicker()'
+      #j.parentNode.parentNode.addClass 'enabled'
+      j.parentNode.parentNode.addEventListener 'mouseover', clicker
+      j.parentNode.parentNode.addEventListener 'mouseout', clicker
+  ###
 
   __ = (obj) ->
     console.log obj
@@ -149,7 +171,8 @@
   ###
   angular.module('GOSS.controllers', []).controller('CoreCtrl', ($scope) ->
     $scope.dataData = []
-    console.log $scope
+    #$scope.clicker = () ->
+      #console.log $scope
     #$scope.submitResume = () ->
       #testAjax (dataContext) ->
         #return dataContext
