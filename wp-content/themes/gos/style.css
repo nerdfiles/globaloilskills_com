@@ -1909,11 +1909,7 @@ table {
 .fa-meanpath:before {
   content: "\f20c"; }
 
-<<<<<<< HEAD
-.animated, body.home .home-widgets .widget article:hover {
-=======
 .animated, body.home .home-widgets .widget article:hover, body.home .home-widgets .widget article.enabled {
->>>>>>> develop
   -webkit-animation-duration: 0.75s;
   -moz-animation-duration: 0.75s;
   -o-animation-duration: 0.75s;
