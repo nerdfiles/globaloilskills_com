@@ -5404,6 +5404,7 @@ body.home {
     body.home .home-search-widgets .widget_search:before {
       font-family: FontAwesome;
       /*@include shift(10);*/
+      right: 1%;
       content: "\f0c9";
       position: absolute;
       top: 2.5rem;
