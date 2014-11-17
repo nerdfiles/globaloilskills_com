@@ -145,7 +145,7 @@ function admin_stylesheet() {
     wp_enqueue_style( 'custom-admin', get_template_directory_uri() . '/style.css' );
     //wp_enqueue_script( 'custom-admin', get_template_directory_uri() . '/grunt/dist/require.js', array('jquery'), '1.0', true );
 }
-add_action( 'admin_enqueue_scripts', 'admin_stylesheet' );
+//add_action( 'admin_enqueue_scripts', 'admin_stylesheet' );
 
 /******************************************************************************\
   Content functions

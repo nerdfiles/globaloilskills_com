@@ -12,6 +12,14 @@ body.home {
 
   .home-widgets .widget {
     background-color: #fff;
+    /**
+     * Overrides
+     */
+    .upw-posts article {
+      padding-bottom: 0 !important;
+      padding-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
     article {
       @include clearfix;
       /*
@@ -27,6 +35,40 @@ body.home {
        *}
        */
 
+      &:hover {
+        min-height: 10rem;
+        @include transition (all .5s ease-in-out);
+        @extend .fade-in;
+        @extend .animated;
+        .entry-image {
+          position: relative;
+          @include shift(9);
+          margin-top: 2rem;
+          left: auto;
+          top: auto;
+        }
+        .entry-summary {
+
+        }
+        .entry-title {
+          margin-top: -4rem;
+        }
+        .entry-meta {}
+        .schema_job_posting {
+          display: block;
+        }
+
+      }
+
+      .user--role {
+        display: none;
+      }
+      .schema_job_posting {
+        display: none;
+      }
+      .wpcf7 {
+        display: none;
+      }
       margin-bottom: 1rem;
       border-bottom: 1px #ccc solid;
       header { }
@@ -34,25 +76,40 @@ body.home {
         padding-left: .5rem;
         &:before { content: 'Posted '; color: green; }
         color: #111; }
-      h4 { margin: 0; padding: 0 .5rem; }
-      a { color: #111; text-decoration: none; }
+      h4 {
+        margin: 0;
+        padding: 0;
+      }
+      a { @include pad(0 default); display: block; color: #111; text-decoration: none; }
       header {
         @include span-columns(12);
       }
       .entry-image {
-        text-align: center;
+        text-align: left;
         @include span-columns(4);
+        position: absolute;
+        top: 2rem;
+        left: -9999px;
+        @include pad(0 default);
         img { max-width: 50%; }
       }
       .entry-meta {
-        @include span-columns(8);
+        /*
+         *@include span-columns(8);
+         */
+        position: absolute;
+        left: -9999px;
       }
       .entry-title {
-        @include span-columns(8);
+        @include span-columns(12);
         @include omega();
       }
+      .entry-meta {
+
+      }
       .entry-summary {
-        @include span-columns(12);
+        position: absolute;
+        left: -9999px;
       }
       .entry-summary p {
         margin: 0;

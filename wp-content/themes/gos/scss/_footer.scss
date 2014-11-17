@@ -1,11 +1,12 @@
 .footer-widgets {
-	@include clearfix;
-	@include span-columns(12);
+  @include clearfix;
+  @include span-columns(12);
 
-	background: $color1;
-	padding: 1.5em 0;
-	list-style: none;
-	margin: 0;
+  background: $color1;
+  padding: 1.5em 0;
+  list-style: none;
+  margin: 0;
+  margin-top: 5rem;
   .home--base-menu {
     @include span-columns(12);
     .menu-base-container {
