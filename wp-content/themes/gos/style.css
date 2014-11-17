@@ -5242,14 +5242,16 @@ body.home {
         body.home .home-widgets .widget article .published:before {
           content: 'Posted ';
           color: green; }
-      body.home .home-widgets .widget article h4 {
-        margin: 0;
-        padding: 0; }
       body.home .home-widgets .widget article a {
         padding:  0 3.06748%;
         display: block;
         color: #111111;
         text-decoration: none; }
+      body.home .home-widgets .widget article h4 {
+        margin: 0;
+        padding: 0; }
+        body.home .home-widgets .widget article h4 a {
+          padding:  0.35rem 0; }
       body.home .home-widgets .widget article header {
         float: left;
         display: block;
