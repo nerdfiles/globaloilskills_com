@@ -5403,10 +5403,9 @@ body.home {
     font-size: 0.8rem; }
     body.home .home-search-widgets .widget_search:before {
       font-family: FontAwesome;
+      /*@include shift(10);*/
       content: "\f0c9";
       position: absolute;
-      /*right: 0;*/
-      margin-left: 85.88957%;
       top: 2.5rem;
       width: 50px;
       height: 50px; }
@@ -5426,7 +5425,7 @@ body.home {
     float: left;
     display: block;
     margin-right: 3.06748%;
-    width: 82.82209%;
+    width: 100%;
     padding: 1rem;
     opacity: 0.4;
     -webkit-transition: all 0.5s ease-in-out;

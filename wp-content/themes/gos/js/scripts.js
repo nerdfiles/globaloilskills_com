@@ -1,10 +1,10 @@
-(function(angular, doc) {
+(function(angular, doc, HTML) {
 
   /*
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
   for caching the history of elements on the page. This is a change tracking strategy for A/B tests.
    */
-  var $email, abbrevText, app, applicationScaffolding, clicker, disabler, input, j, k, someInputs$, uPosts, uPostsAnchors, uPostsDivs, z, __, __abbrev_text, _i, _j, _k, _len, _len1, _len2, _stored_text;
+  var $email, abbrevText, app, applicationScaffolding, clicker, disabler, entryTitle, input, j, k, someInputs$, uPosts, uPostsAnchors, uPostsDivs, z, __, __abbrev_text, _i, _j, _k, _len, _len1, _len2, _stored_text;
   input = function() {
     var iteritems;
     iteritems = ["input"];
@@ -26,6 +26,12 @@
     | |   | | |_| | |_| |  _ (|___ |
     |_|   |_|\___/ \___/|_| \_|___/
    */
+  entryTitle = HTML.query('.entry-title');
+  entryTitle.each(function(el, i, all) {
+    return el.addEventListener('click', function() {
+      return console.log(el.parentNode.parentNode);
+    });
+  });
 
   /*
   Utility Functions
@@ -259,6 +265,6 @@
   |_____/  \_____/|_|   |_|  (______/|_| |_|_|  \__)
    */
   return angular.bootstrap(doc.body, ['GOSS']);
-})(angular, document);
+})(angular, document, HTML);
 
 //# sourceMappingURL=scripts.js.map

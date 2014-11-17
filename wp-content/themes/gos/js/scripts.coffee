@@ -1,4 +1,4 @@
-((angular, doc) ->
+((angular, doc, HTML) ->
 
   ###
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
@@ -23,8 +23,13 @@
     |  ___  |/ _ \ / _ \| |_/ )/___)
     | |   | | |_| | |_| |  _ (|___ |
     |_|   |_|\___/ \___/|_| \_|___/
-
   ###
+  entryTitle = HTML.query('.entry-title')
+  entryTitle.each((el, i, all) ->
+    el.addEventListener 'click', () ->
+      console.log el.parentNode.parentNode
+  )
+
   ###
   Utility Functions
   ###
@@ -79,6 +84,7 @@
       j.parentNode.parentNode.addEventListener 'mouseover', clicker
       j.parentNode.parentNode.addEventListener 'mouseout', clicker
   ###
+
 
   __ = (obj) ->
     console.log obj
@@ -284,4 +290,4 @@
   ###
   angular.bootstrap doc.body, ['GOSS']
 
-)(angular, document)
+)(angular, document, HTML)

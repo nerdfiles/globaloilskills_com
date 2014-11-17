@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         "trailing": true,
         "undef": true,
         "globals": {
-          "jQuery": true,
+          "HTML": true,
           "angular": true,
           "alert": true,
           "Framework7": true,
@@ -56,7 +56,8 @@ module.exports = function(grunt) {
         }
       },
       coffee: [
-        '../js/scripts.coffee'
+        '../js/scripts.coffee',
+        '../js/hoverintent.coffee'
       ],
       all: [
         'gruntfile.js',
