@@ -1,0 +1,96 @@
+@mixin search-block() {
+
+  h1 {
+    @include font-size(1.3);
+
+    font-weight: normal;
+    background: $color2;
+    text-align:center;
+    color: $color1;
+    margin-top: 0;
+    margin-bottom:0;
+    padding: 0.6em 0;
+  }
+
+  .second-search {
+    @include font-size(0.9);
+
+    font-style: italic;
+    margin-top:0;
+    background: $color2;
+    color: $color1;
+    text-align: center;
+    padding-top:0;
+    padding-bottom: 0.8em;
+
+    p {
+      margin:0;
+    }
+
+    form {
+      margin-top:0.5em;
+      margin-bottom: 0.6em;
+    }
+
+    input {
+      box-shadow:none;
+    }
+  }
+
+  .searchform,
+  .widget_search {
+    padding: 0;
+
+    &:before {
+      font-family: FontAwesome;
+      /*@include shift(10);*/
+      right: 0;
+      /*content: "\f0c9";*/
+      content: "\f054";
+      position: absolute;
+      top: 1rem;
+      width: 25px;
+      height: 50px;
+    }
+
+    /**
+     * Default Cases
+     */
+    @include span-columns(12);
+    @include font-size(0.8);
+
+    @include media($small) {
+      @include span-columns(12);
+      @include font-size(0.8);
+    }
+
+  }
+
+  #s {
+    @include span-columns(12);
+    padding: 1rem;
+    opacity: .4;
+    @include transition (all .5s ease-in-out);
+    &:focus,
+    &:hover {
+      opacity: 1;
+      /*
+       *@extend .pulse !optional;
+       *@extend .animated !optional;
+       */
+    }
+  }
+
+
+  #searchsubmit {
+    opacity: .4;
+    @include span-columns(1);
+    @include transition (all .5s ease-in-out);
+    padding: 1rem;
+    background-color: transparent;
+    text-indent: -9999px;
+    position: absolute;
+    right: 0;
+  }
+
+}
