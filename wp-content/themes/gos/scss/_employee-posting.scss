@@ -1,0 +1,43 @@
+$type: '.post';
+@mixin employee-posting() {
+  .__unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #{$type}-title,
+  #{$type}-meta,
+  #{$type}-content {
+    margin: 0;
+    @include span-columns(12);
+  }
+  li {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+  article.employee {
+
+    .post-title {
+      background-color: #054481;
+      color: #fff;
+      font-size: 1rem;
+      a { color: #fff; }
+    }
+    .post-meta {}
+    .edit-link {
+
+    }
+    .post-edit-link {
+
+    }
+    .post-content {
+
+    }
+    .module--employee--financial-summary {
+
+    }
+  }//.employee
+  .google-maps-builder-wrap {
+    display: none;
+  }
+}

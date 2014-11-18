@@ -275,7 +275,7 @@ function priv_contact () {
     }
 
     // Check for post_type to prevent from mucking up API call
-    if ($show == false && ! $_GET['post_type']) {
+    if ($show == false) {
       ob_start();
       ?>
       <style>
@@ -286,7 +286,7 @@ function priv_contact () {
       echo $html;
       //exit;
     } else {
-      @include_once('partials/signup.html.php');
+      //@include_once('partials/signup.html.php');
     }
   endif;
 
@@ -327,3 +327,17 @@ function priv_contact () {
  * @namespace Amiright?
  */
 
+
+function SearchFilter($query) {
+  if ($query->is_search) {
+    //$query->set('post_type', 'post');
+    $query->set( 'posts_per_page', 500 );
+    $query->set( 'post_type', array(
+        'relation' => 'AND',
+        'post',
+        'employee'
+    ) );
+  }
+  return $query;
+}
+add_filter('pre_get_posts','SearchFilter');

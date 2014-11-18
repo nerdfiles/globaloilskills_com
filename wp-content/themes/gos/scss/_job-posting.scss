@@ -1,0 +1,230 @@
+@mixin job-posting() {
+    article.post {
+      @include clearfix;
+      @include disabled();
+      padding-bottom: 0 !important;
+      padding-top: 0 !important;
+      margin-bottom: 0 !important;
+      border-top: none;
+      /*border-bottom: 1px #0B4E9E solid;*/
+      &:hover {
+        background-color: #f1f1f1;
+        padding-bottom: 1rem !important;
+        border-bottom: 2px #ccc solid;
+      }
+      &:hover,
+      &.enabled {
+        /*position: absolute;*/
+        min-height: 5rem;
+        @include span-columns(12);
+        @include transition (min-height .5s ease-in-out);
+        @extend .fade-in;
+        @extend .animated;
+        .post-image,
+        .entry-image {
+          position: absolute;
+          @include shift(9);
+          margin-top: 2rem;
+          left: auto;
+          top: auto;
+        }
+        footer {
+          display: block;
+          /*
+           *position: absolute;
+           *bottom: 0;
+           *right: 0;
+           */
+        }
+
+        .post-summary,
+        .entry-summary {
+
+        }
+        .post-title,
+        .entry-title {
+          /*background-color: #069CC8;*/
+          background-color: #177A72;
+          a { color: #fff; }
+          position: relative;
+          /*margin-top: -4.5rem;*/
+        }
+
+        &.has-post-thumbnail {
+          .post-meta,
+          .entry-meta {}
+          .schema_job_posting {
+            /*max-height: 10rem !important;*/
+          }
+        }
+
+        .post-meta,
+        .entry-meta {}
+        .schema_job_posting {
+          display: block !important;
+          /*max-height: 5rem !important;*/
+          /*overflow: auto !important;*/
+        }
+
+        .post-content,
+        .entry-content {
+          & > a {
+            display: block;
+          }
+        }
+
+        .post-title,
+        .entry-title:after {
+          display: block;
+          height: 100px;
+          width: 100px;
+          content: " ";
+          background-image: url('http://placehold.it/100x100');
+          position: absolute;
+          right: 0;
+          top: 100%;
+        }
+
+        .post-image + .post-title:after,
+        .entry-image + .entry-title:after {
+          display: none;
+        }
+      }
+
+      /**
+       * Nonhover
+       */
+      .user--role {
+        display: none;
+      }
+
+      .schema_job_posting {
+        margin: 0 !important;
+        padding: 0 .5rem 1rem !important;
+        display: none !important;
+        background-color: transparent !important;
+        border: none !important;
+        font-size: .6rem;
+        & > div > div {
+          display: none;
+        }
+        .schema_url {
+          position: absolute;
+          left: -9999px;
+        }
+        .schema_description {
+          /*border-top: 1px #ccc solid;*/
+          /*border-bottom: 1px #ccc solid;*/
+          display: block;
+          max-height: 6rem;
+          overflow: scroll;
+          padding-top: 1rem;
+          margin-bottom: 0 !important;
+        }
+      }
+
+      .review-job {
+        /*
+         *border-top: 1px #ccc solid;
+         *background-color: #f1f1f1;
+         */
+        display: inline-block;
+        /*border-top: 1px #ccc solid;*/
+        margin: 0 .5rem;
+        padding: 0 .5rem;
+        text-align: right;
+        font-weight: 700;
+      }
+
+      .wpcf7 {
+        display: none;
+      }
+
+      footer {
+        display: none;
+      }
+
+      /*border-bottom: 1px #ccc solid;*/
+      header { }
+      .published {
+        padding-left: .5rem;
+        &:before { content: 'Posted '; color: green; }
+        color: #111; }
+
+      a { @include pad(0 default); display: block; color: #111; text-decoration: none; }
+
+      h4 {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        border-bottom: 2px #fff solid;
+        a {
+        }
+      }
+      header {
+        @include span-columns(12);
+      }
+      /**
+       *
+       */
+      .post-image,
+      .entry-image {
+        text-align: left;
+        position: absolute;
+        a {
+          padding: 0;
+        }
+        @include span-columns(2, block-collapse);
+        /*
+         *position: absolute;
+         *top: 2rem;
+         *left: -9999px;
+         */
+        @include pad(.5rem 0 0);
+        img { max-height: 100%; max-width: 100%; }
+      }
+      .post-meta,
+      .entry-meta {
+        /*
+         *@include span-columns(8);
+         */
+        /*
+         *position: absolute;
+         *left: -9999px;
+         */
+      }
+      .post-title,
+      .entry-title {
+        @include span-columns(12);
+        @include omega();
+        a {
+          padding: .35rem .5rem;
+        }
+      }
+      .post-meta,
+      .entry-meta {
+      }
+
+      .post-content,
+      .entry-content {
+
+        @include span-columns(8);
+        & > a {
+          display: none;
+        }
+      }
+      .post-summary,
+      .entry-summary {
+        /*
+         *position: absolute;
+         *left: -9999px;
+         */
+      }
+      .post-summary p,
+      .entry-summary p {
+        margin: 0;
+        padding: 0 .5rem;
+        text-align: right;
+      }
+    }
+}

@@ -48,7 +48,7 @@
 
     <?php if ( is_front_page() || is_category() || is_archive() || is_search() ) : ?>
 
-      <?php the_excerpt(); ?>
+      <?php the_content(); ?>
 
       <aside class="module--employee--financial-summary">
         <?php

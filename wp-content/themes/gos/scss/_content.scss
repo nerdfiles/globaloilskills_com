@@ -201,14 +201,16 @@ article {
 /**
  *
  */
-body.search-results {
-  .type-employee {
-    @include span-columns(3, block-collapse);
-  }
-  .page-content {
-    color: #222;
-  }
-}
+/*
+ *body.search-results {
+ *  .type-employee {
+ *    @include span-columns(3, block-collapse);
+ *  }
+ *  .page-content {
+ *    color: #222;
+ *  }
+ *}
+ */
 
 #schema_block {
   background-color: transparent;
