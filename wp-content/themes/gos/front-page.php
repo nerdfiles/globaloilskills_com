@@ -41,6 +41,7 @@ get_header(); ?>
   -->
 
   <div class="home-widgets">
+    <h2>Available Jobs</h2>
     <ul>
       <?php if ( function_exists( 'dynamic_sidebar' ) ) :
         dynamic_sidebar( 'home-sidebar' );

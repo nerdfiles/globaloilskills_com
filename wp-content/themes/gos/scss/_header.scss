@@ -1,5 +1,7 @@
 .site-header {
-  background-color: transparent;
+  background-color: #0B4E9E;
+
+  background-color: #AFAE9C;
   padding-bottom: 1rem;
   /*overflow: hidden;*/
   /*padding: 3em 0;*/
@@ -13,6 +15,7 @@
     color: $color2;
     position: relative;
     z-index: 2;
+    padding: .5rem 0;
 
     .site-name {
       text-indent: -9999px;
@@ -27,7 +30,7 @@
       /*@include shift(3);*/
       /*text-align: center;*/
       /*text-shadow: 0 0 .5em $color1;*/
-      height: 70px;
+      height: 4rem;
     }
 
     .site-description {
@@ -62,20 +65,28 @@
       text-align: center;
 
       @include media($xlarge) {
-        @include span-columns(2);
+        @include span-columns(3);
       }
 
       @include media($large) {
-        @include span-columns(2);
+        @include span-columns(3);
       }
 
       @include media($medium) {
-        @include span-columns(2);
+        @include span-columns(3);
       }
 
       @include media($small) {
         @include span-columns(6);
         @include omega(2n);
+      }
+
+      a {
+        display: block;
+        padding: .5rem 0;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
       }
 
     }

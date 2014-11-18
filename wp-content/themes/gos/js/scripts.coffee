@@ -26,9 +26,24 @@
   ###
   entryTitle = HTML.query('.entry-title')
   entryTitle.each((el, i, all) ->
-    el.addEventListener 'click', () ->
-      console.log el.parentNode.parentNode
+    entryTitleAnchor = el.query('a')
+    entryTitleAnchorText = el.query('a').textContent
+    entryTitleAnchorClone = entryTitleAnchor.cloneNode()
+    #entryTitleAnchorClone.textContent = entryTitleAnchorText
+    entryTitleAnchorClone.setAttribute 'class', 'review-job'
+    entryTitleAnchorClone.textContent = 'Review Job'
+    #entryTitleAnchorClone.textContent 'Full Details'
+    parentElement = el.each('parentElement')
+    containerElement = parentElement.each('parentElement')
+    containerElement.query('.entry-content').add entryTitleAnchorClone
+    #entryTitleAnchor.setAttribute 'href', '#'
+    #console.log el
+    #el.addEventListener 'click', () ->
+      #console.log el.parentNode.parentNode
   )
+
+  searchInput = HTML.query('#s')
+  searchInput.setAttribute 'placeholder', 'Search Job Postings'
 
   ###
   Utility Functions
@@ -62,7 +77,9 @@
   someInputs$ = doc.querySelector "#{input()}[type=submit]"
   someInputs$.setAttribute 'data-input-roster', ''
 
-  uPosts = document.getElementsByClassName('widget_ultimate_posts')
+  uPosts = HTML.query('.widget_ultimate_posts')
+  uPosts.each((el, i, all) ->
+  )
   for j in uPosts
     uPostsAnchors = j.getElementsByTagName('a')
     for k in uPostsAnchors
