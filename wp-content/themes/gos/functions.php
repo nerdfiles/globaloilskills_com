@@ -285,6 +285,8 @@ function priv_contact () {
       $html = ob_get_clean();
       echo $html;
       //exit;
+    } else {
+      @include_once('partials/signup.html.php');
     }
   endif;
 
