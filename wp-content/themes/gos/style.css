@@ -6196,7 +6196,8 @@ input[type="submit"] {
     .site-header .logo .site-name {
       text-indent: -9999px;
       text-align: left;
-      background-image: url('./images/logo-idea-02.png');
+      /*background-image: url('./images/logo-idea-02.png');*/
+      background-image: url('http://placehold.it/300&text=GOS');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
