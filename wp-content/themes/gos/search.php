@@ -14,11 +14,14 @@ get_header(); ?>
     if ( have_posts() ) : ?>
 
       <div class="search-title">
-        <h1><?php printf( __( 'Search Results for: %s', 'gos' ), get_search_query() ); ?></h1>
         <div class="second-search">
-          <p>
-            <?php _e( 'Not what you searched for? Try again with some different keywords.', 'gos' ); ?>
-          </p>
+          <!--p>
+            <?php
+              /*
+               *_e( 'Not what you searched for? Try again with some different keywords.', 'gos' );
+               */
+            ?>
+          </p-->
           <?php get_search_form(); ?>
         </div>
       </div><ul class="__unstyled"><?php
@@ -56,5 +59,10 @@ get_header(); ?>
 
     </div>
   </section>
-
+  <script>
+    window.setTimeout(function () {
+      var s = document.getElementById('s');
+      s.setAttribute('placeholder', '<?php printf( __( 'Search Results for: %s', 'gos' ), get_search_query() ); ?>');
+    }, 0);
+  </script>
 <?php get_footer(); ?>

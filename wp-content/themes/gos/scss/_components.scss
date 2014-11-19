@@ -13,8 +13,10 @@
 }
 
 body.search-results {
-  @include employee-posting();
-  @include job-posting();
+  .page-content {
+    @include employee-posting();
+    @include job-posting();
+  }
 }
 
 body.home {
@@ -163,7 +165,8 @@ body.login #lostpasswordform {
 
   h1 {
     a {
-      background-image: url('./images/logo.png');
+      /*background-image: url('./images/logo.png');*/
+      background-image: url('http://placehold.it/500x500');
     }
   }
   .message {

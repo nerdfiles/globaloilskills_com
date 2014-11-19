@@ -329,15 +329,25 @@ function priv_contact () {
 
 
 function SearchFilter($query) {
+  global $current_user;
   if ($query->is_search) {
-    //$query->set('post_type', 'post');
     $query->set( 'posts_per_page', 500 );
-    $query->set( 'post_type', array(
-        'relation' => 'AND',
-        'post',
-        'employee'
-    ) );
+    $all_roles = $current_user->roles;
+    $show = false;
+    foreach ($all_roles as $role) {
+      if ( $role == 'administrator' || $role == 'manager' ) {
+        $query->set( 'post_type', array(
+            'relation' => 'AND',
+            'post',
+            'employee'
+        ) );
+      } elseif ( $role == 'recruiter' ) {
+        $query->set( 'post_type', 'employee' );
+      } else {
+        $query->set( 'post_type', 'post' );
+      }
+    }
   }
   return $query;
 }
-add_filter('pre_get_posts','SearchFilter');
+add_filter( 'pre_get_posts', 'SearchFilter' );

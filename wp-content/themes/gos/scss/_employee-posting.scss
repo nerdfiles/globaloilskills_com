@@ -11,6 +11,10 @@ $type: '.post';
     margin: 0;
     @include span-columns(12);
   }
+
+  #{$type}-title {
+    padding: .5rem .5rem;
+  }
   li {
     @include span-columns(4);
     @include omega(3n);

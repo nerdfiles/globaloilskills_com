@@ -14,22 +14,22 @@
 
   .second-search {
     @include font-size(0.9);
+    @include clearfix;
 
     font-style: italic;
-    margin-top:0;
-    background: $color2;
+    margin: 0;
+    /*background: $color2;*/
     color: $color1;
-    text-align: center;
-    padding-top:0;
-    padding-bottom: 0.8em;
+    /*text-align: center;*/
+    padding: 0;
+    /*padding-top:0;*/
+    /*padding-bottom: 0.8em;*/
 
     p {
       margin:0;
     }
 
     form {
-      margin-top:0.5em;
-      margin-bottom: 0.6em;
     }
 
     input {
@@ -40,6 +40,10 @@
   .searchform,
   .widget_search {
     padding: 0;
+
+    & > div {
+      @include clearfix;
+    }
 
     &:before {
       font-family: FontAwesome;
@@ -71,6 +75,7 @@
     padding: 1rem;
     opacity: .4;
     @include transition (all .5s ease-in-out);
+    border-bottom: none;
     &:focus,
     &:hover {
       opacity: 1;
