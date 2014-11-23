@@ -4,7 +4,7 @@
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
   for caching the history of elements on the page. This is a change tracking strategy for A/B tests.
    */
-  var $email, abbrevText, app, applicationScaffolding, clicker, disabler, entryTitle, input, j, k, searchInput, someInputs$, uPosts, uPostsAnchors, uPostsDivs, z, __, __abbrev_text, _i, _j, _k, _len, _len1, _len2, _stored_text;
+  var $email, abbrevText, app, applicationScaffolding, clicker, disabler, entryTitle, input, searchInput, someInputs$, uPosts, __;
   input = function() {
     var iteritems;
     iteritems = ["input"];
@@ -77,22 +77,9 @@
   someInputs$ = doc.querySelector("" + (input()) + "[type=submit]");
   someInputs$.setAttribute('data-input-roster', '');
   uPosts = HTML.query('.widget_ultimate_posts');
-  uPosts.each(function(el, i, all) {});
-  for (_i = 0, _len = uPosts.length; _i < _len; _i++) {
-    j = uPosts[_i];
-    uPostsAnchors = j.getElementsByTagName('a');
-    for (_j = 0, _len1 = uPostsAnchors.length; _j < _len1; _j++) {
-      k = uPostsAnchors[_j];
-      k.addEventListener('click', disabler);
-    }
-    uPostsDivs = j.getElementsByTagName('div');
-    for (_k = 0, _len2 = uPosts.length; _k < _len2; _k++) {
-      z = uPosts[_k];
-      _stored_text = z.textContent;
-      __abbrev_text = abbrevText(_stored_text);
-      console.log(z);
-    }
-  }
+  uPosts.each(function(el, i, all) {
+    return console.log(el);
+  });
 
   /*
   for i in uPosts

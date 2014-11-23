@@ -79,18 +79,19 @@
 
   uPosts = HTML.query('.widget_ultimate_posts')
   uPosts.each((el, i, all) ->
+    console.log el
   )
-  for j in uPosts
-    uPostsAnchors = j.getElementsByTagName('a')
-    for k in uPostsAnchors
-      k.addEventListener 'click', disabler
 
-    uPostsDivs = j.getElementsByTagName('div')
-    for z in uPosts
-      _stored_text = z.textContent
-      __abbrev_text = abbrevText _stored_text
-      console.log z
-      #z.textContent = __abbrev_text
+  #for j in uPosts
+    #uPostsAnchors = j.getElementsByTagName('a')
+    #for k in uPostsAnchors
+      #k.addEventListener 'click', disabler
+    #uPostsDivs = j.getElementsByTagName('div')
+    #for z in uPosts
+      #_stored_text = z.textContent
+      #__abbrev_text = abbrevText _stored_text
+      #console.log z
+      ##z.textContent = __abbrev_text
 
   ###
   for i in uPosts
