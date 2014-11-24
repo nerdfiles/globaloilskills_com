@@ -170,10 +170,11 @@
     json (from WP JSON API / REST :: https://github.com/cliffwoo/rest-api-cheat-sheet/blob/master/REST-API-Cheat-Sheet.md)
     schema.org microdata (arbitrary HTML)
 4. Visualulz
-4.1. D3 Treemap Views of Employer Differentials and Narratological Datatrends  
+4.1. D3 Recursive Interactive Treemap Views of Employer Differentials and  
+     Narratological Datatrends  
      WP Query Contextualizations expressed through “drill-down” treepmaps.  
      See https://github.com/mbostock/d3/wiki/Treemap-Layout.
-4.2. Candidate Historical Trends  
+4.2. Candidate Historical Trends over interactive time series graphs  
      See http://c3js.org.
 5.1. Analytics
     Mixpanel
