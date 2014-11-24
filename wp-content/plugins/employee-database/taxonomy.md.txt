@@ -17,14 +17,14 @@
 1. Job (Custom Post Type)
 1.1. Jobs
 1.1.1.
-    All
-    Active
-    Unread
-    Awaiting Approval
-    Inactive
-    Expiring Soon
-    Expired
-1.1.2.
+    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch/)
+    Active (Icon: http://fortawesome.github.io/Font-Awesome/icon/bolt/)
+    Unread (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle/)
+    Awaiting Approval ((Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o/))
+    Inactive (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-thin/)
+    Expiring Soon (Icon: http://fortawesome.github.io/Font-Awesome/icon/clock-o/)
+    Expired (Icon: http://fortawesome.github.io/Font-Awesome/icon/dot-circle-o/)
+1.1.2. FK
     Position Title
     Company Name
     Category
@@ -33,21 +33,21 @@
     Expires
     Applications
     Status
-1.2. Reactive Job Postings  
+1.2. Corollary: Reactive Job Postings  
      Correlate discrete numbers of "drag" interface to WP custom taxonomy  
      posts "carousel", thus documents are interactive such that other key  
      data points are cycled in accordance with WP Query constraints.)  
      See http://worrydream.com/Tangle/guide.html.  
-1.3. Leaflet Maps (Custom Post Type)  
+1.3. Corollary: Leaflet Maps (Custom Post Type)  
      Job (Postings) and Employers have GIS data.
      See http://leafletjs.com/.
 1.2. Applications (Custom Post Type)
 1.2.1.
-    All
-    New
-    Accepted
-    Rejected
-1.2.2.
+    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch/)
+    New (Icon: http://fortawesome.github.io/Font-Awesome/icon/bullseye/)
+    Accepted (Icon: http://fortawesome.github.io/Font-Awesome/icon/check-circle/)
+    Rejected (Icon: http://fortawesome.github.io/Font-Awesome/icon/ban/)
+1.2.2. FK
     Applicant Name
     Applicant Email
     Job
@@ -55,7 +55,7 @@
     Posted
     Status
 1.3. Employers (Custom Post Type)
-1.3.1.
+1.3.1. FK
     Id
     Company Name
     Company Location
@@ -64,10 +64,10 @@
     Status
 1.4. Candidates (Custom Post Type)
 1.4.1.
-    All
-    Active
-    Inactive
-1.4.2.
+    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch/)
+    Active (Icon: http://fortawesome.github.io/Font-Awesome/icon/bolt/)
+    Inactive (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-thin/)
+1.4.2. FK
     Name
     Headline
     E-mail
@@ -75,7 +75,7 @@
     Updated (By Owner)
     Status
 1.5. Payments (Stripe, Paypal as Custom Post Types)
-1.5.1.
+1.5.1. FK
     ID
     Payment For
     Created At
@@ -94,9 +94,9 @@
     Status
 1.7. Notifications (E-mail as Custom Post Type)
 1.7.1.
-    All
-    Daily
-    Weekly
+    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch/)
+    Daily (Icon: http://fortawesome.github.io/Font-Awesome/icon/calendar-o/)
+    Weekly (Icon: http://fortawesome.github.io/Font-Awesome/icon/calendar/)
 1.8.2.
     Email
     Created At
@@ -110,7 +110,9 @@
 3.1.2. Job Board Options
 3.1.3. Resumés Options
 3.1.4. SEO & Titles Options
-3.1.5. Integrations
+3.1.5. Integrations  
+  Depends on scope of integration. There's also automation with IFTTT and  
+  Zapier. Don't get me started on #bitcoin.
     3.1.5.1.     Facebook
     3.1.5.2.     Twitter
     3.1.5.3.     LinkedIn
@@ -129,7 +131,7 @@
     Single Job Posting
     Single Resumé Access
     Employer Membership Packages
-3.3. Custom Fields
+3.3. Custom Fields (Contact Form 7, a WordPress plugin)
     Add/Edit Job Form
     Apply Online Form
     Advanced Search Form
@@ -138,31 +140,32 @@
     My Resumé Form
     Advanced Search Form
 3.4. Promotions
+3.4.1. FK
     Id
     Title
     Code
     Discount
     Expires At
     Usage
-    Is Active
+    Is Active (Icon: http://fortawesome.github.io/Font-Awesome/icon/bolt/)
 3.5. Categories
-3.5.1.
+3.5.1. FK
     Id
     Title
     Slug
     Total Jobs
     Total Resumés
 3.6. Job Types
-3.6.1.
+3.6.1. FK
     Id
     Title
     Slug
     Total Jobs
     Total Resumés
 3.7. E-mail Templates
-    admins
-    employers
-    candidates
+    admins (Icon: http://fortawesome.github.io/Font-Awesome/icon/child/)
+    employers (Icon: http://fortawesome.github.io/Font-Awesome/icon/users/)
+    candidates (Icon: http://fortawesome.github.io/Font-Awesome/icon/user/)
     other
 3.8. Import (CSV)
     schedule
