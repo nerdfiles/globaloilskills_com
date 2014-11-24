@@ -213,7 +213,7 @@ function acx_widget_si_pluign_finish_version_update()
 		  </div>';
 }
 $acx_widget_si_current_version = get_option('acx_widget_si_current_version');
-if($acx_widget_si_current_version != '2.1') // Current Version
+if($acx_widget_si_current_version != '2.2') // Current Version
 {
 if (get_option('social_widget_icon_array_order') != "")
 {
@@ -758,6 +758,7 @@ $message = $message . "Phone: ".$acx_phone . "\r\n <br>";
 $acx_question = wordwrap($acx_question, 70, "\r\n <br>");
 $message = $message . "Website: ".$acx_weburl . "\r\n <br>";
 $message = $message . "Question: ".$acx_question . "\r\n <br>";
+$message = stripslashes($message);
 $acx_subject = "Quick Support - " . $acx_subject;
 $emailed = wp_mail( 'info@acurax.com', $acx_subject, $message, $headers );
 if($emailed)

@@ -1,9 +1,9 @@
 /**
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/common/tags/Views-1.6.4-CRED-1.3.2-Types-1.6.4-Acces-1.2.3/toolset-forms/js/file.js $
- * $LastChangedDate: 2014-07-11 14:41:02 +0200 (Fri, 11 Jul 2014) $
- * $LastChangedRevision: 24880 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.4/embedded/common/toolset-forms/js/file.js $
+ * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
+ * $LastChangedRevision: 970205 $
+ * $LastChangedBy: brucepearson $
  *
  */
 var wptFile = (function($, w) {

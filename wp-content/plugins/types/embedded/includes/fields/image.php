@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.3/embedded/includes/fields/image.php $
- * $LastChangedDate: 2014-10-23 10:56:37 +0000 (Thu, 23 Oct 2014) $
- * $LastChangedRevision: 1012704 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.4/embedded/includes/fields/image.php $
+ * $LastChangedDate: 2014-11-18 06:47:25 +0000 (Tue, 18 Nov 2014) $
+ * $LastChangedRevision: 1027712 $
  * $LastChangedBy: iworks $
  *
  */
@@ -224,7 +224,7 @@ function wpcf_fields_image_editor_submit( $data, $field, $context ) {
         $add .= ' onload="' . $data['onload'] . '"';
     }
 
-    if ( $data['image_size'] != 'full' ) {
+    if ( array_key_exists('image_size', $data) && $data['image_size'] != 'full' ) {
         if ( !empty( $data['proportional'] ) ) {
             $settings['resize'] = isset( $data['resize'] ) ? $data['resize'] : 'proportional';
             $add .= " resize=\"{$settings['resize']}\"";
