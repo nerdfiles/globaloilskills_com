@@ -23,7 +23,7 @@
 
           $scope.employeeViewset = employeeResult.data
               .where("employee.companyName", "startsWith", "C")
-              .expand("customer")
+              .expand("employee")
               .noTracking();
 
         });
