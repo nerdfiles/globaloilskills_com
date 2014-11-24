@@ -1,4 +1,4 @@
-1. Job
+1. Job (Custom Post Type)
 1.1. Jobs
 1.1.1.
     All
@@ -22,7 +22,10 @@
      posts "carousel", thus documents are interactive such that other key  
      data points are cycled in accordance with WP Query constraints.)  
      See http://worrydream.com/Tangle/guide.html.  
-1.2. Applications
+1.3. Leaflet Maps (Custom Post Type)  
+     Job (Postings) and Employers have GIS data.
+     See http://leafletjs.com/.
+1.2. Applications (Custom Post Type)
 1.2.1.
     All
     New
@@ -35,7 +38,7 @@
     Files
     Posted
     Status
-1.3. Employers
+1.3. Employers (Custom Post Type)
 1.3.1.
     Id
     Company Name
@@ -43,7 +46,7 @@
     Representative
     Jobs Posted
     Status
-1.4. Candidates
+1.4. Candidates (Custom Post Type)
 1.4.1.
     All
     Active
@@ -55,7 +58,7 @@
     Phone
     Updated (By Owner)
     Status
-1.5. Payments (Stripe, Paypal)
+1.5. Payments (Stripe, Paypal as Custom Post Types)
 1.5.1.
     ID
     Payment For
@@ -73,7 +76,7 @@
     Started
     Expires
     Status
-1.7. Notifications (E-mail)
+1.7. Notifications (E-mail as Custom Post Type)
 1.7.1.
     All
     Daily
@@ -84,7 +87,7 @@
     Last Run
     Frequency
     Params
-2. Profile
+2. Profile (User)
 3. Settings
 3.1. Configuration
 3.1.1. Common Settings
@@ -101,7 +104,8 @@
     3.1.5.7.     Indeed.com
     3.1.5.8.     Payment Methods
     3.1.5.9.     PayPal
-    3.1.5.10.    Stripe (Stripe Market, based on WP-Stripe)
+    3.1.5.10.    Stripe (Stripe Market, based on WP-Stripe, but implements  
+                 Stripe Connect (multi bank account WordPress sites))
     3.1.5.11.    Health Check
     3.1.5.12.    Cache (WP Super Cache)
     3.1.5.13.    Aggregators and RSS Feeds
@@ -150,8 +154,8 @@
     json (from WP JSON API / REST :: https://github.com/cliffwoo/rest-api-cheat-sheet/blob/master/REST-API-Cheat-Sheet.md)
     schema.org microdata (arbitrary HTML)
 4. Visualulz
-4.1. D3 Treemap Views of Employer Differentials  
-     WP Query Contextualizations  
+4.1. D3 Treemap Views of Employer Differentials and Narratological Datatrends  
+     WP Query Contextualizations expressed through “drill-down” treepmaps.  
      See https://github.com/mbostock/d3/wiki/Treemap-Layout.
 4.2. Candidate Historical Trends  
      See http://c3js.org.
@@ -159,3 +163,11 @@
     Mixpanel
     GoSquared
     Google Webmaster Tools
+6. Tech Stack
+   WANGS
+       WordPress (Custom Plugin for 1-6; Hide WP Posts, Keep WP Pages, Widgets, Menus)
+       AngularJS
+       Node
+       Grunt
+       SASS
+   
