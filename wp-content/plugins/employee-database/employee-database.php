@@ -1,25 +1,26 @@
 <?php
 /*
-Plugin Name: Employee Database
+Plugin Name: Applicant Database
 Plugin URI: http://nerdfiles.net
 Author: nerdfiles
 Author URI: http://nerdfiles.net
-Description: A custom post type that adds employees and custom taxonomies.
+Description: A custom post type that adds Applicants and custom taxonomies.
+Needs:
 Version: 1.0
 */
 include_once('recruiter.php');
 //include_once('job.php');
 
-new EmployeePostType; // Initial call
+new ApplicantPostType; // Initial call
 
-class EmployeePostType {
+class ApplicantPostType {
 
-  var $single = "Employee"; 	// this represents the singular name of the post type
-  var $plural = "Employees"; 	// this represents the plural name of the post type
-  var $type 	= "employee"; 	// this is the actual type
+  var $single = "Applicant"; 	// this represents the singular name of the post type
+  var $plural = "Applicants"; 	// this represents the plural name of the post type
+  var $type 	= "applicant"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function EmployeePostType()
+  function ApplicantPostType()
   {
     $this->__construct();
   }
@@ -176,12 +177,12 @@ class EmployeePostType {
     </p>
 
     <p>
-    <label for="data[employee_url]">Employee Website</label>
+    <label for="data[applicant_url]">Applicant Website</label>
     <input
       type="url"
-      id= "data[employee_url]"
-      name="data[employee_url]"
-      value="<?php echo $employee_url[0] ?>"
+      id= "data[applicant_url]"
+      name="data[applicant_url]"
+      value="<?php echo $applicant_url[0] ?>"
       placeholder="http://www.shell.com/"
       size="75"
     />
@@ -231,90 +232,3 @@ class EmployeePostType {
 
 }
 
-class Featured_Employee extends WP_Widget {
-
-  /**
-   * Register widget with WordPress.
-   */
-  public function __construct() {
-    parent::__construct(
-      'employee', // Base ID
-      'Featured Employee', // Name
-
-      array( 'description' => __( 'A widget to display a featured employee', 'text_domain' ), ) // Args
-    );
-  }
-
-  /**
-   * Front-end display of widget.
-   *
-   * @see WP_Widget::widget()
-   *
-   * @param array $args     Widget arguments.
-   * @param array $instance Saved values from database.
-   */
-  public function widget( $args, $instance ) {
-    extract( $args );
-    $featured_employee = apply_filters( 'featured_employee', $instance['featured_employee'] );
-        $args = array(
-            'p' => $featured_employee,
-            'post_type' => 'employee');
-        $featured_employee = new WP_Query( $args );
-        echo $before_widget;
-        ?>
-        <h2>Featured Employee</h2>
-        <?php
-        if ($featured_employee->have_posts()) : while ($featured_employee->have_posts()) : $featured_employee->the_post();?>
-        <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
-        <?php the_excerpt(); ?>
-        <?php endwhile; endif; ?>
-    <?php
-    echo $after_widget;
-  }
-
-  /**
-   * Sanitize widget form values as they are saved.
-   *
-   * @see WP_Widget::update()
-   *
-   * @param array $new_instance Values just sent to be saved.
-   * @param array $old_instance Previously saved values from database.
-   *
-   * @return array Updated safe values to be saved.
-   */
-  public function update( $new_instance, $old_instance ) {
-    $instance = $old_instance;
-    $instance['featured_employee'] = strip_tags( $new_instance['featured_employee'] );
-
-    return $instance;
-  }
-
-  /**
-   * Back-end widget form.
-   *
-   * @see WP_Widget::form()
-   *
-   * @param array $instance Previously saved values from database.
-   */
-  public function form( $instance ) {
-        $featured_employee = $instance['featured_employee'];
-        $featured_employee_args = array(
-          'post_type' => 'employee',
-          'posts_per_page' => '-1'
-        );
-        $featured_employees = new WP_Query( $featured_employee_args );
-    ?>
-    <p>
-        <fieldset>
-        <label for="<?php echo $this->get_field_id( 'featured_employee' ); ?>">Select a  case study:</label>
-        <select id="<?php echo $this->get_field_id( 'featured_employee' ); ?>" name="<?php echo $this->get_field_name('featured_employee');?> ">
-            <?php if ($featured_employees->have_posts()) : while ($featured_employees->have_posts()) : $featured_employees->the_post();?>
-            <option value="<?php the_ID(); ?>" <?php selected( $featured_employee, get_the_ID()); ?>><?php the_title();?></option>
-            <?php endwhile; endif; ?>
-        </select>
-        </fieldset>
-    </p>
-    <?php
-  }
-}
-add_action( 'widgets_init', create_function( '', 'register_widget( "Featured_Employee" );' ) );

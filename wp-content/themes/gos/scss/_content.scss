@@ -224,3 +224,44 @@ article {
   color: #222;
   input { color: #000; }
 }
+
+.home-benefits {
+  clear: both;
+
+  ul {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+  }
+
+  .widget {
+    background-color: #BACFCB;
+    padding: 0;
+    position: relative;
+
+    @include media($small) {
+      @include span-columns(12);
+    }
+
+    @include media($medium) {
+      @include span-columns(12);
+    }
+
+    @include media($large) {
+      @include span-columns(4);
+    }
+
+  }
+}
+
+.home-benefits {
+  .home--benefits-first {
+    .widgettitle:before {
+      @extend .fa-check;
+      @extend .fa;
+    }
+  }
+
+  .home--benefits-second { }
+  .home--benefits-third { }
+}

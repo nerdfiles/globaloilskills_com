@@ -54,7 +54,8 @@ body.home {
     ul {
       @include row();
       @include clearfix;
-      padding-left: 0;
+      padding: 0;
+      margin: 0;
     }
   }
 

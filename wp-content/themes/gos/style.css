@@ -330,7 +330,11 @@ table {
   font-weight: normal;
   font-style: normal; }
 
-.fa {
+@font-face {
+  font-family: 'FontAwesome';
+  src: local('FontAwesome'); }
+
+.fa, .home-benefits .home--benefits-first .widgettitle:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -5066,6 +5070,9 @@ input, textarea {
   max-width: 100%;
   height: auto; }
 
+.upw-posts article.post {
+  border-bottom: none; }
+
 /******************************************************************************\
 	Settings
 \******************************************************************************/
@@ -5522,7 +5529,8 @@ body.home {
     *zoom: 1;
     display: block;
     *zoom: 1;
-    padding-left: 0; }
+    padding: 0;
+    margin: 0; }
     body.home .home-widgets ul:before, body.home .home-widgets ul:after, body.home .home-search-widgets ul:before, body.home .home-search-widgets ul:after {
       content: " ";
       display: table; }
@@ -6168,8 +6176,7 @@ input[type="submit"] {
   margin-top: 0; }
 
 .site-header {
-  background-color: #0b4e9e;
-  background-color: #a9ccc0;
+  background-color: #8e9dab;
   padding-bottom: 1rem;
   /*overflow: hidden;*/
   /*padding: 3em 0;*/
@@ -6528,6 +6535,47 @@ article {
   color: #222222; }
   .wpcf7 input {
     color: black; }
+
+.home-benefits {
+  clear: both; }
+  .home-benefits ul {
+    *zoom: 1;
+    margin: 0;
+    padding: 0; }
+    .home-benefits ul:before, .home-benefits ul:after {
+      content: " ";
+      display: table; }
+    .home-benefits ul:after {
+      clear: both; }
+  .home-benefits .widget {
+    background-color: #bacfcb;
+    padding: 0;
+    position: relative; }
+    @media screen and (max-width: 480px) {
+      .home-benefits .widget {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%; }
+        .home-benefits .widget:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 481px) {
+      .home-benefits .widget {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%; }
+        .home-benefits .widget:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 769px) {
+      .home-benefits .widget {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 31.28834%; }
+        .home-benefits .widget:last-child {
+          margin-right: 0; } }
+
 
 .format-status .date, .format-link .date, .format-quote .date {
   width: 100%;
