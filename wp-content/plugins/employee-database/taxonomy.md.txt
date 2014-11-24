@@ -193,5 +193,48 @@
            built to  
                Asynchronous Module Definition for the Web via RequireJS
                package-based Cordova application, deploy iPhone first
-       SASS (Syntactically Awesome Stylesheets with Organic Block-Element-Modifier presentation layer)
-   
+       SASS  
+           Syntactically Awesome Stylesheets with Organic  
+           Block-Element-Modifier presentation layer  
+           See http://krasimir.github.io/organic-css/.
+7. Testing
+See https://github.com/nerdfiles/skreen.ls/blob/develop/shoot.site.coffee.
+
+"Don't commit a line of code unless and until you have one failing test for its logical feature." But the (kind of test)[1-4] is determined by the [feature scope] which is composed of logical units or [modules of code].
+
+1. Test-driven Development: Restricted Unit Testing (around API Requests and Responses)
+1.1. frex: /api/v1/data/endpoint, /api/v2/search?query={{term}}
+2. Behavior-driven Development: Behavior Testing (around Specific Interactions)
+2.1. frex: Button clicks, Swipes, etc.
+3. Integration Testing (around Modular Units of Programmatic Code)
+3.1. frex: Search Bar, Navigation, etc.
+4. Feature/Subbranch Development: End-to-End Testing (around Use Case Flows)
+4.1. frex: Pages for Login Flow, Sidebars for Upload, etc.
+5. UX Development: Automated Screen Testing (around Design Goals expressed as Modular Units of Presentation Code)
+5.1. frex: Design Borders, Sprites, Icons, Typesetting, etc.
+6. Generational Development: Regression Testing based on Client-side Error Analytics (emissions of errors from clients to a "regression API" that listens for generated errors)
+6.1. frex: https://airbrake.io/blog/notifier/state-client-side-javascript-error-reporting combined with Screen Tests for Spotting errors
+7. Validation: 
+7.1. Semantics — http://linter.structured-data.org
+7.2. Markup and CSS — http://validator.w3.org/unicorn/
+8. Code Linting: JSHint for Programmatic Front End syntax checking, use Preprocessors where possible to oversee correct/proper syntax production
+9. Device/Browser/Responsive Testing:
+9.1 Use third-party services like Sauce Labs or Browser Stack, who offer automation especially with tools like AngularJS's Protractor which can be used [outside of the Angular context]
+9.2 Automated: Use Vagrant Cookbooks to build recipes for certain configurations
+9.3 Manual Testing: Virtual Environments for various Use Case flows that are of interest to Users, Customers, and Stakeholders
+
+Software Development Life Cycle configuration files should follow: 
+
+1. Unit (local, development)
+2. Behavior (local, development)
+3. Integration (development, staging)
+4. Feature (staging, QA)
+5. Screen (QA, production)
+
+Environments: 
+
+1. Local
+2. Development
+3. Staging
+4. QA
+5. Production
