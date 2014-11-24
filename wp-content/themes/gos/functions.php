@@ -323,6 +323,8 @@ function gos_post_meta() {
 // Disable get_author_index method (e.g., for security reasons)
 add_action('json_api-core-get_author_index', 'disable_author_index');
 function disable_author_index() {
+  $nameConstruct = $table_prefix . '';
+  printf('%s', $nameConstruct);
   // Stop execution
   exit;
 }
@@ -333,7 +335,7 @@ function disable_author_index() {
  * Basic MemberMouse implementation involves the creation of Members with Employee Schemas
  */
 //add_action('wpcf7_contact_form', 'MM__Create');
-function MM__Create() {
+  //local.globaloilstaffing.services/api/get_page_index/?post_type=postnction MM__Create() {
 
   /*
    *  var user = Membership.GetUser(username);
@@ -345,7 +347,7 @@ function MM__Create() {
    *  }
    */
   return '';
-}
+//}
 
 /**
  * Conditional Logic for Employee Signup
