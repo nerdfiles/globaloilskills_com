@@ -7,10 +7,109 @@
  * @since gos 1.0
  */
 
-
 /******************************************************************************\
   Theme support, standard settings, menus and widgets
 \******************************************************************************/
+
+/**
+ * Hide Help
+ */
+add_filter( 'contextual_help', 'remove_help_tabs', 999, 3 );
+function remove_help_tabs($old_help, $screen_id, $screen){
+    $screen->remove_help_tabs();
+    return $old_help;
+}
+
+/**
+ * Hide Screen Options
+ */
+add_filter('screen_options_show_screen', '__return_false');
+
+/**
+ * Nuke WordPress Sidebar
+ */
+function remove_menu() {
+  global $menu;
+  // Particularly for Google Maps Builder Plugin
+  for ($i = 0; $i < 20; ++$i) {
+    unset($menu[$i]);
+  }
+}
+add_action('admin_menu', 'remove_menu', 210);
+
+/**
+ * Hide Tribe Event's Calendar
+ */
+function disable_tribe_dashboard_widget() {
+  remove_meta_box('tribe_dashboard_widget', 'dashboard', 'normal');
+}
+add_action('admin_menu', 'disable_tribe_dashboard_widget');
+
+/**
+ * Hide WordPress Welcome Panel
+ */
+remove_action('welcome_panel', 'wp_welcome_panel');
+
+/**
+ * Rework WordPress Dashboard
+ */
+add_action('admin_init', 'rw_remove_dashboard_widgets');
+function rw_remove_dashboard_widgets() {
+  remove_meta_box('dashboard_right_now', 'dashboard', 'normal');   // right now
+  remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // recent comments
+  remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');  // incoming links
+  remove_meta_box('dashboard_plugins', 'dashboard', 'normal');   // plugins
+
+
+  remove_meta_box('dashboard_activity', 'dashboard', 'normal');  // quick press
+  remove_meta_box('dashboard_quick_press', 'dashboard', 'normal');  // quick press
+  remove_meta_box('dashboard_recent_drafts', 'dashboard', 'normal');  // recent drafts
+  remove_meta_box('dashboard_primary', 'dashboard', 'normal');   // wordpress blog
+  remove_meta_box('dashboard_secondary', 'dashboard', 'normal');   // other wordpress news
+}
+
+/**
+ * Rework WordPress Menus
+ */
+function rw_remove_menus () {
+  global $menu;
+  $restricted = array(
+    __('Dashboard'),
+    __('Posts'),
+    __('Media'),
+    __('Links'),
+    __('Pages'),
+    __('Appearance'),
+    __('Tools'),
+    //__('Users'),
+    //__('Settings'),
+    __('Comments'),
+    __('Plugins'),
+    __('Events'),
+    __('Recruiters'),
+    __('Applicants'),
+    __('Contact'),
+    __('FooGallery')
+  );
+  end ($menu);
+  while (prev($menu)) {
+    $value = explode(' ',$menu[key($menu)][0]);
+    if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
+  }
+}
+add_action('admin_menu', 'rw_remove_menus');
+
+/**
+ * Dashboard Customizations for http://globaloilstaffing.services
+ */
+add_action('wp_dashboard_setup', 'dashboard_widgets');
+function dashboard_widgets() {
+  global $wp_meta_boxes;
+  wp_add_dashboard_widget('custom_help_widget', 'Analytics', 'custom_dashboard_help');
+}
+function custom_dashboard_help() {
+  echo '<p>Welcome</p>';
+}
 
 add_theme_support( 'post-formats', array( 'image', 'quote', 'status', 'link' ) );
 add_theme_support( 'post-thumbnails' );

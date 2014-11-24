@@ -8,6 +8,7 @@ Description: A custom post type that adds Applicants and custom taxonomies.
 Needs:
 Version: 1.0
 */
+
 include_once('recruiter.php');
 //include_once('job.php');
 
