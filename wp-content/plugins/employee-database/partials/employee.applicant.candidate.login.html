@@ -1,0 +1,42 @@
+<div
+  itemscope
+  itemtype="http://schema.org/Organization"
+>
+  <span itemprop="name">Employees</span> 
+  <div
+    itemprop="member"
+    itemscope
+    itemtype="http://schema.org/OrganizationRole"
+  >
+    <div
+      itemprop="member"
+      itemscope
+      itemtype="http://schema.org/Person"
+    >
+      <span itemprop="name">Sally Samson</span>
+    </div>
+    <span itemprop="startDate">1977</span>
+  </div>
+</div>
+
+<script type="application/ld+json"> 
+/**
+ * Let's be real here. In all of these connotations, why do we not typically 
+ * include labor workers as a "role" ? Employees, stretched to its dire 
+ * meaning, function as performers, faculty members of society writ large,
+ * in the blurry, dismal picture of the everyday thing.
+ */
+{ 
+  "@context": "http://schema.org", 
+  "@type": "Organization", 
+  "name": "Employees", 
+  "member": { 
+    "@type": "OrganizationRole", 
+    "member": { 
+    "@type": "Person", 
+    "name": "Sally Samson" 
+    }, 
+    "startDate": "1977" 
+  } 
+} 
+</script>
