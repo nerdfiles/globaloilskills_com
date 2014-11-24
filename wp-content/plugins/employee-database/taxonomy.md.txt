@@ -182,8 +182,15 @@
 6. Tech Stack
    WANGS
        WordPress (Custom Plugin for 1-6; Hide WP Posts, Keep WP Pages, Widgets, Menus)
-       AngularJS
+       AngularJS  
+       I've already implemented AngularJS: one controller, two services, two 
+       directives. WordPress Roles are being used to authorize data services, 
+       and we use AngularJS's internal $http service with Promises to size and 
+       shape payloads to clients.
        Node
-       Grunt
-       SASS
+       Grunt ::  
+           built to  
+               Asynchronous Module Definition for the Web via RequireJS
+               package-based Cordova application, deploy iPhone first
+       SASS (Syntactically Awesome Stylesheets with Organic Block-Element-Modifier presentation layer)
    
