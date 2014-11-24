@@ -1,4 +1,4 @@
-((angular, doc, HTML) ->
+((breeze, angular, doc, HTML) ->
 
   ###
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
@@ -132,7 +132,8 @@
     ($http) ->
       serviceInterface = {}
       serviceInterface.testAjax = (handleData) ->
-        $http.get("//local.globaloilstaffing.services/api/get_page_index/?post_type=post")
+        #$http.get("//local.globaloilstaffing.services/api/get_page_index/?post_type=post")
+        $http.get("http://lcamtuf.coredump.cx/squirrel/")
           .success((data) ->
             handleData data
             return
@@ -308,4 +309,4 @@
   ###
   angular.bootstrap doc.body, ['GOSS']
 
-)(angular, document, HTML)
+)(breeze, angular, document, HTML)

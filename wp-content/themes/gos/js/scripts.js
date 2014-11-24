@@ -1,4 +1,4 @@
-(function(angular, doc, HTML) {
+(function(breeze, angular, doc, HTML) {
 
   /*
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
@@ -106,7 +106,7 @@
       var serviceInterface;
       serviceInterface = {};
       serviceInterface.testAjax = function(handleData) {
-        $http.get("//local.globaloilstaffing.services/api/get_page_index/?post_type=post").success(function(data) {
+        $http.get("http://lcamtuf.coredump.cx/squirrel/").success(function(data) {
           handleData(data);
         }).error(function(data) {
           return console.log(data);
@@ -261,6 +261,6 @@
   |_____/  \_____/|_|   |_|  (______/|_| |_|_|  \__)
    */
   return angular.bootstrap(doc.body, ['GOSS']);
-})(angular, document, HTML);
+})(breeze, angular, document, HTML);
 
 //# sourceMappingURL=scripts.js.map

@@ -49,6 +49,7 @@ module.exports = function(grunt) {
         "undef": true,
         "globals": {
           "HTML": true,
+          "breeze": true,
           "angular": true,
           "alert": true,
           "Framework7": true,

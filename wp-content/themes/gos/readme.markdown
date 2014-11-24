@@ -18,3 +18,8 @@ See ``.requirements.iterate.sh``.
 1. Free Member Employees (extends MemberMouse)
 2. Free Member Recruiters (extends MemberMouse)
 3. Subscription Series?
+
+## Site Links
+
+1. http://local.globaloilskills.com/wp-admin/plugins.php
+2. http://globaloilskills.com/wp-admin/plugins.php
