@@ -35,14 +35,14 @@ function isLocalInstall($specificServer="localhost")
 }
 
 define("MM_PREFIX", "mm_");
+$centralServer = (isLocalInstall("localhost") || isLocalInstall("membermouse2.localhost") || isLocalInstall("wordpress.test"))?"http://localhost/mmcentral/index.php?q=/":"http://hub.membermouse.com/index.php?q=/";
+$centralServerUrl = (isLocalInstall("localhost")  || isLocalInstall("membermouse2.localhost") || isLocalInstall("wordpress.test"))?"http://localhost/mmcentral":"http://hub.membermouse.com";
+$centralServerPrettyUrl = (isLocalInstall("localhost")  || isLocalInstall("membermouse2.localhost") || isLocalInstall("wordpress.test"))?"http://localhost/mmcentral":"http://hub.membermouse.com";
 /*
- *$centralServer = (isLocalInstall("localhost") || isLocalInstall("membermouse2.localhost") || isLocalInstall("wordpress.test"))?"http://localhost/mmcentral/index.php?q=/":"http://hub.membermouse.com/index.php?q=/";
- *$centralServerUrl = (isLocalInstall("localhost")  || isLocalInstall("membermouse2.localhost") || isLocalInstall("wordpress.test"))?"http://localhost/mmcentral":"http://hub.membermouse.com";
- *$centralServerPrettyUrl = (isLocalInstall("localhost")  || isLocalInstall("membermouse2.localhost") || isLocalInstall("wordpress.test"))?"http://localhost/mmcentral":"http://hub.membermouse.com";
+ * $centralServer = (isLocalInstall("localhost") || isLocalInstall("membermouse2.localhost") || isLocalInstall("local.globaloilstaffing.services"))?"http://hub.membermouse.com/index.php?q=/":"http://hub.membermouse.com/index.php?q=/";
+ * $centralServerUrl = (isLocalInstall("localhost")  || isLocalInstall("membermouse2.localhost") || isLocalInstall("local.globaloilstaffing.services"))?"http://hub.membermouse.com":"http://hub.membermouse.com";
+ * $centralServerPrettyUrl = (isLocalInstall("localhost")  || isLocalInstall("membermouse2.localhost") || isLocalInstall("local.globaloilstaffing.services"))?"http://hub.membermouse.com":"http://hub.membermouse.com";
  */
-$centralServer = (isLocalInstall("localhost") || isLocalInstall("membermouse2.localhost") || isLocalInstall("local.globaloilstaffing.services"))?"http://hub.membermouse.com/index.php?q=/":"http://hub.membermouse.com/index.php?q=/";
-$centralServerUrl = (isLocalInstall("localhost")  || isLocalInstall("membermouse2.localhost") || isLocalInstall("local.globaloilstaffing.services"))?"http://hub.membermouse.com":"http://hub.membermouse.com";
-$centralServerPrettyUrl = (isLocalInstall("localhost")  || isLocalInstall("membermouse2.localhost") || isLocalInstall("local.globaloilstaffing.services"))?"http://hub.membermouse.com":"http://hub.membermouse.com";
 
 $reservedGetParams = array(
 	's'=>1,
