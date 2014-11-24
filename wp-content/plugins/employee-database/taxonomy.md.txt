@@ -17,7 +17,7 @@
 1. Job (Custom Post Type)
 1.1. Jobs
 1.1.1.
-    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch/)
+    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/bars/)
     Active (Icon: http://fortawesome.github.io/Font-Awesome/icon/bolt/)
     Unread (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle/)
     Awaiting Approval ((Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o/))
@@ -43,7 +43,7 @@
      See http://leafletjs.com/.
 1.2. Applications (Custom Post Type)
 1.2.1.
-    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch/)
+    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/bars/)
     New (Icon: http://fortawesome.github.io/Font-Awesome/icon/bullseye/)
     Accepted (Icon: http://fortawesome.github.io/Font-Awesome/icon/check-circle/)
     Rejected (Icon: http://fortawesome.github.io/Font-Awesome/icon/ban/)
@@ -64,7 +64,7 @@
     Status
 1.4. Candidates (Custom Post Type)
 1.4.1.
-    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch/)
+    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/bars/)
     Active (Icon: http://fortawesome.github.io/Font-Awesome/icon/bolt/)
     Inactive (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-thin/)
 1.4.2. FK
@@ -94,7 +94,7 @@
     Status
 1.7. Notifications (E-mail as Custom Post Type)
 1.7.1.
-    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch/)
+    All (Icon: http://fortawesome.github.io/Font-Awesome/icon/bars/)
     Daily (Icon: http://fortawesome.github.io/Font-Awesome/icon/calendar-o/)
     Weekly (Icon: http://fortawesome.github.io/Font-Awesome/icon/calendar/)
 1.8.2.
