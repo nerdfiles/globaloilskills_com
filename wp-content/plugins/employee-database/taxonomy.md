@@ -22,12 +22,12 @@
      posts "carousel", thus documents are interactive such that other key 
      data points are cycled.)
 1.2. Applications
-1.2.1
+1.2.1.
     All
     New
     Accepted
     Rejected
-1.2.2
+1.2.2.
     Applicant Name
     Applicant Email
     Job
@@ -149,7 +149,7 @@
     json (from WP JSON API / REST :: https://github.com/cliffwoo/rest-api-cheat-sheet/blob/master/REST-API-Cheat-Sheet.md)
     schema.org microdata (arbitrary HTML)
 4. Visualulz (D3 Treemap Views of Employer Differentials, Candidate Historical Trends)
-5.1 Analytics
+5.1. Analytics
     Mixpanel
     GoSquared
     Google Webmaster Tools
