@@ -1,10 +1,10 @@
 <?php
 /**
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.3/embedded/common/toolset-forms/classes/class.password.php $
- * $LastChangedDate: 2014-10-23 10:56:37 +0000 (Thu, 23 Oct 2014) $
- * $LastChangedRevision: 1012704 $
- * $LastChangedBy: iworks $
+ * $HeadURL: https://www.onthegosystems.com/misc_svn/common/trunk/toolset-forms/classes/class.password.php $
+ * $LastChangedDate: 2014-07-10 11:46:40 +0300 (Чт, 10 июл 2014) $
+ * $LastChangedRevision: 24820 $
+ * $LastChangedBy: francesco $
  *
  */
 require_once 'class.field_factory.php';

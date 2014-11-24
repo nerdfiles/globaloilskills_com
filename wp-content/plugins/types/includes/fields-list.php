@@ -2,10 +2,10 @@
 /*
  * Fields and groups list functions
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.3/includes/fields-list.php $
- * $LastChangedDate: 2014-10-23 10:56:37 +0000 (Thu, 23 Oct 2014) $
- * $LastChangedRevision: 1012704 $
- * $LastChangedBy: iworks $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.4/includes/fields-list.php $
+ * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
+ * $LastChangedRevision: 970205 $
+ * $LastChangedBy: brucepearson $
  *
  */
 

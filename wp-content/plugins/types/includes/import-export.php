@@ -2,9 +2,9 @@
 /*
  * Import/export data.
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.3/includes/import-export.php $
- * $LastChangedDate: 2014-10-23 10:56:37 +0000 (Thu, 23 Oct 2014) $
- * $LastChangedRevision: 1012704 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.4/includes/import-export.php $
+ * $LastChangedDate: 2014-11-18 06:47:25 +0000 (Tue, 18 Nov 2014) $
+ * $LastChangedRevision: 1027712 $
  * $LastChangedBy: iworks $
  *
  */

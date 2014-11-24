@@ -6,9 +6,9 @@ require_once 'class.file.php';
  *
  * @author Srdjan
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.3/embedded/common/toolset-forms/classes/class.image.php $
- * $LastChangedDate: 2014-10-23 10:56:37 +0000 (Thu, 23 Oct 2014) $
- * $LastChangedRevision: 1012704 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.4/embedded/common/toolset-forms/classes/class.image.php $
+ * $LastChangedDate: 2014-11-18 06:47:25 +0000 (Tue, 18 Nov 2014) $
+ * $LastChangedRevision: 1027712 $
  * $LastChangedBy: iworks $
  *
  */
@@ -19,17 +19,28 @@ class WPToolset_Field_Image extends WPToolset_Field_File
         $validation = $this->getValidationData();
         $validation = self::addTypeValidation($validation);
         $this->setValidationData($validation);
-        return parent::metaform();        
+        return parent::metaform();
     }
 
-    public static function addTypeValidation($validation) {
+    public static function addTypeValidation($validation)
+    {
+        $valid_extensions = array(
+            'bmp',
+            'gif',
+            'jpeg',
+            'jpg',
+            'png',
+            'svg',
+            'webp',
+        );
+        $valid_extensions = apply_filters( 'toolset_valid_image_extentions', $valid_extensions);
         $validation['extension'] = array(
             'args' => array(
                 'extension',
-                'jpg|jpeg|gif|png|bmp|webp',
+                implode('|', $valid_extensions),
             ),
             'message' => __( 'You can add only images.', 'wpv-views' ),
         );
         return $validation;
-    }    
+    }
 }

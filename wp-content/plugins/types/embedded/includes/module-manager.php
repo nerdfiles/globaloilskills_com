@@ -4,9 +4,9 @@
  *
  * Since Types 1.2
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.3/embedded/includes/module-manager.php $
- * $LastChangedDate: 2014-10-23 10:56:37 +0000 (Thu, 23 Oct 2014) $
- * $LastChangedRevision: 1012704 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.4/embedded/includes/module-manager.php $
+ * $LastChangedDate: 2014-11-18 06:47:25 +0000 (Tue, 18 Nov 2014) $
+ * $LastChangedRevision: 1027712 $
  * $LastChangedBy: iworks $
  *
  */
@@ -1036,21 +1036,20 @@ function wpcf_admin_import_data_from_xmlstring( $data = '', $_type = 'types',
         update_option( 'wpcf-custom-types', $types_existing );
 
         // Add relationships
-        if ( !empty( $data->post_relationships ) ) {
-            $relationship_existing = get_option( 'wpcf_post_relationship', array() );
-            /**
-             * be sure, $relationship_existing is a array!
-             */
-            if ( !is_array( $relationship_existing ) ) {
-                $relationship_existing = array();
-            }
-            foreach ( $data->post_relationships->post_relationship as $relationship ) {
-                $relationship = json_decode( $relationship, true );
-                $relationship = array_merge( $relationship_existing,
-                        $relationship );
-                update_option( 'wpcf_post_relationship', $relationship );
-                break;
-            }
+        /** EMERSON: Restore Types relationships when importing modules */
+        if ( !empty( $data->post_relationships )) {
+        	$relationship_existing = get_option( 'wpcf_post_relationship', array() );
+        	/**
+        	 * be sure, $relationship_existing is a array!
+        	*/
+        	if ( !is_array( $relationship_existing ) ) {
+        		$relationship_existing = array();
+        	}
+        	$relationship = json_decode( $data->post_relationships->data, true );
+        	if ( is_array( $relationship ) ) {
+        		$relationship = array_merge( $relationship_existing, $relationship );
+        		update_option( 'wpcf_post_relationship', $relationship );
+        	}
         }
     }
 

@@ -8,10 +8,10 @@
  * Values:
  * 0 nothing (ignore), 1 copy, 2 translate
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.3/embedded/includes/wpml.php $
- * $LastChangedDate: 2014-10-23 10:56:37 +0000 (Thu, 23 Oct 2014) $
- * $LastChangedRevision: 1012704 $
- * $LastChangedBy: iworks $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.4/embedded/includes/wpml.php $
+ * $LastChangedDate: 2014-08-27 08:49:51 +0000 (Wed, 27 Aug 2014) $
+ * $LastChangedRevision: 973824 $
+ * $LastChangedBy: brucepearson $
  *
  */
 

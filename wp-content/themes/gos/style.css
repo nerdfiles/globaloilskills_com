@@ -5222,7 +5222,7 @@ p ~ h1 {
     .search-title .searchform > div:after, .search-title .widget_search > div:after {
       clear: both; }
   .search-title .searchform:before, .search-title .widget_search:before {
-    font-family: FontAwesome;
+    font-family: 'FontAwesome';
     /*@include shift(10);*/
     right: 0;
     /*content: "\f0c9";*/
@@ -5814,7 +5814,7 @@ body.home {
       body.home .home-search-widgets .searchform > div:after, body.home .home-search-widgets .widget_search > div:after {
         clear: both; }
     body.home .home-search-widgets .searchform:before, body.home .home-search-widgets .widget_search:before {
-      font-family: FontAwesome;
+      font-family: 'FontAwesome';
       /*@include shift(10);*/
       right: 0;
       /*content: "\f0c9";*/

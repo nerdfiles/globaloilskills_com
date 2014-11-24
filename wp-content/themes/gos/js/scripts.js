@@ -106,7 +106,11 @@
       var serviceInterface;
       serviceInterface = {};
       serviceInterface.testAjax = function(handleData) {
+<<<<<<< HEAD
         $http.get("http://lcamtuf.coredump.cx/squirrel/").success(function(data) {
+=======
+        $http.get("//" + window.location.hostname + "/api/get_page_index/?post_type=post").success(function(data) {
+>>>>>>> develop
           handleData(data);
         }).error(function(data) {
           return console.log(data);
