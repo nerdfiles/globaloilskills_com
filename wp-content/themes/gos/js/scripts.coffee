@@ -111,6 +111,35 @@
   #// http://local.globaloilskills.com/api/get_page_index/?post_type=employee
   #// http://local.globaloilskills.com/api/get_page_index/?post_type=recruiter
   #// http://local.globaloilskills.com/api/get_page_index/?post_type=post
+  
+  # Use the above to print arbitrary WordPress init-based JS code with nonces, 
+  # etc. like for Stripe Connect OAuth filtered by additional CGI parameters 
+  # like the nonces from template code. By default they only print JSON, but 
+  # with REST-ful sugar they print HTML that has to pass through AngularJS's
+  # $httpIntercept, albeit HTML with a messy of JSON data glued to its back.
+  # AngularJS's http://www.webdeveasy.com/interceptors-in-angularjs-and-useful-examples/ 
+  # can clean it away with an abstraction wrapper that tests a sequence of chars 
+  # for being HTML, likely looking for tags. Mark the semantic chars, then split
+  # the whole string by the first tag found. Sometimes it will be a <script> tag,
+  # but it could very well be a <div> in case of a simple partial template 
+  # condition. Either way, test for tags when calling the API for data. Either way, 
+  # it's one URL that servers ``(<element>)?({})?`` with a nonce binding template 
+  # to anticipated async Request (who will have the nonce token as CGI param).
+  #
+  # Essentially http://codex.wordpress.org/Function_Reference/wp_nonce_url wrapper 
+  # code at add_action('init', ...) for AJAX calls through WP JSON API. The JS 
+  # code will add RequireJS modules will wrap AngularJS directive code AND vanilla 
+  # JS such that my route in AngularJS and service calls reuse the same Cool URL but 
+  # request UI resources they need as URL Attributes which pick out named partials 
+  # and named data, binding RequireJS dependency chain to WordPress API.
+  
+  # Fine. Example:
+  
+  # http://local.globaloilskills.com/api/get_page_index/?post_type=employee&component[site-footer]&component[site-header] serves:
+  #
+  #     <script id="site-footer" nonce="...">/* Code in here, however, sanitizes and nonces the $http GETs using ngSanitize. */</script>{}
+  
+  # define 
 
   #// Add view
   #/*
