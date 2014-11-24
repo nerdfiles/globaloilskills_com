@@ -216,11 +216,17 @@ function google_maps_config() {
 function gos_enqueue_scripts() {
   // Presentation Layer
   wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
-  //wp_enqueue_style( 'gos-fonts-fontawesome', esc_url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'), array(), '0.0.1');
+  wp_enqueue_style( 'gos-fonts-font-awesome', esc_url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'), array(), '0.0.1');
+  //$fa-font-path = './scss/vendor/font-awesome/fonts';
+
+  wp_enqueue_style( 'gos-fonts-fontawesome', esc_url('font-awesome/4.2.0/css/font-awesome.min.css'), array(), '0.0.1');
   wp_enqueue_style( 'gos-styles', get_stylesheet_uri(), array(), '1.0' );
 
   // Dependencies
   wp_enqueue_script( 'jquery' );
+
+  // ORM
+  wp_enqueue_script( 'breeze-debug', get_template_directory_uri() . '/grunt/bower_components/breezejs/breeze.debug.js', array(), '1.0', true );
 
   // Default Front End
 
@@ -238,10 +244,8 @@ function gos_enqueue_scripts() {
   wp_enqueue_script( 'angular-sanitize', get_template_directory_uri() . '/grunt/bower_components/angular-sanitize/angular-sanitize.js', array(), '1.0', true );
   wp_enqueue_script( 'angular-animate', get_template_directory_uri() . '/grunt/bower_components/angular-animate/angular-animate.js', array(), '1.0', true );
 
-  /*
-   *wp_dequeue_style('membermouse-font-awesome-css');
-   *wp_deregister_style('membermouse-font-awesome-css');
-   */
+  wp_dequeue_style('membermouse-font-awesome');
+  wp_deregister_style('membermouse-font-awesome');
 
   // Main
   wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.dev.js', array('angular', 'hoverintent', 'HTML'), '1.0', true );

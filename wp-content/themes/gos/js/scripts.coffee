@@ -161,7 +161,7 @@
     ($http) ->
       serviceInterface = {}
       serviceInterface.testAjax = (handleData) ->
-        $http.get("//local.globaloilstaffing.services/api/get_page_index/?post_type=post")
+        $http.get("//#{window.location.hostname}/api/get_page_index/?post_type=post")
           .success((data) ->
             handleData data
             return

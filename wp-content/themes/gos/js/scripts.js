@@ -106,7 +106,7 @@
       var serviceInterface;
       serviceInterface = {};
       serviceInterface.testAjax = function(handleData) {
-        $http.get("//local.globaloilstaffing.services/api/get_page_index/?post_type=post").success(function(data) {
+        $http.get("//" + window.location.hostname + "/api/get_page_index/?post_type=post").success(function(data) {
           handleData(data);
         }).error(function(data) {
           return console.log(data);
