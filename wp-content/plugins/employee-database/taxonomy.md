@@ -17,10 +17,11 @@
     Expires
     Applications
     Status
-1.2. Reactive Job Postings (Think http://worrydream.com/Tangle/guide.html, 
-     but correlate discrete numbers of "drag" interface to WP custom taxonomy 
-     posts "carousel", thus documents are interactive such that other key 
-     data points are cycled.)
+1.2. Reactive Job Postings  
+     Correlate discrete numbers of "drag" interface to WP custom taxonomy  
+     posts "carousel", thus documents are interactive such that other key  
+     data points are cycled in accordance with WP Query constraints.)  
+     See http://worrydream.com/Tangle/guide.html.  
 1.2. Applications
 1.2.1.
     All
@@ -148,7 +149,12 @@
     csv
     json (from WP JSON API / REST :: https://github.com/cliffwoo/rest-api-cheat-sheet/blob/master/REST-API-Cheat-Sheet.md)
     schema.org microdata (arbitrary HTML)
-4. Visualulz (D3 Treemap Views of Employer Differentials, Candidate Historical Trends)
+4. Visualulz
+4.1. D3 Treemap Views of Employer Differentials  
+     WP Query Contextualizations  
+     See https://github.com/mbostock/d3/wiki/Treemap-Layout.
+4.2. Candidate Historical Trends  
+     See http://c3js.org.
 5.1. Analytics
     Mixpanel
     GoSquared
