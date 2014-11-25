@@ -255,6 +255,9 @@ article {
 }
 
 .home-benefits {
+  & > * {
+    outline: 1px solid gold;
+  }
   .home--benefits-first {
     .widgettitle:before {
       @extend .fa-check;
