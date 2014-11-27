@@ -92,6 +92,27 @@ body.home {
    * Uses media queries for responsive cases, based on Bourbon Neat.
    */
   .home-widgets {
+    position: relative;
+
+    &:after {
+      content: "Join us in real-time collaboration";
+      font-weight: 700;
+      font-variant: small-caps;
+      text-transform: lowercase;
+      position: absolute;
+      left: 1%;
+      font-style: italic;
+      font-size: 2rem;
+      bottom: -70%;
+      text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+      rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
+      rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
+      color: #199CA9;
+      color: #fff;
+      @include media($small) {
+        bottom: -30%;
+      }
+    }
 
     ul {
       padding: 0;
@@ -106,6 +127,9 @@ body.home {
       padding: 0 .5rem;
       /*background-color: #054481;*/
       background-color: #27608A;
+      text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+      rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
+      rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
       color: #fff;
       text-align: center;
     }
@@ -113,6 +137,9 @@ body.home {
 
     h2.widgettitle {
       background-color: #199ca9;
+      text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+      rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
+      rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
     }
 
     .widget {
