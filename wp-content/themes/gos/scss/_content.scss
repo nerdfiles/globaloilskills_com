@@ -399,7 +399,7 @@ article {
     &:hover {
       &:before {
         @extend .animated;
-        @extend .swing;
+        @extend .shake;
       }
     }
 

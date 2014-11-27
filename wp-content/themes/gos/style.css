@@ -4525,7 +4525,7 @@ table {
   20%, 40%, 60%, 80% {
     -moz-transform: translateX(10px); } }
 
-.shake {
+.shake, .home-benefits .home--benefits-second:hover:before {
   -webkit-animation-name: shake;
   -moz-animation-name: shake;
   -o-animation-name: shake;
@@ -4679,7 +4679,7 @@ table {
   100% {
     -moz-transform: rotate(0deg); } }
 
-.swing, .home-benefits .home--benefits-second:hover:before {
+.swing {
   -webkit-animation-name: swing;
   -moz-animation-name: swing;
   -o-animation-name: swing;
@@ -6873,14 +6873,14 @@ article {
     clear: both; }
   .footer-widgets:last-child {
     margin-right: 0; }
-  .footer-widgets .home--base-menu {
+  .footer-widgets .footer--base-menu {
     float: left;
     display: block;
     margin-right: 3.06748%;
     width: 100%; }
-    .footer-widgets .home--base-menu:last-child {
+    .footer-widgets .footer--base-menu:last-child {
       margin-right: 0; }
-    .footer-widgets .home--base-menu .menu-base-container ul.menu {
+    .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu {
       padding-left: 0;
       list-style: none;
       *zoom: 1;
@@ -6888,49 +6888,49 @@ article {
       display: block;
       margin-right: 3.06748%;
       width: 100%; }
-      .footer-widgets .home--base-menu .menu-base-container ul.menu:before, .footer-widgets .home--base-menu .menu-base-container ul.menu:after {
+      .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu:before, .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu:after {
         content: " ";
         display: table; }
-      .footer-widgets .home--base-menu .menu-base-container ul.menu:after {
+      .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu:after {
         clear: both; }
-      .footer-widgets .home--base-menu .menu-base-container ul.menu:last-child {
+      .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu:last-child {
         margin-right: 0; }
-      .footer-widgets .home--base-menu .menu-base-container ul.menu a {
+      .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu a {
         color: white;
         text-transform: lowercase;
         font-variant: small-caps; }
-      .footer-widgets .home--base-menu .menu-base-container ul.menu li {
+      .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li {
         text-align: left; }
         @media screen and (min-width: 1025px) {
-          .footer-widgets .home--base-menu .menu-base-container ul.menu li {
+          .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li {
             float: left;
             display: block;
             margin-right: 3.06748%;
             width: 100%; }
-            .footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
+            .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li:last-child {
               margin-right: 0; } }
         @media screen and (min-width: 769px) {
-          .footer-widgets .home--base-menu .menu-base-container ul.menu li {
+          .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li {
             float: left;
             display: block;
             margin-right: 3.06748%;
             width: 100%; }
-            .footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
+            .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li:last-child {
               margin-right: 0; } }
         @media screen and (min-width: 481px) {
-          .footer-widgets .home--base-menu .menu-base-container ul.menu li {
+          .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li {
             float: left;
             display: block;
             margin-right: 3.06748%;
             width: 100%; }
-            .footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
+            .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li:last-child {
               margin-right: 0; } }
         @media screen and (max-width: 480px) {
-          .footer-widgets .home--base-menu .menu-base-container ul.menu li {
+          .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li {
             float: left;
             display: block;
             margin-right: 3.06748%;
             width: 100%;
             /*@include omega(2n);*/ }
-            .footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
+            .footer-widgets .footer--base-menu .menu-footer-menu-container ul.menu li:last-child {
               margin-right: 0; } }
