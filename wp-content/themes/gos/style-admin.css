@@ -1,0 +1,14 @@
+body.wp-admin {
+  /*
+   *#footer-thankyou {
+   *  display: none;
+   *}
+   */ }
+  body.wp-admin ul, body.wp-admin ol {
+    margin-bottom: 0; }
+  body.wp-admin #footer-left {
+    display: none; }
+  body.wp-admin #footer-upgrade {
+    display: none; }
+  body.wp-admin.post-new-php .shortcode-wrap {
+    display: none; }

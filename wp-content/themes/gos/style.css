@@ -5527,20 +5527,40 @@ body.home {
    */ }
   body.home .home-widgets ul, body.home .home-search-widgets ul {
     *zoom: 1;
-    display: block;
-    *zoom: 1;
-    padding: 0;
-    margin: 0; }
+    margin: 0;
+    padding: 0; }
     body.home .home-widgets ul:before, body.home .home-widgets ul:after, body.home .home-search-widgets ul:before, body.home .home-search-widgets ul:after {
       content: " ";
       display: table; }
     body.home .home-widgets ul:after, body.home .home-search-widgets ul:after {
       clear: both; }
-    body.home .home-widgets ul:before, body.home .home-widgets ul:after, body.home .home-search-widgets ul:before, body.home .home-search-widgets ul:after {
-      content: " ";
-      display: table; }
-    body.home .home-widgets ul:after, body.home .home-search-widgets ul:after {
-      clear: both; }
+  @media screen and (max-width: 480px) {
+    body.home .home-widgets ul {
+      float: left;
+      display: block;
+      margin-right: 3.06748%;
+      width: 100%; }
+      body.home .home-widgets ul:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 481px) {
+    body.home .home-widgets ul {
+      float: left;
+      display: block;
+      margin-right: 3.06748%;
+      width: 100%; }
+      body.home .home-widgets ul:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 769px) {
+    body.home .home-widgets ul {
+      float: left;
+      display: block;
+      margin-right: 3.06748%;
+      width: 100%;
+      padding:  0 3.06748%; }
+      body.home .home-widgets ul:last-child {
+        margin-right: 0; } }
+  body.home .home-widgets ul li a {
+    padding:  0 3.06748%; }
   body.home .home-widgets .widget {
     background-color: white;
     /*border-radius: .1rem;*/
@@ -5733,7 +5753,8 @@ body.home {
       margin: 0;
       padding: 0 0.5rem;
       background-color: #054481;
-      color: white; }
+      color: white;
+      text-align: center; }
     body.home .home-widgets:last-child {
       margin-right: 0; }
     body.home .home-widgets .widget {
@@ -6541,9 +6562,15 @@ article {
 .home-benefits {
   clear: both; }
   .home-benefits ul {
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%;
+    padding:  0 3.06748%;
     *zoom: 1;
-    margin: 0;
-    padding: 0; }
+    margin: 0; }
+    .home-benefits ul:last-child {
+      margin-right: 0; }
     .home-benefits ul:before, .home-benefits ul:after {
       content: " ";
       display: table; }
@@ -6580,9 +6607,14 @@ article {
 
 .home-benefits {
   padding-top: 5rem; }
+  .home-benefits h2 {
+    color: #27608a; }
   .home-benefits .home--benefits-first p, .home-benefits .home--benefits-second p, .home-benefits .home--benefits-third p {
     text-align: left;
     margin: 0 0.5rem; }
+  .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
+    text-align: center;
+    padding-top: 9rem; }
   @media screen and (min-width: 481px) {
     .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
       float: left;
@@ -6590,9 +6622,8 @@ article {
       margin-right: 3.06748%;
       width: 100%;
       margin-bottom: 3rem;
-      font-size: 1rem; }
+      font-size: 0.8rem; }
       .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
-        text-align: center;
         font-size: 1.2rem; }
       .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
         margin-right: 0; } }
@@ -6603,9 +6634,8 @@ article {
       margin-right: 3.06748%;
       width: 100%;
       margin-bottom: 3rem;
-      font-size: 1rem; }
+      font-size: 0.8rem; }
       .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
-        text-align: center;
         font-size: 1.2rem; }
       .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
         margin-right: 0; } }
@@ -6616,12 +6646,58 @@ article {
       margin-right: 3.06748%;
       width: 31.28834%;
       margin-bottom: 3rem;
-      font-size: 1rem; }
+      font-size: 0.8rem; }
       .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
-        text-align: center;
         font-size: 1.2rem; }
       .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
         margin-right: 0; } }
+  .home-benefits .home--benefits-first:before, .home-benefits .home--benefits-second:before, .home-benefits .home--benefits-third:before {
+    color: #99c9d9; }
+  .home-benefits .home--benefits-first:before {
+    font-family: 'FontAwesome';
+    /*@include shift(10);*/
+    /*content: "\f0c9";*/
+    content: "\f1d9";
+    font-size: 6rem;
+    position: absolute;
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%;
+    text-align: center;
+    top: 0; }
+    .home-benefits .home--benefits-first:before:last-child {
+      margin-right: 0; }
+  .home-benefits .home--benefits-second:before {
+    font-family: 'FontAwesome';
+    /*@include shift(10);*/
+    /*content: "\f0c9";*/
+    content: "\f074";
+    font-size: 6rem;
+    position: absolute;
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%;
+    text-align: center;
+    top: 0; }
+    .home-benefits .home--benefits-second:before:last-child {
+      margin-right: 0; }
+  .home-benefits .home--benefits-third:before {
+    font-family: 'FontAwesome';
+    /*@include shift(10);*/
+    /*content: "\f0c9";*/
+    content: "\f0ac";
+    font-size: 6rem;
+    position: absolute;
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%;
+    text-align: center;
+    top: 0; }
+    .home-benefits .home--benefits-third:before:last-child {
+      margin-right: 0; }
 
 #comments {
   display: none; }
@@ -6726,16 +6802,3 @@ article {
               margin-right: 0; }
             .footer-widgets .home--base-menu .menu-base-container ul.menu li:nth-child(2n+1) {
               clear: left; } }
-
-body.wp-admin {
-  /*
-   *#footer-thankyou {
-   *  display: none;
-   *}
-   */ }
-  body.wp-admin ul, body.wp-admin ol {
-    margin-bottom: 0; }
-  body.wp-admin #footer-left {
-    display: none; }
-  body.wp-admin #footer-upgrade {
-    display: none; }

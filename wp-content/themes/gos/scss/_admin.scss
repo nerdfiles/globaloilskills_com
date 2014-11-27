@@ -13,5 +13,8 @@ body.wp-admin {
    *  display: none;
    *}
    */
+  &.post-new-php .shortcode-wrap {
+    display: none;
+  }
 }
 

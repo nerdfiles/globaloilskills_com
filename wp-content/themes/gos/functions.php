@@ -35,7 +35,7 @@ function remove_menu() {
     unset($menu[$i]);
   }
 }
-add_action('admin_menu', 'remove_menu', 210);
+//add_action('admin_menu', 'remove_menu', 210);
 
 /**
  * Hide Tribe Event's Calendar
@@ -59,14 +59,17 @@ function rw_remove_dashboard_widgets() {
   remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // recent comments
   remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');  // incoming links
   remove_meta_box('dashboard_plugins', 'dashboard', 'normal');   // plugins
-
-
   remove_meta_box('dashboard_activity', 'dashboard', 'normal');  // quick press
   remove_meta_box('dashboard_quick_press', 'dashboard', 'normal');  // quick press
   remove_meta_box('dashboard_recent_drafts', 'dashboard', 'normal');  // recent drafts
   remove_meta_box('dashboard_primary', 'dashboard', 'normal');   // wordpress blog
   remove_meta_box('dashboard_secondary', 'dashboard', 'normal');   // other wordpress news
 }
+
+function z_remove_media_controls() {
+     remove_action( 'media_buttons', 'media_buttons' );
+}
+add_action('admin_head','z_remove_media_controls');
 
 /**
  * Rework WordPress Menus
@@ -216,10 +219,6 @@ function google_maps_config() {
 function gos_enqueue_scripts() {
   // Presentation Layer
   wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
-  //wp_enqueue_style( 'gos-fonts-font-awesome', esc_url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'), array(), '0.0.1');
-  //$fa-font-path = './scss/vendor/font-awesome/fonts';
-
-  wp_enqueue_style( 'gos-fonts-font-awesome', esc_url('font-awesome/4.2.0/css/font-awesome.min.css'), array(), '0.0.1');
   wp_enqueue_style( 'gos-styles', get_stylesheet_uri(), array(), '1.0' );
 
   // Dependencies
@@ -248,10 +247,8 @@ function gos_enqueue_scripts() {
   wp_enqueue_script( 'angular-sanitize', get_template_directory_uri() . '/grunt/bower_components/angular-sanitize/angular-sanitize.js', array(), '1.0', true );
   wp_enqueue_script( 'angular-animate', get_template_directory_uri() . '/grunt/bower_components/angular-animate/angular-animate.js', array(), '1.0', true );
 
-  /*
-   *wp_dequeue_style('membermouse-font-awesome');
-   *wp_deregister_style('membermouse-font-awesome');
-   */
+  wp_dequeue_style('membermouse-font-awesome', 110);
+  wp_deregister_style('membermouse-font-awesome', 110);
 
   // Main
   wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.dev.js', array('angular', 'hoverintent', 'HTML'), '1.0', true );
@@ -274,11 +271,11 @@ function login_stylesheet() {
 add_action( 'login_enqueue_scripts', 'login_stylesheet' );
 
 function admin_stylesheet() {
-    wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
-    wp_enqueue_style( 'custom-admin', get_template_directory_uri() . '/style.css' );
+    //wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:401,800,700,500,300,200,600,900'), array(), '0.0.1');
+    wp_enqueue_style( 'custom-admin', get_template_directory_uri() . '/style-admin.css' );
     //wp_enqueue_script( 'custom-admin', get_template_directory_uri() . '/grunt/dist/require.js', array('jquery'), '1.0', true );
 }
-//add_action( 'admin_enqueue_scripts', 'admin_stylesheet' );
+add_action( 'admin_enqueue_scripts', 'admin_stylesheet' );
 
 /******************************************************************************\
   Content functions
