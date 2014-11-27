@@ -129,7 +129,15 @@ module.exports = function(grunt) {
         },
         src: ['../scss/wp-editor-style.scss'],
         dest: '../css/wp-editor-style.css'
+      },
+      adminstyles: {
+        options: {
+          style: 'expanded'
+        },
+        src: ['../scss/style-admin.scss'],
+        dest: '../style-admin.css'
       }
+
     },
 
     // watch for changes
@@ -139,6 +147,7 @@ module.exports = function(grunt) {
         tasks: [
           'sass:dev',
           'sass:editorstyles',
+          'sass:adminstyles',
           //'exec:page_runner',
           'notify:scss'
         ]
@@ -338,7 +347,8 @@ module.exports = function(grunt) {
 		'jshint:all',
 		'uglify',
 		'sass:dev',
-		'sass:editorstyles'
+		'sass:editorstyles',
+		'sass:adminstyles'
 	]);
 
 	// Production task
@@ -348,6 +358,7 @@ module.exports = function(grunt) {
 			'uglify',
 			'sass:prod',
 			'sass:editorstyles',
+      'sass:adminstyles',
 			'clean:dist',
 			'copyto:dist',
 			'notify:dist'

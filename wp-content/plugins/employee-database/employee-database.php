@@ -15,9 +15,9 @@ include_once('recruiter.php');
 new JobPostType;
 class JobPostType {
 
-  var $single = "JobPost"; 	// this represents the singular name of the post type
-  var $plural = "JobPosts"; 	// this represents the plural name of the post type
-  var $type 	= "jobpost"; 	// this is the actual type
+  var $single = "Job Posting"; 	// this represents the singular name of the post type
+  var $plural = "Job Postings"; 	// this represents the plural name of the post type
+  var $type 	= "jobposting"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
   function JobPostPostType()
@@ -63,6 +63,7 @@ class JobPostType {
   function add_post_type(){
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
+      'menu_name' => __('Job Board'),
       'singular_name' => _x($this->single, 'post type singular name'),
       'add_new' => _x('Add ' . $this->single, $this->single),
       'add_new_item' => __('Add New ' . $this->single),
@@ -86,14 +87,14 @@ class JobPostType {
       'has_archive' => true,
       'menu_position' => 20,
       'show_in_nav_menus' => true,
-      'taxonomies' => array( 'post_tag' ),
+      'taxonomies' => array(),
       'supports' => array(
         'title',
         'editor',
         #'author',
         'thumbnail',
-        'excerpt',
-        'comments'
+        //'excerpt',
+        //'comments'
       ),
     );
     register_post_type($this->type, $options);
@@ -116,6 +117,44 @@ class JobPostType {
   function add_taxonomies() {
 
     register_taxonomy(
+      'industry',
+      array($this->type),
+      array(
+        'hierarchical' => true,
+        'labels' => array(
+          'name' => __( 'Industry' ),
+          'singular_name' => __( 'Industry' ),
+          'all_items' => __( 'All Industries' ),
+          'add_new_item' => __( 'Add Industry' )
+        ),
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array(
+          'slug' => 'industry'
+        ),
+      )
+    );
+
+    register_taxonomy(
+      'job_type',
+      array($this->type),
+      array(
+        'hierarchical' => true,
+        'labels' => array(
+          'name' => __( 'Job Type' ),
+          'singular_name' => __( 'Job Type' ),
+          'all_items' => __( 'All Job Types' ),
+          'add_new_item' => __( 'Add Job Type' )
+        ),
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array(
+          'slug' => 'job_type'
+        ),
+      )
+    );
+
+    register_taxonomy(
       'status',
       array($this->type),
       array(
@@ -132,7 +171,7 @@ class JobPostType {
           'slug' => 'status'
         ),
       )
-     );
+    );
 
   }
 
@@ -150,29 +189,18 @@ class JobPostType {
     wp_nonce_field( plugin_basename(__FILE__), 'noncename' );  // Use nonce for verification
   ?>
 
-    Position Title
-    Company Name
-    Category
-    Job Type
-    Price
-    Expires
-    Applications
-    Status
-
-
     <p>
-    <label for="data[position_title]">Short Title</label>
+    <label for="data[position_title]">Position Title</label>
     <input type="text" id= "data[position_title]" name="data[position_title]" value="<?php echo $position_title[0] ?>"  placeholder="5-6 Word Title" size="75" />
     </p>
 
     <p>
-    <label for="data[currency]">Currency</label>
+    <label for="data[company_name]">Company Name</label>
     <input
       type="text"
-      id= "data[currency]"
-      name="data[currency]"
-      value="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
-      size="10"
+      id= "data[company_name]"
+      name="data[company_name]"
+      value="<?php echo $company_name[0] ? $company_name[0] : 'Independent Project' ?>"
     />
     </p>
 
@@ -189,7 +217,7 @@ class JobPostType {
     </p>
 
     <p>
-    <label for="data[applicant_url]">JobPost Website</label>
+    <label for="data[applicant_url]">Website</label>
     <input
       type="url"
       id= "data[applicant_url]"
@@ -321,11 +349,11 @@ class ApplicantPostType {
       'taxonomies' => array( 'post_tag' ),
       'supports' => array(
         'title',
-        'editor',
+        //'editor',
 #      	'author',
         'thumbnail',
 #      	'excerpt',
-        'comments'
+        //'comments'
       ),
     );
     register_post_type($this->type, $options);
