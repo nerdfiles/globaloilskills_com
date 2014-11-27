@@ -1913,7 +1913,7 @@ table {
 .fa-meanpath:before {
   content: "\f20c"; }
 
-.animated, body.search-results .page-content article.post:hover, body.search-results .page-content article.post.enabled, body.home .home-widgets .widget article.post:hover, body.home .home-widgets .widget article.post.enabled {
+.animated, body.search-results .page-content article.post:hover, body.search-results .page-content article.post.enabled, body.home .home-widgets .widget article.post:hover, body.home .home-widgets .widget article.post.enabled, .home-benefits .home--benefits-first:hover:before, .home-benefits .home--benefits-second:hover:before, .home-benefits .home--benefits-third:hover:before {
   -webkit-animation-duration: 0.75s;
   -moz-animation-duration: 0.75s;
   -o-animation-duration: 0.75s;
@@ -3895,7 +3895,7 @@ table {
   100% {
     -moz-transform: scale(1); } }
 
-.pulse {
+.pulse, .home-benefits .home--benefits-third:hover:before {
   -webkit-animation-name: pulse;
   -moz-animation-name: pulse;
   -o-animation-name: pulse;
@@ -4679,7 +4679,7 @@ table {
   100% {
     -moz-transform: rotate(0deg); } }
 
-.swing {
+.swing, .home-benefits .home--benefits-second:hover:before {
   -webkit-animation-name: swing;
   -moz-animation-name: swing;
   -o-animation-name: swing;
@@ -4753,7 +4753,7 @@ table {
   100% {
     -moz-transform: scale(1) rotate(0); } }
 
-.tada {
+.tada, .home-benefits .home--benefits-first:hover:before {
   -webkit-animation-name: tada;
   -moz-animation-name: tada;
   -o-animation-name: tada;
@@ -6705,7 +6705,8 @@ article {
 .home-benefits {
   padding-top: 5rem; }
   .home-benefits h2 {
-    color: #27608a; }
+    color: #27608a;
+    padding-bottom: 0.5rem; }
   .home-benefits ul {
     position: relative; }
     .home-benefits ul:after {
@@ -6732,50 +6733,53 @@ article {
         .home-benefits ul:after {
           right: 10%;
           bottom: -80%; } }
-  .home-benefits .home--benefits-first p, .home-benefits .home--benefits-second p, .home-benefits .home--benefits-third p {
-    text-align: justify;
-    margin: 0 0.5rem; }
-  .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
-    text-align: center;
-    padding-top: 9rem; }
-  @media screen and (min-width: 481px) {
-    .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
-      float: left;
-      display: block;
-      margin-right: 3.06748%;
-      width: 100%;
-      margin-bottom: 3rem;
-      font-size: 0.8rem; }
-      .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
-        font-size: 1.2rem; }
-      .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
-        margin-right: 0; } }
-  @media screen and (max-width: 480px) {
-    .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
-      float: left;
-      display: block;
-      margin-right: 3.06748%;
-      width: 100%;
-      margin-bottom: 3rem;
-      font-size: 0.8rem; }
-      .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
-        font-size: 1.2rem; }
-      .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
-        margin-right: 0; } }
-  @media screen and (min-width: 769px) {
-    .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
-      float: left;
-      display: block;
-      margin-right: 3.06748%;
-      width: 31.28834%;
-      margin-bottom: 3rem;
-      font-size: 0.8rem; }
-      .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
-        font-size: 1.2rem; }
-      .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
-        margin-right: 0; } }
-  .home-benefits .home--benefits-first:before, .home-benefits .home--benefits-second:before, .home-benefits .home--benefits-third:before {
-    color: #99c9d9; }
+  .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem #efefef solid; }
+    .home-benefits .home--benefits-first p, .home-benefits .home--benefits-second p, .home-benefits .home--benefits-third p {
+      text-align: justify;
+      margin: 0 0.5rem; }
+    .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
+      text-align: center;
+      padding-top: 9rem; }
+    @media screen and (min-width: 481px) {
+      .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%;
+        margin-bottom: 3rem;
+        font-size: 0.8rem; }
+        .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
+          font-size: 1.2rem; }
+        .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
+          margin-right: 0; } }
+    @media screen and (max-width: 480px) {
+      .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%;
+        margin-bottom: 3rem;
+        font-size: 0.8rem; }
+        .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
+          font-size: 1.2rem; }
+        .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 769px) {
+      .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 31.28834%;
+        margin-bottom: 3rem;
+        font-size: 0.8rem; }
+        .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
+          font-size: 1.2rem; }
+        .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
+          margin-right: 0; } }
+    .home-benefits .home--benefits-first:before, .home-benefits .home--benefits-second:before, .home-benefits .home--benefits-third:before {
+      color: #99c9d9; }
   .home-benefits .home--benefits-first:before {
     font-family: 'FontAwesome';
     /*@include shift(10);*/
