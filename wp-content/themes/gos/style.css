@@ -6550,7 +6550,7 @@ article {
     .home-benefits ul:after {
       clear: both; }
   .home-benefits .widget {
-    background-color: #bacfcb;
+    /*background-color: #BACFCB;*/
     padding: 0;
     position: relative; }
     @media screen and (max-width: 480px) {
