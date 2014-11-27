@@ -291,6 +291,7 @@ article {
   }
   h2 {
     color: #27608A;
+    padding-bottom: .5rem;
   }
   ul {
     position: relative;
@@ -328,6 +329,8 @@ article {
   .home--benefits-first,
   .home--benefits-second,
   .home--benefits-third {
+    padding-bottom: .5rem;
+    border-bottom: .1rem #efefef solid;
 
     p {
       text-align: justify;
@@ -368,6 +371,12 @@ article {
     }
   }
   .home--benefits-first {
+    &:hover {
+      &:before {
+        @extend .animated;
+        @extend .tada;
+      }
+    }
 
     .widgettitle:before {
       @extend .fa-check;
@@ -387,6 +396,13 @@ article {
   }
 
   .home--benefits-second {
+    &:hover {
+      &:before {
+        @extend .animated;
+        @extend .swing;
+      }
+    }
+
     &:before {
       font-family: 'FontAwesome';
       /*@include shift(10);*/
@@ -399,7 +415,15 @@ article {
       top: 0;
     }
   }
+
   .home--benefits-third {
+    &:hover {
+      &:before {
+        @extend .animated;
+        @extend .pulse;
+      }
+    }
+
     &:before {
       font-family: 'FontAwesome';
       /*@include shift(10);*/
