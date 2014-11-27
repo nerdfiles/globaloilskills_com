@@ -6578,6 +6578,24 @@ article {
         .home-benefits .widget:last-child {
           margin-right: 0; } }
 
+.home-benefits {
+  padding-top: 5rem; }
+  .home-benefits .home--benefits-first p, .home-benefits .home--benefits-second p, .home-benefits .home--benefits-third p {
+    text-align: left;
+    margin: 0 0.5rem; }
+  @media screen and (max-width: 480px) {
+    .home-benefits .home--benefits-first, .home-benefits .home--benefits-second, .home-benefits .home--benefits-third {
+      float: left;
+      display: block;
+      margin-right: 3.06748%;
+      width: 100%;
+      margin-bottom: 3rem;
+      font-size: 1.1rem; }
+      .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
+        text-align: center;
+        font-size: 1.2rem; }
+      .home-benefits .home--benefits-first:last-child, .home-benefits .home--benefits-second:last-child, .home-benefits .home--benefits-third:last-child {
+        margin-right: 0; } }
 
 .format-status .date, .format-link .date, .format-quote .date {
   width: 100%;
