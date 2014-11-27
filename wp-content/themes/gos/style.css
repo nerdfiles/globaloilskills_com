@@ -5745,10 +5745,27 @@ body.home {
         padding: 0 0.5rem;
         text-align: right; }
   body.home .home-widgets {
+    position: relative;
     float: left;
     display: block;
     margin-right: 3.06748%;
     width: 100%; }
+    body.home .home-widgets:after {
+      content: "Join us in real-time collaboration";
+      font-weight: 700;
+      font-variant: small-caps;
+      text-transform: lowercase;
+      position: absolute;
+      left: 1%;
+      font-style: italic;
+      font-size: 2rem;
+      bottom: -70%;
+      text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
+      color: #199ca9;
+      color: white; }
+      @media screen and (max-width: 480px) {
+        body.home .home-widgets:after {
+          bottom: -30%; } }
     body.home .home-widgets ul {
       padding: 0; }
       body.home .home-widgets ul .upw-posts .entry-content {
@@ -5758,12 +5775,14 @@ body.home {
       padding: 0 0.5rem;
       /*background-color: #054481;*/
       background-color: #27608a;
+      text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
       color: white;
       text-align: center; }
     body.home .home-widgets:last-child {
       margin-right: 0; }
     body.home .home-widgets h2.widgettitle {
-      background-color: #199ca9; }
+      background-color: #199ca9;
+      text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px; }
     body.home .home-widgets .widget {
       padding: 0; }
     @media screen and (max-width: 480px) {
@@ -6582,7 +6601,7 @@ article {
     background-image: url('./images/bg-underlay-1.jpg');
     background-size: cover;
     height: 500px;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     image-rendering: optimizeQuality;
     content: " ";
     display: block;
@@ -6662,8 +6681,28 @@ article {
   padding-top: 5rem; }
   .home-benefits h2 {
     color: #27608a; }
+  .home-benefits ul {
+    position: relative; }
+    .home-benefits ul:after {
+      content: "Your piece, our board";
+      position: absolute;
+      right: 10%;
+      font-style: italic;
+      text-align: right;
+      font-size: 2rem;
+      bottom: -60%;
+      color: #199ca9;
+      color: white;
+      text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
+      font-weight: 700;
+      font-variant: small-caps;
+      text-transform: lowercase; }
+      @media screen and (max-width: 480px) {
+        .home-benefits ul:after {
+          right: 10%;
+          bottom: -30%; } }
   .home-benefits .home--benefits-first p, .home-benefits .home--benefits-second p, .home-benefits .home--benefits-third p {
-    text-align: left;
+    text-align: justify;
     margin: 0 0.5rem; }
   .home-benefits .home--benefits-first h1, .home-benefits .home--benefits-first h2, .home-benefits .home--benefits-first h3, .home-benefits .home--benefits-first h4, .home-benefits .home--benefits-second h1, .home-benefits .home--benefits-second h2, .home-benefits .home--benefits-second h3, .home-benefits .home--benefits-second h4, .home-benefits .home--benefits-third h1, .home-benefits .home--benefits-third h2, .home-benefits .home--benefits-third h3, .home-benefits .home--benefits-third h4 {
     text-align: center;

@@ -233,7 +233,7 @@ article {
     background-image: url('./images/bg-underlay-1.jpg');
     background-size: cover;
     height: 500px;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     @include image-rendering(optimizeQuality);
     content: " ";
     display: block;
@@ -292,13 +292,38 @@ article {
   h2 {
     color: #27608A;
   }
+  ul {
+    position: relative;
+    &:after {
+      content: "Your piece, our board";
+      position: absolute;
+      right: 10%;
+      font-style: italic;
+      text-align: right;
+      font-size: 2rem;
+      bottom: -60%;
+      color: #199CA9;
+      color: #fff;
+      text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+      rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
+      rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
+      font-weight: 700;
+      font-variant: small-caps;
+      text-transform: lowercase;
+      @include media($small) {
+        right: 10%;
+        bottom: -30%;
+      }
+    }
+  }
   padding-top: 5rem;
 
   .home--benefits-first,
   .home--benefits-second,
   .home--benefits-third {
+
     p {
-      text-align: left;
+      text-align: justify;
       margin: 0 .5rem;
     }
     h1, h2 , h3, h4 {
@@ -336,6 +361,7 @@ article {
     }
   }
   .home--benefits-first {
+
     .widgettitle:before {
       @extend .fa-check;
       @extend .fa;
