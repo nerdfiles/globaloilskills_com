@@ -6711,11 +6711,9 @@ article {
     .home-benefits ul:after {
       content: "Your piece, our board";
       position: absolute;
-      right: 10%;
       font-style: italic;
       text-align: right;
       font-size: 2rem;
-      bottom: -60%;
       color: #199ca9;
       color: white;
       text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
@@ -6726,6 +6724,14 @@ article {
         .home-benefits ul:after {
           right: 10%;
           bottom: -30%; } }
+      @media screen and (min-width: 481px) {
+        .home-benefits ul:after {
+          right: 10%;
+          bottom: -40%; } }
+      @media screen and (min-width: 769px) {
+        .home-benefits ul:after {
+          right: 10%;
+          bottom: -80%; } }
   .home-benefits .home--benefits-first p, .home-benefits .home--benefits-second p, .home-benefits .home--benefits-third p {
     text-align: justify;
     margin: 0 0.5rem; }
@@ -6847,8 +6853,12 @@ article {
   display: block;
   margin-right: 3.06748%;
   width: 100%;
-  background: #222222;
-  padding: 1.5em 0;
+  background-image: url('./images/bg-underlay-3.jpg');
+  background-repeat: no-repeat;
+  background-position: 0% 10%;
+  background-size: cover;
+  border-top: 0.8rem solid #f3f3f3;
+  padding:  3.06748% 0;
   list-style: none;
   margin: 0;
   margin-top: 5rem; }
@@ -6881,14 +6891,18 @@ article {
         clear: both; }
       .footer-widgets .home--base-menu .menu-base-container ul.menu:last-child {
         margin-right: 0; }
+      .footer-widgets .home--base-menu .menu-base-container ul.menu a {
+        color: white;
+        text-transform: lowercase;
+        font-variant: small-caps; }
       .footer-widgets .home--base-menu .menu-base-container ul.menu li {
-        text-align: center; }
+        text-align: left; }
         @media screen and (min-width: 1025px) {
           .footer-widgets .home--base-menu .menu-base-container ul.menu li {
             float: left;
             display: block;
             margin-right: 3.06748%;
-            width: 14.11043%; }
+            width: 100%; }
             .footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
               margin-right: 0; } }
         @media screen and (min-width: 769px) {
@@ -6896,7 +6910,7 @@ article {
             float: left;
             display: block;
             margin-right: 3.06748%;
-            width: 14.11043%; }
+            width: 100%; }
             .footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
               margin-right: 0; } }
         @media screen and (min-width: 481px) {
@@ -6904,7 +6918,7 @@ article {
             float: left;
             display: block;
             margin-right: 3.06748%;
-            width: 14.11043%; }
+            width: 100%; }
             .footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
               margin-right: 0; } }
         @media screen and (max-width: 480px) {
@@ -6912,10 +6926,7 @@ article {
             float: left;
             display: block;
             margin-right: 3.06748%;
-            width: 48.46626%; }
+            width: 100%;
+            /*@include omega(2n);*/ }
             .footer-widgets .home--base-menu .menu-base-container ul.menu li:last-child {
-              margin-right: 0; }
-            .footer-widgets .home--base-menu .menu-base-container ul.menu li:nth-child(2n) {
-              margin-right: 0; }
-            .footer-widgets .home--base-menu .menu-base-container ul.menu li:nth-child(2n+1) {
-              clear: left; } }
+              margin-right: 0; } }
