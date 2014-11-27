@@ -6064,8 +6064,8 @@ body.login #login form, body.login #lostpasswordform form {
           margin-right: 0; } }
     .footer-after-content-widgets ul li a {
       display: block;
-      padding: 0.5rem 0;
-      color: white; }
+      color: white;
+      padding:  0.5rem 3.06748%; }
     .footer-after-content-widgets ul li:nth-of-type(0) {
       background-color: #cccccc; }
       .footer-after-content-widgets ul li:nth-of-type(0) a {
@@ -6345,6 +6345,18 @@ body.login #login form, body.login #lostpasswordform form {
 
 .sticky {
   background: none; }
+
+a {
+  text-decoration: none;
+  outline: 0 !important; }
+  a:hover {
+    outline: 0 !important; }
+
+object, embed {
+  outline: 0 !important; }
+
+input::-moz-focus-inner {
+  border: 0 !important; }
 
 .alignleft {
   float: left; }
