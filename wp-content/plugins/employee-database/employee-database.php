@@ -117,6 +117,25 @@ class JobPostType {
   function add_taxonomies() {
 
     register_taxonomy(
+      'location',
+      array($this->type),
+      array(
+        'hierarchical' => true,
+        'labels' => array(
+          'name' => __( 'location' ),
+          'singular_name' => __( 'Location' ),
+          'all_items' => __( 'All Locations' ),
+          'add_new_item' => __( 'Add Location' )
+        ),
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array(
+          'slug' => 'location'
+        ),
+      )
+    );
+
+    register_taxonomy(
       'industry',
       array($this->type),
       array(
