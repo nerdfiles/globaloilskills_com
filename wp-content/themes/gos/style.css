@@ -5749,10 +5749,15 @@ body.home {
     display: block;
     margin-right: 3.06748%;
     width: 100%; }
+    body.home .home-widgets ul {
+      padding: 0; }
+      body.home .home-widgets ul .upw-posts {
+        padding:  0 3.06748%; }
     body.home .home-widgets h2 {
       margin: 0;
       padding: 0 0.5rem;
-      background-color: #054481;
+      /*background-color: #054481;*/
+      background-color: #27608a;
       color: white;
       text-align: center; }
     body.home .home-widgets:last-child {
@@ -5779,10 +5784,10 @@ body.home {
       body.home .home-widgets .widget {
         float: left;
         display: block;
-        margin-right: 3.06748%;
-        width: 31.28834%; }
+        width: 34.35583%;
+        margin-right: 0; }
         body.home .home-widgets .widget:last-child {
-          margin-right: 0; } }
+          width: 31.28834%; } }
   body.home .home-search-widgets ul {
     margin: 0 0 0; }
   body.home .home-search-widgets h1 {

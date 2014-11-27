@@ -93,14 +93,25 @@ body.home {
    */
   .home-widgets {
 
+    ul {
+      padding: 0;
+      .upw-posts {
+        @include pad(0 default);
+      }
+    }
     h2 {
       margin: 0;
       padding: 0 .5rem;
-      background-color: #054481;
+      /*background-color: #054481;*/
+      background-color: #27608A;
       color: #fff;
       text-align: center;
     }
     @include span-columns(12);
+
+    h2.widgettitle {
+
+    }
 
     .widget {
       padding: 0;
@@ -120,7 +131,8 @@ body.home {
 
     @include media($large) {
       .widget {
-        @include span-columns(4);
+        @include span-columns(4, block-collapse);
+        @include omega();
       }
     }
 
