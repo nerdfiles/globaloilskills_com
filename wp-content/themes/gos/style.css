@@ -5751,8 +5751,8 @@ body.home {
     width: 100%; }
     body.home .home-widgets ul {
       padding: 0; }
-      body.home .home-widgets ul .upw-posts {
-        padding:  0 3.06748%; }
+      body.home .home-widgets ul .upw-posts .entry-content {
+        padding:  0 0; }
     body.home .home-widgets h2 {
       margin: 0;
       padding: 0 0.5rem;
@@ -5762,6 +5762,8 @@ body.home {
       text-align: center; }
     body.home .home-widgets:last-child {
       margin-right: 0; }
+    body.home .home-widgets h2.widgettitle {
+      background-color: #199ca9; }
     body.home .home-widgets .widget {
       padding: 0; }
     @media screen and (max-width: 480px) {
@@ -6232,7 +6234,7 @@ input[type="submit"] {
     .site-header .logo .site-name {
       text-indent: -9999px;
       text-align: left;
-      background-image: url('./images/logo-idea-03.png');
+      background-image: url('./images/logo-idea-04.png');
       /*
        *background-image: url('./images/logo--globaloilskills.png');
        */
