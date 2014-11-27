@@ -1,3 +1,7 @@
+
+Notice: Undefined index: HTTP_HOST in phar:///usr/local/bin/wp/php/wp-cli.php(23) : eval()'d code on line 74
+
+Notice: Undefined index: HTTP_HOST in phar:///usr/local/bin/wp/php/wp-cli.php(23) : eval()'d code on line 75
 admin-menu-editor
 advanced-custom-fields
 akismet
@@ -6,26 +10,29 @@ contact-form-7
 custom-author-base
 custom-header-images
 custom-shipping-options-for-membermouse
-employee-database
 fantastic-elasticsearch
 foogallery
 google-maps-builder
 hello
 image-widget
+employee-database
 json-api
 limit-login-attempts
 wp-media-library-categories
 membermouse
+qtranslate
 recent-tweets-widget
 redirection
 schema-creator
 search-everything
 acurax-social-media-widget
+stripe-market
 the-events-calendar
 types
 ultimate-posts-widget
 widget-importer-exporter
 wordpress-importer
+wp-slim-framework
 wp-dbmanager
 wp-optimize
 wp-editor-widget

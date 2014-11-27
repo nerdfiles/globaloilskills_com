@@ -6576,6 +6576,8 @@ article {
         .home-benefits .widget:last-child {
           margin-right: 0; } }
 
+.home-benefits > * {
+  outline: 1px solid gold; }
 
 .format-status .date, .format-link .date, .format-quote .date {
   width: 100%;
