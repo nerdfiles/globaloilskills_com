@@ -6566,6 +6566,17 @@ article {
 
 .home-benefits {
   clear: both; }
+  .home-benefits:before {
+    background-image: url('./images/bg-underlay-1.jpg');
+    height: 500px;
+    content: " ";
+    display: block;
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%; }
+    .home-benefits:before:last-child {
+      margin-right: 0; }
   .home-benefits ul {
     float: left;
     display: block;
