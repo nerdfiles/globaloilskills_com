@@ -178,9 +178,17 @@ if ( function_exists( 'register_sidebars' ) ) {
 
   register_sidebar(
     array(
+      'id' => 'footer-after-content-sidebar',
+      'name' => __( 'Footer After Content widgets', 'gos' ),
+      'description' => __( 'Shows in the site footer', 'gos' )
+    )
+  );
+
+  register_sidebar(
+    array(
       'id' => 'footer-sidebar',
       'name' => __( 'Footer widgets', 'gos' ),
-      'description' => __( 'Shows in the sites footer', 'gos' )
+      'description' => __( 'Shows in the site footer', 'gos' )
     )
   );
 }
