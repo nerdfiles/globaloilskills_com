@@ -208,7 +208,9 @@ input[type="submit"] {
     @extend .circle;
 
     &:nth-of-type(1) {
-      outline: 1px solid gold;
+      /*
+       *outline: 1px solid gold;
+       */
       z-index: -1;
     }
   }
