@@ -294,6 +294,7 @@ body.login #lostpasswordform {
 
 .footer-after-content-widgets {
   .widget h2 { margin-bottom: 0; border-bottom: none; }
+
   ul {
     @include clearfix;
     margin: 0;
@@ -313,8 +314,8 @@ body.login #lostpasswordform {
     li {
       a {
         display: block;
-        padding: .5rem 0;
         color: #fff;
+        @include pad(.5rem default);
       }
       $num: 5;
       @for $i from 0 to $num {

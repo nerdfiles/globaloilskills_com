@@ -29,6 +29,23 @@
   .post-title {}
 }
 
+a {
+  text-decoration: none;
+  outline: 0 !important;
+  &:hover {
+    outline: 0 !important;
+  }
+}
+
+object, embed { 
+  outline: 0 !important;
+}
+
+input::-moz-focus-inner { 
+  border: 0 !important; 
+}
+
+
 .alignleft {
   float:left;
 }
