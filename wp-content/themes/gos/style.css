@@ -5763,13 +5763,18 @@ body.home {
       left: 1%;
       font-style: italic;
       font-size: 2rem;
-      bottom: -70%;
       text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
       color: #199ca9;
       color: white; }
       @media screen and (max-width: 480px) {
         body.home .home-widgets:after {
           bottom: -30%; } }
+      @media screen and (min-width: 481px) {
+        body.home .home-widgets:after {
+          bottom: -30%; } }
+      @media screen and (min-width: 769px) {
+        body.home .home-widgets:after {
+          bottom: -70%; } }
     body.home .home-widgets ul {
       padding: 0; }
       body.home .home-widgets ul .upw-posts .entry-content {
