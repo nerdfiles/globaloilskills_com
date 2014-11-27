@@ -227,6 +227,13 @@ article {
 
 .home-benefits {
   clear: both;
+  &:before {
+    background-image: url('./images/bg-underlay-1.jpg');
+    height: 500px;
+    content: " ";
+    display: block;
+    @include span-columns(12);
+  }
 
   ul {
     @include span-columns(12);
