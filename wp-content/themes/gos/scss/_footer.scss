@@ -2,8 +2,12 @@
   @include clearfix;
   @include span-columns(12);
 
-  background: $color1;
-  padding: 1.5em 0;
+  background-image: url('./images/bg-underlay-3.jpg');
+  background-repeat: no-repeat;
+  background-position: 0% 10%;
+  background-size: cover;
+  border-top: 0.8rem solid #F3F3F3;
+  @include pad(default 0);
   list-style: none;
   margin: 0;
   margin-top: 5rem;
@@ -15,24 +19,29 @@
         list-style: none;
         @include clearfix;
         @include span-columns(12);
+        a {
+          color: #fff;
+          text-transform: lowercase;
+          font-variant: small-caps;
+        }
         li {
-          text-align: center;
+          text-align: left;
 
           @include media($xlarge) {
-            @include span-columns(2);
+            @include span-columns(12);
           }
 
           @include media($large) {
-            @include span-columns(2);
+            @include span-columns(12);
           }
 
           @include media($medium) {
-            @include span-columns(2);
+            @include span-columns(12);
           }
 
           @include media($small) {
-            @include span-columns(6);
-            @include omega(2n);
+            @include span-columns(12);
+            /*@include omega(2n);*/
           }
 
         }
