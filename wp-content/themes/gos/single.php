@@ -41,7 +41,7 @@ get_header(); ?>
           <?php } ?>
         </aside>
 
-				<aside class="post-aside">
+				<!--aside class="post-aside">
 
 					<div class="post-links">
 						<?php previous_post_link( '%link', __( '&laquo; Previous post', 'gos' ) ) ?>
@@ -54,7 +54,7 @@ get_header(); ?>
 						endif;
 					?>
 
-				</aside><?php
+				</aside--><?php
 
 			else :
 
