@@ -81,7 +81,7 @@ function rw_remove_menus () {
     __('Posts'),
     __('Media'),
     __('Links'),
-    __('Pages'),
+    //__('Pages'),
     //__('Appearance'),
     //__('Tools'),
     //__('Users'),
@@ -258,7 +258,7 @@ function gos_enqueue_scripts() {
 
   // Testing Scenarios
   if (strpos($_SERVER['SERVER_NAME'],'local') !== false) {
-    wp_enqueue_script( '', 'http://localhost:35729/livereload.js', array(), '0.0.1', true);
+    //wp_enqueue_script( '', 'http://localhost:35729/livereload.js', array(), '0.0.1', true);
   }
 }
 add_action( 'wp_enqueue_scripts', 'gos_enqueue_scripts', 200 );
