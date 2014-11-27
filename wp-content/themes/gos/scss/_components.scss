@@ -281,3 +281,103 @@ body.login #lostpasswordform {
   #backtoblog { }
 }
 
+
+.footer-after-content-widgets {
+  .widget h2 { margin-bottom: 0; border-bottom: none; }
+  ul {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    border-bottom: .1rem solid #199CA9;
+    @include media($small) {
+      @include span-columns(12);
+    }
+    @include media($medium) {
+      @include span-columns(12);
+    }
+    @include media($large) {
+      @include span-columns(12);
+    }
+    li {
+      a {
+        display: block;
+        padding: .5rem 0;
+        color: #fff;
+      }
+      $num: 5;
+      @for $i from 0 to $num {
+        &:nth-of-type(#{$i}) {
+          background-color: adjust-color(#ccc, $blue: $i*10, $red: $i*10, $green: $i*10);
+          a {
+            color: adjust-color(#111, $blue: $i*30, $red: $i*30, $green: $i*30);
+          }
+        }
+      }
+    }
+  }
+
+  .widget {
+    ul { padding: 0; list-style: none; }
+    p { text-align: left; }
+
+    background-color: #fff;
+    /*border-radius: .1rem;*/
+    overflow: hidden;
+    @include job-posting();
+  }
+
+  /**
+   * Home Widgets Case for All Users
+   * Uses media queries for responsive cases, based on Bourbon Neat.
+   */
+  & {
+    position: relative;
+
+    h2 {
+      margin: 0;
+      padding: 0 .5rem;
+      /*background-color: #054481;*/
+      background-color: #27608A;
+      text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+      rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
+      rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
+      color: #fff;
+      text-align: center;
+    }
+    @include span-columns(12);
+
+    h2.widgettitle {
+      background-color: #199ca9;
+      text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+      rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
+      rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
+    }
+
+    .widget {
+      padding: 0;
+    }
+
+    @include media($small) {
+      .widget {
+        @include span-columns(12);
+      }
+    }
+
+    @include media($medium) {
+      .widget {
+        @include span-columns(12);
+      }
+    }
+
+    @include media($large) {
+      .widget {
+        @include span-columns(4, block-collapse);
+        @include omega();
+      }
+    }
+
+  }
+
+}

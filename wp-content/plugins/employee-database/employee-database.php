@@ -81,7 +81,7 @@ class JobPostType {
       'publicly_queryable' => true,
       'show_ui' => true,
       'query_var' => true,
-      'rewrite' => array('slug' => strtolower($this->plural)),
+      'rewrite' => array('slug' => strtolower(str_replace(' ', '-', $this->plural))),
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
@@ -122,7 +122,7 @@ class JobPostType {
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'location' ),
+          'name' => __( 'Location' ),
           'singular_name' => __( 'Location' ),
           'all_items' => __( 'All Locations' ),
           'add_new_item' => __( 'Add Location' )
