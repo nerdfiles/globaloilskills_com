@@ -5411,7 +5411,7 @@ body.search-results .page-content {
         height: 100px;
         width: 100px;
         content: " ";
-        background-image: url('http://placehold.it/100x100');
+        background-image: url('http://placehold.it/100&text=NEW+JOB');
         position: absolute;
         right: 0;
         top: 100%; }
@@ -5616,7 +5616,7 @@ body.home {
           height: 100px;
           width: 100px;
           content: " ";
-          background-image: url('http://placehold.it/100x100');
+          background-image: url('http://placehold.it/100&text=NEW+JOB');
           position: absolute;
           right: 0;
           top: 100%; }
