@@ -1,7 +1,6 @@
 .site-header {
   background-color: #8E9DAB;
   background-color: #fff;
-  padding-bottom: 1rem;
   /*overflow: hidden;*/
   /*padding: 3em 0;*/
   position:relative;
@@ -14,12 +13,12 @@
     color: $color2;
     position: relative;
     z-index: 2;
-    padding: .5rem 0;
+    @include pad(default 0);
 
     .site-name {
       text-indent: -9999px;
       text-align: left;
-      background-image: url('./images/logo-idea-04.png');
+      background-image: url('./images/logo-9000.png');
       /*
        *background-image: url('./images/logo--globaloilskills.png');
        */
@@ -48,21 +47,34 @@
 
   div.menu {
     @include span-columns(8);
+    @include pad(default 0);
+    @include media($small) {
+      @include pad(0);
+    }
     /*
      *@include span-columns(10);
      *@include shift(1);
      */
   }
   .main-menu {
+    @include pad(default 0);
     @include clearfix;
     /*padding-bottom: 20px;*/
-    padding-top: 1rem;
   }
-  .menu .main-menu .menu {
+  div.menu .main-menu ul.menu {
     margin: 0;
     padding: 0;
     @include clearfix;
-    @include span-columns(12);
+    @include span-columns(11);
+    @include shift(2);
+    @include media($medium) {
+      @include span-columns(12);
+      @include shift(0);
+    }
+    @include media($small) {
+      @include span-columns(12);
+      @include shift(0);
+    }
     li {
       list-style: none;
       text-align: center;
@@ -76,17 +88,19 @@
       }
 
       @include media($medium) {
-        @include span-columns(3);
+        @include span-columns(4);
       }
 
       @include media($small) {
-        @include span-columns(6);
-        @include omega(2n);
+        @include span-columns(12);
+        text-align: right;
+        /*@include omega(2n);*/
       }
 
       a {
         display: block;
         padding: .5rem 0;
+        @include pad(0 default);
         color: #313131;
         font-weight: 700;
         text-transform: uppercase;
