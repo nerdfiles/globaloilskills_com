@@ -1,5 +1,6 @@
 .site-header {
   background-color: #8E9DAB;
+  background-color: #fff;
   padding-bottom: 1rem;
   /*overflow: hidden;*/
   /*padding: 3em 0;*/
@@ -18,8 +19,11 @@
     .site-name {
       text-indent: -9999px;
       text-align: left;
-      /*background-image: url('./images/logo-idea-02.png');*/
-      background-image: url('http://placehold.it/300&text=GOS');
+      background-image: url('./images/logo-idea-03.png');
+      /*
+       *background-image: url('./images/logo--globaloilskills.png');
+       */
+      /*background-image: url('http://placehold.it/300&text=GOS');*/
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -52,7 +56,7 @@
   .main-menu {
     @include clearfix;
     /*padding-bottom: 20px;*/
-    padding-top: 0;
+    padding-top: 1rem;
   }
   .menu .main-menu .menu {
     margin: 0;
@@ -83,7 +87,7 @@
       a {
         display: block;
         padding: .5rem 0;
-        color: #fff;
+        color: #313131;
         font-weight: 700;
         text-transform: uppercase;
       }

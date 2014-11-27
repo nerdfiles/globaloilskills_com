@@ -6205,6 +6205,7 @@ input[type="submit"] {
 
 .site-header {
   background-color: #8e9dab;
+  background-color: white;
   padding-bottom: 1rem;
   /*overflow: hidden;*/
   /*padding: 3em 0;*/
@@ -6231,8 +6232,11 @@ input[type="submit"] {
     .site-header .logo .site-name {
       text-indent: -9999px;
       text-align: left;
-      /*background-image: url('./images/logo-idea-02.png');*/
-      background-image: url('http://placehold.it/300&text=GOS');
+      background-image: url('./images/logo-idea-03.png');
+      /*
+       *background-image: url('./images/logo--globaloilskills.png');
+       */
+      /*background-image: url('http://placehold.it/300&text=GOS');*/
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -6264,7 +6268,7 @@ input[type="submit"] {
   .site-header .main-menu {
     *zoom: 1;
     /*padding-bottom: 20px;*/
-    padding-top: 0; }
+    padding-top: 1rem; }
     .site-header .main-menu:before, .site-header .main-menu:after {
       content: " ";
       display: table; }
@@ -6327,7 +6331,7 @@ input[type="submit"] {
       .site-header .menu .main-menu .menu li a {
         display: block;
         padding: 0.5rem 0;
-        color: white;
+        color: #313131;
         font-weight: 700;
         text-transform: uppercase; }
 
@@ -6565,17 +6569,48 @@ article {
     color: black; }
 
 .home-benefits {
-  clear: both; }
+  clear: both;
+  *zoom: 1; }
+  .home-benefits:before, .home-benefits:after {
+    content: " ";
+    display: table; }
+  .home-benefits:after {
+    clear: both; }
   .home-benefits:before {
     background-image: url('./images/bg-underlay-1.jpg');
+    background-size: cover;
     height: 500px;
+    margin-bottom: 2rem;
+    image-rendering: optimizeQuality;
     content: " ";
     display: block;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%;
+    border-bottom: 0.8rem #f3f3f3 solid;
+    border-top: 0.8rem #f3f3f3 solid; }
+    .home-benefits:before:last-child {
+      margin-right: 0; }
+  .home-benefits:after {
+    border-top: 0.8rem #f3f3f3 solid;
+    border-bottom: 0.8rem #f3f3f3 solid;
+    background-image: url('./images/bg-underlay-2.jpg');
+    background-size: cover;
+    height: 500px;
+    margin-top: 2rem;
+    image-rendering: optimizeQuality;
+    content: " ";
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50%;
     float: left;
     display: block;
     margin-right: 3.06748%;
     width: 100%; }
-    .home-benefits:before:last-child {
+    .home-benefits:after:last-child {
       margin-right: 0; }
   .home-benefits ul {
     float: left;

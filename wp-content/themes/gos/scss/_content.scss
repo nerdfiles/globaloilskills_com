@@ -227,11 +227,35 @@ article {
 
 .home-benefits {
   clear: both;
+  @include clearfix;
+
   &:before {
     background-image: url('./images/bg-underlay-1.jpg');
+    background-size: cover;
     height: 500px;
+    margin-bottom: 2rem;
+    @include image-rendering(optimizeQuality);
     content: " ";
     display: block;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    @include span-columns(12);
+    border-bottom: .8rem #f3f3f3 solid;
+    border-top: .8rem #f3f3f3 solid;
+  }
+
+  &:after {
+    border-top: .8rem #f3f3f3 solid;
+    border-bottom: .8rem #f3f3f3 solid;
+    background-image: url('./images/bg-underlay-2.jpg');
+    background-size: cover;
+    height: 500px;
+    margin-top: 2rem;
+    @include image-rendering(optimizeQuality);
+    content: " ";
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50%;
     @include span-columns(12);
   }
 
