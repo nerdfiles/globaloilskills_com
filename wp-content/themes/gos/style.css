@@ -5426,7 +5426,8 @@ body.search-results .page-content {
       display: none !important;
       background-color: transparent !important;
       border: none !important;
-      font-size: 0.6rem; }
+      font-size: 0.6rem;
+      min-height: 5rem; }
       body.search-results .page-content article.post .schema_job_posting > div > div {
         display: none; }
       body.search-results .page-content article.post .schema_job_posting .schema_url {
@@ -5652,7 +5653,8 @@ body.home {
         display: none !important;
         background-color: transparent !important;
         border: none !important;
-        font-size: 0.6rem; }
+        font-size: 0.6rem;
+        min-height: 5rem; }
         body.home .home-widgets .widget article.post .schema_job_posting > div > div {
           display: none; }
         body.home .home-widgets .widget article.post .schema_job_posting .schema_url {
