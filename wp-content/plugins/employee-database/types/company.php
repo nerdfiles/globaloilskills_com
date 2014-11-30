@@ -7,7 +7,7 @@ class Company {
   var $type 	= "company"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function Company()
+  function CompanyScaffolding()
   {
     $this->__construct();
   }
