@@ -1,7 +1,4 @@
 <?php
-/**
- * Job Posting Entity
- */
 new JobPostingType;       // First class object
 class JobPostingType {
 
@@ -10,16 +7,14 @@ class JobPostingType {
   var $type 	= "jobposting"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function JobPostingType()
-  {
+  function JobPostingType() {
     $this->__construct();
   }
 
-  function __construct()
-  {
+  function __construct() {
     # Place your add_actions and add_filters here
-    add_action( 'init', array( &$this, 'init' ) );
-    add_action( 'init', array(&$this, 'add_post_type'));
+    add_action( 'init', array( &$this, 'init_job_posting' ) );
+    add_action( 'init', array(&$this, 'add_job_posting_post_type'));
 
     # Add image support
     add_theme_support('post-thumbnails', array( $this->type ) );
@@ -27,21 +22,20 @@ class JobPostingType {
     add_image_size(strtolower($this->plural).'-thumb-m', 300, 180, true);
 
     # Add Post Type to Search
-    add_filter('pre_get_posts', array( &$this, 'query_post_type') );
+    add_filter('pre_get_posts', array( &$this, 'query_job_posting_post_type') );
 
     # Add Custom Taxonomies
-    add_action( 'init', array( &$this, 'add_taxonomies'), 0 );
+    add_action( 'init', array( &$this, 'add_job_posting_taxonomies'), 200 );
 
     # Add meta box
     add_action('add_meta_boxes', array( &$this, 'add_custom_metaboxes') );
 
     # Save entered data
-    add_action('save_post', array( &$this, 'save_postdata') );
-
+    add_action('save_post', array( &$this, 'save_job_posting_postdata') );
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
-  function init($options = null){
+  function init_job_posting($options = null){
     if($options) {
       foreach($options as $key => $value){
         $this->$key = $value;
@@ -50,7 +44,7 @@ class JobPostingType {
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
-  function add_post_type(){
+  function add_job_posting_post_type(){
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
       'menu_name' => __('Job Board'),
@@ -76,7 +70,7 @@ class JobPostingType {
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
-      'menu_position' => 22,
+      'menu_position' => 8,
       'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
@@ -88,11 +82,13 @@ class JobPostingType {
         //'comments'
       ),
     );
+
     register_post_type($this->type, $options);
+    flush_rewrite_rules( false );
   }
 
 
-  function query_post_type($query) {
+  function query_job_posting_post_type($query) {
     if(is_category() || is_tag()) {
       $post_type = get_query_var('post_type');
     if($post_type) {
@@ -105,10 +101,17 @@ class JobPostingType {
     }
   }
 
-  function add_taxonomies() {
+  function add_job_posting_taxonomies() {
 
+    /**
+     * Register Location Category
+     *
+     * @TODO Supply reference data.
+     *
+     * frex: Planet > Country > State > City > Locality (Zip Code)
+     */
     register_taxonomy(
-      'location',
+      'job-location',
       array($this->type),
       array(
         'hierarchical' => true,
@@ -121,13 +124,18 @@ class JobPostingType {
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'location'
+          'slug' => 'job-location'
         ),
       )
     );
 
+    /**
+     * Register Industry Category
+     *
+     * frex: Oil and Gas, etc.
+     */
     register_taxonomy(
-      'industry',
+      'job-industry',
       array($this->type),
       array(
         'hierarchical' => true,
@@ -140,32 +148,37 @@ class JobPostingType {
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'industry'
+          'slug' => 'job-industry'
         ),
       )
     );
 
+    /**
+     * Register Job Type Category
+     *
+     * frex: Engineering, Programming, etc.
+     */
     register_taxonomy(
-      'job_type',
+      'job-role',
       array($this->type),
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'Job Type' ),
-          'singular_name' => __( 'Job Type' ),
-          'all_items' => __( 'All Job Types' ),
-          'add_new_item' => __( 'Add Job Type' )
+          'name' => __( 'Role' ),
+          'singular_name' => __( 'Role' ),
+          'all_items' => __( 'All Roles' ),
+          'add_new_item' => __( 'Add Role' )
         ),
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'job_type'
+          'slug' => 'job-role'
         ),
       )
     );
 
     register_taxonomy(
-      'status',
+      'job-status',
       array($this->type),
       array(
         'hierarchical' => true,
@@ -178,7 +191,7 @@ class JobPostingType {
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'status'
+          'slug' => 'job-status'
         ),
       )
     );
@@ -187,11 +200,11 @@ class JobPostingType {
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
   function add_custom_metaboxes() {
-    add_meta_box( 'metabox1', 'Details', array( &$this, 'metabox1'), $this->type, 'normal', 'high' );
+    add_meta_box( 'job_posting_metabox1', 'Details', array( &$this, 'job_posting_metabox1'), $this->type, 'normal', 'high' );
   }
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
-  function metabox1() {
+  function job_posting_metabox1() {
 
     global $post;
     extract(get_post_custom($post->ID));
@@ -238,7 +251,7 @@ class JobPostingType {
     />
     </p>
     <style type="text/css">
-      #metabox1 label {
+      #job_posting_metabox1 label {
         width: 150px;
         display: -moz-inline-stack;
         display: inline-block;
@@ -253,7 +266,7 @@ class JobPostingType {
   }
 
 
-  function save_postdata(){
+  function save_job_posting_postdata(){
     if ( empty($_POST) || $_POST['post_type'] !== $this->type || !wp_verify_nonce( $_POST['noncename'], plugin_basename(__FILE__) )) {
       return $post_id;
     }
