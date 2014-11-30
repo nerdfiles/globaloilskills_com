@@ -7,7 +7,7 @@ class ApplicationPostType {
   var $type 	= "application"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function ApplicationPostType()
+  function ApplicationScaffolding()
   {
     $this->__construct();
   }

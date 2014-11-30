@@ -7,7 +7,7 @@ class JobPostingType {
   var $type 	= "jobposting"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function JobPostingType() {
+  function JobPostingScaffolding() {
     $this->__construct();
   }
 

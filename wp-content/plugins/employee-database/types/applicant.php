@@ -8,7 +8,7 @@ class ApplicantPostType {
   var $type 	= "applicant"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function ApplicantPostType() {
+  function ApplicantScaffolding() {
     $this->__construct();
   }
 

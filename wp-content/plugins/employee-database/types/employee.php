@@ -5,15 +5,15 @@
  *
  * @TODO Breezify
  */
-new Candidate;             // First class object
-class Candidate {
+new CandidatePostType;             // First class object
+class CandidatePostType {
 
   var $single = "Candidate"; 	// this represents the singular name of the post type
   var $plural = "Candidates"; 	// this represents the plural name of the post type
   var $type 	= "candidate"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function Candidate()
+  function CandidateScaffolding()
   {
     $this->__construct();
   }
