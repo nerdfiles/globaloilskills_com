@@ -18,15 +18,7 @@ Version: 1.0
  * content (List Views, Detail Views).
  */
 
-//include_once('recruiter.php');
-//include_once('job.php');
-
 new Employee;             // First class object
-new Employer;             // First class object
-new ApplicationPostType;  // Applications will be constituted by Contact Form 7, Maps Builder, and a Standard Post object
-new ApplicantPostType;    // First class object
-new JobPostingType;       // First class object
-
 class Employee {
 
   var $single = "Employee"; 	// this represents the singular name of the post type
@@ -77,7 +69,7 @@ class Employee {
   function add_post_type(){
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
-      'menu_name' => __('Job Board'),
+      'menu_name' => __('Employees'),
       'singular_name' => _x($this->single, 'post type singular name'),
       'add_new' => _x('Add ' . $this->single, $this->single),
       'add_new_item' => __('Add New ' . $this->single),
@@ -89,6 +81,7 @@ class Employee {
       'not_found_in_trash' => __('No ' . $this->plural . ' found in Trash'),
       'parent_item_colon' => ''
     );
+
     $options = array(
       'labels' => $labels,
       'public' => true,
@@ -304,14 +297,15 @@ class Employee {
 
 }
 
-class Employer {
+new Company;             // First class object
+class Company {
 
-  var $single = "Employer"; 	// this represents the singular name of the post type
-  var $plural = "Employers"; 	// this represents the plural name of the post type
-  var $type 	= "employer"; 	// this is the actual type
+  var $single = "Company"; 	// this represents the singular name of the post type
+  var $plural = "Companies"; 	// this represents the plural name of the post type
+  var $type 	= "company"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function Employer()
+  function Company()
   {
     $this->__construct();
   }
@@ -377,7 +371,7 @@ class Employer {
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
-      'menu_position' => 20,
+      'menu_position' => 21,
       'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
@@ -583,6 +577,7 @@ class Employer {
 
 }
 
+new JobPostingType;       // First class object
 class JobPostingType {
 
   var $single = "Job Posting"; 	// this represents the singular name of the post type
@@ -645,6 +640,7 @@ class JobPostingType {
       'not_found_in_trash' => __('No ' . $this->plural . ' found in Trash'),
       'parent_item_colon' => ''
     );
+
     $options = array(
       'labels' => $labels,
       'public' => true,
@@ -655,7 +651,7 @@ class JobPostingType {
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
-      'menu_position' => 20,
+      'menu_position' => 22,
       'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
@@ -861,6 +857,7 @@ class JobPostingType {
 
 }
 
+new ApplicantPostType;    // First class object
 class ApplicantPostType {
 
   var $single = "Applicant"; 	// this represents the singular name of the post type
@@ -912,6 +909,7 @@ class ApplicantPostType {
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
       'singular_name' => _x($this->single, 'post type singular name'),
+      'menu_name' => __('Applicant'),
       'add_new' => _x('Add ' . $this->single, $this->single),
       'add_new_item' => __('Add New ' . $this->single),
       'edit_item' => __('Edit ' . $this->single),
@@ -922,6 +920,7 @@ class ApplicantPostType {
       'not_found_in_trash' => __('No ' . $this->plural . ' found in Trash'),
       'parent_item_colon' => ''
     );
+
     $options = array(
       'labels' => $labels,
       'public' => true,
@@ -932,7 +931,7 @@ class ApplicantPostType {
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
-      'menu_position' => 20,
+      'menu_position' => 23,
       'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
@@ -1081,6 +1080,7 @@ class ApplicantPostType {
 
 }
 
+new ApplicationPostType;  // Applications will be constituted by Contact Form 7, Maps Builder, and a Standard Post object
 class ApplicationPostType {
 
   var $single = "Application"; 	// this represents the singular name of the post type
@@ -1132,6 +1132,7 @@ class ApplicationPostType {
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
       'singular_name' => _x($this->single, 'post type singular name'),
+      'menu_name' => __('Applications'),
       'add_new' => _x('Add ' . $this->single, $this->single),
       'add_new_item' => __('Add New ' . $this->single),
       'edit_item' => __('Edit ' . $this->single),
@@ -1142,6 +1143,7 @@ class ApplicationPostType {
       'not_found_in_trash' => __('No ' . $this->plural . ' found in Trash'),
       'parent_item_colon' => ''
     );
+
     $options = array(
       'labels' => $labels,
       'public' => true,
@@ -1152,9 +1154,9 @@ class ApplicationPostType {
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
-      'menu_position' => 20,
+      'menu_position' => 24,
       'show_in_nav_menus' => true,
-      'taxonomies' => array( 'post_tag' ),
+      'taxonomies' => array(),
       'supports' => array(
         'title',
         //'editor',
