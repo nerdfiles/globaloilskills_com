@@ -1,7 +1,4 @@
 <?php
-/**
- * Job Posting Entity
- */
 new JobPostingType;       // First class object
 class JobPostingType {
 
@@ -10,13 +7,11 @@ class JobPostingType {
   var $type 	= "jobposting"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function JobPostingType()
-  {
+  function JobPostingType() {
     $this->__construct();
   }
 
-  function __construct()
-  {
+  function __construct() {
     # Place your add_actions and add_filters here
     add_action( 'init', array( &$this, 'init' ) );
     add_action( 'init', array(&$this, 'add_post_type'));
@@ -37,7 +32,6 @@ class JobPostingType {
 
     # Save entered data
     add_action('save_post', array( &$this, 'save_postdata') );
-
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
@@ -88,7 +82,9 @@ class JobPostingType {
         //'comments'
       ),
     );
+
     register_post_type($this->type, $options);
+    flush_rewrite_rules( false );
   }
 
 

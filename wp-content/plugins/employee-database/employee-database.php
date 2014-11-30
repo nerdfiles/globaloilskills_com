@@ -19,7 +19,7 @@ Version: 1.0
  */
 
 
-include('types/appication.php');
+include('types/application.php');
 include('types/applicant.php');
 include('types/job-posting.php');
 include('types/employee.php');

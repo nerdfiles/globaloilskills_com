@@ -92,6 +92,7 @@ class Employee {
       ),
     );
     register_post_type($this->type, $options);
+    flush_rewrite_rules( false );
   }
 
   function query_post_type($query) {

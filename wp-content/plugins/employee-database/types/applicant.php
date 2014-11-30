@@ -1,4 +1,5 @@
 <?php
+
 new ApplicantPostType;    // First class object
 class ApplicantPostType {
 
@@ -7,13 +8,11 @@ class ApplicantPostType {
   var $type 	= "applicant"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function ApplicantPostType()
-  {
+  function ApplicantPostType() {
     $this->__construct();
   }
 
-  function __construct()
-  {
+  function __construct() {
     # Place your add_actions and add_filters here
     add_action( 'init', array( &$this, 'init' ) );
     add_action( 'init', array( &$this, 'add_post_type') );
@@ -51,7 +50,7 @@ class ApplicantPostType {
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
       'singular_name' => _x($this->single, 'post type singular name'),
-      'menu_name' => __('Applicant'),
+      'menu_name' => __('Onboarding'),
       'add_new' => _x('Add ' . $this->single, $this->single),
       'add_new_item' => __('Add New ' . $this->single),
       'edit_item' => __('Edit ' . $this->single),
@@ -86,6 +85,7 @@ class ApplicantPostType {
       ),
     );
     register_post_type($this->type, $options);
+    flush_rewrite_rules( false );
   }
 
 
