@@ -1,8 +1,4 @@
 <?php
-/**
- * Company Entity
- *
- */
 new Company;             // First class object
 class Company {
 
@@ -19,8 +15,8 @@ class Company {
   function __construct()
   {
     # Place your add_actions and add_filters here
-    add_action( 'init', array( &$this, 'init' ) );
-    add_action( 'init', array(&$this, 'add_post_type'));
+    add_action( 'init', array( &$this, 'init_company' ) );
+    add_action( 'init', array( &$this, 'add_company_type') );
 
     # Add image support
     add_theme_support('post-thumbnails', array( $this->type ) );
@@ -28,21 +24,21 @@ class Company {
     add_image_size(strtolower($this->plural).'-thumb-m', 300, 180, true);
 
     # Add Post Type to Search
-    add_filter('pre_get_posts', array( &$this, 'query_post_type') );
+    add_filter('pre_get_posts', array( &$this, 'query_company_post_type') );
 
     # Add Custom Taxonomies
-    add_action( 'init', array( &$this, 'add_taxonomies'), 0 );
+    add_action( 'init', array( &$this, 'add_company_taxonomies'), 111 );
 
     # Add meta box
-    add_action('add_meta_boxes', array( &$this, 'add_custom_metaboxes') );
+    add_action('add_meta_boxes', array( &$this, 'add_company_custom_metaboxes') );
 
     # Save entered data
-    add_action('save_post', array( &$this, 'save_postdata') );
+    add_action('save_post', array( &$this, 'save_company_postdata') );
 
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
-  function init($options = null){
+  function init_company($options = null){
     if($options) {
       foreach($options as $key => $value){
         $this->$key = $value;
@@ -51,7 +47,7 @@ class Company {
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
-  function add_post_type(){
+  function add_company_type(){
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
       'menu_name' => __('Companies'),
@@ -77,7 +73,7 @@ class Company {
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
-      'menu_position' => 21,
+      'menu_position' => 11,
       'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
@@ -94,7 +90,7 @@ class Company {
   }
 
 
-  function query_post_type($query) {
+  function query_company_post_type($query) {
     if(is_category() || is_tag()) {
       $post_type = get_query_var('post_type');
     if($post_type) {
@@ -102,15 +98,15 @@ class Company {
     } else {
       $post_type = array($this->type); // replace cpt to your custom post type
     }
-    $query->set('post_type',$post_type);
+    $query->set('post_type', $post_type);
     return $query;
     }
   }
 
-  function add_taxonomies() {
+  function add_company_taxonomies() {
 
     register_taxonomy(
-      'location',
+      'company-location',
       array($this->type),
       array(
         'hierarchical' => true,
@@ -123,13 +119,13 @@ class Company {
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'location'
+          'slug' => 'company-location'
         ),
       )
     );
 
     register_taxonomy(
-      'industry',
+      'company-industry',
       array($this->type),
       array(
         'hierarchical' => true,
@@ -142,32 +138,13 @@ class Company {
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'industry'
+          'slug' => 'company-industry'
         ),
       )
     );
 
     register_taxonomy(
-      'job_type',
-      array($this->type),
-      array(
-        'hierarchical' => true,
-        'labels' => array(
-          'name' => __( 'Job Type' ),
-          'singular_name' => __( 'Job Type' ),
-          'all_items' => __( 'All Job Types' ),
-          'add_new_item' => __( 'Add Job Type' )
-        ),
-        'public' => true,
-        'query_var' => true,
-        'rewrite' => array(
-          'slug' => 'job_type'
-        ),
-      )
-    );
-
-    register_taxonomy(
-      'status',
+      'company-status',
       array($this->type),
       array(
         'hierarchical' => true,
@@ -180,7 +157,7 @@ class Company {
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'status'
+          'slug' => 'company-status'
         ),
       )
     );
@@ -188,12 +165,12 @@ class Company {
   }
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
-  function add_custom_metaboxes() {
-    add_meta_box( 'metabox1', 'Details', array( &$this, 'metabox1'), $this->type, 'normal', 'high' );
+  function add_company_custom_metaboxes() {
+    add_meta_box( 'company_metabox1', 'Details', array( &$this, 'company_metabox1'), $this->type, 'normal', 'high' );
   }
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
-  function metabox1() {
+  function company_metabox1() {
 
     global $post;
     extract(get_post_custom($post->ID));
@@ -240,7 +217,7 @@ class Company {
     />
     </p>
     <style type="text/css">
-      #metabox1 label {
+      #company_metabox1 label {
         width: 150px;
         display: -moz-inline-stack;
         display: inline-block;
@@ -255,7 +232,7 @@ class Company {
   }
 
 
-  function save_postdata(){
+  function save_company_postdata(){
     if ( empty($_POST) || $_POST['post_type'] !== $this->type || !wp_verify_nonce( $_POST['noncename'], plugin_basename(__FILE__) )) {
       return $post_id;
     }

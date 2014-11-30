@@ -18,9 +18,20 @@ Version: 1.0
  * content (List Views, Detail Views).
  */
 
-
-include('types/application.php');
-include('types/applicant.php');
-include('types/job-posting.php');
-include('types/employee.php');
-include('types/company.php');
+/**
+ *
+ */
+require_once('types/job-posting.php');
+/**
+ * Employees, essentially, with new-hire, candidate, applicant, etc. statuses
+ */
+require_once('types/applicant.php');
+/**
+ *
+ */
+require_once('types/application.php');
+/**
+ *
+ */
+require_once('types/company.php');
+//require_once('types/employee.php');

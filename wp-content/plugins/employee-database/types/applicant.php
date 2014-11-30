@@ -15,7 +15,7 @@ class ApplicantPostType {
   function __construct() {
     # Place your add_actions and add_filters here
     add_action( 'init', array( &$this, 'init' ) );
-    add_action( 'init', array( &$this, 'add_post_type') );
+    add_action( 'init', array( &$this, 'add_applicant_type') );
 
     # Add image support
     add_theme_support('post-thumbnails', array( $this->type ) );
@@ -26,10 +26,10 @@ class ApplicantPostType {
     add_filter('pre_get_posts', array( &$this, 'query_post_type') );
 
     # Add Custom Taxonomies
-    add_action( 'init', array( &$this, 'add_taxonomies'), 0 );
+    add_action( 'init', array( &$this, 'add_job_applicant_taxonomies'), 100 );
 
     # Add meta box
-    add_action('add_meta_boxes', array( &$this, 'add_custom_metaboxes') );
+    add_action('add_meta_boxes', array( &$this, 'add_applicant_custom_metaboxes') );
 
     # Save entered data
     add_action('save_post', array( &$this, 'save_postdata') );
@@ -46,7 +46,7 @@ class ApplicantPostType {
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
-  function add_post_type(){
+  function add_applicant_type(){
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
       'singular_name' => _x($this->single, 'post type singular name'),
@@ -72,7 +72,7 @@ class ApplicantPostType {
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
-      'menu_position' => 23,
+      'menu_position' => 10,
       'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
@@ -102,10 +102,10 @@ class ApplicantPostType {
     }
   }
 
-  function add_taxonomies() {
+  function add_job_applicant_taxonomies() {
 
     register_taxonomy(
-      'status',
+      'applicant-status',
       array($this->type),
       array(
         'hierarchical' => true,
@@ -118,7 +118,7 @@ class ApplicantPostType {
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'status'
+          'slug' => 'applicant-status'
         ),
       )
      );
@@ -126,12 +126,12 @@ class ApplicantPostType {
   }
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
-  function add_custom_metaboxes() {
-    add_meta_box( 'metabox1', 'Details', array( &$this, 'metabox1'), $this->type, 'normal', 'high' );
+  function add_applicant_custom_metaboxes() {
+    add_meta_box( 'applicant_metabox1', 'Details', array( &$this, 'applicant_metabox1'), $this->type, 'normal', 'high' );
   }
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
-  function metabox1() {
+  function applicant_metabox1() {
 
     global $post;
     extract(get_post_custom($post->ID));
@@ -178,7 +178,7 @@ class ApplicantPostType {
     />
     </p>
     <style type="text/css">
-      #metabox1 label {
+      #applicant_metabox1 label {
         width: 150px;
         display: -moz-inline-stack;
         display: inline-block;

@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Employee Entity
+ * candidate Entity
  *
  * @TODO Breezify
  */
-new Employee;             // First class object
-class Employee {
+new Candidate;             // First class object
+class Candidate {
 
-  var $single = "Employee"; 	// this represents the singular name of the post type
-  var $plural = "Employees"; 	// this represents the plural name of the post type
-  var $type 	= "employee"; 	// this is the actual type
+  var $single = "Candidate"; 	// this represents the singular name of the post type
+  var $plural = "Candidates"; 	// this represents the plural name of the post type
+  var $type 	= "candidate"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
-  function Employee()
+  function Candidate()
   {
     $this->__construct();
   }
@@ -21,8 +21,8 @@ class Employee {
   function __construct()
   {
     # Place your add_actions and add_filters here
-    add_action( 'init', array( &$this, 'init' ) );
-    add_action( 'init', array(&$this, 'add_post_type'));
+    add_action( 'init', array( &$this, 'init_candidate' ) );
+    add_action( 'init', array( &$this, 'add_candidate_post_type') );
 
     # Add image support
     add_theme_support('post-thumbnails', array( $this->type ) );
@@ -30,21 +30,21 @@ class Employee {
     add_image_size(strtolower($this->plural).'-thumb-m', 300, 180, true);
 
     # Add Post Type to Search
-    add_filter('pre_get_posts', array( &$this, 'query_post_type') );
+    add_filter('pre_get_posts', array( &$this, 'query_candidate_post_type') );
 
     # Add Custom Taxonomies
-    add_action( 'init', array( &$this, 'add_taxonomies'), 0 );
+    add_action( 'init', array( &$this, 'add_candidate_taxonomies'), 114 );
 
     # Add meta box
-    add_action('add_meta_boxes', array( &$this, 'add_custom_metaboxes') );
+    add_action('add_meta_boxes', array( &$this, 'add_candidate_custom_metaboxes') );
 
     # Save entered data
-    add_action('save_post', array( &$this, 'save_postdata') );
+    add_action('save_post', array( &$this, 'save_candidate_postdata') );
 
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
-  function init($options = null){
+  function init_candidate($options = null){
     if($options) {
       foreach($options as $key => $value){
         $this->$key = $value;
@@ -53,10 +53,10 @@ class Employee {
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
-  function add_post_type(){
+  function add_candidate_post_type(){
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
-      'menu_name' => __('Employees'),
+      'menu_name' => __('Candidates'),
       'singular_name' => _x($this->single, 'post type singular name'),
       'add_new' => _x('Add ' . $this->single, $this->single),
       'add_new_item' => __('Add New ' . $this->single),
@@ -95,7 +95,7 @@ class Employee {
     flush_rewrite_rules( false );
   }
 
-  function query_post_type($query) {
+  function query_candidate_post_type($query) {
     if(is_category() || is_tag()) {
       $post_type = get_query_var('post_type');
     if($post_type) {
@@ -108,7 +108,7 @@ class Employee {
     }
   }
 
-  function add_taxonomies() {
+  function add_candidate_taxonomies() {
 
     register_taxonomy(
       'location',
@@ -149,26 +149,26 @@ class Employee {
     );
 
     register_taxonomy(
-      'job_type',
+      'role',
       array($this->type),
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'Job Type' ),
-          'singular_name' => __( 'Job Type' ),
-          'all_items' => __( 'All Job Types' ),
-          'add_new_item' => __( 'Add Job Type' )
+          'name' => __( 'Role' ),
+          'singular_name' => __( 'Role' ),
+          'all_items' => __( 'All Roles' ),
+          'add_new_item' => __( 'Add Role' )
         ),
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'job_type'
+          'slug' => 'role'
         ),
       )
     );
 
     register_taxonomy(
-      'status',
+      'candidate-status',
       array($this->type),
       array(
         'hierarchical' => true,
@@ -181,7 +181,7 @@ class Employee {
         'public' => true,
         'query_var' => true,
         'rewrite' => array(
-          'slug' => 'status'
+          'slug' => 'candidate-status'
         ),
       )
     );
@@ -189,12 +189,12 @@ class Employee {
   }
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
-  function add_custom_metaboxes() {
-    add_meta_box( 'metabox1', 'Details', array( &$this, 'metabox1'), $this->type, 'normal', 'high' );
+  function add_candidate_custom_metaboxes() {
+    add_meta_box( 'candidate_metabox1', 'Details', array( &$this, 'candidate_metabox1'), $this->type, 'normal', 'high' );
   }
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
-  function metabox1() {
+  function candidate_metabox1() {
 
     global $post;
     extract(get_post_custom($post->ID));
@@ -241,7 +241,7 @@ class Employee {
     />
     </p>
     <style type="text/css">
-      #metabox1 label {
+      #candidate_metabox1 label {
         width: 150px;
         display: -moz-inline-stack;
         display: inline-block;
@@ -256,7 +256,7 @@ class Employee {
   }
 
 
-  function save_postdata(){
+  function save_candidate_postdata(){
     if ( empty($_POST) || $_POST['post_type'] !== $this->type || !wp_verify_nonce( $_POST['noncename'], plugin_basename(__FILE__) )) {
       return $post_id;
     }
