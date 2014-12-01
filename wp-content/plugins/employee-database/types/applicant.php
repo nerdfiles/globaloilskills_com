@@ -77,7 +77,7 @@ class ApplicantPostType {
       'taxonomies' => array(),
       'supports' => array(
         'title',
-        //'editor',
+        'editor',
 #      	'author',
         'thumbnail',
 #      	'excerpt',
@@ -103,6 +103,14 @@ class ApplicantPostType {
   }
 
   function add_job_applicant_taxonomies() {
+    /*
+    Applicant Name
+    Applicant Email
+    Job
+    Files
+    Posted
+    Status
+    */
 
     register_taxonomy(
       'applicant-status',
@@ -121,7 +129,26 @@ class ApplicantPostType {
           'slug' => 'applicant-status'
         ),
       )
-     );
+    );
+
+    register_taxonomy(
+      'applicant-status',
+      array($this->type),
+      array(
+        'hierarchical' => true,
+        'labels' => array(
+          'name' => __( 'Status' ),
+          'singular_name' => __( 'Status' ),
+          'all_items' => __( 'All Statuses' ),
+          'add_new_item' => __( 'Add Status' )
+        ),
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array(
+          'slug' => 'applicant-status'
+        ),
+      )
+    );
 
   }
 
@@ -138,18 +165,26 @@ class ApplicantPostType {
 
     wp_nonce_field( plugin_basename(__FILE__), 'noncename' );  // Use nonce for verification
   ?>
+
     <p>
-    <label for="data[short_title]">Short Title</label>
-    <input type="text" id= "data[short_title]" name="data[short_title]" value="<?php echo $short_title[0] ?>"  placeholder="5-6 Word Title" size="75" />
+    <label for="data[applicant_email]">Applicant E-mail</label>
+    <input
+      type="text"
+      id= "data[applicant_email]"
+      name="data[applicant_email]"
+      value="<?php echo $applicant_email[0] ?>"
+      placeholder="5-6 Word Title"
+      size="75"
+    />
     </p>
 
     <p>
-    <label for="data[currency]">Currency</label>
+    <label for="data[applicant_role]">applicant_role</label>
     <input
       type="text"
-      id= "data[currency]"
-      name="data[currency]"
-      value="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
+      id= "data[applicant_role]"
+      name="data[applicant_role]"
+      value="<?php echo $applicant_role[0] ? $applicant_role[0] : 'USD' ?>"
       size="10"
     />
     </p>

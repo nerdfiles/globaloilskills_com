@@ -138,45 +138,42 @@ class ApplicationPostType {
 
     wp_nonce_field( plugin_basename(__FILE__), 'noncename' );  // Use nonce for verification
   ?>
+
     <p>
-    <label for="data[short_title]">Short Title</label>
-    <input type="text" id= "data[short_title]" name="data[short_title]" value="<?php echo $short_title[0] ?>"  placeholder="5-6 Word Title" size="75" />
+    <label for="data[applicant_name]">Applicant Name</label>
+    <input
+      type="text"
+      id="data[applicant_name]"
+      name="data[applicant_name]"
+      value="<?php echo $applicant_name[0] ?>"
+      placeholder="5-6 Word Title"
+      size="75"
+    />
     </p>
 
     <p>
-    <label for="data[currency]">Currency</label>
+    <label for="data[applicant_email]">Applicant E-mail</label>
     <input
       type="text"
-      id= "data[currency]"
-      name="data[currency]"
-      value="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
+      id= "data[applicant_email]"
+      name="data[applicant_email]"
+      value="<?php echo $applicant_email[0] ? $applicant_email[0] : '@' ?>"
       size="10"
     />
     </p>
 
     <p>
-    <label for="data[salary]">Salary</label>
+    <label for="data[role]">Role</label>
     <input
-      type="number"
-      id= "data[salary]"
-      name="data[salary]"
-      value="<?php echo $salary[0] ?>"
-      placeholder="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
+      type="text"
+      id= "data[role]"
+      name="data[role]"
+      value="<?php echo $role[0] ?>"
+      placeholder="<?php echo $role[0] ? $role[0] : '...' ?>"
       size="25"
     />
     </p>
 
-    <p>
-    <label for="data[application_url]">Application Website</label>
-    <input
-      type="url"
-      id= "data[application_url]"
-      name="data[application_url]"
-      value="<?php echo $application_url[0] ?>"
-      placeholder="http://www.shell.com/"
-      size="75"
-    />
-    </p>
     <style type="text/css">
       #application_metabox1 label {
         width: 150px;
