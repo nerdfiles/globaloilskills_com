@@ -214,7 +214,13 @@ class JobPostingType {
 
     <p>
     <label for="data[position_title]">Position Title</label>
-    <input type="text" id= "data[position_title]" name="data[position_title]" value="<?php echo $position_title[0] ?>"  placeholder="5-6 Word Title" size="75" />
+    <input
+      type="text"
+      id= "data[position_title]"
+      name="data[position_title]"
+      value="<?php echo $position_title[0] ?>"
+      placeholder="5-6 Word Title"
+      size="75" />
     </p>
 
     <p>
@@ -250,6 +256,7 @@ class JobPostingType {
       size="75"
     />
     </p>
+
     <style type="text/css">
       #job_posting_metabox1 label {
         width: 150px;
