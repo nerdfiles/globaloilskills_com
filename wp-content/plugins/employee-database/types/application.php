@@ -51,7 +51,7 @@ class ApplicationPostType {
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
       'singular_name' => _x($this->single, 'post type singular name'),
-      'menu_name' => __('Applications'),
+      'menu_name' => __('Onboarding'),
       'add_new' => _x('Add ' . $this->single, $this->single),
       'add_new_item' => __('Add New ' . $this->single),
       'edit_item' => __('Edit ' . $this->single),
@@ -104,16 +104,19 @@ class ApplicationPostType {
   }
 
   function add_job_application_taxonomies() {
+
+    register_taxonomy_for_object_type( 'category', 'application' );
+
     register_taxonomy(
       'application-status',
       array($this->type),
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'Status' ),
-          'singular_name' => __( 'Status' ),
-          'all_items' => __( 'All Statuses' ),
-          'add_new_item' => __( 'Add Status' )
+          'name' => __( 'Application Status' ),
+          'singular_name' => __( 'Application Status' ),
+          'all_items' => __( 'All Application Statuses' ),
+          'add_new_item' => __( 'Add Application Status' )
         ),
         'public' => true,
         'query_var' => true,

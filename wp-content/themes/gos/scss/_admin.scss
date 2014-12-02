@@ -21,10 +21,13 @@ body.wp-admin {
 
 
 body.login {
-  background: #C9DEDB;
+  #login_error { }
+  #loginform { }
+  background-color: #28608a;
   a {
     color: #fff !important;
-    text-shadow: 0 0 1px #444;
+    /*text-shadow: 0 0 1px #444;*/
+    text-shadow: none;
   }
 }
 .login #backtoblog {
@@ -32,7 +35,7 @@ body.login {
 
 body.login,
 body.login input {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', 'Open Sans', sans-serif;
 }
 body.login #login,
 body.login #lostpasswordform {
@@ -51,8 +54,8 @@ body.login #lostpasswordform {
 
   h1 {
     a {
-      /*background-image: url('./images/logo.png');*/
-      background-image: url('http://placehold.it/500x500');
+      background-image: url('./images/logo-9001.png');
+      height: 100px;
     }
   }
   .message {
@@ -60,19 +63,32 @@ body.login #lostpasswordform {
     color: #333;
   }
   .input {
-    background-color: #ccc;
-    border: 1px solid #ccc;
+    background-color: #fff;
+    border: 4px solid #ccc;
     box-shadow: none;
-    color: #fff;
+    color: #28608a;
   }
   & form {
-    background-color: #f1f1f1;
+    /*
+     *background-color: #f1f1f1;
+     */
+    background-color: transparent;
+    box-shadow: none;
     label {
       color: #111; 
     }
   }
   .forgetmenot { }
-  .submit { }
-  #nav { }
-  #backtoblog { }
+  .submit {
+    #wp-submit {
+      text-shadow: none;
+      border-radius: 0 !important;
+  } }
+  #nav {
+    text-align: center;
+  }
+  #backtoblog {
+    text-align: center;
+    display: none;
+  }
 }

@@ -105,16 +105,18 @@ class Company {
 
   function add_company_taxonomies() {
 
+    register_taxonomy_for_object_type( 'category', 'job_posting' );
+
     register_taxonomy(
       'company-location',
       array($this->type),
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'Location' ),
-          'singular_name' => __( 'Location' ),
-          'all_items' => __( 'All Locations' ),
-          'add_new_item' => __( 'Add Location' )
+          'name' => __( 'Company Location' ),
+          'singular_name' => __( 'Company Location' ),
+          'all_items' => __( 'All Company Locations' ),
+          'add_new_item' => __( 'Add Company Location' )
         ),
         'public' => true,
         'query_var' => true,
@@ -125,12 +127,31 @@ class Company {
     );
 
     register_taxonomy(
+      'company-ranking',
+      array($this->type),
+      array(
+        'hierarchical' => true,
+        'labels' => array(
+          'name' => __( 'Ranking' ),
+          'singular_name' => __( 'Ranking' ),
+          'all_items' => __( 'All Rankings' ),
+          'add_new_item' => __( 'Add Ranking' )
+        ),
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array(
+          'slug' => 'company-ranking'
+        ),
+      )
+    );
+
+    register_taxonomy(
       'company-industry',
       array($this->type),
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'Industry' ),
+          'name' => __( 'Industry Codes' ),
           'singular_name' => __( 'Industry' ),
           'all_items' => __( 'All Industries' ),
           'add_new_item' => __( 'Add Industry' )
@@ -149,10 +170,10 @@ class Company {
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'Status' ),
-          'singular_name' => __( 'Status' ),
-          'all_items' => __( 'All Statuses' ),
-          'add_new_item' => __( 'Add Status' )
+          'name' => __( 'Company Status' ),
+          'singular_name' => __( 'Company Status' ),
+          'all_items' => __( 'All Company Statuses' ),
+          'add_new_item' => __( 'Add Company Status' )
         ),
         'public' => true,
         'query_var' => true,
@@ -194,28 +215,278 @@ class Company {
     </p>
 
     <p>
-    <label for="data[salary]">Salary</label>
+    <label for="data[annual_sales]">Annual Sales</label>
     <input
       type="number"
-      id= "data[salary]"
-      name="data[salary]"
-      value="<?php echo $salary[0] ?>"
-      placeholder="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
-      size="25"
+      step="any"
+      id= "data[annual_sales]"
+      name="data[annual_sales]"
+      value="<?php echo $annual_sales[0] ?>"
+      placeholder="<?php echo $annual_sales[0] ? $annual_sales[0] : 'USD' ?>"
+      title="Determines Annual Sales Growth, etc."
     />
     </p>
 
     <p>
-    <label for="data[applicant_url]">Website</label>
+    <label for="data[number_of_employees]">Number of Employees</label>
     <input
-      type="url"
-      id= "data[applicant_url]"
-      name="data[applicant_url]"
-      value="<?php echo $applicant_url[0] ?>"
-      placeholder="http://www.shell.com/"
-      size="75"
+      type="number"
+      id= "data[number_of_employees]"
+      name="data[number_of_employees]"
+      value="<?php echo $number_of_employees[0] ?>"
+      placeholder="Determines Employee Growth Metrics, etc."
+      title="Determines Employee Growth Metrics, etc."
     />
     </p>
+
+    <p>
+    <label for="data[market_cap]">Market Cap</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[market_cap]"
+      name="data[market_cap]"
+      value="<?php echo $market_cap[0] ?>"
+      placeholder="<?php echo $market_cap[0] ? $market_cap[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[square_footage]">Square Footage</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[square_footage]"
+      name="data[square_footage]"
+      value="<?php echo $square_footage[0] ?>"
+      placeholder="<?php echo $square_footage[0] ? $square_footage[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[net_income]">Net Income</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[net_income]"
+      name="data[net_income]"
+      value="<?php echo $net_income[0] ?>"
+      placeholder="<?php echo $net_income[0] ? $net_income[0] : 'USD' ?>"
+      title="Determines Net Income Growth, etc."
+    />
+    </p>
+
+    <p>
+    <label for="data[advertising_expense]">Advertising Expense</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[advertising_expense]"
+      name="data[advertising_expense]"
+      value="<?php echo $advertising_expense[0] ?>"
+      placeholder="<?php echo $advertising_expense[0] ? $advertising_expense[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[research_expense]">Research Expense</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[research_expense]"
+      name="data[research_expense]"
+      value="<?php echo $research_expense[0] ?>"
+      placeholder="<?php echo $research_expense[0] ? $research_expense[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[assets]">Assets</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[assets]"
+      name="data[assets]"
+      value="<?php echo $assets[0] ?>"
+      placeholder="<?php echo $assets[0] ? $assets[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[filing_date]">filing_date</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[filing_date]"
+      name="data[filing_date]"
+      value="<?php echo $filing_date[0] ?>"
+      placeholder="<?php echo $filing_date[0] ? $filing_date[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[trading_date]">trading_date</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[trading_date]"
+      name="data[trading_date]"
+      value="<?php echo $trading_date[0] ?>"
+      placeholder="<?php echo $trading_date[0] ? $trading_date[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[exchange_rate]">exchange_rate</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[exchange_rate]"
+      name="data[exchange_rate]"
+      value="<?php echo $exchange_rate[0] ?>"
+      placeholder="<?php echo $exchange_rate[0] ? $exchange_rate[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[currency_enum]">currency_enum</label>
+    <input
+      type="text"
+      id= "data[currency_enum]"
+      name="data[currency_enum]"
+      value="<?php echo $currency_enum[0] ?>"
+      placeholder="<?php echo $currency_enum[0] ? $currency_enum[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[duns]">duns</label>
+    <input
+      type="text"
+      id= "data[duns]"
+      name="data[duns]"
+      value="<?php echo $duns[0] ?>"
+      placeholder="<?php echo $duns[0] ? $duns[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[industry_focus]">industry_focus</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[industry_focus]"
+      name="data[industry_focus]"
+      value="<?php echo $industry_focus[0] ?>"
+      placeholder="<?php echo $industry_focus[0] ? $industry_focus[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[exchange_focus]">exchange_focus</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[exchange_focus]"
+      name="data[exchange_focus]"
+      value="<?php echo $exchange_focus[0] ?>"
+      placeholder="<?php echo $exchange_focus[0] ? $exchange_focus[0] : 'USD' ?>"
+    />
+    </p>
+
+    <!-- #category
+       -<p>
+       -<label for="data[franchise_status]">franchise_status</label>
+       -<input
+       -  type="number"
+       -  step="any"
+       -  id= "data[franchise_status]"
+       -  name="data[franchise_status]"
+       -  value="<?php echo $franchise_status[0] ?>"
+       -  placeholder="<?php echo $franchise_status[0] ? $franchise_status[0] : 'USD' ?>"
+       -/>
+       -</p>
+       -->
+
+    <!-- #category
+       -<p>
+       -<label for="data[home_based_status]">home_based_status</label>
+       -<input
+       -  type="text"
+       -  id= "data[home_based_status]"
+       -  name="data[home_based_status]"
+       -  value="<?php echo $home_based_status[0] ?>"
+       -  placeholder="<?php echo $currency_status[0] ? $currency_status[0] : 'USD' ?>"
+       -/>
+       -</p>
+       -->
+
+    <!-- #category
+       -<p>
+       -<label for="data[subsidiary_status]">subsidiary_status</label>
+       -<input
+       -  type="number"
+       -  step="any"
+       -  id= "data[subsidiary_status]"
+       -  name="data[subsidiary_status]"
+       -  value="<?php echo $subsidiary_status[0] ?>"
+       -  placeholder="<?php echo $subsidiary_status[0] ? $subsidiary_status[0] : 'USD' ?>"
+       -/>
+       -</p>
+       -->
+
+    <!-- # category
+       -<p>
+       -<label for="data[ownership_types]">ownership_types</label>
+       -<input
+       -  type="number"
+       -  step="any"
+       -  id= "data[ownership_types]"
+       -  name="data[ownership_types]"
+       -  value="<?php echo $ownership_types[0] ?>"
+       -  placeholder="<?php echo $ownership_types[0] ? $ownership_types[0] : 'USD' ?>"
+       -/>
+       -</p>
+       -->
+
+    <p>
+    <label for="data[founding_year]">founding_year</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[founding_year]"
+      name="data[founding_year]"
+      value="<?php echo $founding_year[0] ?>"
+      placeholder="<?php echo $founding_year[0] ? $founding_year[0] : 'USD' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[location_types]">location_types</label>
+    <input
+      type="number"
+      step="any"
+      id= "data[location_types]"
+      name="data[location_types]"
+      value="<?php echo $location_types[0] ?>"
+      placeholder="<?php echo $location_types[0] ? $location_types[0] : 'USD' ?>"
+    />
+    </p>
+
+    <!-- #category
+       -<p>
+       -<label for="data[legal_status_codes]">legal_status_codes</label>
+       -<input
+       -  type="number"
+       -  step="any"
+       -  id= "data[legal_status_codes]"
+       -  name="data[legal_status_codes]"
+       -  value="<?php echo $legal_status_codes[0] ?>"
+       -  placeholder="<?php echo $legal_status_codes[0] ? $legal_status_codes[0] : 'USD' ?>"
+       -/>
+       -</p>
+       -->
+
     <style type="text/css">
       #company_metabox1 label {
         width: 150px;
