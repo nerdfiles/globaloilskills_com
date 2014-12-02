@@ -1,0 +1,32 @@
+<div> <label class=required for="apply-form[qualifications]"> Why
+  is this job right for you? (required) </label>
+  <p> [textarea* id:qualification your-qualifications]
+</div>
+
+<div> <label class=required for="apply-form[questions]"> Do you
+  have any questions about this position? </label>
+  <p> [textarea* id:questions your-questions]
+</div>
+
+<div> <label class=required for="apply-form[contact-method]">
+  Preferred contact method? </label>
+  <p> [radio radio-406 label_first use_label_element "Skype"
+    "E-mail" "Phone" "Telepathy"]
+</div>
+
+<div> <label for="apply-form[resume]">Got a resumé?</label>
+  <p>[file* file-966 id:apply-form[resume] class:resume
+    filetypes:pdf|txt|doc]
+</div>
+
+<div> <label for="apply-form[submit]">Sure and ready?</label>
+  <p>[submit id:apply-form[submit] "Fire away!"]
+</div>
+
+<div class=wp-user--email-scaffolding class=conceal>
+  <div class=handle> [text* id:generated-handle your-name]</div>
+
+  <div class=email> [text* id:generated-email your-email]</div>
+
+  <div class=subject> [text* id:generated-subject your-subject]</div>
+</div>
