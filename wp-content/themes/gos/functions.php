@@ -866,13 +866,13 @@ function add_user_controller($controllers) {
 }
 
 /**
- * Set User Controller
+ * Set Get User Controller
  */
-function set_user_controller_path() {
-  $p = get_template_directory_uri() . '/controllers/user_controller.php';
+function set_get_user_controller_path() {
+  $p = '/wp-content/themes/gos/controllers/get_user.php';
   return $p;
 }
-add_filter('json_api_user_controller_path', 'set_user_controller_path');
+add_filter('json_api_get_user_controller_path', 'set_get_user_controller_path');
 
 
 /**
@@ -885,13 +885,13 @@ function add_company_controller($controllers) {
 }
 
 /**
- * Set company Controller
+ * Set get company Controller
  */
-function set_company_controller_path() {
-  $p = get_template_directory_uri() . '/controllers/company_controller.php';
+function set_get_company_controller_path() {
+  $p = '/wp-content/themes/gos/controllers/get_company.php';
   return $p;
 }
-add_filter('json_api_company_controller_path', 'set_company_controller_path');
+add_filter('json_api_get_company_controller_path', 'set_get_company_controller_path');
 
 
 /**
@@ -904,13 +904,13 @@ function add_recruiter_controller($controllers) {
 }
 
 /**
- * Set recruiter Controller
+ * Set get recruiter Controller
  */
-function set_recruiter_controller_path() {
-  $p = get_template_directory_uri() . '/controllers/recruiter_controller.php';
+function set_get_recruiter_controller_path() {
+  $p = '/wp-content/themes/gos/controllers/get_recruiter.php';
   return $p;
 }
-add_filter('json_api_recruiter_controller_path', 'set_recruiter_controller_path');
+add_filter('json_api_get_recruiter_controller_path', 'set_get_recruiter_controller_path');
 
 
 /**
@@ -923,12 +923,10 @@ function add_employee_controller($controllers) {
 }
 
 /**
- * Set employee Controller
+ * Set get employee Controller
  */
-function set_employee_controller_path() {
-  $p = get_template_directory_uri() . '/controllers/employee_controller.php';
+function set_get_employee_controller_path() {
+  $p = '/wp-content/themes/gos/controllers/get_employee.php';
   return $p;
 }
-add_filter('json_api_employee_controller_path', 'set_employee_controller_path');
-
-
+add_filter('json_api_get_employee_controller_path', 'set_get_employee_controller_path');
