@@ -4,7 +4,7 @@
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
   for caching the history of elements on the page. This is a change tracking strategy for A/B tests.
    */
-  var $email, abbrevText, app, applicationScaffolding, clicker, disabler, entryTitle, input, searchInput, someInputs$, uPosts, __;
+  var $email, abbrevText, app, applicationScaffolding, clicker, disabler, entryTitle, input, searchInput, someInputs$, uPosts, wp_user_email_scaffolding, __;
   input = function() {
     var iteritems;
     iteritems = ["input"];
@@ -90,6 +90,19 @@
       j.parentNode.parentNode.addEventListener 'mouseover', clicker
       j.parentNode.parentNode.addEventListener 'mouseout', clicker
    */
+
+  /*
+  wp-user--email-scaffolding
+   */
+  wp_user_email_scaffolding = function() {
+    var generatedEmail, generatedHandle, generatedSubject, h;
+    h = HTML;
+    generatedHandle = h.query('#generated-handle');
+    generatedSubject = h.query('#generated-subject');
+    generatedEmail = h.query('#generated-email');
+    return console.log(generatedEmail);
+  };
+  wp_user_email_scaffolding();
   __ = function(obj) {
     return console.log(obj);
   };

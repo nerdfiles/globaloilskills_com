@@ -30,7 +30,7 @@ class Company {
     add_action( 'init', array( &$this, 'add_company_taxonomies'), 111 );
 
     # Add meta box
-    add_action('add_meta_boxes', array( &$this, 'add_company_custom_metaboxes') );
+    add_action( 'add_meta_boxes', array( &$this, 'add_company_custom_metaboxes') );
 
     # Save entered data
     add_action('save_post', array( &$this, 'save_company_postdata') );
@@ -130,6 +130,31 @@ class Company {
         'query_var' => true,
         'rewrite' => array(
           'slug' => 'legal-status-codes'
+        ),
+      )
+    );
+
+    /**
+     * Suborganization
+     *
+     * @example Fair Trade, Rainforest Action Alliance, MENSA, etc.
+     * @see https://schema.org/subOrganization
+     */
+    register_taxonomy(
+      'company-suborganization',
+      array($this->type),
+      array(
+        'hierarchical' => true,
+        'labels' => array(
+          'name' => __( 'Suborganization' ),
+          'singular_name' => __( 'Suborganization' ),
+          'all_items' => __( 'All Suborganization' ),
+          'add_new_item' => __( 'Add Suborganization' )
+        ),
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array(
+          'slug' => 'suborganization'
         ),
       )
     );
@@ -429,7 +454,7 @@ class Company {
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( '<a href="https://www.osha.gov/pls/imis/sicsearch.html">ISIC</a>' ),
+          'name' => __( 'ISIC' ),
           'singular_name' => __( 'ISIC' ),
           'all_items' => __( 'All ISIC' ),
           'add_new_item' => __( 'Add ISIC' )
@@ -546,6 +571,29 @@ class Company {
         'normal',
         'high'
     );
+    /*
+     *add_meta_box(
+     *  'prfx_meta',
+     *  __('Meta Box Title', 'prfx-textdomain'),
+     *  array(&$this, 'prfx_meta_callback'),
+     *  $this->type,
+     *  'normal',
+     *  'high'
+     *);
+     */
+  }
+
+  function prfx_meta_callback( $post ) {
+    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+    $prfx_stored_meta = get_post_meta( $post->ID );
+  ?>
+
+    <p>
+      <label for="meta-text" class="prfx-row-title"><?php _e( 'Example Text Input', 'prfx-textdomain' )?></label>
+      <input type="file" name="meta-text" id="meta-text" value="<?php if ( isset ( $prfx_stored_meta['meta-text'] ) ) echo $prfx_stored_meta['meta-text'][0]; ?>" />
+    </p>
+
+    <?php
   }
 
   # @credit: http://wptheming.com/2010/08/custom-metabox-for-post-type/
@@ -753,6 +801,16 @@ class Company {
     </p>
 
     <p>
+    <label for="data[hasPOS]">Has POS?</label>
+    <input
+      type="checkbox"
+      id= "data[hasPOS]"
+      name="data[hasPOS]"
+      value="<?php echo $hasPOS[0] ?>"
+    />
+    </p>
+
+    <p>
     <label for="data[bitcoin]">Accepts Bitcoin?</label>
     <input
       type="checkbox"
@@ -863,6 +921,16 @@ class Company {
       value="<?php echo $fax_number[0] ?>"
       placeholder="<?php echo $fax_number[0] ? $fax_number[0] : '' ?>"
     />
+    </p>
+
+    <p>
+      <label for="logo">Logo</label>
+      <input
+        type="file"
+        id="data[logo]"
+        name="data[logo]"
+        value="data[logo]"
+      />
     </p>
 
     <p>

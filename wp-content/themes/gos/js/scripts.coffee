@@ -103,6 +103,18 @@
       j.parentNode.parentNode.addEventListener 'mouseout', clicker
   ###
 
+  ###
+  wp-user--email-scaffolding
+  ###
+
+  wp_user_email_scaffolding = () ->
+    h = HTML
+    generatedHandle = h.query('#generated-handle')
+    generatedSubject = h.query('#generated-subject')
+    generatedEmail = h.query('#generated-email')
+    console.log generatedEmail
+
+  wp_user_email_scaffolding()
 
   __ = (obj) ->
     console.log obj
