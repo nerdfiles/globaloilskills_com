@@ -77,22 +77,24 @@ add_action('admin_head','z_remove_media_controls');
 function rw_remove_menus () {
   global $menu;
   $restricted = array(
-    __('Dashboard'),
-    __('Posts'),
-    __('Media'),
-    __('Links'),
-    //__('Pages'),
-    //__('Appearance'),
-    //__('Tools'),
-    //__('Users'),
-    //__('Settings'),
-    __('Comments'),
-    __('Plugins'),
-    __('Events'),
-    __('Recruiters'),
-    __('Applicants'),
-    __('Contact'),
-    __('FooGallery')
+    /*
+     *__('Dashboard'),
+     *__('Posts'),
+     *__('Media'),
+     *__('Links'),
+     *__('Pages'),
+     *__('Appearance'),
+     *__('Tools'),
+     *__('Users'),
+     *__('Settings'),
+     *__('Comments'),
+     *__('Plugins'),
+     *__('Events'),
+     *__('Recruiters'),
+     *__('Applicants'),
+     *__('Contact'),
+     *__('FooGallery')
+     */
   );
   end ($menu);
   while (prev($menu)) {
