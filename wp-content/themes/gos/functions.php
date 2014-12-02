@@ -849,3 +849,86 @@ function wpcf7_before_action($cfdata) {
   }
 }
 add_action('wpcf7_before_send_mail', 'wpcf7_before_action',1);
+
+/******************************************************************************\
+ *
+ * API Controllers
+ *
+\******************************************************************************/
+
+/**
+ * Add User Controller
+ */
+add_filter('json_api_controllers', 'add_user_controller');
+function add_user_controller($controllers) {
+  $controllers[] = 'UserController';
+  return $controllers;
+}
+
+/**
+ * Set User Controller
+ */
+function set_user_controller_path() {
+  $p = get_template_directory_uri() . '/controllers/user_controller.php';
+  return $p;
+}
+add_filter('json_api_user_controller_path', 'set_user_controller_path');
+
+
+/**
+ * Add company Controller
+ */
+add_filter('json_api_controllers', 'add_company_controller');
+function add_company_controller($controllers) {
+  $controllers[] = 'CompanyController';
+  return $controllers;
+}
+
+/**
+ * Set company Controller
+ */
+function set_company_controller_path() {
+  $p = get_template_directory_uri() . '/controllers/company_controller.php';
+  return $p;
+}
+add_filter('json_api_company_controller_path', 'set_company_controller_path');
+
+
+/**
+ * Add recruiter Controller
+ */
+add_filter('json_api_controllers', 'add_recruiter_controller');
+function add_recruiter_controller($controllers) {
+  $controllers[] = 'RecruiterController';
+  return $controllers;
+}
+
+/**
+ * Set recruiter Controller
+ */
+function set_recruiter_controller_path() {
+  $p = get_template_directory_uri() . '/controllers/recruiter_controller.php';
+  return $p;
+}
+add_filter('json_api_recruiter_controller_path', 'set_recruiter_controller_path');
+
+
+/**
+ * Add employee Controller
+ */
+add_filter('json_api_controllers', 'add_employee_controller');
+function add_employee_controller($controllers) {
+  $controllers[] = 'EmployeeController';
+  return $controllers;
+}
+
+/**
+ * Set employee Controller
+ */
+function set_employee_controller_path() {
+  $p = get_template_directory_uri() . '/controllers/employee_controller.php';
+  return $p;
+}
+add_filter('json_api_employee_controller_path', 'set_employee_controller_path');
+
+
