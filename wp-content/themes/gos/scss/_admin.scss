@@ -18,3 +18,61 @@ body.wp-admin {
   }
 }
 
+
+
+body.login {
+  background: #C9DEDB;
+  a {
+    color: #fff !important;
+    text-shadow: 0 0 1px #444;
+  }
+}
+.login #backtoblog {
+}
+
+body.login,
+body.login input {
+  font-family: 'Open Sans', sans-serif;
+}
+body.login #login,
+body.login #lostpasswordform {
+
+  .button { 
+    background-color: #ccc;
+    border: 1px #ccc solid;
+    color: #fff;
+    text-shadow: 0 0 1px #444;
+    box-shadow: none !important;
+  }
+  .button-primary {
+  }
+  .button-large {
+  }
+
+  h1 {
+    a {
+      /*background-image: url('./images/logo.png');*/
+      background-image: url('http://placehold.it/500x500');
+    }
+  }
+  .message {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  .input {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    color: #fff;
+  }
+  & form {
+    background-color: #f1f1f1;
+    label {
+      color: #111; 
+    }
+  }
+  .forgetmenot { }
+  .submit { }
+  #nav { }
+  #backtoblog { }
+}
