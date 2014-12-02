@@ -866,6 +866,16 @@ class Company {
     </p>
 
     <p>
+      <label for="logo">Logo</label>
+      <input
+        type="file"
+        id="data[logo]"
+        name="data[logo]"
+        value="data[logo]"
+      />
+    </p>
+
+    <p>
       <label for="company_qr_code">Upload your QR code image file here</label>
       <input
         type="file"
