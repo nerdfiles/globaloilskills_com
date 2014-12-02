@@ -2,9 +2,9 @@
 new JobPostingType;       // First class object
 class JobPostingType {
 
-  var $single = "Job Posting"; 	// this represents the singular name of the post type
-  var $plural = "Job Postings"; 	// this represents the plural name of the post type
-  var $type 	= "jobposting"; 	// this is the actual type
+  var $single = "Job"; 	// this represents the singular name of the post type
+  var $plural = "Jobs"; 	// this represents the plural name of the post type
+  var $type 	= "job_posting"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
   function JobPostingScaffolding() {
@@ -66,7 +66,7 @@ class JobPostingType {
       'publicly_queryable' => true,
       'show_ui' => true,
       'query_var' => true,
-      'rewrite' => array('slug' => strtolower(str_replace(' ', '-', $this->plural))),
+      'rewrite' => array('slug' => strtolower($this->plural)),
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
