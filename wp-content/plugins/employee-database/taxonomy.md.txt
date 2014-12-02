@@ -11,12 +11,12 @@
 1.1.2. FK
     Position Title
     Company Name
-    Category
-    Job Type
-    Price
-    Expires
-    Applications
-    Status
+    Category (Category)
+    Job Type (Category)
+    Price (Salary?)
+    Expires (Datetime)
+    Applications (List)
+    Status (Category)
 1.2. Corollary: Reactive Job Postings  
      Correlate discrete numbers of "drag" interface to WP custom taxonomy  
      posts "carousel", thus documents are interactive such that other key  
@@ -34,10 +34,10 @@
 1.2.2. FK
     Applicant Name
     Applicant Email
-    Role
+    Job
     Files
     Posted
-    Status (Category)
+    Status
 1.3. Employers (Custom Post Type)
 1.3.1. FK
     Id
