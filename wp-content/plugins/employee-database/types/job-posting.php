@@ -2,9 +2,9 @@
 new JobPostingType;       // First class object
 class JobPostingType {
 
-  var $single = "Job Posting"; 	// this represents the singular name of the post type
-  var $plural = "Job Postings"; 	// this represents the plural name of the post type
-  var $type 	= "jobposting"; 	// this is the actual type
+  var $single = "Job"; 	// this represents the singular name of the post type
+  var $plural = "Jobs"; 	// this represents the plural name of the post type
+  var $type 	= "job_posting"; 	// this is the actual type
 
   # credit: http://w3prodigy.com/behind-wordpress/php-classes-wordpress-plugin/
   function JobPostingScaffolding() {
@@ -66,7 +66,7 @@ class JobPostingType {
       'publicly_queryable' => true,
       'show_ui' => true,
       'query_var' => true,
-      'rewrite' => array('slug' => strtolower(str_replace(' ', '-', $this->plural))),
+      'rewrite' => array('slug' => strtolower($this->plural)),
       'capability_type' => 'page',
       'hierarchical' => false,
       'has_archive' => true,
@@ -103,6 +103,8 @@ class JobPostingType {
 
   function add_job_posting_taxonomies() {
 
+    register_taxonomy_for_object_type( 'category', 'company' );
+
     /**
      * Register Location Category
      *
@@ -116,10 +118,10 @@ class JobPostingType {
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'Location' ),
-          'singular_name' => __( 'Location' ),
-          'all_items' => __( 'All Locations' ),
-          'add_new_item' => __( 'Add Location' )
+          'name' => __( 'Job Location' ),
+          'singular_name' => __( 'Job Location' ),
+          'all_items' => __( 'All Job Locations' ),
+          'add_new_item' => __( 'Add Job Location' )
         ),
         'public' => true,
         'query_var' => true,
@@ -183,10 +185,10 @@ class JobPostingType {
       array(
         'hierarchical' => true,
         'labels' => array(
-          'name' => __( 'Status' ),
-          'singular_name' => __( 'Status' ),
-          'all_items' => __( 'All Statuses' ),
-          'add_new_item' => __( 'Add Status' )
+          'name' => __( 'Job Status' ),
+          'singular_name' => __( 'Job Status' ),
+          'all_items' => __( 'All Job Statuses' ),
+          'add_new_item' => __( 'Add Job Status' )
         ),
         'public' => true,
         'query_var' => true,

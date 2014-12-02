@@ -275,7 +275,7 @@ add_action( 'wp_enqueue_scripts', 'gos_enqueue_scripts', 200 );
 
 function login_stylesheet() {
     //echo "<link rel='import' id='Polymer--paper-progress' href='" . get_template_directory_uri() . "/grunt/bower_components/paper-progress/paper-progress.html' />";
-    wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/style-admin.css' );
     wp_enqueue_script( 'custom-login', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0', true );
 }
 add_action( 'login_enqueue_scripts', 'login_stylesheet' );
@@ -286,6 +286,11 @@ function admin_stylesheet() {
     //wp_enqueue_script( 'custom-admin', get_template_directory_uri() . '/grunt/dist/require.js', array('jquery'), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'admin_stylesheet' );
+
+add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+function custom_loginlogo_url($url) {
+  return 'http://' . $_SERVER['HTTP_HOST'];
+}
 
 /******************************************************************************\
   Content functions

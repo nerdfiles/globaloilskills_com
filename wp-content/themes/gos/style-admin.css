@@ -12,3 +12,48 @@ body.wp-admin {
     display: none; }
   body.wp-admin.post-new-php .shortcode-wrap {
     display: none; }
+
+body.login {
+  background-color: #28608a; }
+  body.login a {
+    color: white !important;
+    /*text-shadow: 0 0 1px #444;*/
+    text-shadow: none; }
+
+
+body.login, body.login input {
+  font-family: 'Raleway', 'Open Sans', sans-serif; }
+
+body.login #login .button, body.login #lostpasswordform .button {
+  background-color: #cccccc;
+  border: 1px #cccccc solid;
+  color: white;
+  text-shadow: 0 0 1px #444444;
+  box-shadow: none !important; }
+body.login #login h1 a, body.login #lostpasswordform h1 a {
+  background-image: url('./images/logo-9001.png');
+  height: 100px; }
+body.login #login .message, body.login #lostpasswordform .message {
+  background-color: #f1f1f1;
+  color: #333333; }
+body.login #login .input, body.login #lostpasswordform .input {
+  background-color: white;
+  border: 4px solid #cccccc;
+  box-shadow: none;
+  color: #28608a; }
+body.login #login form, body.login #lostpasswordform form {
+  /*
+     *background-color: #f1f1f1;
+     */
+  background-color: transparent;
+  box-shadow: none; }
+  body.login #login form label, body.login #lostpasswordform form label {
+    color: #111111; }
+body.login #login .submit #wp-submit, body.login #lostpasswordform .submit #wp-submit {
+  text-shadow: none;
+  border-radius: 0 !important; }
+body.login #login #nav, body.login #lostpasswordform #nav {
+  text-align: center; }
+body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
+  text-align: center;
+  display: none; }

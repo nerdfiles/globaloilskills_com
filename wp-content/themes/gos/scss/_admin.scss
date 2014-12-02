@@ -18,3 +18,77 @@ body.wp-admin {
   }
 }
 
+
+
+body.login {
+  #login_error { }
+  #loginform { }
+  background-color: #28608a;
+  a {
+    color: #fff !important;
+    /*text-shadow: 0 0 1px #444;*/
+    text-shadow: none;
+  }
+}
+.login #backtoblog {
+}
+
+body.login,
+body.login input {
+  font-family: 'Raleway', 'Open Sans', sans-serif;
+}
+body.login #login,
+body.login #lostpasswordform {
+
+  .button { 
+    background-color: #ccc;
+    border: 1px #ccc solid;
+    color: #fff;
+    text-shadow: 0 0 1px #444;
+    box-shadow: none !important;
+  }
+  .button-primary {
+  }
+  .button-large {
+  }
+
+  h1 {
+    a {
+      background-image: url('./images/logo-9001.png');
+      height: 100px;
+    }
+  }
+  .message {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  .input {
+    background-color: #fff;
+    border: 4px solid #ccc;
+    box-shadow: none;
+    color: #28608a;
+  }
+  & form {
+    /*
+     *background-color: #f1f1f1;
+     */
+    background-color: transparent;
+    box-shadow: none;
+    label {
+      color: #111; 
+    }
+  }
+  .forgetmenot { }
+  .submit {
+    #wp-submit {
+      text-shadow: none;
+      border-radius: 0 !important;
+  } }
+  #nav {
+    text-align: center;
+  }
+  #backtoblog {
+    text-align: center;
+    display: none;
+  }
+}
