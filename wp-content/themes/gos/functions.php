@@ -794,3 +794,58 @@ function SearchFilter($query) {
   return $query;
 }
 add_filter( 'pre_get_posts', 'SearchFilter' );
+
+
+/**
+ * Create Application Custom Post Type
+ *
+ * Based on the given form submission name we will create a Custom Post Type.
+ */
+function wpcf7_before_action($cfdata) {
+  $formtitle = $cfdata->title;
+  $formcontents = $cfdata->qualifications;
+  require_once $_SERVER["DOCUMENT_ROOT"]."/wp-load.php";
+
+  if ( $formtitle == 'apply-now-form') {
+    /*
+     *ini_set('display_errors', 1);
+     *error_reporting('E_ALL');
+     */
+    print_r($cfdata);
+    $statusTerm = null;
+
+    $terms = get_terms( 'applications' );
+    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+        foreach ( $terms as $term ) {
+          if ( strpos($term->name, 'status') != false ) {
+            $statusTerm = $term->ID;
+          }
+        }
+    }
+
+    $user_ID = get_current_user_id();
+    $application_post_title = $_POST['post_title'] || $formtitle;
+    $application_post_content = $_POST['post_content'] || $formcontents;
+
+    // Create post object
+    $my_post = array(
+      'post_title'    => wp_strip_all_tags( $application_post_title ),
+      'post_content'  => $application_post_content,
+      'post_type'     => 'application',
+      'post_status'   => 'publish',
+      'post_author'   => $user_ID,
+      //'tags_input'    => implode(",","TAG1,TAG2"),
+    );
+
+    // Insert the post into the database
+    $post_ID = wp_insert_post( $my_post );
+    wp_set_object_terms(
+      $post_ID,
+      array($statusTerm,),
+      'application-status'
+    );
+
+    echo $post_ID;
+  }
+}
+add_action('wpcf7_before_send_mail', 'wpcf7_before_action',1);
