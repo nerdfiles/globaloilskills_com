@@ -111,7 +111,7 @@
       generatedEmail = h.query('#generated-email');
       generatedPermalink = h.query('#generated-permalink');
       return $.ajax({
-        url: 'http://local.globaloilskills.com/api/user/user_metadata/'
+        url: "http://" + window.location.hostname + "/api/user/user_metadata/"
       }).done(function(data) {
         generatedEmail.setAttribute('value', data.user_email);
         generatedHandle.setAttribute('value', data.display_name);
