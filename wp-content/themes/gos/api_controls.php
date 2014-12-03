@@ -1,5 +1,4 @@
 <?php
-require '../../plugins/json-api/json-api.php';
 
 /**
  * Add Application Controller

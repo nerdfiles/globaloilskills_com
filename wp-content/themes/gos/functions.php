@@ -7,11 +7,14 @@
  * @since gos 1.0
  */
 
+/*
+ *ini_set('display_errors', 1);
+ *error_reporting('E_ALL');
+ */
+
 /******************************************************************************\
   Theme support, standard settings, menus and widgets
 \******************************************************************************/
-
-@require_once 'api_controls.php';
 
 /**
  * Hide Help
@@ -123,6 +126,8 @@ add_theme_support( 'post-thumbnails' );
 //set_post_thumbnail_size( 300, 300 );
 add_theme_support( 'automatic-feed-links' );
 
+//require 'api_controls.php';
+
 $custom_header_args = array(
   'width'         => 980,
   'height'        => 300,
@@ -145,6 +150,7 @@ function gos_custom_header() {
   }
 }
 //add_action( 'wp_head', 'gos_custom_header', 11 );
+
 
 $custom_bg_args = array(
   'default-color' => 'fba919',
