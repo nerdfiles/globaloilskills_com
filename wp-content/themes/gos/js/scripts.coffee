@@ -1,5 +1,8 @@
 ((breeze, angular, doc, HTML) ->
 
+  __ = (obj) ->
+    console.log obj
+
   ###
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
   for caching the history of elements on the page. This is a change tracking strategy for A/B tests.
@@ -43,7 +46,8 @@
   )
 
   searchInput = HTML.query('#s')
-  searchInput.setAttribute 'placeholder', 'Search Job Postings'
+  if (searchInput.length)
+    searchInput.setAttribute 'placeholder', 'Search Job Postings'
 
   ###
   Utility Functions
@@ -71,8 +75,9 @@
         _o.push d
     return _o.join(' ')
 
-  $email = doc.querySelector('#search-2')
-  $email.setAttribute 'data-check-email', ''
+  $email = HTML.query('#search-2')
+  if ($email.length)
+    $email.setAttribute 'data-check-email', ''
 
   someInputs$ = doc.querySelector "#{input()}[type=submit]"
   someInputs$.setAttribute 'data-input-roster', ''
@@ -106,18 +111,15 @@
   ###
   wp-user--email-scaffolding
   ###
-
   wp_user_email_scaffolding = () ->
     h = HTML
-    generatedHandle = h.query('#generated-handle')
-    generatedSubject = h.query('#generated-subject')
-    generatedEmail = h.query('#generated-email')
-    console.log generatedEmail
+    generatedHandle = h.query('input[name="id:generated-handle"]')
+    generatedSubject = h.query('input[name="id:generated-subject"]')
+    generatedEmail = h.query('input[name="id:generated-email"]')
+    __ generatedEmail
 
   wp_user_email_scaffolding()
 
-  __ = (obj) ->
-    console.log obj
 
   #// API
   #// http://local.globaloilskills.com/api/get_page_index/?post_type=employee
