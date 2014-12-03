@@ -861,18 +861,18 @@ add_action('wpcf7_before_send_mail', 'wpcf7_before_action',1);
  */
 add_filter('json_api_controllers', 'add_user_controller');
 function add_user_controller($controllers) {
-  $controllers[] = 'UserController';
+  $controllers[] = 'user';
   return $controllers;
 }
 
 /**
  * Set Get User Controller
  */
-function set_get_user_controller_path() {
-  $p = '/wp-content/themes/gos/controllers/get_user.php';
+function set_user_controller_path() {
+  $p = '/wp-content/themes/gos/controllers/user.php';
   return $p;
 }
-add_filter('json_api_get_user_controller_path', 'set_get_user_controller_path');
+add_filter('json_api_user_controller_path', 'set_user_controller_path');
 
 
 /**
@@ -880,18 +880,18 @@ add_filter('json_api_get_user_controller_path', 'set_get_user_controller_path');
  */
 add_filter('json_api_controllers', 'add_company_controller');
 function add_company_controller($controllers) {
-  $controllers[] = 'CompanyController';
+  $controllers[] = 'company';
   return $controllers;
 }
 
 /**
- * Set get company Controller
+ * Set company Controller
  */
-function set_get_company_controller_path() {
-  $p = '/wp-content/themes/gos/controllers/get_company.php';
+function set_company_controller_path() {
+  $p = '/wp-content/themes/gos/controllers/company.php';
   return $p;
 }
-add_filter('json_api_get_company_controller_path', 'set_get_company_controller_path');
+add_filter('json_api_company_controller_path', 'set_company_controller_path');
 
 
 /**
@@ -899,18 +899,18 @@ add_filter('json_api_get_company_controller_path', 'set_get_company_controller_p
  */
 add_filter('json_api_controllers', 'add_recruiter_controller');
 function add_recruiter_controller($controllers) {
-  $controllers[] = 'RecruiterController';
+  $controllers[] = 'recruiter';
   return $controllers;
 }
 
 /**
- * Set get recruiter Controller
+ * Set recruiter Controller
  */
-function set_get_recruiter_controller_path() {
-  $p = '/wp-content/themes/gos/controllers/get_recruiter.php';
+function set_recruiter_controller_path() {
+  $p = '/wp-content/themes/gos/controllers/recruiter.php';
   return $p;
 }
-add_filter('json_api_get_recruiter_controller_path', 'set_get_recruiter_controller_path');
+add_filter('json_api_recruiter_controller_path', 'set_recruiter_controller_path');
 
 
 /**
@@ -918,15 +918,35 @@ add_filter('json_api_get_recruiter_controller_path', 'set_get_recruiter_controll
  */
 add_filter('json_api_controllers', 'add_employee_controller');
 function add_employee_controller($controllers) {
-  $controllers[] = 'EmployeeController';
+  $controllers[] = 'employee';
   return $controllers;
 }
 
 /**
- * Set get employee Controller
+ * Set employee Controller
  */
-function set_get_employee_controller_path() {
-  $p = '/wp-content/themes/gos/controllers/get_employee.php';
+function set_employee_controller_path() {
+  $p = '/wp-content/themes/gos/controllers/employee.php';
   return $p;
 }
-add_filter('json_api_get_employee_controller_path', 'set_get_employee_controller_path');
+add_filter('json_api_employee_controller_path', 'set_employee_controller_path');
+
+/*
+ *class JSON_API_Make_Controller {
+ *  public function user() {
+ *    global $json_api;
+ *    $email = $json_api->query->email;
+ *    $fileToUpload = $json_api->query-fileToUpload;
+ *    if ( email_exists($email) == false ) {
+ *        $random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+ *        $user_id = wp_create_user( $email, $random_password, $email );
+ *    } else {
+ *        $random_password = __('User already exists.  Password inherited.');
+ *    }
+ *    return array(
+ *      "user" => $user_id
+ *    );
+ *  }
+ *}
+ */
+
