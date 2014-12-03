@@ -1,4 +1,22 @@
 <?php
+require '../../plugins/json-api/json-api.php';
+
+/**
+ * Add Application Controller
+ */
+function add_application_controller($controllers) {
+  $controllers[] = 'application';
+  return $controllers;
+}
+add_filter('json_api_controllers', 'add_application_controller');
+
+/**
+ * Set Get Application Controller
+ */
+function set_application_controller_path() {
+  return "../wp-content/themes/gos/controllers/application.php";
+}
+add_filter('json_api_application_controller_path', 'set_application_controller_path');
 
 /**
 * Add User Controller
