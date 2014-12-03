@@ -8,4 +8,4 @@ class JSON_API_Recruiter_Controller {
   }
 }
 
-
+?>

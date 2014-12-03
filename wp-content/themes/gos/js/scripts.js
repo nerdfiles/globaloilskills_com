@@ -1,10 +1,13 @@
 (function(breeze, angular, doc, HTML) {
+  var $email, abbrevText, app, applicationScaffolding, clicker, disabler, entryTitle, input, searchInput, someInputs$, uPosts, wp_user_email_scaffolding, __;
+  __ = function(obj) {
+    return console.log(obj);
+  };
 
   /*
   yas, really: publish events to Firebase, etc. @TODO BReezeJS domain models 
   for caching the history of elements on the page. This is a change tracking strategy for A/B tests.
    */
-  var $email, abbrevText, app, applicationScaffolding, clicker, disabler, entryTitle, input, searchInput, someInputs$, uPosts, wp_user_email_scaffolding, __;
   input = function() {
     var iteritems;
     iteritems = ["input"];
@@ -39,7 +42,9 @@
     return containerElement.query('.entry-content').add(entryTitleAnchorClone);
   });
   searchInput = HTML.query('#s');
-  searchInput.setAttribute('placeholder', 'Search Job Postings');
+  if (searchInput.length) {
+    searchInput.setAttribute('placeholder', 'Search Job Postings');
+  }
 
   /*
   Utility Functions
@@ -72,8 +77,10 @@
     }
     return _o.join(' ');
   };
-  $email = doc.querySelector('#search-2');
-  $email.setAttribute('data-check-email', '');
+  $email = HTML.query('#search-2');
+  if ($email.length) {
+    $email.setAttribute('data-check-email', '');
+  }
   someInputs$ = doc.querySelector("" + (input()) + "[type=submit]");
   someInputs$.setAttribute('data-input-roster', '');
   uPosts = HTML.query('.widget_ultimate_posts');
@@ -95,17 +102,25 @@
   wp-user--email-scaffolding
    */
   wp_user_email_scaffolding = function() {
-    var generatedEmail, generatedHandle, generatedSubject, h;
+    var form, generatedEmail, generatedHandle, generatedPermalink, generatedSubject, h;
     h = HTML;
-    generatedHandle = h.query('#generated-handle');
-    generatedSubject = h.query('#generated-subject');
-    generatedEmail = h.query('#generated-email');
-    return console.log(generatedEmail);
+    form = h.query('.wpcf7');
+    if (form) {
+      generatedHandle = h.query('#generated-handle');
+      generatedSubject = h.query('#generated-subject');
+      generatedEmail = h.query('#generated-email');
+      generatedPermalink = h.query('#generated-permalink');
+      return $.ajax({
+        url: 'http://local.globaloilskills.com/api/user/user_metadata/'
+      }).done(function(data) {
+        generatedEmail.setAttribute('value', data.user_email);
+        generatedHandle.setAttribute('value', data.display_name);
+        generatedSubject.setAttribute('value', "" + data.display_name + " has applied!");
+        generatedPermalink.setAttribute('value', data.permalink);
+      });
+    }
   };
   wp_user_email_scaffolding();
-  __ = function(obj) {
-    return console.log(obj);
-  };
 
   /*
      / _____)                 (_)                 
@@ -119,11 +134,7 @@
       var serviceInterface;
       serviceInterface = {};
       serviceInterface.testAjax = function(handleData) {
-<<<<<<< HEAD
-        $http.get("http://lcamtuf.coredump.cx/squirrel/").success(function(data) {
-=======
         $http.get("//" + window.location.hostname + "/api/get_page_index/?post_type=post").success(function(data) {
->>>>>>> develop
           handleData(data);
         }).error(function(data) {
           return console.log(data);
