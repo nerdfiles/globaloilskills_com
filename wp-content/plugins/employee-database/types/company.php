@@ -86,7 +86,7 @@ class Company {
       ),
     );
     register_post_type($this->type, $options);
-    flush_rewrite_rules( false );
+    //flush_rewrite_rules( false );
   }
 
 

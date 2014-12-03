@@ -3,19 +3,19 @@
 /**
 * Add User Controller
 */
-function add_globaloiluser_controller($controllers) {
-  $controllers[] = 'globaloiluser';
+function add_user_controller($controllers) {
+  $controllers[] = 'user';
   return $controllers;
 }
-add_filter('json_api_controllers', 'add_globaloiluser_controller');
+add_filter('json_api_controllers', 'add_user_controller');
 
 /**
 * Set Get User Controller
 */
-function set_globaloiluser_controller_path() {
-  return '/wp-content/themes/gos/controllers/user.php';
+function set_user_controller_path() {
+  return "../wp-content/themes/gos/controllers/user.php";
 }
-add_filter('json_api_globaloiluser_controller_path', 'set_globaloiluser_controller_path');
+add_filter('json_api_user_controller_path', 'set_user_controller_path');
 
 
 /**
@@ -31,7 +31,7 @@ function add_company_controller($controllers) {
 * Set company Controller
 */
 function set_company_controller_path() {
-  $p = '/wp-content/themes/gos/controllers/company.php';
+  $p = '../wp-content/themes/gos/controllers/company.php';
   return $p;
 }
 add_filter('json_api_company_controller_path', 'set_company_controller_path');
@@ -50,7 +50,7 @@ function add_recruiter_controller($controllers) {
 * Set recruiter Controller
 */
 function set_recruiter_controller_path() {
-  $p = '/wp-content/themes/gos/controllers/recruiter.php';
+  $p = '../wp-content/themes/gos/controllers/recruiter.php';
   return $p;
 }
 add_filter('json_api_recruiter_controller_path', 'set_recruiter_controller_path');
@@ -69,7 +69,7 @@ function add_employee_controller($controllers) {
 * Set employee Controller
 */
 function set_employee_controller_path() {
-  $p = '/wp-content/themes/gos/controllers/employee.php';
+  $p = '../wp-content/themes/gos/controllers/employee.php';
   return $p;
 }
 add_filter('json_api_employee_controller_path', 'set_employee_controller_path');
