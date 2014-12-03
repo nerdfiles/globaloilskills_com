@@ -102,12 +102,23 @@
   wp-user--email-scaffolding
    */
   wp_user_email_scaffolding = function() {
-    var generatedEmail, generatedHandle, generatedSubject, h;
+    var form, generatedEmail, generatedHandle, generatedPermalink, generatedSubject, h;
     h = HTML;
-    generatedHandle = h.query('input[name="id:generated-handle"]');
-    generatedSubject = h.query('input[name="id:generated-subject"]');
-    generatedEmail = h.query('input[name="id:generated-email"]');
-    return __(generatedEmail);
+    form = h.query('.wpcf7');
+    if (form) {
+      generatedHandle = h.query('#generated-handle');
+      generatedSubject = h.query('#generated-subject');
+      generatedEmail = h.query('#generated-email');
+      generatedPermalink = h.query('#generated-permalink');
+      return $.ajax({
+        url: 'http://local.globaloilskills.com/api/user/user_metadata/'
+      }).done(function(data) {
+        generatedEmail.setAttribute('value', data.user_email);
+        generatedHandle.setAttribute('value', data.display_name);
+        generatedSubject.setAttribute('value', "" + data.display_name + " has applied!");
+        return generatedPermalink.setAttribute('value', data.permalink);
+      });
+    }
   };
   wp_user_email_scaffolding();
 

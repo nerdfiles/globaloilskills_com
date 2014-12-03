@@ -113,13 +113,21 @@
   ###
   wp_user_email_scaffolding = () ->
     h = HTML
-    generatedHandle = h.query('input[name="id:generated-handle"]')
-    generatedSubject = h.query('input[name="id:generated-subject"]')
-    generatedEmail = h.query('input[name="id:generated-email"]')
-    __ generatedEmail
+    form = h.query('.wpcf7')
+    if (form)
+      generatedHandle = h.query('#generated-handle')
+      generatedSubject = h.query('#generated-subject')
+      generatedEmail = h.query('#generated-email')
+      generatedPermalink = h.query('#generated-permalink')
+      $.ajax({
+        url: 'http://local.globaloilskills.com/api/user/user_metadata/'
+      }).done (data) ->
+        generatedEmail.setAttribute 'value', data.user_email
+        generatedHandle.setAttribute 'value', data.display_name
+        generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
+        generatedPermalink.setAttribute 'value', data.permalink
 
   wp_user_email_scaffolding()
-
 
   #// API
   #// http://local.globaloilskills.com/api/get_page_index/?post_type=employee
