@@ -1,5 +1,5 @@
 @mixin job-posting() {
-    article.post {
+    article.job_posting {
       @include clearfix;
       @include disabled();
       padding-bottom: 0 !important;
