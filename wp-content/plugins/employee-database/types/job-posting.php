@@ -103,7 +103,7 @@ class JobPostingType {
 
   function add_job_posting_taxonomies() {
 
-    register_taxonomy_for_object_type( 'category', 'company' );
+    register_taxonomy_for_object_type( 'category', 'job_posting' );
 
     /**
      * Register Location Category
