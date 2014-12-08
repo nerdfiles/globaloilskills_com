@@ -49,7 +49,12 @@ input, textarea {
  */
 .wpcf7-form input, .wpcf7-form textarea {
   width: 100%;
-  border: 1px #b8b452 solid;
+  background-color: #fff;
+  /*border: 1px #b8b452 solid;*/
+}
+
+.wpcf7-form .wpcf7-form-control-wrap {
+  @include span-columns(12);
 }
 
 /**

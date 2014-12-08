@@ -128,7 +128,7 @@
         generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
         generatedPermalink.setAttribute 'value', data.permalink
         $('.wpcf7').on 'submit', () ->
-          wp_user_application_create()
+          console.log data
 
   wp_user_application_create = () ->
     h = HTML

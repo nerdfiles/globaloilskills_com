@@ -40,7 +40,16 @@ input, textarea {
  */
 .wpcf7-form input, .wpcf7-form textarea {
   width: 100%;
-  border: 1px #b8b452 solid; }
+  background-color: white;
+  /*border: 1px #b8b452 solid;*/ }
+
+.wpcf7-form .wpcf7-form-control-wrap {
+  float: left;
+  display: block;
+  margin-right: 3.06748%;
+  width: 100%; }
+  .wpcf7-form .wpcf7-form-control-wrap:last-child {
+    margin-right: 0; }
 
 /**
  * @note Think Framework7 implementation.

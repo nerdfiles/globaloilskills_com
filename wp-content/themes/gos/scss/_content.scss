@@ -220,9 +220,11 @@ article {
   color: #222;
 }
 
-.wpcf7 {
+div.wpcf7 {
   color: #222;
   input { color: #000; }
+  /*@include shift(-1);*/
+  @include span-columns(12);
 }
 
 .home-benefits {
