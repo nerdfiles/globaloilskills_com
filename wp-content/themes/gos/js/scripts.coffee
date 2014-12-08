@@ -1,4 +1,4 @@
-((angular, doc, HTML) ->
+((angular, doc, HTML, $) ->
 
   __ = (obj) ->
     console.log obj
@@ -67,13 +67,13 @@
       elem.removeAttribute 'class', 'enabled'
       elem.setAttribute 'class', 'disabled'
 
-  abbrevText = (obj) ->
-    o = obj.split ' '
-    _o = []
-    for d, i in o
-      if i < 100
-        _o.push d
-    return _o.join(' ')
+  #abbrevText = (obj) ->
+    #o = obj.split ' '
+    #_o = []
+    #for d, i in o
+      #if i < 100
+        #_o.push d
+    #return _o.join(' ')
 
   $email = HTML.query('#search-2')
   if ($email.length)
@@ -113,12 +113,13 @@
   ###
   wp_user_email_scaffolding = () ->
     h = HTML
-    form = h.query('.wpcf7')
+    form = h.query( '.wpcf7' )
     if (form)
       generatedHandle = h.query('#generated-handle')
       generatedSubject = h.query('#generated-subject')
       generatedEmail = h.query('#generated-email')
       generatedPermalink = h.query('#generated-permalink')
+
       $.ajax({
         url: "http://#{window.location.hostname}/api/user/user_metadata/"
       }).done (data) ->
@@ -126,6 +127,20 @@
         generatedHandle.setAttribute 'value', data.display_name
         generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
         generatedPermalink.setAttribute 'value', data.permalink
+        $('.wpcf7').on 'submit', () ->
+          wp_user_application_create()
+
+  wp_user_application_create = () ->
+    h = HTML
+    form = h.query( '.wpcf7' )
+    $.ajax({
+      type: 'POST'
+      url: "http://#{window.location.hostname}/api/application/create_application"
+      data:
+        post_title: h.query('h1.post-title').textContent
+        post_content: h.query('#apply-form--qualifications').textContent
+    }).done (data) ->
+      console.log data
 
   wp_user_email_scaffolding()
 
@@ -359,4 +374,4 @@
   ###
   angular.bootstrap doc.body, ['GOSS']
 
-)(angular, document, HTML)
+)(angular, document, HTML, jQuery)
