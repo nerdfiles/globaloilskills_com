@@ -269,7 +269,7 @@ function gos_enqueue_scripts() {
   wp_deregister_style('membermouse-font-awesome', 110);
 
   // Main
-  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.js', array('angular', 'hoverintent', 'HTML', 'jquery'), '1.0', true );
+  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.dev.js', array('angular', 'hoverintent', 'HTML', 'jquery'), '1.0', true );
 
   // CMS Taxonomy
   if ( is_singular() ) wp_enqueue_script( 'comment-reply' );

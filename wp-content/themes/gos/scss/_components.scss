@@ -78,7 +78,15 @@ body.single-job_posting {
 }
 
 body.home {
-
+  .upw-not-found {
+    @include span-columns(11);
+    @include shift(.5);
+    margin-top: .5rem;
+    color: #aaa;
+    text-align: center !important;
+    text-transform: lowercase;
+    font-variant: small-caps;
+  }
   .home-widgets,
   .home-search-widgets {
     ul {
@@ -208,6 +216,8 @@ body.home {
   }
 
   .home-search-widgets {
+    /* @TODO TEMPORARY */
+    display: none !important;
 
     ul {
       margin: 0 0 0;

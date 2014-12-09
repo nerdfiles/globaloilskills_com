@@ -70,6 +70,10 @@ article {
 }
 
 .single .post-title {
+  margin-left: 1rem;
+  /*
+   *@include shift(.5);
+   */
   &:first-child {
     margin-top: 1em;
   }

@@ -115,6 +115,7 @@
           &.has-post-thumbnail {
             .post-meta,
             .entry-meta {}
+            .entry-content,
             .schema_job_posting {
               /*max-height: 10rem !important;*/
             }
@@ -122,8 +123,15 @@
 
           .post-meta,
           .entry-meta {}
+
+          .entry-content,
           .schema_job_posting {
             display: block !important;
+            padding-top: .5rem !important;
+            & > p {
+              display: block !important;
+              margin: 0 0 .5rem;
+            }
             /*max-height: 5rem !important;*/
             /*overflow: auto !important;*/
           }
@@ -162,6 +170,12 @@
         display: none;
       }
 
+      .post-content {
+        & > p {
+          margin: 0 1rem .5rem;
+        }
+      }
+      .entry-content,
       .schema_job_posting {
         margin: 0 !important;
         padding: 0 .5rem 1rem !important;
@@ -170,8 +184,9 @@
         border: none !important;
         font-size: .6rem;
         min-height: 5rem;
-        & > div > div {
+        & > p {
           display: none;
+          margin: 0 1rem;
         }
         .schema_url {
           position: absolute;
@@ -194,10 +209,10 @@
          *background-color: #f1f1f1;
          */
         display: inline-block;
+        text-align: center;
         /*border-top: 1px #ccc solid;*/
-        margin: 0 .5rem;
+        margin: 0 .5rem 0 0;
         padding: 0 .5rem;
-        text-align: right;
         font-weight: 700;
       }
 
@@ -270,6 +285,8 @@
       }
       .post-meta,
       .entry-meta {
+        position: absolute;
+        left: -9999px;
       }
 
       .post-content,
