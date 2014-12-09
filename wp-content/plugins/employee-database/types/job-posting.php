@@ -221,27 +221,131 @@ class JobPostingType {
       id= "data[position_title]"
       name="data[position_title]"
       value="<?php echo $position_title[0] ?>"
-      placeholder="5-6 Word Title"
+      placeholder="Position Title"
       size="75" />
     </p>
 
     <p>
-    <label for="data[company_name]">Company Name</label>
+    <label for="data[hiringOrganization]">hiringOrganization</label>
     <input
       type="text"
-      id= "data[company_name]"
-      name="data[company_name]"
-      value="<?php echo $company_name[0] ? $company_name[0] : 'Independent Project' ?>"
+      id= "data[hiringOrganization]"
+      name="data[hiringOrganization]"
+      value="<?php echo $hiringOrganization[0] ? $hiringOrganization[0] : '' ?>"
     />
     </p>
 
     <p>
-    <label for="data[salary]">Salary</label>
+    <label for="data[workHours]">workHours</label>
+    <input
+      type="text"
+      id= "data[workHours]"
+      name="data[workHours]"
+      value="<?php echo $workHours[0] ? $workHours[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[specialCommitments]">specialCommitments</label>
+    <input
+      type="text"
+      id= "data[specialCommitments]"
+      name="data[specialCommitments]"
+      value="<?php echo $specialCommitments[0] ? $specialCommitments[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[skills]">skills</label>
+    <input
+      type="text"
+      id= "data[skills]"
+      name="data[skills]"
+      value="<?php echo $skills[0] ? $skills[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[responsibilities]">responsibilities</label>
+    <input
+      type="text"
+      id= "data[responsibilities]"
+      name="data[responsibilities]"
+      value="<?php echo $responsibilities[0] ? $responsibilities[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[qualifications]">qualifications</label>
+    <input
+      type="text"
+      id= "data[qualifications]"
+      name="data[qualifications]"
+      value="<?php echo $qualifications[0] ? $qualifications[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[benefits]">benefits</label>
+    <input
+      type="text"
+      id= "data[benefits]"
+      name="data[benefits]"
+      value="<?php echo $benefits[0] ? $benefits[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[educationRequirements]">educationRequirements</label>
+    <input
+      type="text"
+      id= "data[educationRequirements]"
+      name="data[educationRequirements]"
+      value="<?php echo $educationRequirements[0] ? $educationRequirements[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[experienceRequirements]">experienceRequirements</label>
+    <input
+      type="text"
+      id= "data[experienceRequirements]"
+      name="data[experienceRequirements]"
+      value="<?php echo $experienceRequirements[0] ? $experienceRequirements[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[incentives]">incentives</label>
+    <input
+      type="text"
+      id= "data[incentives]"
+      name="data[incentives]"
+      value="<?php echo $incentives[0] ? $incentives[0] : '' ?>"
+    />
+    </p>
+
+
+    <p>
+    <label for="data[baseSalary]">baseSalary</label>
     <input
       type="number"
-      id= "data[salary]"
-      name="data[salary]"
-      value="<?php echo $salary[0] ?>"
+      step="any"
+      id= "data[baseSalary]"
+      name="data[baseSalary]"
+      value="<?php echo $baseSalary[0] ?>"
+      placeholder="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
+      size="25"
+    />
+    </p>
+
+    <p>
+    <label for="data[currency]">currency</label>
+    <input
+      type="text"
+      id= "data[currency]"
+      name="data[currency]"
+      value="<?php echo $currency[0] ?>"
       placeholder="<?php echo $currency[0] ? $currency[0] : 'USD' ?>"
       size="25"
     />
