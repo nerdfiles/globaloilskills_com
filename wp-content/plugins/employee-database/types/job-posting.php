@@ -222,7 +222,7 @@ class JobPostingType {
       name="data[position_title]"
       value="<?php echo $position_title[0] ?>"
       placeholder="Position Title"
-      size="75" />
+    />
     </p>
 
     <p>
@@ -232,6 +232,16 @@ class JobPostingType {
       id= "data[hiringOrganization]"
       name="data[hiringOrganization]"
       value="<?php echo $hiringOrganization[0] ? $hiringOrganization[0] : '' ?>"
+    />
+    </p>
+
+    <p>
+    <label for="data[datePosted]">datePosted</label>
+    <input
+      type="date"
+      id= "data[datePosted]"
+      name="data[datePosted]"
+      value="<?php echo $datePosted[0] ? $datePosted[0] : '' ?>"
     />
     </p>
 
@@ -247,84 +257,75 @@ class JobPostingType {
 
     <p>
     <label for="data[specialCommitments]">specialCommitments</label>
-    <input
+    <textarea
       type="text"
       id= "data[specialCommitments]"
       name="data[specialCommitments]"
-      value="<?php echo $specialCommitments[0] ? $specialCommitments[0] : '' ?>"
-    />
+    ><?php echo $specialCommitments[0] ? $specialCommitments[0] : '' ?></textarea>
     </p>
 
     <p>
     <label for="data[skills]">skills</label>
-    <input
+    <textarea
       type="text"
       id= "data[skills]"
       name="data[skills]"
-      value="<?php echo $skills[0] ? $skills[0] : '' ?>"
-    />
+    ><?php echo $skills[0] ? $skills[0] : '' ?></textarea>
     </p>
 
     <p>
     <label for="data[responsibilities]">responsibilities</label>
-    <input
+    <textarea
       type="text"
       id= "data[responsibilities]"
       name="data[responsibilities]"
-      value="<?php echo $responsibilities[0] ? $responsibilities[0] : '' ?>"
-    />
+    ><?php echo $responsibilities[0] ? $responsibilities[0] : '' ?></textarea>
     </p>
 
     <p>
     <label for="data[qualifications]">qualifications</label>
-    <input
+    <textarea
       type="text"
       id= "data[qualifications]"
       name="data[qualifications]"
-      value="<?php echo $qualifications[0] ? $qualifications[0] : '' ?>"
-    />
+    ><?php echo $qualifications[0] ? $qualifications[0] : '' ?></textarea>
     </p>
 
     <p>
     <label for="data[benefits]">benefits</label>
-    <input
+    <textarea
       type="text"
       id= "data[benefits]"
       name="data[benefits]"
-      value="<?php echo $benefits[0] ? $benefits[0] : '' ?>"
-    />
+    ><?php echo $benefits[0] ? $benefits[0] : '' ?></textarea>
     </p>
 
     <p>
     <label for="data[educationRequirements]">educationRequirements</label>
-    <input
+    <textarea
       type="text"
       id= "data[educationRequirements]"
       name="data[educationRequirements]"
-      value="<?php echo $educationRequirements[0] ? $educationRequirements[0] : '' ?>"
-    />
+    ><?php echo $educationRequirements[0] ? $educationRequirements[0] : '' ?></textarea>
     </p>
 
     <p>
     <label for="data[experienceRequirements]">experienceRequirements</label>
-    <input
+    <textarea
       type="text"
       id= "data[experienceRequirements]"
       name="data[experienceRequirements]"
-      value="<?php echo $experienceRequirements[0] ? $experienceRequirements[0] : '' ?>"
-    />
+    ><?php echo $experienceRequirements[0] ? $experienceRequirements[0] : '' ?></textarea>
     </p>
 
     <p>
     <label for="data[incentives]">incentives</label>
-    <input
+    <textarea
       type="text"
       id= "data[incentives]"
       name="data[incentives]"
-      value="<?php echo $incentives[0] ? $incentives[0] : '' ?>"
-    />
+    ><?php echo $incentives[0] ? $incentives[0] : '' ?></textarea>
     </p>
-
 
     <p>
     <label for="data[baseSalary]">baseSalary</label>
@@ -359,7 +360,6 @@ class JobPostingType {
       name="data[applicant_url]"
       value="<?php echo $applicant_url[0] ?>"
       placeholder="http://www.shell.com/"
-      size="75"
     />
     </p>
 
