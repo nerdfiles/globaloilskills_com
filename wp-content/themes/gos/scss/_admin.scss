@@ -92,3 +92,47 @@ body.login #lostpasswordform {
     display: none;
   }
 }
+
+/**
+ * @see ls *.rtf *.txt | grep -v 'output.txt' | xargs grep -iIohE 'https?://[^[:space:]]+'
+ */
+#edit-slug-box {
+  color: #fff;
+}
+#poststuff {
+  background-color: #27608A;
+  @extend .animated;
+  @extend .bounce-in-left;
+}
+
+@include media($small) {
+  .wp-core-ui .button {
+    width: 50% !important;
+  }
+}
+#wpcontent {
+  background-color: #27608A;
+}
+
+#wpbody-content {
+  background-color: #27608A;
+}
+.hndle {
+  color: #f1f1f1;
+}
+.postbox {
+  color: #f1f1f1;
+  background-color: #27608A;
+  a {
+    color: #fff;
+    &:link {
+
+    }
+    &:hover {
+
+    }
+    &:visited {
+      background-color: #f1f1f1;
+    }
+  }
+}

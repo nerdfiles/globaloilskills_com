@@ -69,8 +69,16 @@ article {
   }
 }
 
+.single {
+  .attachment-full {
+    float: right;
+    max-width: 50%;
+    margin: 1rem;
+  }
+}
 .single .post-title {
   margin-left: 1rem;
+  margin-right: 1rem !important;
   /*
    *@include shift(.5);
    */
@@ -78,7 +86,9 @@ article {
     margin-top: 1em;
   }
 }
-
+body.single-job_posting .page-content article.job_posting h1.post-title {
+  @include span-columns(11);
+}
 .post-meta {
   @include span-columns(10);
   @include shift(1);

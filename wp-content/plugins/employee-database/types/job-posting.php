@@ -353,13 +353,13 @@ class JobPostingType {
     </p>
 
     <p>
-    <label for="data[applicant_url]">Website</label>
+    <label for="data[job_posting_url]">Website</label>
     <input
       type="url"
-      id= "data[applicant_url]"
-      name="data[applicant_url]"
-      value="<?php echo $applicant_url[0] ?>"
-      placeholder="http://www.shell.com/"
+      id= "data[job_posting_url]"
+      name="data[job_posting_url]"
+      value="<?php echo $job_posting_url[0] ?>"
+      placeholder="http://globaloilskills.com/"
     />
     </p>
 

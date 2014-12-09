@@ -173,6 +173,9 @@
       }
 
       .post-content {
+        .attachment-full {
+          float: right;
+        }
         & > p {
           margin: 0 1rem .5rem;
         }
@@ -284,6 +287,9 @@
         a {
           padding: .35rem .5rem;
         }
+      }
+      .type-job_posting .post-title {
+        @include span-columns(10);
       }
       .post-meta,
       .entry-meta {
