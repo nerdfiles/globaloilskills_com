@@ -5377,6 +5377,29 @@ body.search-results .page-content {
     body.search-results .page-content article.job_posting .entry-summary, body.search-results .page-content article.job_posting .entry-meta, body.search-results .page-content article.job_posting .entry-image {
       position: absolute;
       left: -9999px; }
+    body.search-results .page-content article.job_posting form p {
+      margin: 0;
+      padding: 0; }
+    body.search-results .page-content article.job_posting input, body.search-results .page-content article.job_posting textarea {
+      border-top: 2px #cccccc solid;
+      border-right: 5px #cccccc solid; }
+      body.search-results .page-content article.job_posting input:active, body.search-results .page-content article.job_posting input:focus, body.search-results .page-content article.job_posting input:hover, body.search-results .page-content article.job_posting textarea:active, body.search-results .page-content article.job_posting textarea:focus, body.search-results .page-content article.job_posting textarea:hover {
+        border-right: 5px #177a72 solid; }
+    body.search-results .page-content article.job_posting label {
+      display: inline-block;
+      background-color: #177a72;
+      padding: 0.5rem;
+      margin: 0;
+      color: white; }
+      body.search-results .page-content article.job_posting label br {
+        display: none; }
+    body.search-results .page-content article.job_posting .wpcf7-form-control-wrap {
+      margin-bottom: 1rem; }
+    body.search-results .page-content article.job_posting .wpcf7-list-item.first {
+      margin-left: 0 !important; }
+    body.search-results .page-content article.job_posting .wpcf7-list-item label {
+      text-align: center;
+      background-color: #cccccc; }
     body.search-results .page-content article.job_posting:hover {
       background-color: #f1f1f1;
       padding-bottom: 1rem !important;
@@ -5600,6 +5623,29 @@ body.single-job_posting .page-content {
     body.single-job_posting .page-content article.job_posting .entry-summary, body.single-job_posting .page-content article.job_posting .entry-meta, body.single-job_posting .page-content article.job_posting .entry-image {
       position: absolute;
       left: -9999px; }
+    body.single-job_posting .page-content article.job_posting form p {
+      margin: 0;
+      padding: 0; }
+    body.single-job_posting .page-content article.job_posting input, body.single-job_posting .page-content article.job_posting textarea {
+      border-top: 2px #cccccc solid;
+      border-right: 5px #cccccc solid; }
+      body.single-job_posting .page-content article.job_posting input:active, body.single-job_posting .page-content article.job_posting input:focus, body.single-job_posting .page-content article.job_posting input:hover, body.single-job_posting .page-content article.job_posting textarea:active, body.single-job_posting .page-content article.job_posting textarea:focus, body.single-job_posting .page-content article.job_posting textarea:hover {
+        border-right: 5px #177a72 solid; }
+    body.single-job_posting .page-content article.job_posting label {
+      display: inline-block;
+      background-color: #177a72;
+      padding: 0.5rem;
+      margin: 0;
+      color: white; }
+      body.single-job_posting .page-content article.job_posting label br {
+        display: none; }
+    body.single-job_posting .page-content article.job_posting .wpcf7-form-control-wrap {
+      margin-bottom: 1rem; }
+    body.single-job_posting .page-content article.job_posting .wpcf7-list-item.first {
+      margin-left: 0 !important; }
+    body.single-job_posting .page-content article.job_posting .wpcf7-list-item label {
+      text-align: center;
+      background-color: #cccccc; }
     body.single-job_posting .page-content article.job_posting .user--role {
       display: none; }
     body.single-job_posting .page-content article.job_posting .schema_job_posting {
@@ -5772,6 +5818,29 @@ body.home {
       body.home .home-widgets .widget article.job_posting .entry-summary, body.home .home-widgets .widget article.job_posting .entry-meta, body.home .home-widgets .widget article.job_posting .entry-image {
         position: absolute;
         left: -9999px; }
+      body.home .home-widgets .widget article.job_posting form p {
+        margin: 0;
+        padding: 0; }
+      body.home .home-widgets .widget article.job_posting input, body.home .home-widgets .widget article.job_posting textarea {
+        border-top: 2px #cccccc solid;
+        border-right: 5px #cccccc solid; }
+        body.home .home-widgets .widget article.job_posting input:active, body.home .home-widgets .widget article.job_posting input:focus, body.home .home-widgets .widget article.job_posting input:hover, body.home .home-widgets .widget article.job_posting textarea:active, body.home .home-widgets .widget article.job_posting textarea:focus, body.home .home-widgets .widget article.job_posting textarea:hover {
+          border-right: 5px #177a72 solid; }
+      body.home .home-widgets .widget article.job_posting label {
+        display: inline-block;
+        background-color: #177a72;
+        padding: 0.5rem;
+        margin: 0;
+        color: white; }
+        body.home .home-widgets .widget article.job_posting label br {
+          display: none; }
+      body.home .home-widgets .widget article.job_posting .wpcf7-form-control-wrap {
+        margin-bottom: 1rem; }
+      body.home .home-widgets .widget article.job_posting .wpcf7-list-item.first {
+        margin-left: 0 !important; }
+      body.home .home-widgets .widget article.job_posting .wpcf7-list-item label {
+        text-align: center;
+        background-color: #cccccc; }
       body.home .home-widgets .widget article.job_posting:hover {
         background-color: #f1f1f1;
         padding-bottom: 1rem !important;
@@ -6268,6 +6337,29 @@ body.home {
       .footer-after-content-widgets .widget article.job_posting .entry-summary, .footer-after-content-widgets .widget article.job_posting .entry-meta, .footer-after-content-widgets .widget article.job_posting .entry-image {
         position: absolute;
         left: -9999px; }
+      .footer-after-content-widgets .widget article.job_posting form p {
+        margin: 0;
+        padding: 0; }
+      .footer-after-content-widgets .widget article.job_posting input, .footer-after-content-widgets .widget article.job_posting textarea {
+        border-top: 2px #cccccc solid;
+        border-right: 5px #cccccc solid; }
+        .footer-after-content-widgets .widget article.job_posting input:active, .footer-after-content-widgets .widget article.job_posting input:focus, .footer-after-content-widgets .widget article.job_posting input:hover, .footer-after-content-widgets .widget article.job_posting textarea:active, .footer-after-content-widgets .widget article.job_posting textarea:focus, .footer-after-content-widgets .widget article.job_posting textarea:hover {
+          border-right: 5px #177a72 solid; }
+      .footer-after-content-widgets .widget article.job_posting label {
+        display: inline-block;
+        background-color: #177a72;
+        padding: 0.5rem;
+        margin: 0;
+        color: white; }
+        .footer-after-content-widgets .widget article.job_posting label br {
+          display: none; }
+      .footer-after-content-widgets .widget article.job_posting .wpcf7-form-control-wrap {
+        margin-bottom: 1rem; }
+      .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item.first {
+        margin-left: 0 !important; }
+      .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item label {
+        text-align: center;
+        background-color: #cccccc; }
       .footer-after-content-widgets .widget article.job_posting:hover {
         background-color: #f1f1f1;
         padding-bottom: 1rem !important;
@@ -6765,7 +6857,7 @@ input[type="submit"] {
       .site-header div.menu {
         padding:  0; } }
   .site-header .main-menu {
-    padding:  3.06748% 0;
+    padding:  3.06748% 3.06748% 3.06748% 0;
     *zoom: 1;
     /*padding-bottom: 20px;*/ }
     .site-header .main-menu:before, .site-header .main-menu:after {

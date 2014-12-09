@@ -8,6 +8,47 @@
       border-top: none;
       /*border-bottom: 1px #0B4E9E solid;*/
 
+      form {
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      input, textarea {
+        border-top: 2px #ccc solid;
+        border-right: 5px #ccc solid;
+        &:active,
+        &:focus,
+        &:hover {
+          border-right: 5px #177A72 solid;
+        }
+      }
+
+      label {
+        display: inline-block;
+        background-color: #177A72;
+        padding: .5rem;
+        margin: 0;
+        color: #fff;
+
+        br {
+          display: none;
+        }
+      }
+
+      .wpcf7-form-control-wrap {
+        margin-bottom: 1rem;
+      }
+      .wpcf7-list-item.first {
+        margin-left: 0 !important;
+      }
+      .wpcf7-list-item {
+        label {
+          text-align: center;
+          background-color: #ccc;
+        }
+      }
       @if $noHover == false {
         &:hover {
           background-color: #f1f1f1;

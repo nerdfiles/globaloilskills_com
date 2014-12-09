@@ -214,9 +214,9 @@ function gos_editor_style() {
 }
 add_action( 'init', 'gos_editor_style' );
 
-//add_action('wp_enqueue_scripts', 'google_maps_config', 25);
+add_action('wp_enqueue_scripts', 'google_maps_config', 25);
 function google_maps_config() {
-  if (is_front_page()) {
+  if (is_front_page() || is_tax() || is_singular()) {
     wp_dequeue_script('google-maps-builder-gmaps');
     wp_dequeue_script('google-maps-builder-plugin-script');
     wp_dequeue_script('google-maps-builder-maps-icons');
