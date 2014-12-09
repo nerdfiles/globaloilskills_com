@@ -18,6 +18,8 @@
       input, textarea {
         border-top: 2px #ccc solid;
         border-right: 5px #ccc solid;
+        border-radius: none !important;
+        box-shadow: none !important;
         &:active,
         &:focus,
         &:hover {

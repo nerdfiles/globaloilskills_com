@@ -5382,7 +5382,9 @@ body.search-results .page-content {
       padding: 0; }
     body.search-results .page-content article.job_posting input, body.search-results .page-content article.job_posting textarea {
       border-top: 2px #cccccc solid;
-      border-right: 5px #cccccc solid; }
+      border-right: 5px #cccccc solid;
+      border-radius: none !important;
+      box-shadow: none !important; }
       body.search-results .page-content article.job_posting input:active, body.search-results .page-content article.job_posting input:focus, body.search-results .page-content article.job_posting input:hover, body.search-results .page-content article.job_posting textarea:active, body.search-results .page-content article.job_posting textarea:focus, body.search-results .page-content article.job_posting textarea:hover {
         border-right: 5px #177a72 solid; }
     body.search-results .page-content article.job_posting label {
@@ -5649,7 +5651,9 @@ body.single-job_posting .page-content {
       padding: 0; }
     body.single-job_posting .page-content article.job_posting input, body.single-job_posting .page-content article.job_posting textarea {
       border-top: 2px #cccccc solid;
-      border-right: 5px #cccccc solid; }
+      border-right: 5px #cccccc solid;
+      border-radius: none !important;
+      box-shadow: none !important; }
       body.single-job_posting .page-content article.job_posting input:active, body.single-job_posting .page-content article.job_posting input:focus, body.single-job_posting .page-content article.job_posting input:hover, body.single-job_posting .page-content article.job_posting textarea:active, body.single-job_posting .page-content article.job_posting textarea:focus, body.single-job_posting .page-content article.job_posting textarea:hover {
         border-right: 5px #177a72 solid; }
     body.single-job_posting .page-content article.job_posting label {
@@ -5874,7 +5878,9 @@ body.home {
         padding: 0; }
       body.home .home-widgets .widget article.job_posting input, body.home .home-widgets .widget article.job_posting textarea {
         border-top: 2px #cccccc solid;
-        border-right: 5px #cccccc solid; }
+        border-right: 5px #cccccc solid;
+        border-radius: none !important;
+        box-shadow: none !important; }
         body.home .home-widgets .widget article.job_posting input:active, body.home .home-widgets .widget article.job_posting input:focus, body.home .home-widgets .widget article.job_posting input:hover, body.home .home-widgets .widget article.job_posting textarea:active, body.home .home-widgets .widget article.job_posting textarea:focus, body.home .home-widgets .widget article.job_posting textarea:hover {
           border-right: 5px #177a72 solid; }
       body.home .home-widgets .widget article.job_posting label {
@@ -6417,7 +6423,9 @@ body.home {
         padding: 0; }
       .footer-after-content-widgets .widget article.job_posting input, .footer-after-content-widgets .widget article.job_posting textarea {
         border-top: 2px #cccccc solid;
-        border-right: 5px #cccccc solid; }
+        border-right: 5px #cccccc solid;
+        border-radius: none !important;
+        box-shadow: none !important; }
         .footer-after-content-widgets .widget article.job_posting input:active, .footer-after-content-widgets .widget article.job_posting input:focus, .footer-after-content-widgets .widget article.job_posting input:hover, .footer-after-content-widgets .widget article.job_posting textarea:active, .footer-after-content-widgets .widget article.job_posting textarea:focus, .footer-after-content-widgets .widget article.job_posting textarea:hover {
           border-right: 5px #177a72 solid; }
       .footer-after-content-widgets .widget article.job_posting label {
