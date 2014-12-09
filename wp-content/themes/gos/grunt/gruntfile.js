@@ -81,7 +81,8 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         mangle: false,
-        expand: true
+        expand: true,
+        compress: false
       },
       dist: {
         files: {
@@ -92,6 +93,9 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
+          '../js/scripts.js': [
+            '../js/scripts.js'
+          ],
           '../js/scripts.dev.js': [
             '../js/scripts.js'
           ]

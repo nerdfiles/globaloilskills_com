@@ -216,7 +216,7 @@ add_action( 'init', 'gos_editor_style' );
 
 add_action('wp_enqueue_scripts', 'google_maps_config', 25);
 function google_maps_config() {
-  if (is_front_page()) {
+  if (is_front_page() || is_tax() || is_singular()) {
     wp_dequeue_script('google-maps-builder-gmaps');
     wp_dequeue_script('google-maps-builder-plugin-script');
     wp_dequeue_script('google-maps-builder-maps-icons');
@@ -269,7 +269,7 @@ function gos_enqueue_scripts() {
   wp_deregister_style('membermouse-font-awesome', 110);
 
   // Main
-  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.dev.js', array('angular', 'hoverintent', 'HTML'), '1.0', true );
+  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.js', array('angular', 'hoverintent', 'HTML', 'jquery'), '1.0', true );
 
   // CMS Taxonomy
   if ( is_singular() ) wp_enqueue_script( 'comment-reply' );

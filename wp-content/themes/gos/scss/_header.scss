@@ -57,7 +57,7 @@
      */
   }
   .main-menu {
-    @include pad(default 0);
+    @include pad(default default default 0);
     @include clearfix;
     /*padding-bottom: 20px;*/
   }

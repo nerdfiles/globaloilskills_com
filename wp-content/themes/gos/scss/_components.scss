@@ -47,6 +47,36 @@ body.search-results {
   }
 }
 
+body.single-job_posting {
+
+  .page-content {
+
+    @include span-columns(12);
+    @include clearfix;
+
+    @include media($small) {
+      li {
+        @include span-columns(12);
+      }
+    }
+
+    @include media($medium) {
+      li {
+        @include span-columns(12);
+      }
+    }
+
+    @include media($large) {
+      li {
+        @include span-columns(4);
+        @include omega(3n);
+      }
+    }
+
+    @include job-posting($noHover: true, $single: true);
+  }
+}
+
 body.home {
 
   .home-widgets,
