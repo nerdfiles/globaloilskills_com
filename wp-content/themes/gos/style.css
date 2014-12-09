@@ -5393,13 +5393,24 @@ body.search-results .page-content {
       color: white; }
       body.search-results .page-content article.job_posting label br {
         display: none; }
+    body.search-results .page-content article.job_posting #apply-form--submit {
+      background: #f1f1f1; }
     body.search-results .page-content article.job_posting .wpcf7-form-control-wrap {
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      text-align: center;
+      margin-top: 1rem; }
     body.search-results .page-content article.job_posting .wpcf7-list-item.first {
       margin-left: 0 !important; }
-    body.search-results .page-content article.job_posting .wpcf7-list-item label {
-      text-align: center;
-      background-color: #cccccc; }
+    body.search-results .page-content article.job_posting .wpcf7-list-item {
+      cursor: pointer !important; }
+      body.search-results .page-content article.job_posting .wpcf7-list-item input {
+        position: absolute;
+        left: -9999px; }
+      body.search-results .page-content article.job_posting .wpcf7-list-item.active label {
+        background-color: #27608a; }
+      body.search-results .page-content article.job_posting .wpcf7-list-item label {
+        text-align: center;
+        background-color: #cccccc; }
     body.search-results .page-content article.job_posting:hover {
       background-color: #f1f1f1;
       padding-bottom: 1rem !important;
@@ -5639,13 +5650,24 @@ body.single-job_posting .page-content {
       color: white; }
       body.single-job_posting .page-content article.job_posting label br {
         display: none; }
+    body.single-job_posting .page-content article.job_posting #apply-form--submit {
+      background: #f1f1f1; }
     body.single-job_posting .page-content article.job_posting .wpcf7-form-control-wrap {
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      text-align: center;
+      margin-top: 1rem; }
     body.single-job_posting .page-content article.job_posting .wpcf7-list-item.first {
       margin-left: 0 !important; }
-    body.single-job_posting .page-content article.job_posting .wpcf7-list-item label {
-      text-align: center;
-      background-color: #cccccc; }
+    body.single-job_posting .page-content article.job_posting .wpcf7-list-item {
+      cursor: pointer !important; }
+      body.single-job_posting .page-content article.job_posting .wpcf7-list-item input {
+        position: absolute;
+        left: -9999px; }
+      body.single-job_posting .page-content article.job_posting .wpcf7-list-item.active label {
+        background-color: #27608a; }
+      body.single-job_posting .page-content article.job_posting .wpcf7-list-item label {
+        text-align: center;
+        background-color: #cccccc; }
     body.single-job_posting .page-content article.job_posting .user--role {
       display: none; }
     body.single-job_posting .page-content article.job_posting .schema_job_posting {
@@ -5834,13 +5856,24 @@ body.home {
         color: white; }
         body.home .home-widgets .widget article.job_posting label br {
           display: none; }
+      body.home .home-widgets .widget article.job_posting #apply-form--submit {
+        background: #f1f1f1; }
       body.home .home-widgets .widget article.job_posting .wpcf7-form-control-wrap {
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        text-align: center;
+        margin-top: 1rem; }
       body.home .home-widgets .widget article.job_posting .wpcf7-list-item.first {
         margin-left: 0 !important; }
-      body.home .home-widgets .widget article.job_posting .wpcf7-list-item label {
-        text-align: center;
-        background-color: #cccccc; }
+      body.home .home-widgets .widget article.job_posting .wpcf7-list-item {
+        cursor: pointer !important; }
+        body.home .home-widgets .widget article.job_posting .wpcf7-list-item input {
+          position: absolute;
+          left: -9999px; }
+        body.home .home-widgets .widget article.job_posting .wpcf7-list-item.active label {
+          background-color: #27608a; }
+        body.home .home-widgets .widget article.job_posting .wpcf7-list-item label {
+          text-align: center;
+          background-color: #cccccc; }
       body.home .home-widgets .widget article.job_posting:hover {
         background-color: #f1f1f1;
         padding-bottom: 1rem !important;
@@ -6353,13 +6386,24 @@ body.home {
         color: white; }
         .footer-after-content-widgets .widget article.job_posting label br {
           display: none; }
+      .footer-after-content-widgets .widget article.job_posting #apply-form--submit {
+        background: #f1f1f1; }
       .footer-after-content-widgets .widget article.job_posting .wpcf7-form-control-wrap {
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        text-align: center;
+        margin-top: 1rem; }
       .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item.first {
         margin-left: 0 !important; }
-      .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item label {
-        text-align: center;
-        background-color: #cccccc; }
+      .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item {
+        cursor: pointer !important; }
+        .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item input {
+          position: absolute;
+          left: -9999px; }
+        .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item.active label {
+          background-color: #27608a; }
+        .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item label {
+          text-align: center;
+          background-color: #cccccc; }
       .footer-after-content-widgets .widget article.job_posting:hover {
         background-color: #f1f1f1;
         padding-bottom: 1rem !important;

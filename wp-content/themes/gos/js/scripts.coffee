@@ -145,6 +145,18 @@
 
   wp_user_email_scaffolding()
 
+  wp_job_posting_list_item = () ->
+    h = HTML
+    form = h.query( '.wpcf7' )
+    wpcf7ListItem = form.query( '.wpcf7-list-item input' )
+    $.each wpcf7ListItem, () ->
+      $listItem = $(this)
+      $listItem.bind 'click', (e) ->
+        $listItem.closest('.wpcf7-form-control').find('.wpcf7-list-item').removeClass 'active'
+        $listItem.closest('.wpcf7-list-item').addClass 'active'
+
+  wp_job_posting_list_item()
+
   #// API
   #// http://local.globaloilskills.com/api/get_page_index/?post_type=employee
   #// http://local.globaloilskills.com/api/get_page_index/?post_type=recruiter
