@@ -51,31 +51,6 @@
       <aside class="module--job-posting-summary">
         <?php
           $baseSalary = get_post_meta(get_the_ID(), 'baseSalary', true);
-          print_r($baseSalary);
-
-
-
-
-
-
-
-          print_r(get_post_meta(get_the_ID(), 'baseSalary'));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           $currency = get_post_meta(get_the_ID(), 'currency', true);
           $position_title = get_post_meta(get_the_ID(), 'position_title', true);
           $hiringOrganization = get_post_meta(get_the_ID(), 'hiringOrganization', true);
