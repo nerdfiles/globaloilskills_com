@@ -16,7 +16,7 @@ class JSON_API_Application_Controller {
     }
     else {
         if (!file_exists($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id)) {
-            mkdir($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id, 0777, true);
+            mkdir($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id, 0755, true);
         }
         copy(
           $_FILES['file']['tmp_name'],
