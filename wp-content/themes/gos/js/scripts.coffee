@@ -129,6 +129,7 @@
         generatedPermalink.setAttribute 'value', data.permalink
         $('.wpcf7').on 'submit', () ->
           console.log data
+          wp_user_application_create()
         return
 
   wp_user_application_create = () ->
