@@ -41,16 +41,18 @@
 
     if ( '' != get_the_post_thumbnail() ) :
     ?>
+      <div class="module--job-posting-logo">
       <?php
       the_post_thumbnail('full');
       ?>
+      </div>
     <?php endif; ?>
 
     <?php if ( is_singular() || is_tax() || is_front_page() || is_category() || is_archive() || is_search() ) : ?>
 
       <aside class="module--job-posting-summary">
         <?php
-          if ('' != $baseSalary) {
+          if ('' != get_post_meta(get_the_ID(), 'baseSalary', true)) {
           $baseSalary = get_post_meta(get_the_ID(), 'baseSalary', true);
           $currency = get_post_meta(get_the_ID(), 'currency', true);
           $position_title = get_post_meta(get_the_ID(), 'position_title', true);
@@ -228,7 +230,7 @@
 
       <?php the_content(); ?>
 
-      <a href="<?php the_permalink(); ?>"><?php _e( 'Read more &raquo;', 'gos' ); ?></a>
+      <!--<a href="<?php the_permalink(); ?>"><?php _e( 'Read more &raquo;', 'gos' ); ?></a>-->
 
     <?php else : ?>
 

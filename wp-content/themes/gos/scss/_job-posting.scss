@@ -324,3 +324,30 @@
       }
     }
 }
+
+.attachment-full {
+}
+.module--job-posting-logo {
+  @include span-columns(4.5);
+  background-color: #fff;
+  float: right;
+  padding: 1rem;
+  img { width: 100% !important; margin: 0 !important; max-width: 100% !important; }
+}
+.module--job-posting-summary {
+  border-bottom: 1rem #ccc dashed;
+  margin-bottom: 1rem;
+  dt {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    background-color: #177A72;
+    color: #fff;
+    @include pad(0 default);
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+  }
+  & > p {
+    @include shift(.5);
+    @include span-columns(6);
+  }
+}

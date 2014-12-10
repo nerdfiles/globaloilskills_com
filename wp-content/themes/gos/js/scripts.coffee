@@ -140,7 +140,7 @@
       url: "http://#{window.location.hostname}/api/application/create_application"
       data:
         post_title: h.query('h1.post-title').textContent
-        post_content: h.query('#apply-form--qualifications').textContent
+        post_content: h.query('#apply-form--qualifications').value + "\r\n" + h.query('#apply-form--questions').value + "\r\n" + h.query('.wpcf7-list-item.active label').textContent
     }).done (data) ->
       console.log data
 
