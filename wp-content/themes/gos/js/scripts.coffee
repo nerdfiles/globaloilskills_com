@@ -123,6 +123,7 @@
       $.ajax({
         url: "http://#{window.location.hostname}/api/user/user_metadata/"
       }).done (data) ->
+        console.log data
         generatedEmail.setAttribute 'value', data.user_email
         generatedHandle.setAttribute 'value', data.display_name
         generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
@@ -135,12 +136,17 @@
   wp_user_application_create = () ->
     h = HTML
     form = h.query( '.wpcf7' )
+    fd = new FormData()
+    fd.append('file', $(h.query('input[name="file-966"]')).prop('files')[0])
+    fd.append('post_title', h.query('h1.post-title').textContent)
+    fd.append('post_content', "<div>" + h.query('#apply-form--qualifications').value + "</div><div>" + h.query('#apply-form--questions').value + "</div><div>" + h.query('.wpcf7-list-item.active label').textContent + "</div>")
     $.ajax({
       type: 'POST'
       url: "http://#{window.location.hostname}/api/application/create_application"
-      data:
-        post_title: h.query('h1.post-title').textContent
-        post_content: h.query('#apply-form--qualifications').value + "\r\n" + h.query('#apply-form--questions').value + "\r\n" + h.query('.wpcf7-list-item.active label').textContent
+      cache: false
+      contentType: false
+      processData: false
+      data: fd
     }).done (data) ->
       console.log data
 

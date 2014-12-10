@@ -5193,7 +5193,8 @@ p ~ h1 {
   width: 35.58282%;
   background-color: white;
   float: right;
-  padding: 1rem; }
+  padding: 1rem;
+  border-bottom: 5px #cccccc solid; }
   .module--job-posting-logo:last-child {
     margin-right: 0; }
   .module--job-posting-logo img {

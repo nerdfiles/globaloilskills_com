@@ -78,11 +78,10 @@ class ApplicationPostType {
       'taxonomies' => array(),
       'supports' => array(
         'title',
-        //'editor',
-#      	'author',
+        'editor',
+        'author',
         'thumbnail',
-#      	'excerpt',
-        //'comments'
+        'comments'
       ),
     );
     register_post_type($this->type, $options);
