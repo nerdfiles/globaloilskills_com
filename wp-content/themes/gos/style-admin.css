@@ -5089,3 +5089,22 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
     color: white; }
     .postbox a:visited {
       background-color: #f1f1f1; }
+
+#post-body {
+  color: #cccccc;
+  display: flex;
+  flex-direction: column; }
+
+
+
+
+
+.textarea.wp-editor-area {
+  float: left; }
+
+
+.quicktags-toolbar {
+  display: flex;
+  flex-direction: row; }
+
+
