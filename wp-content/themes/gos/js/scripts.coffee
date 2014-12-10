@@ -123,14 +123,15 @@
       $.ajax({
         url: "http://#{window.location.hostname}/api/user/user_metadata/"
       }).done (data) ->
-        console.log data
         generatedEmail.setAttribute 'value', data.user_email
         generatedHandle.setAttribute 'value', data.display_name
         generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
-        generatedPermalink.setAttribute 'value', data.permalink
+        post_id = $('.page-content > .job_posting').prop('id')
+        permalink_url = post_id.replace('post-', "http://#{window.location.hostname}/?p=")
+        generatedPermalink.setAttribute 'value', permalink_url
         $('.wpcf7').on 'submit', () ->
-          console.log data
           wp_user_application_create()
+          return
         return
 
   wp_user_application_create = () ->
@@ -139,7 +140,11 @@
     fd = new FormData()
     fd.append('file', $(h.query('input[name="file-966"]')).prop('files')[0])
     fd.append('post_title', h.query('h1.post-title').textContent)
-    fd.append('post_content', "<div>" + h.query('#apply-form--qualifications').value + "</div><div>" + h.query('#apply-form--questions').value + "</div><div>" + h.query('.wpcf7-list-item.active label').textContent + "</div>")
+    post_content = []
+    post_content.push h.query('#apply-form--qualifications').value
+    post_content.push h.query('#apply-form--questions').value
+    post_content.push h.query('.wpcf7-list-item.active label').textContent
+    fd.append('post_content', post_content.join("\n\n\r\r"))
     $.ajax({
       type: 'POST'
       url: "http://#{window.location.hostname}/api/application/create_application"

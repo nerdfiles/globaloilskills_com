@@ -9,14 +9,18 @@ class JSON_API_Application_Controller {
 
     $user_id = get_current_user_id();
     $post_type = 'application';
+    $hostname = 'http://' . $_SERVER['HTTP_HOST'];
 
-    if ( 0 < $_FILES['file-966']['error'] ) {
-        echo 'Error: ' . $_FILES['file-966']['error'] . '<br>';
+    if ( 0 < $_FILES['file']['error'] ) {
+        echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     }
     else {
-        move_uploaded_file(
-          $_FILES['file-966']['tmp_name'],
-          $_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/' . $_FILES['file-966']['name']
+        if (!file_exists($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id)) {
+            mkdir($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id, 0777, true);
+        }
+        copy(
+          $_FILES['file']['tmp_name'],
+          $_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id . '/' . $_FILES['file']['name']
         );
     }
 
@@ -33,7 +37,7 @@ class JSON_API_Application_Controller {
       'post_title'    => wp_strip_all_tags( $_POST['post_title'] ),
       // If a resumé exists, we should recapitulate the resumé content (if parsable) into the post_content, otherwise, we take:
       // the Contact Form 7 Template answers and reproduce them. This should be a cumulative process.
-      'post_content'  => $_POST['post_content'] + '::' + $_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/' . $_FILES['file-966']['name'],
+      'post_content'  => wp_strip_all_tags( $_POST['post_content'] ) . "\r\nhttp://" . $hostname . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $_FILES['file']['name'],
       // The natural post status semantics don't make any fucking sense here. What does it mean to "publish" to an internal ecosystem of documents, you fucking prick?
       'post_status'   => 'publish',
       // The user ID should match the candidate to the recruiter or company that has posted the job posting. The cmpany should be notified via e-mail template post.
