@@ -5222,6 +5222,17 @@ p ~ h1 {
     .module--job-posting-summary > p:last-child {
       margin-right: 0; }
 
+.wpcf7-response-output {
+  margin-left: -8.58896%;
+  float: left;
+  display: block;
+  margin-right: 3.06748%;
+  width: 100%; }
+  .wpcf7-response-output:last-child {
+    margin-right: 0; }
+
+
+
 .search-title h1 {
   font-size: 20.8px;
   font-size: 1.3rem;

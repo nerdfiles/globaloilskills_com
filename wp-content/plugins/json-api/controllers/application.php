@@ -1,7 +1,7 @@
 <?php
 class JSON_API_Application_Controller {
   public function create_application() {
-    require_once  $_SERVER["DOCUMENT_ROOT"]."/wp-load.php";
+    require_once $_SERVER["DOCUMENT_ROOT"]."/wp-load.php";
     /*
      *ini_set('display_errors', 1);
      *error_reporting('E_ALL');
@@ -13,18 +13,20 @@ class JSON_API_Application_Controller {
 
     if ( 0 < $_FILES['file']['error'] ) {
         echo 'Error: ' . $_FILES['file']['error'] . '<br>';
-    }
-    else {
+    } else {
         if (!file_exists($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id)) {
             mkdir($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id, 0777, true);
+<<<<<<< Updated upstream
+=======
         }
-        copy(
-          $_FILES['file']['tmp_name'],
-          $_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id . '/' . $_FILES['file']['name']
-        );
+        if (!copy($_FILES['file']['tmp_name'], $_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id . '/' . $_FILES['file']['name'])) {
+          echo 'Error: ' . $_FILES['file']['error'] . '<meta itemtype="http://schema.org/JobPosting" name="demand" itemscope itemprop="demand" />'
+>>>>>>> Stashed changes
+        }
     }
 
     /**
+     * Like federated consciousnesses, etc.
      * So here we make an application that represents an employee user's submission to a particular job posting.
      * We're using restful API methods exposed from WP's custom post taxonomy, and it's all very straightforward and simple. Oh, and fuck you.
      */
