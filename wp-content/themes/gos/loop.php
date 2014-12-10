@@ -50,6 +50,7 @@
 
       <aside class="module--job-posting-summary">
         <?php
+          if ('' != $baseSalary) {
           $baseSalary = get_post_meta(get_the_ID(), 'baseSalary', true);
           $currency = get_post_meta(get_the_ID(), 'currency', true);
           $position_title = get_post_meta(get_the_ID(), 'position_title', true);
@@ -222,6 +223,8 @@
         </div>
         <?php } ?>
       </aside>
+
+      <?php } ?>
 
       <?php the_content(); ?>
 
