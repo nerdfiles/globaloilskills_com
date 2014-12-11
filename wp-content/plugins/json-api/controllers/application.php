@@ -1,24 +1,26 @@
 <?php
 class JSON_API_Application_Controller {
   public function create_application() {
-    require_once $_SERVER["DOCUMENT_ROOT"]."/wp-load.php";
-    /*
-     *ini_set('display_errors', 1);
-     *error_reporting('E_ALL');
-     */
-
     $user_id = get_current_user_id();
     $post_type = 'application';
-    $hostname = 'http://' . $_SERVER['HTTP_HOST'];
+    $hostname = $_SERVER['HTTP_HOST'];
+    $document_root = $_SERVER["DOCUMENT_ROOT"];
+    require_once $document_root . "/wp-load.php";
+    $file_name = $_FILES['file']['name'];
+    $tmp_file_name = $_FILES['file']['tmp_name'];
+    $sep = "\r\n";
+    $full_path = "Full Path: " . $document_root . 'wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name;
+    $url = "URL: http://" . $hostname . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name;
+    $post_title = $_POST['post_title'];
 
     if ( 0 < $_FILES['file']['error'] ) {
         echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     } else {
-        if (!file_exists($_SERVER["DOCUMENT_ROOT"] . '/wp-content/uploads/resumes/user/' . $user_id)) {
-            mkdir($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id, 0777, true);
+        if (!file_exists($document_root . '/wp-content/uploads/resumes/user/' . $user_id)) {
+            mkdir($document_root . 'wp-content/uploads/resumes/user/' . $user_id, 0777, true);
         }
-        if (!copy($_FILES['file']['tmp_name'], $_SERVER["DOCUMENT_ROOT"] . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $_FILES['file']['name'])) {
-          echo 'Error: ' . $_FILES['file']['error'] . '<meta itemtype="http://schema.org/JobPosting" name="demand" itemscope itemprop="demand" />';
+        if (!file_exists($document_root . '/wp-content/uploads/resumes/users/' . $user_id . '/' . $file_name)) {
+            copy($tmp_file_name, $document_root . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name);
         }
     }
 
@@ -28,15 +30,18 @@ class JSON_API_Application_Controller {
      * We're using restful API methods exposed from WP's custom post taxonomy, and it's all very straightforward and simple. Oh, and fuck you.
      */
 
+    $data = wp_strip_all_tags( $_POST['post_content'] ) .
+        $sep . $full_path .
+        $sep . $url;
     $application_submission = array(
       // The post title should be a template model that combines:
       // 1. Username
       // 2. Job posting title
       // 3. Primary category (industry, I guess?)
-      'post_title'    => wp_strip_all_tags( $_POST['post_title'] ),
+      'post_title'    => wp_strip_all_tags( $post_title ),
       // If a resumé exists, we should recapitulate the resumé content (if parsable) into the post_content, otherwise, we take:
       // the Contact Form 7 Template answers and reproduce them. This should be a cumulative process.
-      'post_content'  => wp_strip_all_tags( $_POST['post_content'] ) . "\r\nhttp://" . $hostname . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $_FILES['file']['name'],
+      'post_content'  => $data,
       // The natural post status semantics don't make any fucking sense here. What does it mean to "publish" to an internal ecosystem of documents, you fucking prick?
       'post_status'   => 'publish',
       // The user ID should match the candidate to the recruiter or company that has posted the job posting. The cmpany should be notified via e-mail template post.
@@ -48,7 +53,7 @@ class JSON_API_Application_Controller {
 
     $post_ID = wp_insert_post( $application_submission );
     return array(
-      "application_submission" => $post_ID
+      "application_submission" => $post_ID . $sep . $full_path . $sep . $url
     );
   }
 }
