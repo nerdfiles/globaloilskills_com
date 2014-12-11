@@ -14,14 +14,11 @@ class JSON_API_Application_Controller {
     if ( 0 < $_FILES['file']['error'] ) {
         echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     } else {
-        if (!file_exists($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id)) {
+        if (!file_exists($_SERVER["DOCUMENT_ROOT"] . '/wp-content/uploads/resumes/user/' . $user_id)) {
             mkdir($_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id, 0777, true);
-<<<<<<< Updated upstream
-=======
         }
-        if (!copy($_FILES['file']['tmp_name'], $_SERVER["DOCUMENT_ROOT"] . 'wp-content/uploads/resumes/user/' . $user_id . '/' . $_FILES['file']['name'])) {
-          echo 'Error: ' . $_FILES['file']['error'] . '<meta itemtype="http://schema.org/JobPosting" name="demand" itemscope itemprop="demand" />'
->>>>>>> Stashed changes
+        if (!copy($_FILES['file']['tmp_name'], $_SERVER["DOCUMENT_ROOT"] . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $_FILES['file']['name'])) {
+          echo 'Error: ' . $_FILES['file']['error'] . '<meta itemtype="http://schema.org/JobPosting" name="demand" itemscope itemprop="demand" />';
         }
     }
 
