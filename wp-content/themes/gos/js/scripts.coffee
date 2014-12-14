@@ -123,16 +123,18 @@
       $.ajax({
         url: "http://#{window.location.hostname}/api/user/user_metadata/"
       }).done (data) ->
-        generatedEmail.setAttribute 'value', data.user_email
-        generatedHandle.setAttribute 'value', data.display_name
-        generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
-        post_id = $('.page-content > .job_posting').prop('id')
-        permalink_url = post_id.replace('post-', "http://#{window.location.hostname}/?p=")
-        generatedPermalink.setAttribute 'value', permalink_url
-        $('.wpcf7').on 'submit', () ->
-          wp_user_application_create()
+
+        if generatedEmail
+          generatedEmail.setAttribute 'value', data.user_email
+          generatedHandle.setAttribute 'value', data.display_name
+          generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
+          post_id = $('.page-content > .job_posting').prop('id')
+          permalink_url = post_id.replace('post-', "http://#{window.location.hostname}/?p=")
+          generatedPermalink.setAttribute 'value', permalink_url
+          $('.wpcf7').on 'submit', () ->
+            wp_user_application_create()
+            return
           return
-        return
 
   wp_user_application_create = () ->
     h = HTML
