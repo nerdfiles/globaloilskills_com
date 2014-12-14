@@ -50,9 +50,9 @@
 
     <?php if ( is_singular() || is_tax() || is_front_page() || is_category() || is_archive() || is_search() ) : ?>
 
-      <aside class="module--job-posting-summary">
         <?php
           if ('' != get_post_meta(get_the_ID(), 'baseSalary', true)) {
+
           $baseSalary = get_post_meta(get_the_ID(), 'baseSalary', true);
           $currency = get_post_meta(get_the_ID(), 'currency', true);
           $position_title = get_post_meta(get_the_ID(), 'position_title', true);
@@ -68,11 +68,10 @@
           $benefits = get_post_meta(get_the_ID(), 'benefits', true);
           $incentives = get_post_meta(get_the_ID(), 'incentives', true);
         ?>
-        <div class="inner">
 
-          <!--
-             -<h2>Job Posting Summary</h2>
-             -->
+        <aside class="module--job-posting-summary">
+
+        <div class="inner">
 
           <dl>
 
@@ -199,31 +198,6 @@
 
           </dl>
         </div>
-      </aside>
-
-      <aside class="module--employee--financial-summary">
-        <?php
-          $salary = get_post_meta(get_the_ID(), 'salary', true);
-          $currency = get_post_meta(get_the_ID(), 'currency', true);
-          if ( '' != $salary ) {
-        ?>
-        <div class="inner">
-          <h2>Employee Financial Summary</h2>
-          <dl>
-            <dt>
-              Salary
-            </dt>
-            <dd>
-            <span class="value">
-            <?php echo $salary; ?>
-            </span>
-            <span class="currency">
-              <?php echo $currency; ?>
-            </span>
-            </dd>
-          </dl>
-        </div>
-        <?php } ?>
       </aside>
 
       <?php } ?>
