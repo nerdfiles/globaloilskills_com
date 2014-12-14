@@ -123,17 +123,18 @@
       $.ajax({
         url: "http://#{window.location.hostname}/api/user/user_metadata/"
       }).done (data) ->
-        emailNameAttribute = generatedEmail.getAttribute('name')
-        if emailNameAttribute
-          generatedEmail.setAttribute 'value', data.user_email
-          generatedHandle.setAttribute 'value', data.display_name
-          generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
-          post_id = $('.page-content > .job_posting').prop('id')
-          permalink_url = post_id.replace('post-', "http://#{window.location.hostname}/?p=")
-          generatedPermalink.setAttribute 'value', permalink_url
-          $('.wpcf7').on 'submit', () ->
-            wp_user_application_create()
-            return
+        if not generatedEmail.length
+          emailNameAttribute = generatedEmail.getAttribute('name')
+          if emailNameAttribute
+            generatedEmail.setAttribute 'value', data.user_email
+            generatedHandle.setAttribute 'value', data.display_name
+            generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
+            post_id = $('.page-content > .job_posting').prop('id')
+            permalink_url = post_id.replace('post-', "http://#{window.location.hostname}/?p=")
+            generatedPermalink.setAttribute 'value', permalink_url
+            $('.wpcf7').on 'submit', () ->
+              wp_user_application_create()
+              return
         return
 
   wp_user_application_create = () ->
@@ -157,7 +158,9 @@
     }).done (data) ->
       console.log data
 
-  wp_user_email_scaffolding()
+  body_job_posting = HTML.query('body.single-job_posting')
+  if body_job_posting
+    wp_user_email_scaffolding()
 
   wp_job_posting_list_item = () ->
     h = HTML
