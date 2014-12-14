@@ -292,7 +292,7 @@ add_action( 'login_enqueue_scripts', 'login_stylesheet' );
 function admin_stylesheet() {
     //wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:401,800,700,500,300,200,600,900'), array(), '0.0.1');
     wp_enqueue_style( 'custom-admin', get_template_directory_uri() . '/style-admin.css' );
-    wp_enqueue_script( 'custom-admin', get_template_directory_uri() . '/grunt/admin.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'custom-admin', get_template_directory_uri() . '/js/admin.js', array('jquery'), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'admin_stylesheet' );
 
