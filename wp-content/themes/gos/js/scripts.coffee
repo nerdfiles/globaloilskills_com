@@ -134,7 +134,7 @@
           $('.wpcf7').on 'submit', () ->
             wp_user_application_create()
             return
-          return
+        return
 
   wp_user_application_create = () ->
     h = HTML
@@ -404,3 +404,5 @@
   angular.bootstrap doc.body, ['GOSS']
 
 )(angular, document, HTML, jQuery)
+
+
