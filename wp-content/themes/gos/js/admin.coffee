@@ -1,4 +1,4 @@
-((angular, doc, HTML, $) ->
+((doc, HTML, $) ->
   __ = (obj) ->
     console.log obj
 
@@ -31,4 +31,4 @@
 
   $('input').prop('placeholder', __trs(''))
 
-)(angular, document, HTML, jQuery)
+)(document, HTML, jQuery)
