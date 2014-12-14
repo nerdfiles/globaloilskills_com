@@ -58,7 +58,8 @@ module.exports = function(grunt) {
       },
       coffee: [
         '../js/scripts.coffee',
-        '../js/hoverintent.coffee'
+        '../js/hoverintent.coffee',
+        '../js/admin.coffee'
       ],
       all: [
         'gruntfile.js',
@@ -86,6 +87,9 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
+          '../js/admin.min.js': [
+            '../js/admin.js'
+          ],
           '../js/scripts.min.js': [
             '../js/scripts.js'
           ]
@@ -95,6 +99,9 @@ module.exports = function(grunt) {
         files: {
           '../js/scripts.js': [
             '../js/scripts.js'
+          ],
+          '../js/admin.js': [
+            '../js/admin.js'
           ],
           '../js/scripts.dev.js': [
             '../js/scripts.js'
