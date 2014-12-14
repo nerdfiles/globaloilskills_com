@@ -124,7 +124,7 @@
         url: "http://#{window.location.hostname}/api/user/user_metadata/"
       }).done (data) ->
 
-        if generatedEmail
+        if generatedEmail and generatedHandle
           generatedEmail.setAttribute 'value', data.user_email
           generatedHandle.setAttribute 'value', data.display_name
           generatedSubject.setAttribute 'value', "#{data.display_name} has applied!"
