@@ -19,9 +19,8 @@ class JSON_API_Application_Controller {
         if (!file_exists($document_root . '/wp-content/uploads/resumes/user/' . $user_id)) {
             mkdir($document_root . 'wp-content/uploads/resumes/user/' . $user_id, 0777, true);
         }
-        if (!file_exists($document_root . '/wp-content/uploads/resumes/users/' . $user_id . '/' . $file_name)) {
-            copy($tmp_file_name, $document_root . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name);
-        }
+        copy($tmp_file_name, $document_root . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name);
+
     }
 
     /**
