@@ -103,6 +103,12 @@ body.login #lostpasswordform {
   background-color: #27608A;
   @extend .animated;
   @extend .bounce-in-left;
+  h3 {
+    color: #ccc;
+  }
+}
+#poststuff {
+  label { color: #ccc; }
 }
 
 @include media($small) {
@@ -167,4 +173,8 @@ body.login #lostpasswordform {
 
 .selectit {
   color: #222222;
+}
+
+#wpwrap {
+  color: #fff;
 }
