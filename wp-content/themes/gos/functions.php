@@ -119,7 +119,7 @@ function dashboard_widgets() {
 }
 
 function custom_dashboard_help() {
-  $content = _e('Welcome', 'xiliphone');
+  $content = __('Welcome', 'gos');
   echo "<p>$content</p>";
 }
 
