@@ -119,7 +119,8 @@ function dashboard_widgets() {
 }
 
 function custom_dashboard_help() {
-  echo '<p>Welcome</p>';
+  $content = _e('Welcome', 'xiliphone');
+  echo "<p>$content</p>";
 }
 
 add_theme_support( 'post-formats', array( 'image', 'quote', 'status', 'link' ) );
@@ -301,6 +302,17 @@ add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 function custom_loginlogo_url($url) {
   return 'http://' . $_SERVER['HTTP_HOST'];
 }
+
+add_action('after_setup_theme', 'gos_theme_language_setup');
+function gos_theme_language_setup(){
+    load_theme_textdomain('gos', get_template_directory() . '/languages');
+}
+function add_favicon() {
+  $favicon_url = get_stylesheet_directory_uri() . '/images/icons/favicon.png';
+  echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
+}
+add_action('login_head', 'add_favicon');
+add_action('admin_head', 'add_favicon');
 
 /******************************************************************************\
   Content functions

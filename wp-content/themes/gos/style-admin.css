@@ -5068,6 +5068,11 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
 
 #poststuff {
   background-color: #27608a; }
+  #poststuff h3 {
+    color: #cccccc; }
+
+#poststuff label {
+  color: #cccccc; }
 
 @media screen and (max-width: 480px) {
   .wp-core-ui .button {
@@ -5111,3 +5116,6 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
 
 .selectit {
   color: #222222; }
+
+#wpwrap {
+  color: white; }
