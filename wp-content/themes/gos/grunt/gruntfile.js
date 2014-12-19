@@ -160,7 +160,7 @@ module.exports = function(grunt) {
           'sass:editorstyles',
           'sass:adminstyles',
           //'exec:page_runner',
-          'notify:scss'
+          //'notify:scss'
         ]
       },
       js: {
@@ -175,7 +175,7 @@ module.exports = function(grunt) {
           // Linter/Syntax Checker
           'jshint:all',
           'uglify',
-          'notify:js'
+          //'notify:js'
         ]
       }
     },
@@ -372,7 +372,7 @@ module.exports = function(grunt) {
       'sass:adminstyles',
 			'clean:dist',
 			'copyto:dist',
-			'notify:dist'
+			//'notify:dist'
 		]);
 	});
 
@@ -382,7 +382,7 @@ module.exports = function(grunt) {
     'uglify',
     'clean:dist',
     'copyto:dist',
-    'notify:dist'
+    //'notify:dist'
   ]);
 
   grunt.registerTask('pageRunner', [

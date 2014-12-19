@@ -523,13 +523,13 @@ function SearchFilter($query) {
       if ( $role == 'administrator' || $role == 'manager' ) {
         $query->set( 'post_type', array(
             'relation' => 'AND',
-            'post',
+            'job_posting',
             'seeker'
         ) );
       } elseif ( $role == 'recruiter' ) {
         $query->set( 'post_type', 'seeker' );
       } else {
-        $query->set( 'post_type', 'post' );
+        $query->set( 'post_type', 'job_posting' );
       }
     }
   }

@@ -6224,117 +6224,114 @@ body.home {
         margin-right: 0; }
         body.home .home-widgets .widget:last-child {
           width: 31.28834%; } }
-  body.home .home-search-widgets {
-    /* @TODO TEMPORARY */
-    display: none !important; }
-    body.home .home-search-widgets ul {
-      margin: 0 0 0; }
-    body.home .home-search-widgets h1 {
-      font-size: 20.8px;
-      font-size: 1.3rem;
-      font-weight: normal;
-      background: #efefef;
-      text-align: center;
-      color: #222222;
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 0.6em 0; }
-    body.home .home-search-widgets .second-search {
-      font-size: 14.4px;
-      font-size: 0.9rem;
-      *zoom: 1;
-      font-style: italic;
-      margin: 0;
-      /*background: $color2;*/
-      color: #222222;
-      /*text-align: center;*/
-      padding: 0;
-      /*padding-top:0;*/
-      /*padding-bottom: 0.8em;*/ }
-      body.home .home-search-widgets .second-search:before, body.home .home-search-widgets .second-search:after {
-        content: " ";
-        display: table; }
-      body.home .home-search-widgets .second-search:after {
-        clear: both; }
-      body.home .home-search-widgets .second-search p {
-        margin: 0; }
-      body.home .home-search-widgets .second-search input {
-        box-shadow: none; }
-    body.home .home-search-widgets .searchform, body.home .home-search-widgets .widget_search {
-      padding: 0;
-      /**
+  body.home .home-search-widgets ul {
+    margin: 0 0 0; }
+  body.home .home-search-widgets h1 {
+    font-size: 20.8px;
+    font-size: 1.3rem;
+    font-weight: normal;
+    background: #efefef;
+    text-align: center;
+    color: #222222;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.6em 0; }
+  body.home .home-search-widgets .second-search {
+    font-size: 14.4px;
+    font-size: 0.9rem;
+    *zoom: 1;
+    font-style: italic;
+    margin: 0;
+    /*background: $color2;*/
+    color: #222222;
+    /*text-align: center;*/
+    padding: 0;
+    /*padding-top:0;*/
+    /*padding-bottom: 0.8em;*/ }
+    body.home .home-search-widgets .second-search:before, body.home .home-search-widgets .second-search:after {
+      content: " ";
+      display: table; }
+    body.home .home-search-widgets .second-search:after {
+      clear: both; }
+    body.home .home-search-widgets .second-search p {
+      margin: 0; }
+    body.home .home-search-widgets .second-search input {
+      box-shadow: none; }
+  body.home .home-search-widgets .searchform, body.home .home-search-widgets .widget_search {
+    padding: 0;
+    /**
      * Default Cases
      */
-      float: left;
-      display: block;
-      margin-right: 3.06748%;
-      width: 100%;
-      font-size: 12.8px;
-      font-size: 0.8rem; }
-      body.home .home-search-widgets .searchform > div, body.home .home-search-widgets .widget_search > div {
-        *zoom: 1; }
-        body.home .home-search-widgets .searchform > div:before, body.home .home-search-widgets .searchform > div:after, body.home .home-search-widgets .widget_search > div:before, body.home .home-search-widgets .widget_search > div:after {
-          content: " ";
-          display: table; }
-        body.home .home-search-widgets .searchform > div:after, body.home .home-search-widgets .widget_search > div:after {
-          clear: both; }
-      body.home .home-search-widgets .searchform:before, body.home .home-search-widgets .widget_search:before {
-        font-family: 'FontAwesome';
-        /*@include shift(10);*/
-        right: 0;
-        /*content: "\f0c9";*/
-        content: "\f054";
-        position: absolute;
-        top: 1rem;
-        width: 25px;
-        height: 50px; }
-      body.home .home-search-widgets .searchform:last-child, body.home .home-search-widgets .widget_search:last-child {
-        margin-right: 0; }
-      @media screen and (max-width: 480px) {
-        body.home .home-search-widgets .searchform, body.home .home-search-widgets .widget_search {
-          float: left;
-          display: block;
-          margin-right: 3.06748%;
-          width: 100%;
-          font-size: 12.8px;
-          font-size: 0.8rem; }
-          body.home .home-search-widgets .searchform:last-child, body.home .home-search-widgets .widget_search:last-child {
-            margin-right: 0; } }
-    body.home .home-search-widgets #s {
-      float: left;
-      display: block;
-      margin-right: 3.06748%;
-      width: 100%;
-      padding: 1rem;
-      opacity: 0.4;
-      -webkit-transition: all 0.5s ease-in-out;
-      -moz-transition: all 0.5s ease-in-out;
-      transition: all 0.5s ease-in-out;
-      border-bottom: none; }
-      body.home .home-search-widgets #s:last-child {
-        margin-right: 0; }
-      body.home .home-search-widgets #s:focus, body.home .home-search-widgets #s:hover {
-        opacity: 1;
-        /*
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%;
+    font-size: 12.8px;
+    font-size: 0.8rem; }
+    body.home .home-search-widgets .searchform > div, body.home .home-search-widgets .widget_search > div {
+      *zoom: 1; }
+      body.home .home-search-widgets .searchform > div:before, body.home .home-search-widgets .searchform > div:after, body.home .home-search-widgets .widget_search > div:before, body.home .home-search-widgets .widget_search > div:after {
+        content: " ";
+        display: table; }
+      body.home .home-search-widgets .searchform > div:after, body.home .home-search-widgets .widget_search > div:after {
+        clear: both; }
+    body.home .home-search-widgets .searchform:before, body.home .home-search-widgets .widget_search:before {
+      font-family: 'FontAwesome';
+      /*@include shift(10);*/
+      right: 0;
+      /*content: "\f0c9";*/
+      content: "\f054";
+      position: absolute;
+      top: 1rem;
+      width: 25px;
+      height: 50px; }
+    body.home .home-search-widgets .searchform:last-child, body.home .home-search-widgets .widget_search:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 480px) {
+      body.home .home-search-widgets .searchform, body.home .home-search-widgets .widget_search {
+        float: left;
+        display: block;
+        margin-right: 3.06748%;
+        width: 100%;
+        font-size: 12.8px;
+        font-size: 0.8rem; }
+        body.home .home-search-widgets .searchform:last-child, body.home .home-search-widgets .widget_search:last-child {
+          margin-right: 0; } }
+  body.home .home-search-widgets #s {
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 100%;
+    padding: 1rem;
+    opacity: 0.4;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    border-bottom: none; }
+    body.home .home-search-widgets #s:last-child {
+      margin-right: 0; }
+    body.home .home-search-widgets #s:focus, body.home .home-search-widgets #s:hover {
+      opacity: 1;
+      /*
        *@extend .pulse !optional;
        *@extend .animated !optional;
        */ }
-    body.home .home-search-widgets #searchsubmit {
-      opacity: 0.4;
-      float: left;
-      display: block;
-      margin-right: 3.06748%;
-      width: 5.52147%;
-      -webkit-transition: all 0.5s ease-in-out;
-      -moz-transition: all 0.5s ease-in-out;
-      transition: all 0.5s ease-in-out;
-      padding: 1rem;
-      background-color: transparent;
-      text-indent: -9999px;
-      position: absolute;
-      right: 0; }
-      body.home .home-search-widgets #searchsubmit:last-child {
-        margin-right: 0; }
+  body.home .home-search-widgets #searchsubmit {
+    opacity: 0.4;
+    float: left;
+    display: block;
+    margin-right: 3.06748%;
+    width: 5.52147%;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    background-color: transparent;
+    text-indent: -9999px;
+    position: absolute;
+    right: 0; }
+    body.home .home-search-widgets #searchsubmit:last-child {
+      margin-right: 0; }
   body.home .home-widgets {
     text-align: left; }
 
@@ -7265,7 +7262,7 @@ body.single-job_posting .page-content article.job_posting h1.post-title {
   width: 65.64417%;
   margin-left: 17.17791%;
   background: none;
-  color: #efefef;
+  /*color: $color2;*/
   padding: 0;
   text-align: center; }
   .home .post-content:last-child, .archive .post-content:last-child, .search .post-content:last-child, .author .post-content:last-child {
