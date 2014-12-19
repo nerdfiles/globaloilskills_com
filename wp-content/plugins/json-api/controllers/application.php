@@ -17,7 +17,7 @@ class JSON_API_Application_Controller {
         echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     } else {
         if (!file_exists($document_root . '/wp-content/uploads/resumes/user/' . $user_id)) {
-            mkdir($document_root . 'wp-content/uploads/resumes/user/' . $user_id, 0777, true);
+            mkdir($document_root . '/wp-content/uploads/resumes/user/' . $user_id, 0777, true);
         }
         copy($tmp_file_name, $document_root . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name);
     }
