@@ -16,25 +16,29 @@ add_action('register_form','show_role_field');
 function show_role_field() {
   if (isset($_GET['role'])) {
 ?>
-  <label for="role[seeker]">
-    <span class="inner-label">Seeker</span>
-    <input id="role" checked="checked" type="radio" value= "seeker" name="role" />
-  </label>
-  <label for="role[recruiter]">
-    <span class="inner-label">Recruiter</span>
-    <input id="role" type="radio" value= "recruiter" name="role" />
-  </label>
+  <div class="register-form--role">
+    <label for="role[seeker]">
+      <span class="inner-label">Seeker</span>
+      <input id="role[seeker]" checked="checked" type="radio" value= "seeker" name="role" />
+    </label>
+    <label for="role[recruiter]">
+      <span class="inner-label">Recruiter</span>
+      <input id="role[recruiter]" type="radio" value= "recruiter" name="role" />
+    </label>
+  </div>
 <?php
   } else {
 ?>
-  <label for="role[seeker]">
-    <span class="inner-label">Seeker</span>
-    <input id="role" type="radio" value= "seeker" name="role" />
-  </label>
-  <label for="role[recruiter]">
-    <span class="inner-label">Recruiter</span>
-    <input id="role" type="radio" value= "recruiter" name="role" />
-  </label>
+  <div class="register-form--role">
+    <label for="role[seeker]">
+      <span class="inner-label">Seeker</span>
+      <input id="role[seeker]" type="radio" value= "seeker" name="role" />
+    </label>
+    <label for="role[recruiter]">
+      <span class="inner-label">Recruiter</span>
+      <input id="role[recruiter]" type="radio" value= "recruiter" name="role" />
+    </label>
+  </div>
 <?php
   }
 }
@@ -330,7 +334,7 @@ function gos_enqueue_scripts() {
   wp_deregister_style('membermouse-font-awesome', 110);
 
   // Main
-  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.dev.js', array('angular', 'hoverintent', 'HTML', 'jquery'), '1.0', true );
+  wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.dev.js', array('angular', 'HTML', 'jquery', 'hoverintent'), '1.0', true );
 
   // CMS Taxonomy
   if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
@@ -343,9 +347,11 @@ function gos_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'gos_enqueue_scripts', 200 );
 
 function login_stylesheet() {
+    wp_enqueue_script( 'HTML', get_template_directory_uri() . '/grunt/bower_components/HTML/dist/HTML.min.js', array(), '1.0', true );
+    wp_enqueue_script( 'hoverintent', get_template_directory_uri() . '/js/hoverintent.js', array(), '1.0', true );
     //echo "<link rel='import' id='Polymer--paper-progress' href='" . get_template_directory_uri() . "/grunt/bower_components/paper-progress/paper-progress.html' />";
     wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/style-admin.css' );
-    wp_enqueue_script( 'custom-login', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'custom-login', get_template_directory_uri() . '/js/admin.min.js', array('HTML', 'jquery', 'hoverintent'), '1.0', true );
 }
 add_action( 'login_enqueue_scripts', 'login_stylesheet' );
 

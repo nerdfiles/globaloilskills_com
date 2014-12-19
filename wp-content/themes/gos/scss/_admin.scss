@@ -1,3 +1,6 @@
+body {
+  height: auto;
+}
 body.wp-admin {
   ul, ol {
     margin-bottom: 0;
@@ -80,12 +83,19 @@ body.login #lostpasswordform {
   }
   .forgetmenot { }
   .submit {
+    text-align: center;
     #wp-submit {
       text-shadow: none;
       border-radius: 0 !important;
+      @include button;
+      border-radius: 0;
+      float: none;
   } }
   #nav {
+    margin-top: 0;
+    padding-bottom: 1rem;
     text-align: center;
+    color: #ccc;
   }
   #backtoblog {
     text-align: center;
@@ -177,4 +187,35 @@ body.login #lostpasswordform {
 
 #wpwrap {
   color: #fff;
+}
+
+#reg_passmail {
+  color: #fff;
+  margin-top: .5rem;
+  text-align: center;
+}
+
+.register-form--role {
+  border: 3px #ccc solid;
+  text-align: center;
+  margin-bottom: .5rem;
+  padding-bottom: .55rem;
+  margin-right: 38.3%;
+  padding-bottom: 0.53rem;
+  left: 19%;
+  position: relative;
+  label {
+    &:first-child {
+      margin-left: -0.4rem;
+    }
+    background-color: #fff;
+    padding: .5rem 1rem;
+    input {
+      position: absolute;
+      left: -9999px;
+    }
+  }
+  label.active {
+    background-color: #177A72;
+  }
 }

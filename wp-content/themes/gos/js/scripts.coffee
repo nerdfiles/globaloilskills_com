@@ -407,5 +407,3 @@
   angular.bootstrap doc.body, ['GOSS']
 
 )(angular, document, HTML, jQuery)
-
-
