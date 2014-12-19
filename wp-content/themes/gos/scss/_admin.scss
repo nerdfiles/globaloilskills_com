@@ -77,8 +77,11 @@ body.login #lostpasswordform {
      */
     background-color: transparent;
     box-shadow: none;
-    label {
-      color: #111; 
+    p > label {
+      color: #fff; 
+      /*
+       *text-shadow: 0px 1px 0px #173c56;
+       */
     }
   }
   .forgetmenot { }
@@ -88,14 +91,27 @@ body.login #lostpasswordform {
       text-shadow: none;
       border-radius: 0 !important;
       @include button;
+      border-width: 4px;
+      text-shadow: none;
+      background-image: none;
       border-radius: 0;
       float: none;
+      font-size: 2rem;
+      padding: .5rem 1rem !important;
+      width: 100% !important;
+      &:hover {
+        background-image: none !important;
+      }
   } }
   #nav {
     margin-top: 0;
     padding-bottom: 1rem;
     text-align: center;
     color: #ccc;
+
+    &, a {
+      /*text-shadow: 0px 1px 0px #173c56;*/
+    }
   }
   #backtoblog {
     text-align: center;
@@ -103,6 +119,8 @@ body.login #lostpasswordform {
   }
 }
 
+.message {}
+.register { position: absolute; left: -9999px; }
 /**
  * @see ls *.rtf *.txt | grep -v 'output.txt' | xargs grep -iIohE 'https?://[^[:space:]]+'
  */
@@ -190,13 +208,15 @@ body.login #lostpasswordform {
 }
 
 #reg_passmail {
-  color: #fff;
+  color: #ccc;
   margin-top: .5rem;
   text-align: center;
+  position: absolute;
+  left: -9999px;
 }
 
 .register-form--role {
-  border: 3px #ccc solid;
+  /*border: 3px #ccc solid;*/
   text-align: center;
   margin-bottom: .5rem;
   padding-bottom: .55rem;
@@ -206,6 +226,7 @@ body.login #lostpasswordform {
   position: relative;
   label {
     &:first-child {
+      border-right: 4px #ccc solid;
       margin-left: -0.4rem;
     }
     background-color: #fff;
@@ -217,5 +238,11 @@ body.login #lostpasswordform {
   }
   label.active {
     background-color: #177A72;
+    .inner-label {
+      color: #fff;
+      /*
+       *text-shadow: 0px 1px 0px #0f5650;
+       */
+    }
   }
 }

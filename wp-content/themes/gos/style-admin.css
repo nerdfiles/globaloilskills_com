@@ -5052,8 +5052,11 @@ body.login #login form, body.login #lostpasswordform form {
      */
   background-color: transparent;
   box-shadow: none; }
-  body.login #login form label, body.login #lostpasswordform form label {
-    color: #111111; }
+  body.login #login form p > label, body.login #lostpasswordform form p > label {
+    color: white;
+    /*
+       *text-shadow: 0px 1px 0px #173c56;
+       */ }
 body.login #login .submit, body.login #lostpasswordform .submit {
   text-align: center; }
   body.login #login .submit #wp-submit, body.login #lostpasswordform .submit #wp-submit {
@@ -5074,8 +5077,14 @@ body.login #login .submit, body.login #lostpasswordform .submit {
     text-decoration: none;
     text-shadow: 0 1px 0 #0068d6;
     background-clip: padding-box;
+    border-width: 4px;
+    text-shadow: none;
+    background-image: none;
     border-radius: 0;
-    float: none; }
+    float: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem !important;
+    width: 100% !important; }
     body.login #login .submit #wp-submit:hover:not(:disabled), body.login #lostpasswordform .submit #wp-submit:hover:not(:disabled) {
       box-shadow: inset 0 1px 0 0 #60a3ec;
       cursor: pointer;
@@ -5089,6 +5098,8 @@ body.login #login .submit, body.login #lostpasswordform .submit {
     body.login #login .submit #wp-submit:disabled, body.login #lostpasswordform .submit #wp-submit:disabled {
       opacity: 0.5;
       cursor: not-allowed; }
+    body.login #login .submit #wp-submit:hover, body.login #lostpasswordform .submit #wp-submit:hover {
+      background-image: none !important; }
 body.login #login #nav, body.login #lostpasswordform #nav {
   margin-top: 0;
   padding-bottom: 1rem;
@@ -5097,6 +5108,11 @@ body.login #login #nav, body.login #lostpasswordform #nav {
 body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
   text-align: center;
   display: none; }
+
+
+.register {
+  position: absolute;
+  left: -9999px; }
 
 /**
  * @see ls *.rtf *.txt | grep -v 'output.txt' | xargs grep -iIohE 'https?://[^[:space:]]+'
@@ -5159,12 +5175,14 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
   color: white; }
 
 #reg_passmail {
-  color: white;
+  color: #cccccc;
   margin-top: 0.5rem;
-  text-align: center; }
+  text-align: center;
+  position: absolute;
+  left: -9999px; }
 
 .register-form--role {
-  border: 3px #cccccc solid;
+  /*border: 3px #ccc solid;*/
   text-align: center;
   margin-bottom: 0.5rem;
   padding-bottom: 0.55rem;
@@ -5176,9 +5194,15 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
     background-color: white;
     padding: 0.5rem 1rem; }
     .register-form--role label:first-child {
+      border-right: 4px #cccccc solid;
       margin-left: -0.4rem; }
     .register-form--role label input {
       position: absolute;
       left: -9999px; }
   .register-form--role label.active {
     background-color: #177a72; }
+    .register-form--role label.active .inner-label {
+      color: white;
+      /*
+       *text-shadow: 0px 1px 0px #0f5650;
+       */ }
