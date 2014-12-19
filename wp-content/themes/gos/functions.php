@@ -12,6 +12,65 @@
  *error_reporting('E_ALL');
  */
 
+add_action('register_form','show_role_field');
+function show_role_field() {
+  if (isset($_GET['role'])) {
+?>
+  <label for="role[seeker]">
+    <span class="inner-label">Seeker</span>
+    <input id="role" checked="checked" type="radio" value= "seeker" name="role" />
+  </label>
+  <label for="role[recruiter]">
+    <span class="inner-label">Recruiter</span>
+    <input id="role" type="radio" value= "recruiter" name="role" />
+  </label>
+<?php
+  } else {
+?>
+  <label for="role[seeker]">
+    <span class="inner-label">Seeker</span>
+    <input id="role" type="radio" value= "seeker" name="role" />
+  </label>
+  <label for="role[recruiter]">
+    <span class="inner-label">Recruiter</span>
+    <input id="role" type="radio" value= "recruiter" name="role" />
+  </label>
+<?php
+  }
+}
+
+//2. Add validation. In this case, we make sure user_type is required.
+add_filter( 'registration_errors', 'gos_registration_errors', 10, 3 );
+function gos_registration_errors( $errors, $sanitized_user_login, $user_email ) {
+    if ( empty( $_POST['role'] ) || ! empty( $_POST['role'] ) && trim( $_POST['role'] ) == '' ) {
+        $errors->add( 'role_error', __( '<strong>ERROR</strong>: You must choose your user type.', 'gos' ) );
+    }
+    return $errors;
+}
+
+add_action('user_register', 'register_role');
+function register_role($user_id, $password="", $meta=array()) {
+
+   $userdata = array();
+   $userdata['ID'] = $user_id;
+   $userdata['role'] = $_POST['role'];
+
+   //only allow if user role is my_role
+
+   if (($userdata['role'] == "seeker") or ($userdata['role'] == "recruiter")) {
+      wp_update_user($userdata);
+   }
+}
+
+function register_redirect() {
+    global $post;
+    if ( ! is_user_logged_in() and is_page('my-account') ) {
+        wp_redirect( 'http://' . $_SERVER['HTTP_HOST'] . '/wp-login.php?action=register&role=seeker' );
+        exit();
+    }
+}
+add_action( 'template_redirect', 'register_redirect' );
+
 /******************************************************************************\
   Theme support, standard settings, menus and widgets
 \******************************************************************************/
@@ -387,7 +446,7 @@ function priv_contact () {
     $all_roles = $current_user->roles;
     $show = false;
     foreach ($all_roles as $role) {
-      if ( $role == 'employee' || $role == 'administrator' || $role == 'recruiter' ) {
+      if ( $role == 'seeker' || $role == 'administrator' || $role == 'recruiter' ) {
         $show = true;
         ob_start();
         ?>
@@ -465,10 +524,10 @@ function SearchFilter($query) {
         $query->set( 'post_type', array(
             'relation' => 'AND',
             'post',
-            'employee'
+            'seeker'
         ) );
       } elseif ( $role == 'recruiter' ) {
-        $query->set( 'post_type', 'employee' );
+        $query->set( 'post_type', 'seeker' );
       } else {
         $query->set( 'post_type', 'post' );
       }
