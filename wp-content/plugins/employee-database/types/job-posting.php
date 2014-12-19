@@ -14,7 +14,7 @@ class JobPostingType {
   function __construct() {
     # Place your add_actions and add_filters here
     add_action( 'init', array( &$this, 'init_job_posting' ) );
-    add_action( 'init', array(&$this, 'add_job_posting_post_type'));
+    add_action( 'init', array( &$this, 'add_job_posting_post_type') );
 
     # Add image support
     add_theme_support('post-thumbnails', array( $this->type ) );
