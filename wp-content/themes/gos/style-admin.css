@@ -5029,6 +5029,8 @@ body.login {
 body.login, body.login input {
   font-family: 'Raleway', 'Open Sans', sans-serif; }
 
+body.login #login br, body.login #lostpasswordform br {
+  display: none; }
 body.login #login .button, body.login #lostpasswordform .button {
   background-color: #cccccc;
   border: 1px #cccccc solid;
@@ -5082,7 +5084,7 @@ body.login #login .submit, body.login #lostpasswordform .submit {
     background-image: none;
     border-radius: 0;
     float: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 0.5rem 1rem !important;
     width: 100% !important; }
     body.login #login .submit #wp-submit:hover:not(:disabled), body.login #lostpasswordform .submit #wp-submit:hover:not(:disabled) {
@@ -5184,8 +5186,9 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
 .register-form--role {
   /*border: 3px #ccc solid;*/
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 0.55rem;
+  margin-top: 1rem;
   margin-right: 38.3%;
   padding-bottom: 0.53rem;
   left: 19%;

@@ -42,6 +42,9 @@ body.login input {
 }
 body.login #login,
 body.login #lostpasswordform {
+  br {
+    display: none;
+  }
 
   .button { 
     background-color: #ccc;
@@ -96,7 +99,7 @@ body.login #lostpasswordform {
       background-image: none;
       border-radius: 0;
       float: none;
-      font-size: 2rem;
+      font-size: 1.5rem;
       padding: .5rem 1rem !important;
       width: 100% !important;
       &:hover {
@@ -218,8 +221,9 @@ body.login #lostpasswordform {
 .register-form--role {
   /*border: 3px #ccc solid;*/
   text-align: center;
-  margin-bottom: .5rem;
+  margin-bottom: 1.5rem;
   padding-bottom: .55rem;
+  margin-top: 1rem;
   margin-right: 38.3%;
   padding-bottom: 0.53rem;
   left: 19%;
