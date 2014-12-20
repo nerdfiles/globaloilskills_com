@@ -415,9 +415,9 @@ function disable_author_index() {
 }
 
 function SearchFilter($query) {
-  global $current_user;
   if ($query->is_search) {
-    $query->set( 'posts_per_page', 500 );
+    global $current_user;
+    $query->set( 'posts_per_page', 50 );
     $all_roles = $current_user->roles;
     $show = false;
     foreach ($all_roles as $role) {
@@ -428,11 +428,15 @@ function SearchFilter($query) {
             'seeker'
         ) );
       } elseif ( $role == 'recruiter' ) {
-        $query->set( 'post_type', 'seeker' );
+        $query->set( 'post_type', array('seeker') );
       } else {
-        $query->set( 'post_type', 'job_posting' );
+        $query->set( 'post_type', array('job_posting') );
       }
     }
+  }
+  if (!$query->is_admin && $query->is_search) {
+    $query->set( 'posts_per_page', 50 );
+    $query->set( 'post_type', array('job_posting') );
   }
   return $query;
 }
