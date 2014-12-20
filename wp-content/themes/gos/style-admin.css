@@ -5140,7 +5140,7 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
     color: #cccccc; }
 
 #poststuff label {
-  color: #cccccc; }
+  color: #111111; }
 
 @media screen and (max-width: 480px) {
   .wp-core-ui .button {
@@ -5185,8 +5185,6 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
 .selectit {
   color: #222222; }
 
-#wpwrap {
-  color: white; }
 
 #reg_passmail {
   color: #cccccc;
@@ -5221,3 +5219,21 @@ body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
       /*
        *text-shadow: 0px 1px 0px #0f5650;
        */ }
+
+p.description {
+  color: white; }
+
+fieldset {
+  color: white; }
+
+.form-table {
+  color: white; }
+
+.form-table th {
+  color: white; }
+
+body.wp-admin a, body.wp-admin a:link {
+  color: #c1c1c1; }
+
+body.wp-admin a:visited {
+  color: #a1a1a1; }

@@ -150,7 +150,7 @@ body.login #lostpasswordform {
   }
 }
 #poststuff {
-  label { color: #ccc; }
+  label { color: #111; }
 }
 
 @include media($small) {
@@ -218,7 +218,7 @@ body.login #lostpasswordform {
 }
 
 #wpwrap {
-  color: #fff;
+  /*color: #fff;*/
 }
 
 #reg_passmail {
@@ -260,4 +260,26 @@ body.login #lostpasswordform {
        */
     }
   }
+}
+
+p.description {
+  color: #fff;
+}
+fieldset {
+  color: #fff;
+}
+.form-table {
+  color: #fff;
+}
+.form-table th {
+  color: #fff;
+}
+
+body.wp-admin a,
+body.wp-admin a:link {
+  color: #c1c1c1;
+}
+
+body.wp-admin a:visited {
+  color: #a1a1a1;
 }
