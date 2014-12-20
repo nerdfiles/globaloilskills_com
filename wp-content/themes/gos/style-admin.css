@@ -5111,7 +5111,7 @@ body.login #login .submit, body.login #lostpasswordform .submit {
       background-image: none !important; }
 body.login #login #nav, body.login #lostpasswordform #nav {
   margin-top: 0;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   text-align: center;
   color: #cccccc; }
   body.login #login #nav, body.login #login #nav a, body.login #lostpasswordform #nav, body.login #lostpasswordform #nav a {
