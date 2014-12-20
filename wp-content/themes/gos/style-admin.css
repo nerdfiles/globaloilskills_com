@@ -5093,7 +5093,8 @@ body.login #login .submit, body.login #lostpasswordform .submit {
     float: none;
     font-size: 1.5rem;
     padding: 0.5rem 1rem !important;
-    width: 100% !important; }
+    width: 100% !important;
+    padding-top: 0.4rem !important; }
     body.login #login .submit #wp-submit:hover:not(:disabled), body.login #lostpasswordform .submit #wp-submit:hover:not(:disabled) {
       box-shadow: inset 0 1px 0 0 #60a3ec;
       cursor: pointer;
@@ -5111,7 +5112,7 @@ body.login #login .submit, body.login #lostpasswordform .submit {
       background-image: none !important; }
 body.login #login #nav, body.login #lostpasswordform #nav {
   margin-top: 0;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   text-align: center;
   color: #cccccc; }
   body.login #login #nav, body.login #login #nav a, body.login #lostpasswordform #nav, body.login #lostpasswordform #nav a {
