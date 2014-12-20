@@ -1914,7 +1914,7 @@ table {
 .fa-meanpath:before {
   content: "\f20c"; }
 
-.animated, body.search-results .page-content article.job_posting:hover, body.search-results .page-content article.job_posting.enabled, body.home .home-widgets .widget article.job_posting:hover, body.home .home-widgets .widget article.job_posting.enabled, .footer-after-content-widgets .widget article.job_posting:hover, .footer-after-content-widgets .widget article.job_posting.enabled, .home-benefits .home--benefits-first:hover:before, .home-benefits .home--benefits-second:hover:before, .home-benefits .home--benefits-third:hover:before {
+.animated, body.search-results .page-content article.job_posting.enabled, body.home .home-widgets .widget article.job_posting.enabled, .footer-after-content-widgets .widget article.job_posting.enabled, .home-benefits .home--benefits-first:hover:before, .home-benefits .home--benefits-second:hover:before, .home-benefits .home--benefits-third:hover:before {
   -webkit-animation-duration: 0.75s;
   -moz-animation-duration: 0.75s;
   -o-animation-duration: 0.75s;
@@ -2610,7 +2610,7 @@ table {
   100% {
     opacity: 1; } }
 
-.fade-in, body.search-results .page-content article.job_posting:hover, body.search-results .page-content article.job_posting.enabled, body.home .home-widgets .widget article.job_posting:hover, body.home .home-widgets .widget article.job_posting.enabled, .footer-after-content-widgets .widget article.job_posting:hover, .footer-after-content-widgets .widget article.job_posting.enabled {
+.fade-in, body.search-results .page-content article.job_posting.enabled, body.home .home-widgets .widget article.job_posting.enabled, .footer-after-content-widgets .widget article.job_posting.enabled {
   -webkit-animation-name: fade-in;
   -moz-animation-name: fade-in;
   -o-animation-name: fade-in;
@@ -5462,11 +5462,11 @@ body.search-results .page-content {
       body.search-results .page-content article.job_posting .wpcf7-list-item label {
         text-align: center;
         background-color: #cccccc; }
-    body.search-results .page-content article.job_posting:hover {
+    body.search-results .page-content article.job_posting.enabled {
       background-color: #f1f1f1;
       padding-bottom: 1rem !important;
       border-bottom: 2px #cccccc solid; }
-    body.search-results .page-content article.job_posting:hover, body.search-results .page-content article.job_posting.enabled {
+    body.search-results .page-content article.job_posting.enabled {
       /*position: absolute;*/
       min-height: 5rem;
       float: left;
@@ -5476,42 +5476,42 @@ body.search-results .page-content {
       -webkit-transition: min-height 0.5s ease-in-out;
       -moz-transition: min-height 0.5s ease-in-out;
       transition: min-height 0.5s ease-in-out; }
-      body.search-results .page-content article.job_posting:hover:last-child, body.search-results .page-content article.job_posting.enabled:last-child {
+      body.search-results .page-content article.job_posting.enabled:last-child {
         margin-right: 0; }
-      body.search-results .page-content article.job_posting:hover .post-image, body.search-results .page-content article.job_posting:hover .entry-image, body.search-results .page-content article.job_posting.enabled .post-image, body.search-results .page-content article.job_posting.enabled .entry-image {
+      body.search-results .page-content article.job_posting.enabled .post-image, body.search-results .page-content article.job_posting.enabled .entry-image {
         position: absolute;
         margin-left: 77.30061%;
         margin-top: 2rem;
         left: auto;
         top: auto; }
-      body.search-results .page-content article.job_posting:hover footer, body.search-results .page-content article.job_posting.enabled footer {
+      body.search-results .page-content article.job_posting.enabled footer {
         display: block;
         /*
              *position: absolute;
              *bottom: 0;
              *right: 0;
              */ }
-      body.search-results .page-content article.job_posting:hover .post-title, body.search-results .page-content article.job_posting:hover .entry-title, body.search-results .page-content article.job_posting.enabled .post-title, body.search-results .page-content article.job_posting.enabled .entry-title {
+      body.search-results .page-content article.job_posting.enabled .post-title, body.search-results .page-content article.job_posting.enabled .entry-title {
         /*background-color: #069CC8;*/
         background-color: #177a72;
         text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
         position: relative;
         /*margin-top: -4.5rem;*/ }
-        body.search-results .page-content article.job_posting:hover .post-title a, body.search-results .page-content article.job_posting:hover .entry-title a, body.search-results .page-content article.job_posting.enabled .post-title a, body.search-results .page-content article.job_posting.enabled .entry-title a {
+        body.search-results .page-content article.job_posting.enabled .post-title a, body.search-results .page-content article.job_posting.enabled .entry-title a {
           color: white; }
-      body.search-results .page-content article.job_posting:hover .entry-content, body.search-results .page-content article.job_posting:hover .schema_job_posting, body.search-results .page-content article.job_posting.enabled .entry-content, body.search-results .page-content article.job_posting.enabled .schema_job_posting {
+      body.search-results .page-content article.job_posting.enabled .entry-content, body.search-results .page-content article.job_posting.enabled .schema_job_posting {
         display: block !important;
         padding-top: 0.5rem !important;
         /*max-height: 5rem !important;*/
         /*overflow: auto !important;*/ }
-        body.search-results .page-content article.job_posting:hover .entry-content > p, body.search-results .page-content article.job_posting:hover .schema_job_posting > p, body.search-results .page-content article.job_posting.enabled .entry-content > p, body.search-results .page-content article.job_posting.enabled .schema_job_posting > p {
+        body.search-results .page-content article.job_posting.enabled .entry-content > p, body.search-results .page-content article.job_posting.enabled .schema_job_posting > p {
           display: block !important;
           margin: 0 0 0.5rem; }
-      body.search-results .page-content article.job_posting:hover .post-content, body.search-results .page-content article.job_posting:hover .entry-content, body.search-results .page-content article.job_posting.enabled .post-content, body.search-results .page-content article.job_posting.enabled .entry-content {
+      body.search-results .page-content article.job_posting.enabled .post-content, body.search-results .page-content article.job_posting.enabled .entry-content {
         margin-left: 0%; }
-        body.search-results .page-content article.job_posting:hover .post-content > a, body.search-results .page-content article.job_posting:hover .entry-content > a, body.search-results .page-content article.job_posting.enabled .post-content > a, body.search-results .page-content article.job_posting.enabled .entry-content > a {
+        body.search-results .page-content article.job_posting.enabled .post-content > a, body.search-results .page-content article.job_posting.enabled .entry-content > a {
           display: block; }
-      body.search-results .page-content article.job_posting:hover .post-title, body.search-results .page-content article.job_posting:hover .entry-title:after, body.search-results .page-content article.job_posting.enabled .post-title, body.search-results .page-content article.job_posting.enabled .entry-title:after {
+      body.search-results .page-content article.job_posting.enabled .post-title, body.search-results .page-content article.job_posting.enabled .entry-title:after {
         display: block;
         height: 100px;
         width: 100px;
@@ -5520,7 +5520,7 @@ body.search-results .page-content {
         position: absolute;
         right: 0;
         top: 100%; }
-      body.search-results .page-content article.job_posting:hover .post-image + .post-title:after, body.search-results .page-content article.job_posting:hover .entry-image + .entry-title:after, body.search-results .page-content article.job_posting.enabled .post-image + .post-title:after, body.search-results .page-content article.job_posting.enabled .entry-image + .entry-title:after {
+      body.search-results .page-content article.job_posting.enabled .post-image + .post-title:after, body.search-results .page-content article.job_posting.enabled .entry-image + .entry-title:after {
         display: none; }
     body.search-results .page-content article.job_posting .user--role {
       display: none; }
@@ -5976,11 +5976,11 @@ body.home {
         body.home .home-widgets .widget article.job_posting .wpcf7-list-item label {
           text-align: center;
           background-color: #cccccc; }
-      body.home .home-widgets .widget article.job_posting:hover {
+      body.home .home-widgets .widget article.job_posting.enabled {
         background-color: #f1f1f1;
         padding-bottom: 1rem !important;
         border-bottom: 2px #cccccc solid; }
-      body.home .home-widgets .widget article.job_posting:hover, body.home .home-widgets .widget article.job_posting.enabled {
+      body.home .home-widgets .widget article.job_posting.enabled {
         /*position: absolute;*/
         min-height: 5rem;
         float: left;
@@ -5990,42 +5990,42 @@ body.home {
         -webkit-transition: min-height 0.5s ease-in-out;
         -moz-transition: min-height 0.5s ease-in-out;
         transition: min-height 0.5s ease-in-out; }
-        body.home .home-widgets .widget article.job_posting:hover:last-child, body.home .home-widgets .widget article.job_posting.enabled:last-child {
+        body.home .home-widgets .widget article.job_posting.enabled:last-child {
           margin-right: 0; }
-        body.home .home-widgets .widget article.job_posting:hover .post-image, body.home .home-widgets .widget article.job_posting:hover .entry-image, body.home .home-widgets .widget article.job_posting.enabled .post-image, body.home .home-widgets .widget article.job_posting.enabled .entry-image {
+        body.home .home-widgets .widget article.job_posting.enabled .post-image, body.home .home-widgets .widget article.job_posting.enabled .entry-image {
           position: absolute;
           margin-left: 77.30061%;
           margin-top: 2rem;
           left: auto;
           top: auto; }
-        body.home .home-widgets .widget article.job_posting:hover footer, body.home .home-widgets .widget article.job_posting.enabled footer {
+        body.home .home-widgets .widget article.job_posting.enabled footer {
           display: block;
           /*
              *position: absolute;
              *bottom: 0;
              *right: 0;
              */ }
-        body.home .home-widgets .widget article.job_posting:hover .post-title, body.home .home-widgets .widget article.job_posting:hover .entry-title, body.home .home-widgets .widget article.job_posting.enabled .post-title, body.home .home-widgets .widget article.job_posting.enabled .entry-title {
+        body.home .home-widgets .widget article.job_posting.enabled .post-title, body.home .home-widgets .widget article.job_posting.enabled .entry-title {
           /*background-color: #069CC8;*/
           background-color: #177a72;
           text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
           position: relative;
           /*margin-top: -4.5rem;*/ }
-          body.home .home-widgets .widget article.job_posting:hover .post-title a, body.home .home-widgets .widget article.job_posting:hover .entry-title a, body.home .home-widgets .widget article.job_posting.enabled .post-title a, body.home .home-widgets .widget article.job_posting.enabled .entry-title a {
+          body.home .home-widgets .widget article.job_posting.enabled .post-title a, body.home .home-widgets .widget article.job_posting.enabled .entry-title a {
             color: white; }
-        body.home .home-widgets .widget article.job_posting:hover .entry-content, body.home .home-widgets .widget article.job_posting:hover .schema_job_posting, body.home .home-widgets .widget article.job_posting.enabled .entry-content, body.home .home-widgets .widget article.job_posting.enabled .schema_job_posting {
+        body.home .home-widgets .widget article.job_posting.enabled .entry-content, body.home .home-widgets .widget article.job_posting.enabled .schema_job_posting {
           display: block !important;
           padding-top: 0.5rem !important;
           /*max-height: 5rem !important;*/
           /*overflow: auto !important;*/ }
-          body.home .home-widgets .widget article.job_posting:hover .entry-content > p, body.home .home-widgets .widget article.job_posting:hover .schema_job_posting > p, body.home .home-widgets .widget article.job_posting.enabled .entry-content > p, body.home .home-widgets .widget article.job_posting.enabled .schema_job_posting > p {
+          body.home .home-widgets .widget article.job_posting.enabled .entry-content > p, body.home .home-widgets .widget article.job_posting.enabled .schema_job_posting > p {
             display: block !important;
             margin: 0 0 0.5rem; }
-        body.home .home-widgets .widget article.job_posting:hover .post-content, body.home .home-widgets .widget article.job_posting:hover .entry-content, body.home .home-widgets .widget article.job_posting.enabled .post-content, body.home .home-widgets .widget article.job_posting.enabled .entry-content {
+        body.home .home-widgets .widget article.job_posting.enabled .post-content, body.home .home-widgets .widget article.job_posting.enabled .entry-content {
           margin-left: 0%; }
-          body.home .home-widgets .widget article.job_posting:hover .post-content > a, body.home .home-widgets .widget article.job_posting:hover .entry-content > a, body.home .home-widgets .widget article.job_posting.enabled .post-content > a, body.home .home-widgets .widget article.job_posting.enabled .entry-content > a {
+          body.home .home-widgets .widget article.job_posting.enabled .post-content > a, body.home .home-widgets .widget article.job_posting.enabled .entry-content > a {
             display: block; }
-        body.home .home-widgets .widget article.job_posting:hover .post-title, body.home .home-widgets .widget article.job_posting:hover .entry-title:after, body.home .home-widgets .widget article.job_posting.enabled .post-title, body.home .home-widgets .widget article.job_posting.enabled .entry-title:after {
+        body.home .home-widgets .widget article.job_posting.enabled .post-title, body.home .home-widgets .widget article.job_posting.enabled .entry-title:after {
           display: block;
           height: 100px;
           width: 100px;
@@ -6034,7 +6034,7 @@ body.home {
           position: absolute;
           right: 0;
           top: 100%; }
-        body.home .home-widgets .widget article.job_posting:hover .post-image + .post-title:after, body.home .home-widgets .widget article.job_posting:hover .entry-image + .entry-title:after, body.home .home-widgets .widget article.job_posting.enabled .post-image + .post-title:after, body.home .home-widgets .widget article.job_posting.enabled .entry-image + .entry-title:after {
+        body.home .home-widgets .widget article.job_posting.enabled .post-image + .post-title:after, body.home .home-widgets .widget article.job_posting.enabled .entry-image + .entry-title:after {
           display: none; }
       body.home .home-widgets .widget article.job_posting .user--role {
         display: none; }
@@ -6527,11 +6527,11 @@ body.home {
         .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item label {
           text-align: center;
           background-color: #cccccc; }
-      .footer-after-content-widgets .widget article.job_posting:hover {
+      .footer-after-content-widgets .widget article.job_posting.enabled {
         background-color: #f1f1f1;
         padding-bottom: 1rem !important;
         border-bottom: 2px #cccccc solid; }
-      .footer-after-content-widgets .widget article.job_posting:hover, .footer-after-content-widgets .widget article.job_posting.enabled {
+      .footer-after-content-widgets .widget article.job_posting.enabled {
         /*position: absolute;*/
         min-height: 5rem;
         float: left;
@@ -6541,42 +6541,42 @@ body.home {
         -webkit-transition: min-height 0.5s ease-in-out;
         -moz-transition: min-height 0.5s ease-in-out;
         transition: min-height 0.5s ease-in-out; }
-        .footer-after-content-widgets .widget article.job_posting:hover:last-child, .footer-after-content-widgets .widget article.job_posting.enabled:last-child {
+        .footer-after-content-widgets .widget article.job_posting.enabled:last-child {
           margin-right: 0; }
-        .footer-after-content-widgets .widget article.job_posting:hover .post-image, .footer-after-content-widgets .widget article.job_posting:hover .entry-image, .footer-after-content-widgets .widget article.job_posting.enabled .post-image, .footer-after-content-widgets .widget article.job_posting.enabled .entry-image {
+        .footer-after-content-widgets .widget article.job_posting.enabled .post-image, .footer-after-content-widgets .widget article.job_posting.enabled .entry-image {
           position: absolute;
           margin-left: 77.30061%;
           margin-top: 2rem;
           left: auto;
           top: auto; }
-        .footer-after-content-widgets .widget article.job_posting:hover footer, .footer-after-content-widgets .widget article.job_posting.enabled footer {
+        .footer-after-content-widgets .widget article.job_posting.enabled footer {
           display: block;
           /*
              *position: absolute;
              *bottom: 0;
              *right: 0;
              */ }
-        .footer-after-content-widgets .widget article.job_posting:hover .post-title, .footer-after-content-widgets .widget article.job_posting:hover .entry-title, .footer-after-content-widgets .widget article.job_posting.enabled .post-title, .footer-after-content-widgets .widget article.job_posting.enabled .entry-title {
+        .footer-after-content-widgets .widget article.job_posting.enabled .post-title, .footer-after-content-widgets .widget article.job_posting.enabled .entry-title {
           /*background-color: #069CC8;*/
           background-color: #177a72;
           text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
           position: relative;
           /*margin-top: -4.5rem;*/ }
-          .footer-after-content-widgets .widget article.job_posting:hover .post-title a, .footer-after-content-widgets .widget article.job_posting:hover .entry-title a, .footer-after-content-widgets .widget article.job_posting.enabled .post-title a, .footer-after-content-widgets .widget article.job_posting.enabled .entry-title a {
+          .footer-after-content-widgets .widget article.job_posting.enabled .post-title a, .footer-after-content-widgets .widget article.job_posting.enabled .entry-title a {
             color: white; }
-        .footer-after-content-widgets .widget article.job_posting:hover .entry-content, .footer-after-content-widgets .widget article.job_posting:hover .schema_job_posting, .footer-after-content-widgets .widget article.job_posting.enabled .entry-content, .footer-after-content-widgets .widget article.job_posting.enabled .schema_job_posting {
+        .footer-after-content-widgets .widget article.job_posting.enabled .entry-content, .footer-after-content-widgets .widget article.job_posting.enabled .schema_job_posting {
           display: block !important;
           padding-top: 0.5rem !important;
           /*max-height: 5rem !important;*/
           /*overflow: auto !important;*/ }
-          .footer-after-content-widgets .widget article.job_posting:hover .entry-content > p, .footer-after-content-widgets .widget article.job_posting:hover .schema_job_posting > p, .footer-after-content-widgets .widget article.job_posting.enabled .entry-content > p, .footer-after-content-widgets .widget article.job_posting.enabled .schema_job_posting > p {
+          .footer-after-content-widgets .widget article.job_posting.enabled .entry-content > p, .footer-after-content-widgets .widget article.job_posting.enabled .schema_job_posting > p {
             display: block !important;
             margin: 0 0 0.5rem; }
-        .footer-after-content-widgets .widget article.job_posting:hover .post-content, .footer-after-content-widgets .widget article.job_posting:hover .entry-content, .footer-after-content-widgets .widget article.job_posting.enabled .post-content, .footer-after-content-widgets .widget article.job_posting.enabled .entry-content {
+        .footer-after-content-widgets .widget article.job_posting.enabled .post-content, .footer-after-content-widgets .widget article.job_posting.enabled .entry-content {
           margin-left: 0%; }
-          .footer-after-content-widgets .widget article.job_posting:hover .post-content > a, .footer-after-content-widgets .widget article.job_posting:hover .entry-content > a, .footer-after-content-widgets .widget article.job_posting.enabled .post-content > a, .footer-after-content-widgets .widget article.job_posting.enabled .entry-content > a {
+          .footer-after-content-widgets .widget article.job_posting.enabled .post-content > a, .footer-after-content-widgets .widget article.job_posting.enabled .entry-content > a {
             display: block; }
-        .footer-after-content-widgets .widget article.job_posting:hover .post-title, .footer-after-content-widgets .widget article.job_posting:hover .entry-title:after, .footer-after-content-widgets .widget article.job_posting.enabled .post-title, .footer-after-content-widgets .widget article.job_posting.enabled .entry-title:after {
+        .footer-after-content-widgets .widget article.job_posting.enabled .post-title, .footer-after-content-widgets .widget article.job_posting.enabled .entry-title:after {
           display: block;
           height: 100px;
           width: 100px;
@@ -6585,7 +6585,7 @@ body.home {
           position: absolute;
           right: 0;
           top: 100%; }
-        .footer-after-content-widgets .widget article.job_posting:hover .post-image + .post-title:after, .footer-after-content-widgets .widget article.job_posting:hover .entry-image + .entry-title:after, .footer-after-content-widgets .widget article.job_posting.enabled .post-image + .post-title:after, .footer-after-content-widgets .widget article.job_posting.enabled .entry-image + .entry-title:after {
+        .footer-after-content-widgets .widget article.job_posting.enabled .post-image + .post-title:after, .footer-after-content-widgets .widget article.job_posting.enabled .entry-image + .entry-title:after {
           display: none; }
       .footer-after-content-widgets .widget article.job_posting .user--role {
         display: none; }
