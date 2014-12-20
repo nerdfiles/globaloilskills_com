@@ -383,3 +383,10 @@ body.home {
   }
 
 }
+
+.search-title .searchform, .search-title .widget_search {
+  &:before {
+    font-style: normal;
+  }
+  position: relative;
+}
