@@ -24,6 +24,10 @@ body.wp-admin {
 
 
 body.login {
+  label {
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
   #login_error { }
   #loginform { }
   background-color: #28608a;
@@ -87,13 +91,17 @@ body.login #lostpasswordform {
        */
     }
   }
-  .forgetmenot { }
+  p.forgetmenot {
+    margin-bottom: 1rem;
+  }
   .submit {
     text-align: center;
     #wp-submit {
       text-shadow: none;
       border-radius: 0 !important;
       @include button;
+      font-variant: small-caps;
+      text-transform: lowercase;
       border-width: 4px;
       text-shadow: none;
       background-image: none;
@@ -113,6 +121,8 @@ body.login #lostpasswordform {
     color: #ccc;
 
     &, a {
+      font-variant: small-caps;
+      text-transform: lowercase;
       /*text-shadow: 0px 1px 0px #173c56;*/
     }
   }
