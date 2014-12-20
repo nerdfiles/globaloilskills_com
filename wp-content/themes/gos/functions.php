@@ -414,6 +414,30 @@ function disable_author_index() {
   exit;
 }
 
+function SearchFilter($query) {
+  global $current_user;
+  if ($query->is_search) {
+    $query->set( 'posts_per_page', 500 );
+    $all_roles = $current_user->roles;
+    $show = false;
+    foreach ($all_roles as $role) {
+      if ( $role == 'administrator' || $role == 'manager' ) {
+        $query->set( 'post_type', array(
+            'relation' => 'AND',
+            'job_posting',
+            'seeker'
+        ) );
+      } elseif ( $role == 'recruiter' ) {
+        $query->set( 'post_type', 'seeker' );
+      } else {
+        $query->set( 'post_type', 'job_posting' );
+      }
+    }
+  }
+  return $query;
+}
+add_filter( 'pre_get_posts', 'SearchFilter' );
+
 /*
  * Conditions for Recruiter
  *
@@ -431,7 +455,7 @@ function disable_author_index() {
    *      email = user.Email;
    *  }
    */
-  return '';
+  //return '';
 //}
 
 /**
@@ -517,29 +541,3 @@ function priv_contact () {
 /*
  * @namespace Amiright?
  */
-
-
-function SearchFilter($query) {
-  global $current_user;
-  if ($query->is_search) {
-    $query->set( 'posts_per_page', 500 );
-    $all_roles = $current_user->roles;
-    $show = false;
-    foreach ($all_roles as $role) {
-      if ( $role == 'administrator' || $role == 'manager' ) {
-        $query->set( 'post_type', array(
-            'relation' => 'AND',
-            'job_posting',
-            'seeker'
-        ) );
-      } elseif ( $role == 'recruiter' ) {
-        $query->set( 'post_type', 'seeker' );
-      } else {
-        $query->set( 'post_type', 'job_posting' );
-      }
-    }
-  }
-  return $query;
-}
-add_filter( 'pre_get_posts', 'SearchFilter' );
-

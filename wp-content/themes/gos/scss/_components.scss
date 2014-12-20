@@ -42,8 +42,19 @@ body.search-results {
       }
     }
 
+    article.job_posting {
+      .post-meta { position: absolute; left: -9999px; }
+      .wpcf7 { display: none; }
+      .module--job-posting-logo { 
+        float: none;
+        display: none;
+        margin: 0 auto !important;
+      }
+      .module--job-posting-summary { display: none; }
+      p { display: none; }
+    }
     @include employee-posting();
-    @include job-posting();
+    /*@include job-posting();*/
   }
 }
 
