@@ -46,7 +46,7 @@
   )
 
   searchInput = HTML.query('#s')
-  if (searchInput)
+  if (searchInput and HTML.body.getAttribute('class').indexOf('single') == -1)
     searchInput.setAttribute 'placeholder', 'Search Job Postings'
 
   ###
