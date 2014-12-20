@@ -55,17 +55,35 @@
   disabler = (e) ->
     e.preventDefault()
 
+  c = undefined
+  toggleClass = () ->
+    el = @
+    className = 'enabled'
+    if el.classList
+      el.classList.toggle(className)
+    else
+        classes = el.className.split(' ')
+        existingIndex = -1
+        for i in classes
+          i--
+          if classes[i] == className
+            existingIndex = i
+
+        if (existingIndex >= 0)
+          classes.splice(existingIndex, 1)
+        else
+          classes.push(className)
+
+      el.className = classes.join(' ')
+      return
+
   clicker = () ->
     elem = @
     c = elem.getAttribute 'class'
-    t = undefined
     if c.indexOf('enabled') == -1
-      # isn't present
-      elem.removeAttribute 'class', 'disabled'
       elem.setAttribute 'class', 'enabled'
     else
       elem.removeAttribute 'class', 'enabled'
-      elem.setAttribute 'class', 'disabled'
 
   #abbrevText = (obj) ->
     #o = obj.split ' '
@@ -98,15 +116,13 @@
       #console.log z
       ##z.textContent = __abbrev_text
 
-  ###
   for i in uPosts
     h = i.getElementsByTagName 'h4'
     for j in h
       #j.setAttribute 'ng-mouseover', 'clicker()'
-      #j.parentNode.parentNode.addClass 'enabled'
-      j.parentNode.parentNode.addEventListener 'mouseover', clicker
-      j.parentNode.parentNode.addEventListener 'mouseout', clicker
-  ###
+      #j.parentNode.parentNode.setAttribute 'class', 'enabled'
+      j.parentNode.parentNode.addEventListener 'mouseover', toggleClass
+      j.parentNode.parentNode.addEventListener 'mouseout', toggleClass
 
   ###
   wp-user--email-scaffolding

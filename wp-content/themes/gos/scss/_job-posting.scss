@@ -67,13 +67,12 @@
         }
       }
       @if $noHover == false {
-        &:hover {
+        &.enabled {
           background-color: #f1f1f1;
           padding-bottom: 1rem !important;
           border-bottom: 2px #ccc solid;
         }
 
-        &:hover,
         &.enabled {
           /*position: absolute;*/
           min-height: 5rem;
