@@ -110,13 +110,14 @@ body.login #lostpasswordform {
       font-size: 1.5rem;
       padding: .5rem 1rem !important;
       width: 100% !important;
+      padding-top: .4rem !important;
       &:hover {
         background-image: none !important;
       }
   } }
   #nav {
     margin-top: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     text-align: center;
     color: #ccc;
 
