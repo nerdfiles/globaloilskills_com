@@ -5020,6 +5020,9 @@ body.wp-admin {
 
 body.login {
   background-color: #28608a; }
+  body.login label {
+    font-variant: small-caps;
+    text-transform: lowercase; }
   body.login a {
     color: white !important;
     /*text-shadow: 0 0 1px #444;*/
@@ -5059,6 +5062,8 @@ body.login #login form, body.login #lostpasswordform form {
     /*
        *text-shadow: 0px 1px 0px #173c56;
        */ }
+body.login #login p.forgetmenot, body.login #lostpasswordform p.forgetmenot {
+  margin-bottom: 1rem; }
 body.login #login .submit, body.login #lostpasswordform .submit {
   text-align: center; }
   body.login #login .submit #wp-submit, body.login #lostpasswordform .submit #wp-submit {
@@ -5079,6 +5084,8 @@ body.login #login .submit, body.login #lostpasswordform .submit {
     text-decoration: none;
     text-shadow: 0 1px 0 #0068d6;
     background-clip: padding-box;
+    font-variant: small-caps;
+    text-transform: lowercase;
     border-width: 4px;
     text-shadow: none;
     background-image: none;
@@ -5107,6 +5114,10 @@ body.login #login #nav, body.login #lostpasswordform #nav {
   padding-bottom: 1rem;
   text-align: center;
   color: #cccccc; }
+  body.login #login #nav, body.login #login #nav a, body.login #lostpasswordform #nav, body.login #lostpasswordform #nav a {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    /*text-shadow: 0px 1px 0px #173c56;*/ }
 body.login #login #backtoblog, body.login #lostpasswordform #backtoblog {
   text-align: center;
   display: none; }
