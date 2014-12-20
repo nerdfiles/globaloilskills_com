@@ -43,6 +43,6 @@
         #return init
     #return new obj
 
-  #$('input').prop('placeholder', __trs(''))
+  #$('#s').prop('placeholder', 'Search Jobs')
 
 )(document, HTML, jQuery)

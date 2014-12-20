@@ -46,7 +46,7 @@
   )
 
   searchInput = HTML.query('#s')
-  if (searchInput.length)
+  if (searchInput)
     searchInput.setAttribute 'placeholder', 'Search Job Postings'
 
   ###
