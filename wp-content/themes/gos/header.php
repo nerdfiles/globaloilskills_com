@@ -41,6 +41,7 @@
       echo ' | ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
 
     ?></title>
+    <meta name="google-site-verification" content="kAkSEQStnhRWgkahM1ETrkFJXp36uh9jXXOqEJDTZ6E" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <link rel="shortcut icon" href="favicon.png" />
     <!--[if lt IE 9]>
