@@ -5030,6 +5030,9 @@ body.wp-admin.wp-core-ui a, body.wp-admin.wp-core-ui a:link {
 body {
   color: white; }
 
+.updated, .inline, .below-h2, .fade, .error {
+  color: #111111; }
+
 body.login {
   background-color: #28608a; }
   body.login label {
