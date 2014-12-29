@@ -22,6 +22,25 @@ body.wp-admin {
 }
 
 
+body.wp-admin.wp-core-ui a,
+body.wp-admin.wp-core-ui a:link {
+  color: #111;
+}
+
+.wpbody-content {
+  a {
+    color: #111;
+  }
+}
+
+.tablenav .displaying-num {
+  color: #fff;
+}
+
+body {
+  color: #fff;
+}
+
 
 body.login {
   label {
