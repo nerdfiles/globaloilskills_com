@@ -167,7 +167,7 @@ function rw_remove_menus () {
     __('Custom Fields'),
     __('Roles'),
     __('Wordfence'),
-    __('Settings'),
+    //__('Settings'),
     __('Comments'),
     __('Plugins'),
     __('Events'),
@@ -182,7 +182,7 @@ function rw_remove_menus () {
     if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
   }
 }
-add_action('admin_menu', 'rw_remove_menus');
+//add_action('admin_menu', 'rw_remove_menus');
 
 /**
  * Dashboard Customizations for http://globaloilstaffing.services
