@@ -152,7 +152,7 @@ add_action('admin_head','z_remove_media_controls');
 function rw_remove_menus () {
   global $menu;
   $restricted = array(
-    //__('Dashboard'),
+    __('Dashboard'),
     __('Posts'),
     __('Media'),
     __('Links'),
@@ -199,7 +199,7 @@ function custom_dashboard_help() {
   <?php echo "<p>$content</p>"; ?>
   <?php if (is_admin()) { ?>
   <p>If you are an admin, expect a few visual glitches like this menu. Most users will not see the menu below. We're working on it.</p>
-  <div id="adminmenuwrap" style="width: 50%;">
+  <!--div id="adminmenuwrap" style="width: 50%;">
     <ul id="adminmenu" role="navigation" style="width: auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between">
     <li class="wp-has-submenu wp-not-current-submenu open-if-no-js menu-top menu-icon-post menu-top-first" id="menu-posts">
     <a href="edit.php" class="wp-has-submenu wp-not-current-submenu open-if-no-js menu-top menu-icon-post menu-top-first" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-post"><br></div><div class="wp-menu-name">Posts</div></a>
@@ -267,7 +267,7 @@ function custom_dashboard_help() {
     <ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Database</li><li class="wp-first-item"><a href="admin.php?page=wp-dbmanager/database-manager.php" class="wp-first-item">Database</a></li><li><a href="admin.php?page=wp-dbmanager/database-backup.php">Backup DB</a></li><li><a href="admin.php?page=wp-dbmanager/database-manage.php">Manage Backup DB</a></li><li><a href="admin.php?page=wp-dbmanager/database-optimize.php">Optimize DB</a></li><li><a href="admin.php?page=wp-dbmanager/database-repair.php">Repair DB</a></li><li><a href="admin.php?page=wp-dbmanager/database-empty.php">Empty/Drop Tables</a></li><li><a href="admin.php?page=wp-dbmanager/database-run.php">Run SQL Query</a></li><li><a href="admin.php?page=wp-dbmanager/wp-dbmanager.php">DB Options</a></li></ul></li>
     <li class="wp-not-current-submenu menu-top toplevel_page_WP-Optimize menu-top-last" id="toplevel_page_WP-Optimize">
     <a href="admin.php?page=WP-Optimize" class="wp-not-current-submenu menu-top toplevel_page_WP-Optimize menu-top-last"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before"><img src="http://local.globaloilskills.com/wp-content/plugins/wp-optimize/wpo.png" alt=""></div><div class="wp-menu-name">WP-Optimize</div></a></li></ul>
-  </div></ul>
+  </div></ul-->
   <?php } ?>
 <?php
 }
