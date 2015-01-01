@@ -41,7 +41,11 @@ body {
   color: #fff;
 }
 
-.updated, 
+body.iframe {
+  color: #111;
+}
+
+.updated,
 .inline,
 .below-h2,
 .fade,
@@ -310,4 +314,28 @@ body.wp-admin a:link {
 
 body.wp-admin a:visited {
   color: #a1a1a1;
+}
+
+.update-nag {
+  color: #111;
+}
+.control-section {
+  color: #111;
+  h3 { color: #111; }
+  p.description {
+    color: #111;
+  }
+}
+
+.accordion-section-title:after, 
+.handlediv, 
+.item-edit, 
+.sidebar-name-arrow, 
+.widget-action {
+  color: #111;
+
+}
+
+.manage-menus {
+  color: #111;
 }

@@ -1,327 +1,331 @@
 @mixin job-posting($noHover: false, $single: false) {
-    article.job_posting {
-      @include clearfix;
-      @include disabled();
-      padding-bottom: 0 !important;
-      padding-top: 0 !important;
-      margin-bottom: 0 !important;
-      border-top: none;
-      /*border-bottom: 1px #0B4E9E solid;*/
+  article.job_posting {
+    @include clearfix;
+    @include disabled();
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    border-top: none;
+    /*border-bottom: 1px #0B4E9E solid;*/
 
-      form {
-        p {
-          margin: 0;
-          padding: 0;
-        }
-      }
-
-      input, textarea {
-        border-top: 2px #ccc solid;
-        border-right: 5px #ccc solid;
-        border-radius: none !important;
-        box-shadow: none !important;
-        &:active,
-        &:focus,
-        &:hover {
-          border-right: 5px #177A72 solid;
-        }
-      }
-
-      label {
-        display: inline-block;
-        background-color: #177A72;
-        padding: .5rem;
-        margin: 0;
-        color: #fff;
-
-        br {
-          display: none;
-        }
-      }
-
-      #apply-form--submit {
-        background: #f1f1f1;
-      }
-      .wpcf7-form-control-wrap {
-        margin-bottom: 1rem;
-        text-align: center;
-        margin-top: 1rem;
-      }
-      .wpcf7-list-item.first {
-        margin-left: 0 !important;
-      }
-      .wpcf7-list-item {
-        cursor: pointer !important;
-        input {
-          position: absolute;
-          left: -9999px;
-        }
-        &.active {
-          label {
-            background-color: #27608A;
-          }
-        }
-        label {
-          text-align: center;
-          background-color: #ccc;
-        }
-      }
-      @if $noHover == false {
-        &.enabled {
-          background-color: #f1f1f1;
-          padding-bottom: 1rem !important;
-          border-bottom: 2px #ccc solid;
-        }
-
-        &.enabled {
-          /*position: absolute;*/
-          min-height: 5rem;
-          @include span-columns(12);
-          @include transition (min-height .5s ease-in-out);
-          @extend .fade-in;
-          @extend .animated;
-          .post-image,
-          .entry-image {
-            position: absolute;
-            @include shift(9);
-            margin-top: 2rem;
-            left: auto;
-            top: auto;
-          }
-          footer {
-            display: block;
-            /*
-             *position: absolute;
-             *bottom: 0;
-             *right: 0;
-             */
-          }
-
-          .post-summary,
-          .entry-summary {
-
-          }
-          .post-title,
-          .entry-title {
-            /*background-color: #069CC8;*/
-            background-color: #177A72;
-            text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
-            rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
-            rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
-            a { color: #fff; }
-            position: relative;
-            /*margin-top: -4.5rem;*/
-          }
-
-          &.has-post-thumbnail {
-            .post-meta,
-            .entry-meta {}
-            .entry-content,
-            .schema_job_posting {
-              /*max-height: 10rem !important;*/
-            }
-          }
-
-          .post-meta,
-          .entry-meta {}
-
-          .entry-content,
-          .schema_job_posting {
-            display: block !important;
-            padding-top: .5rem !important;
-            & > p {
-              display: block !important;
-              margin: 0 0 .5rem;
-            }
-            /*max-height: 5rem !important;*/
-            /*overflow: auto !important;*/
-          }
-
-          .post-content,
-          .entry-content {
-            @include shift(0);
-            & > a {
-              display: block;
-            }
-          }
-
-          .post-title,
-          .entry-title:after {
-            display: block;
-            height: 100px;
-            width: 100px;
-            content: " ";
-            background-image: url('http://placehold.it/100&text=NEW+JOB');
-            position: absolute;
-            right: 0;
-            top: 100%;
-          }
-
-          .post-image + .post-title:after,
-          .entry-image + .entry-title:after {
-            display: none;
-          }
-        }
-      }
-
-      /**
-       * Nonhover
-       */
-      .user--role {
-        display: none;
-      }
-
-      .post-content {
-        .attachment-full {
-          float: right;
-        }
-        & > p {
-          margin: 0 1rem .5rem;
-        }
-      }
-      .entry-content,
-      .schema_job_posting {
-        margin: 0 !important;
-        padding: 0 .5rem 1rem !important;
-        display: none !important;
-        background-color: transparent !important;
-        border: none !important;
-        font-size: .6rem;
-        min-height: 5rem;
-        & > p {
-          display: none;
-          margin: 0 1rem;
-        }
-        .schema_url {
-          position: absolute;
-          left: -9999px;
-        }
-        .schema_description {
-          /*border-top: 1px #ccc solid;*/
-          /*border-bottom: 1px #ccc solid;*/
-          display: block;
-          max-height: 6rem;
-          overflow: scroll;
-          padding-top: .5rem;
-          margin-bottom: 0 !important;
-        }
-      }
-
-      .review-job {
-        /*
-         *border-top: 1px #ccc solid;
-         *background-color: #f1f1f1;
-         */
-        display: inline-block;
-        text-align: center;
-        /*border-top: 1px #ccc solid;*/
-        margin: 0 .5rem 0 0;
-        padding: 0 .5rem;
-        font-weight: 700;
-      }
-
-      @if $single != true {
-        .wpcf7 {
-          display: none;
-        }
-      }
-
-      footer {
-        display: none;
-      }
-
-      /*border-bottom: 1px #ccc solid;*/
-      header { }
-      .published {
-        padding-left: .5rem;
-        &:before { content: 'Posted '; color: green; }
-        color: #111; }
-
-      a { @include pad(0 default); display: block; color: #111; text-decoration: none; }
-
-      h4 {
+    form {
+      p {
         margin: 0;
         padding: 0;
-        font-weight: 400;
-        border-bottom: 2px #fff solid;
-        a {
-        }
       }
-      header {
-        @include span-columns(12);
+    }
+
+    input, textarea {
+      border-top: 2px #ccc solid;
+      border-right: 5px #ccc solid;
+      border-radius: none !important;
+      box-shadow: none !important;
+      &:active,
+      &:focus,
+      &:hover {
+        border-right: 5px #177A72 solid;
       }
-      /**
-       *
-       */
-      .post-image,
-      .entry-image {
-        text-align: left;
-        position: absolute;
-        a {
-          padding: 0;
-        }
-        @include span-columns(2, block-collapse);
-        /*
-         *position: absolute;
-         *top: 2rem;
-         *left: -9999px;
-         */
-        @include pad(.5rem 0 0);
-        img { max-height: 100%; max-width: 100%; }
+    }
+
+    label {
+      display: inline-block;
+      background-color: #177A72;
+      padding: .5rem;
+      margin: 0;
+      color: #fff;
+
+      br {
+        display: none;
       }
-      .post-meta,
-      .entry-meta {
-        /*
-         *@include span-columns(8);
-         */
-        /*
-         *position: absolute;
-         *left: -9999px;
-         */
-      }
-      .post-title,
-      .entry-title {
-        @include span-columns(12);
-        @include omega();
-        a {
-          padding: .35rem .5rem;
-        }
-      }
-      .type-job_posting .post-title {
-        @include span-columns(10);
-      }
-      .post-meta,
-      .entry-meta {
+    }
+
+    #apply-form--submit {
+      background: #f1f1f1;
+    }
+    .wpcf7-form-control-wrap {
+      margin-bottom: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 3vh;
+    }
+    .wpcf7-list-item.first {
+      margin-left: 0 !important;
+    }
+    .wpcf7-list-item {
+      cursor: pointer !important;
+      input {
         position: absolute;
         left: -9999px;
       }
-
-      .post-content,
-      .entry-content {
-        @if $single == true {
-          @include shift(0);
-          @include span-columns(12);
-        } @else {
-          @include span-columns(8);
+      &.active {
+        label {
+          background-color: #27608A;
         }
-        & > a {
+      }
+      label {
+        text-align: center;
+        background-color: #ccc;
+      }
+    }
+    @if $noHover == false {
+      &.enabled {
+        background-color: #f1f1f1;
+        padding-bottom: 1rem !important;
+        border-bottom: 2px #ccc solid;
+      }
+
+      &.enabled {
+        /*position: absolute;*/
+        min-height: 5rem;
+        @include span-columns(12);
+        @include transition (min-height .5s ease-in-out);
+        @extend .fade-in;
+        @extend .animated;
+        .post-image,
+        .entry-image {
+          position: absolute;
+          @include shift(9);
+          margin-top: 2rem;
+          left: auto;
+          top: auto;
+        }
+        footer {
+          display: block;
+          /*
+           *position: absolute;
+           *bottom: 0;
+           *right: 0;
+           */
+        }
+
+        .post-summary,
+        .entry-summary {
+
+        }
+        .post-title,
+        .entry-title {
+          /*background-color: #069CC8;*/
+          background-color: #177A72;
+          text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+          rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
+          rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
+          a { color: #fff; }
+          position: relative;
+          /*margin-top: -4.5rem;*/
+        }
+
+        &.has-post-thumbnail {
+          .post-meta,
+          .entry-meta {}
+          .entry-content,
+          .schema_job_posting {
+            /*max-height: 10rem !important;*/
+          }
+        }
+
+        .post-meta,
+        .entry-meta {}
+
+        .entry-content,
+        .schema_job_posting {
+          display: block !important;
+          padding-top: .5rem !important;
+          & > p {
+            display: block !important;
+            margin: 0 0 .5rem;
+          }
+          /*max-height: 5rem !important;*/
+          /*overflow: auto !important;*/
+        }
+
+        .post-content,
+        .entry-content {
+          @include shift(0);
+          & > a {
+            display: block;
+          }
+        }
+
+        .post-title,
+        .entry-title:after {
+          display: block;
+          height: 100px;
+          width: 100px;
+          content: " ";
+          background-image: url('http://placehold.it/100&text=NEW+JOB');
+          position: absolute;
+          right: 0;
+          top: 100%;
+        }
+
+        .post-image + .post-title:after,
+        .entry-image + .entry-title:after {
           display: none;
         }
       }
-      .post-summary,
-      .entry-summary {
-        /*
-         *position: absolute;
-         *left: -9999px;
-         */
+    }
+
+    /**
+     * Nonhover
+     */
+    .module--job-posting-summary {
+
+    }
+    .user--role {
+      display: none;
+    }
+
+    .post-content {
+      .attachment-full {
+        float: right;
       }
-      .post-summary p,
-      .entry-summary p {
-        margin: 0;
-        padding: 0 .5rem;
-        text-align: right;
+      & > p {
+        margin: 0 1rem .5rem;
       }
     }
+    .entry-content,
+    .schema_job_posting {
+      margin: 0 !important;
+      padding: 0 .5rem 1rem !important;
+      display: none !important;
+      background-color: transparent !important;
+      border: none !important;
+      font-size: .6rem;
+      min-height: 5rem;
+      & > p {
+        display: none;
+        margin: 0 1rem;
+      }
+      .schema_url {
+        position: absolute;
+        left: -9999px;
+      }
+      .schema_description {
+        /*border-top: 1px #ccc solid;*/
+        /*border-bottom: 1px #ccc solid;*/
+        display: block;
+        max-height: 6rem;
+        overflow: scroll;
+        padding-top: .5rem;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .review-job {
+      /*
+       *border-top: 1px #ccc solid;
+       *background-color: #f1f1f1;
+       */
+      display: inline-block;
+      text-align: center;
+      /*border-top: 1px #ccc solid;*/
+      margin: 0 .5rem 0 0;
+      padding: 0 .5rem;
+      font-weight: 700;
+    }
+
+    @if $single != true {
+      .wpcf7 {
+        display: none;
+      }
+    }
+
+    footer {
+      display: none;
+    }
+
+    /*border-bottom: 1px #ccc solid;*/
+    header { }
+    .published {
+      padding-left: .5rem;
+      &:before { content: 'Posted '; color: green; }
+      color: #111; }
+
+    a { @include pad(0 default); display: block; color: #111; text-decoration: none; }
+
+    h4 {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      border-bottom: 2px #fff solid;
+      a {
+      }
+    }
+    header {
+      @include span-columns(12);
+    }
+    /**
+     *
+     */
+    .post-image,
+    .entry-image {
+      text-align: left;
+      position: absolute;
+      a {
+        padding: 0;
+      }
+      @include span-columns(2, block-collapse);
+      /*
+       *position: absolute;
+       *top: 2rem;
+       *left: -9999px;
+       */
+      @include pad(.5rem 0 0);
+      img { max-height: 100%; max-width: 100%; }
+    }
+    .post-meta,
+    .entry-meta {
+      /*
+       *@include span-columns(8);
+       */
+      /*
+       *position: absolute;
+       *left: -9999px;
+       */
+    }
+    .post-title,
+    .entry-title {
+      @include span-columns(12);
+      @include omega();
+      a {
+        padding: .35rem .5rem;
+      }
+    }
+    .type-job_posting .post-title {
+      @include span-columns(10);
+    }
+    .post-meta,
+    .entry-meta {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .post-content,
+    .entry-content {
+      @if $single == true {
+        @include shift(0);
+        @include span-columns(12);
+      } @else {
+        @include span-columns(8);
+      }
+      & > a {
+        display: none;
+      }
+    }
+    .post-summary,
+    .entry-summary {
+      /*
+       *position: absolute;
+       *left: -9999px;
+       */
+    }
+    .post-summary p,
+    .entry-summary p {
+      margin: 0;
+      padding: 0 .5rem;
+      text-align: right;
+    }
+  }
 }
 
 .attachment-full {
@@ -345,6 +349,9 @@
     @include pad(0 default);
     margin-top: .5rem;
     margin-bottom: 1rem;
+  }
+  dd {
+    padding-right: 3vh;
   }
   & > p {
     @include shift(.5);

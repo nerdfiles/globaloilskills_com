@@ -3,17 +3,15 @@
 \******************************************************************************/
 
 // Variables
-$base-font: 'Raleway';
-$header-font: 'Raleway';
+$header-font: 'Raleway', 'Muli', sans-serif;
+$base-font: 'Muli', 'Raleway', sans-serif;
 $base-line-height: 1.5;
 $base-font-size: 16px;
 
 // Set standard font sizes in media querys
 html {
     font-size: $base-font-size;
-
     @include media($medium) { font-size: 18px; }
-
     @include media($xlarge) { font-size: 20px; }
 }
 
