@@ -5215,7 +5215,8 @@ p ~ h1 {
     margin-top: 0.5rem;
     margin-bottom: 1rem; }
   .module--job-posting-summary dd {
-    padding-right: 3vh; }
+    padding: 3vh 5vh;
+    margin: 0; }
   .module--job-posting-summary > p {
     margin-left: 4.29448%;
     float: left;
@@ -5526,7 +5527,7 @@ body.single-job_posting .page-content {
     body.single-job_posting .page-content article.job_posting .post-content .attachment-full {
       float: right; }
     body.single-job_posting .page-content article.job_posting .post-content > p {
-      margin: 0 1rem 0.5rem; }
+      margin: 0 2rem 0.5rem; }
     body.single-job_posting .page-content article.job_posting .entry-content, body.single-job_posting .page-content article.job_posting .schema_job_posting {
       margin: 0 !important;
       padding: 0 0.5rem 1rem !important;
@@ -5823,7 +5824,7 @@ body.home {
       body.home .home-widgets .widget article.job_posting .post-content .attachment-full {
         float: right; }
       body.home .home-widgets .widget article.job_posting .post-content > p {
-        margin: 0 1rem 0.5rem; }
+        margin: 0 2rem 0.5rem; }
       body.home .home-widgets .widget article.job_posting .entry-content, body.home .home-widgets .widget article.job_posting .schema_job_posting {
         margin: 0 !important;
         padding: 0 0.5rem 1rem !important;
@@ -6375,7 +6376,7 @@ body.home {
       .footer-after-content-widgets .widget article.job_posting .post-content .attachment-full {
         float: right; }
       .footer-after-content-widgets .widget article.job_posting .post-content > p {
-        margin: 0 1rem 0.5rem; }
+        margin: 0 2rem 0.5rem; }
       .footer-after-content-widgets .widget article.job_posting .entry-content, .footer-after-content-widgets .widget article.job_posting .schema_job_posting {
         margin: 0 !important;
         padding: 0 0.5rem 1rem !important;
@@ -7391,6 +7392,9 @@ div.wpcf7 {
 
 #comments {
   display: none; }
+
+body.single .post-content {
+  margin-bottom: 2rem; }
 
 .format-status .date, .format-link .date, .format-quote .date {
   width: 100%;

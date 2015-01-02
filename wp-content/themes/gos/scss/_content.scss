@@ -459,3 +459,9 @@ div.wpcf7 {
 #comments {
   display: none;
 }
+
+body.single {
+  .post-content {
+    margin-bottom: 2rem;
+  }
+}
