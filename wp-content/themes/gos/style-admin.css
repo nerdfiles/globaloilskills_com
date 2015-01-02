@@ -5281,3 +5281,6 @@ html {
 
 #wpbody h2, #wpbody h3 {
   color: #f9f9f9; }
+
+#wp-admin-bar-wp-logo {
+  display: none; }
