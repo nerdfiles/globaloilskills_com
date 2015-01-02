@@ -155,19 +155,17 @@ function remove_menus()
     if($current_user->roles[0] == 'recruiter')
     {
       $restricted = array(
-          /*
-           *__('Pages'),
-           *__('Media'),
-           *__('Links'),
-           *__('Onboarding'),
-           *__('Comments'),
-           *__('Appearance'),
-           *__('Plugins'),
-           *__('Users'),
-           *__('Tools'),
-           *__('Settings'),
-           *__('Posts'),
-           */
+          __('Pages'),
+          __('Media'),
+          __('Links'),
+          __('Onboarding'),
+          __('Comments'),
+          __('Appearance'),
+          __('Plugins'),
+          __('Users'),
+          __('Tools'),
+          __('Settings'),
+          __('Posts'),
 
         );
         end ($menu);
