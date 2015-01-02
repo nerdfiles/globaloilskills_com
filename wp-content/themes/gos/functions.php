@@ -71,8 +71,9 @@ function register_redirect() {
     global $current_user;
 
     /*
-     *if ( is_user_logged_in() and $current_user->data->ID !== $post->post_author) {
+     *if ( is_user_logged_in() && ($post->post_type === 'application' && $current_user->data->ID !== $post->post_author) ) {
      *  wp_redirect( 'http://' . $_SERVER['HTTP_HOST'] . '/' );
+     *  exit();
      *}
      */
 
