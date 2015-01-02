@@ -158,7 +158,6 @@ function remove_menus()
           __('Pages'),
           __('Media'),
           __('Links'),
-          __('Onboarding'),
           __('Comments'),
           __('Appearance'),
           __('Plugins'),
