@@ -109,7 +109,7 @@ class JobPostingType {
         #'author',
         'thumbnail',
         //'excerpt',
-        //'comments'
+        'comments'
       ));
 
     register_post_type($this->type, $options);

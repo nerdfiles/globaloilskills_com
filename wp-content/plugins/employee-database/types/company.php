@@ -79,7 +79,7 @@ class Company {
       'supports' => array(
         'title',
         'editor',
-        #'author',
+        //'author',
         'thumbnail',
         //'excerpt',
         //'comments'

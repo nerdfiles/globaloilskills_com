@@ -73,13 +73,13 @@ class ApplicationPostType {
       'capability_type' => 'post',
       'hierarchical' => false,
       'has_archive' => true,
-      'menu_position' => 7,
+      'menu_position' => 12,
       //'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
         'title',
         'editor',
-        'author',
+        //'author',
         'thumbnail',
         'comments'
       ),
