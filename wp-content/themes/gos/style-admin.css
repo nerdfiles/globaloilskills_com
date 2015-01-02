@@ -5279,5 +5279,5 @@ body.wp-admin a:visited {
 html {
   background-color: #28608a; }
 
-#wpbody h3 {
+#wpbody h2, #wpbody h3 {
   color: #f9f9f9; }
