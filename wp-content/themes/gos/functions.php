@@ -493,14 +493,14 @@ function priv_contact () {
 
   global $current_user;
 
-  if (is_page()) :
+  if (is_singular()) :
     if (!$current_user->data) {
   ?>
       <style>
       .wpcf7 { display: none !important; }
       </style>
   <?php
-      exit();
+      //exit();
     }
     $all_roles = $current_user->roles;
     $show = false;
