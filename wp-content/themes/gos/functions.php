@@ -493,7 +493,7 @@ function priv_contact () {
 
   global $current_user;
 
-  if (!$current_user->data) {
+  if (is_page() && !$current_user->data) {
 ?>
       <style>
       .wpcf7 { display: none !important; }
