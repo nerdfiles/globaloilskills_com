@@ -6540,6 +6540,9 @@ body.home {
   .search-title .searchform:before, .search-title .widget_search:before {
     font-style: normal; }
 
+html.wp-admin {
+  background-color: #28608a; }
+
 /*
  * Circle Extender
  * @depnds css3
