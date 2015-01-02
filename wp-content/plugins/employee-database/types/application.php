@@ -70,7 +70,7 @@ class ApplicationPostType {
       'show_ui' => true,
       'query_var' => true,
       'rewrite' => array('slug' => strtolower($this->plural)),
-      'capability_type' => 'page',
+      'capability_type' => 'application',
       'hierarchical' => false,
       'has_archive' => true,
       'menu_position' => 9,

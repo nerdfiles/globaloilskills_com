@@ -32,10 +32,23 @@ class JobPostingType {
 
     # Save entered data
     add_action('save_post', array( &$this, 'save_job_posting_postdata') );
+
+    add_action( 'admin_menu', array( &$this, 'job_posting_menu' ) );
+    /*
+     *function add_caps() {
+     *    foreach ( array( 'recruiter' ) as $role_name ) {
+     *        $role = get_role( $role_name );
+     *        $role->add_cap( 'publish_job_posting' );
+     *        $role->add_cap( 'edit_job_posting' );
+     *    }
+     *}
+     *register_activation_hook( __FILE__, 'add_caps' );
+     */
+
   }
 
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
-  function init_job_posting($options = null){
+  function init_job_posting ($options = null) {
     if($options) {
       foreach($options as $key => $value){
         $this->$key = $value;
@@ -43,8 +56,21 @@ class JobPostingType {
     }
   }
 
+  function job_posting_menu () {
+    add_menu_page( 'Hall Of Fame', 'Hall Of Fame', 'manage_options', 'hall-of-fame', 'hall_of_fame_menu', get_bloginfo('template_url') . '/images/menu-icon-hall-of-fame.png', 6);
+  }
+
+  function hall_of_fame_menu () {
+    echo '<div class="wrap"><div id="icon-options-general" class="icon32"><br></div><h2>Hall Of Fame</h2></div>';
+  }
+
+  function hall_of_fame_menu_hide () {
+    echo '<div class="wrap"><div id="icon-options-general" class="icon32"><br></div><h2>Settings</h2></div>';
+  }
+
   # @credit: http://www.wpinsideout.com/advanced-custom-post-types-php-class-integration
   function add_job_posting_post_type(){
+
     $labels = array(
       'name' => _x($this->plural, 'post type general name'),
       'menu_name' => __('Job Board'),
@@ -67,26 +93,27 @@ class JobPostingType {
       'show_ui' => true,
       'query_var' => true,
       'rewrite' => array('slug' => strtolower($this->plural)),
-      'capability_type' => 'page',
+      'capability_type' => 'post',
       'hierarchical' => false,
       'has_archive' => true,
       'menu_position' => 8,
-      'show_in_nav_menus' => true,
+      'show_in_menu' => 'hall-of-fame',
       'taxonomies' => array(),
       'supports' => array(
         'title',
         'editor',
+        'page-attributes',
+        'custom-fields',
         #'author',
         'thumbnail',
         //'excerpt',
         //'comments'
-      ),
-    );
+      ));
 
     register_post_type($this->type, $options);
     //flush_rewrite_rules( false );
-  }
 
+  }
 
   function query_job_posting_post_type($query) {
     if(is_category() || is_tag()) {

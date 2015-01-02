@@ -146,6 +146,41 @@ function z_remove_media_controls() {
 }
 add_action('admin_head','z_remove_media_controls');
 
+function remove_menus()
+{
+    global $menu;
+    global $current_user;
+    get_currentuserinfo();
+
+    if($current_user->roles[0] == 'recruiter')
+    {
+      $restricted = array(
+          /*
+           *__('Pages'),
+           *__('Media'),
+           *__('Links'),
+           *__('Onboarding'),
+           *__('Comments'),
+           *__('Appearance'),
+           *__('Plugins'),
+           *__('Users'),
+           *__('Tools'),
+           *__('Settings'),
+           *__('Posts'),
+           */
+
+        );
+        end ($menu);
+        while (prev($menu)){
+            $value = explode(' ',$menu[key($menu)][0]);
+            if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
+        }// end while
+
+    }// end if
+}
+add_action('admin_menu', 'remove_menus');
+
+
 /**
  * Rework WordPress Menus
  */
