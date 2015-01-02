@@ -7399,6 +7399,13 @@ div.wpcf7 {
 body.single .post-content {
   margin-bottom: 2rem; }
 
+.comment-meta {
+  text-align: right;
+  margin-top: 0.2em;
+  margin-bottom: 0.8em;
+  background: #e9e9e9;
+  margin-top: 2vh; }
+
 .format-status .date, .format-link .date, .format-quote .date {
   width: 100%;
   padding: 5px 0 0; }

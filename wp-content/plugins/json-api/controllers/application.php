@@ -10,7 +10,7 @@ class JSON_API_Application_Controller {
     $tmp_file_name = $_FILES['file']['tmp_name'];
     $sep = "\r\n";
     $full_path = "Full Path: " . $document_root . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name;
-    $url = "URL: http://" . $hostname . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name;
+    $url = "URL: <a href=\"http://" . $hostname . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name . "\">$file_name</a>;
     $post_title = $_POST['post_title'];
 
     if ( 0 < $_FILES['file']['error'] ) {

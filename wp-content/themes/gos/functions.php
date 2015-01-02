@@ -68,11 +68,18 @@ function register_role($user_id, $password="", $meta=array()) {
 
 function register_redirect() {
     global $post;
+    global $current_user;
+
+    if ( is_user_logged_in() and $current_user->data->ID !== $post->post_author) {
+      wp_redirect( 'http://' . $_SERVER['HTTP_HOST'] . '/' );
+    }
+
     if ( ! is_user_logged_in() and is_page('my-account') ) {
         //wp_redirect( 'http://' . $_SERVER['HTTP_HOST'] . '/wp-login.php?action=register&role=seeker' );
         wp_redirect( 'http://' . $_SERVER['HTTP_HOST'] . '/wp-login.php' );
         exit();
     }
+
     if ( is_user_logged_in() and is_page('my-account') ) {
         wp_redirect( 'http://' . $_SERVER['HTTP_HOST'] . '/wp-admin/profile.php' );
         exit();
