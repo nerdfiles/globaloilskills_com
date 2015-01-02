@@ -167,6 +167,19 @@ function remove_menus()
           __('Settings'),
           __('Posts'),
 
+          //__('Dashboard'),
+          __('Google Maps'),
+          __('Tidy Tags'),
+          __('Database'),
+          __('WP-Optimize'),
+          __('Custom Fields'),
+          __('Roles'),
+          __('Wordfence'),
+          //__('Settings'),
+          __('Events'),
+          __('Contact'),
+          __('FooGallery')
+
         );
         end ($menu);
         while (prev($menu)){
