@@ -152,8 +152,7 @@ function remove_menus()
     global $current_user;
     get_currentuserinfo();
 
-    if($current_user->roles[0] == 'recruiter')
-    {
+    if($current_user->roles[0] == 'recruiter') {
       $restricted = array(
           __('Pages'),
           __('Media'),
@@ -187,6 +186,42 @@ function remove_menus()
         }// end while
 
     }// end if
+
+    if($current_user->roles[0] == 'seeker') {
+      $restricted = array(
+          __('Pages'),
+          __('Media'),
+          __('Links'),
+          __('Comments'),
+          __('Appearance'),
+          __('Plugins'),
+          __('Users'),
+          __('Tools'),
+          __('Settings'),
+          __('Posts'),
+
+          //__('Dashboard'),
+          __('Google Maps'),
+          __('Tidy Tags'),
+          __('Database'),
+          __('WP-Optimize'),
+          __('Custom Fields'),
+          __('Roles'),
+          __('Wordfence'),
+          //__('Settings'),
+          __('Events'),
+          __('Contact'),
+          __('FooGallery')
+
+        );
+        end ($menu);
+        while (prev($menu)){
+            $value = explode(' ',$menu[key($menu)][0]);
+            if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
+        }// end while
+
+    }// end if
+
 }
 add_action('admin_menu', 'remove_menus');
 
