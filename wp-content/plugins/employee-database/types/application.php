@@ -70,11 +70,11 @@ class ApplicationPostType {
       'show_ui' => true,
       'query_var' => true,
       'rewrite' => array('slug' => strtolower($this->plural)),
-      'capability_type' => 'application',
+      'capability_type' => 'post',
       'hierarchical' => false,
       'has_archive' => true,
       'menu_position' => 9,
-      'show_in_nav_menus' => true,
+      //'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
         'title',

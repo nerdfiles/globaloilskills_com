@@ -70,11 +70,11 @@ class Company {
       'show_ui' => true,
       'query_var' => true,
       'rewrite' => array('slug' => strtolower($this->plural)),
-      'capability_type' => 'company',
+      'capability_type' => 'post',
       'hierarchical' => false,
       'has_archive' => true,
       'menu_position' => 11,
-      'show_in_nav_menus' => true,
+      //'show_in_nav_menus' => true,
       'taxonomies' => array(),
       'supports' => array(
         'title',
