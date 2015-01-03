@@ -353,10 +353,6 @@ html {
   color: #f9f9f9;
 }
 
-#wp-admin-bar-wp-logo {
-  display: none;
-}
-
 #login_error {
   a, a:link {
     text-decoration: none;
@@ -414,4 +410,8 @@ textarea {
 
 #wpbody .wfPaidOnlyNotice {
   color: #444;
+}
+
+#wp-admin-bar-wp-logo {
+  display: none !important;
 }

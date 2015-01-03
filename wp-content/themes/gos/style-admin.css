@@ -5282,9 +5282,6 @@ html {
 #wpbody h2, #wpbody h3 {
   color: #f9f9f9; }
 
-#wp-admin-bar-wp-logo {
-  display: none; }
-
 #login_error {
   color: #111111; }
   #login_error a, #login_error a:link {
@@ -5328,3 +5325,6 @@ input, textarea {
 
 #wpbody .wfPaidOnlyNotice {
   color: #444444; }
+
+#wp-admin-bar-wp-logo {
+  display: none !important; }
