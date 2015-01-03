@@ -89,3 +89,21 @@ textarea {
   display: none;
   visibility: hidden;
 }
+
+body.single-job_posting .page-content article.job_posting {
+  .fa.fa-paper-plane-o {
+    position: absolute;
+    margin-top: 1.5vh;
+    left: 50%;
+    margin-left: -12vh;
+  }
+  /*background-color: #eace44;*/
+}
+
+.ajax-loader {
+  &:after {
+    font-family: 'FontAwesome', sans-serif;
+    display: block;
+    content: "\f03b";
+  }
+}

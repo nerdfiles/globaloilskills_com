@@ -5090,6 +5090,19 @@ input, textarea {
   display: none;
   visibility: hidden; }
 
+body.single-job_posting .page-content article.job_posting {
+  /*background-color: #eace44;*/ }
+  body.single-job_posting .page-content article.job_posting .fa.fa-paper-plane-o {
+    position: absolute;
+    margin-top: 1.5vh;
+    left: 50%;
+    margin-left: -12vh; }
+
+.ajax-loader:after {
+  font-family: 'FontAwesome', sans-serif;
+  display: block;
+  content: "\f03b"; }
+
 /******************************************************************************\
 	Settings
 \******************************************************************************/

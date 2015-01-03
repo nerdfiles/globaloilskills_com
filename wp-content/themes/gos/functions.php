@@ -408,7 +408,8 @@ function google_maps_config() {
  */
 function gos_enqueue_scripts() {
   // Presentation Layer
-  wp_enqueue_style( 'gos-fonts-raleway', esc_url('//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
+  wp_enqueue_style( 'gos-fonts-raleway', esc_url( '//fonts.googleapis.com/css?family=Raleway:400,800,700,500,300,200,600,900'), array(), '0.0.1');
+  wp_enqueue_style( 'gos-font-awesome', get_template_directory_uri() . '/grunt/bower_components/font-awesome/css/font-awesome.css', array(), '1.0', true );
   wp_enqueue_style( 'gos-styles', get_stylesheet_uri(), array(), '1.0' );
 
   // Dependencies
