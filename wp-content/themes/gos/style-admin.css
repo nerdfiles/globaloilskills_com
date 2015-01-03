@@ -5296,3 +5296,18 @@ html {
 
 input, textarea {
   outline: none !important; }
+
+.howto {
+  color: #93ced9; }
+
+.subsubsub a .count, .subsubsub a.current .count {
+  color: #93ced9; }
+
+.subsubsub a {
+  color: #f9f9f9 !important; }
+
+.form-wrap p {
+  color: #e9e9e9; }
+
+.form-wrap label {
+  color: #e9e9e9; }
