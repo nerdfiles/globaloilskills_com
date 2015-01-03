@@ -88,7 +88,7 @@ body.single-job_posting .page-content article.job_posting {
     position: absolute;
     margin-top: 1.5vh;
     left: 50%;
-    margin-left: -12vh; }
+    margin-left: -13vh; }
 
 .ajax-loader:after {
   font-family: 'FontAwesome', sans-serif;
