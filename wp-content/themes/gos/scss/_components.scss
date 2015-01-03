@@ -161,15 +161,18 @@ body.home {
 
 
       @include media($small) {
-        bottom: -30%;
+        bottom: -34vh;
+        /*bottom: -30%;*/
       }
 
       @include media($medium) {
-        bottom: -30%;
+        bottom: -34vh;
+        /*bottom: -30%;*/
       }
 
       @include media($large) {
-        bottom: -70%;
+        bottom: -34vh;
+        /*bottom: -70%;*/
       }
     }
 

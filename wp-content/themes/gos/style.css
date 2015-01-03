@@ -5973,13 +5973,16 @@ body.home {
       color: white; }
       @media screen and (max-width: 480px) {
         body.home .home-widgets:after {
-          bottom: -30%; } }
+          bottom: -34vh;
+          /*bottom: -30%;*/ } }
       @media screen and (min-width: 481px) {
         body.home .home-widgets:after {
-          bottom: -30%; } }
+          bottom: -34vh;
+          /*bottom: -30%;*/ } }
       @media screen and (min-width: 769px) {
         body.home .home-widgets:after {
-          bottom: -70%; } }
+          bottom: -34vh;
+          /*bottom: -70%;*/ } }
     body.home .home-widgets ul {
       padding: 0; }
       body.home .home-widgets ul .upw-posts .entry-content {
