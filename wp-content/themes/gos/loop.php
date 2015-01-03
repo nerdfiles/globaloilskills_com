@@ -89,7 +89,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($position_title && $position_title != '')): ?>
+            <?php if (isset($position_title) && $position_title != ''): ?>
             <dt>
               Position Title
             </dt>
@@ -101,7 +101,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($hiringOrganization && $hiringOrganization != '')): ?>
+            <?php if (isset($hiringOrganization) && $hiringOrganization != ''): ?>
             <dt>
               Hiring Organization
             </dt>
@@ -113,7 +113,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($datePosted && $datePosted != '')): ?>
+            <?php if (isset($datePosted) && $datePosted != ''): ?>
             <dt>
               Date Posted
             </dt>
@@ -125,7 +125,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($workHours && $workHours != '')): ?>
+            <?php if (isset($workHours) && $workHours != ''): ?>
             <dt>
               Work Hours
             </dt>
@@ -137,7 +137,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($specialCommitments && $specialCommitments != '')): ?>
+            <?php if (isset($specialCommitments) && $specialCommitments != ''): ?>
             <dt>
               Special Commitments
             </dt>
@@ -149,7 +149,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($skills && $skills != '')): ?>
+            <?php if (isset($skills) && $skills != ''): ?>
             <dt>
               Skills
             </dt>
@@ -161,7 +161,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($responsibilities && $responsibilities != '')): ?>
+            <?php if (isset($responsibilities) && $responsibilities != ''): ?>
             <dt>
               Responsibilities
             </dt>
@@ -173,7 +173,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($qualifications && $qualifications != '')): ?>
+            <?php if (isset($qualifications) && $qualifications != ''): ?>
             <dt>
               Qualifications
             </dt>
@@ -185,7 +185,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($benefits && $benefits != '')): ?>
+            <?php if (isset($benefits) && $benefits != ''): ?>
             <dt>
               Benefits
             </dt>
@@ -197,7 +197,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($experienceRequirements && $experienceRequirements != '')): ?>
+            <?php if (isset($experienceRequirements) && $experienceRequirements != ''): ?>
             <dt>
               Experience Requirements
             </dt>
@@ -209,7 +209,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($incentives && $incentives != '')): ?>
+            <?php if (isset($incentives) && $incentives != ''): ?>
             <dt>
               Incentives
             </dt>
@@ -221,7 +221,7 @@
             <?php endif; ?>
 
 
-            <?php if (isset($educationRequirements && $educationRequirements != '')): ?>
+            <?php if (isset($educationRequirements) && $educationRequirements != ''): ?>
               <dt>
                 Education Requirements
               </dt>
