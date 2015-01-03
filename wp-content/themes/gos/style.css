@@ -5211,7 +5211,8 @@ p ~ h1 {
   background-color: white;
   float: right;
   padding: 1rem;
-  border-bottom: 5px #cccccc solid; }
+  border-bottom: 5px #cccccc solid;
+  margin-bottom: 3vh; }
   .module--job-posting-logo:last-child {
     margin-right: 0; }
   .module--job-posting-logo img {
@@ -5241,6 +5242,9 @@ p ~ h1 {
     .module--job-posting-summary > p:last-child {
       margin-right: 0; }
 
+
+.wpcf7-form {
+  margin-top: 3vh; }
 
 .wpcf7-response-output {
   margin-left: -8.58896%;
@@ -5524,7 +5528,6 @@ body.single-job_posting .page-content {
     body.single-job_posting .page-content article.job_posting .wpcf7-form-control-wrap {
       margin-bottom: 1rem;
       text-align: center;
-      margin-top: 1rem;
       font-size: 3vh; }
     body.single-job_posting .page-content article.job_posting .wpcf7-list-item.first {
       margin-left: 0 !important; }
@@ -5761,7 +5764,6 @@ body.home {
       body.home .home-widgets .widget article.job_posting .wpcf7-form-control-wrap {
         margin-bottom: 1rem;
         text-align: center;
-        margin-top: 1rem;
         font-size: 3vh; }
       body.home .home-widgets .widget article.job_posting .wpcf7-list-item.first {
         margin-left: 0 !important; }
@@ -6311,7 +6313,6 @@ body.home {
       .footer-after-content-widgets .widget article.job_posting .wpcf7-form-control-wrap {
         margin-bottom: 1rem;
         text-align: center;
-        margin-top: 1rem;
         font-size: 3vh; }
       .footer-after-content-widgets .widget article.job_posting .wpcf7-list-item.first {
         margin-left: 0 !important; }
@@ -6556,6 +6557,9 @@ body.home {
 
 html.wp-admin {
   background-color: #28608a; }
+
+#respond {
+  clear: left; }
 
 /*
  * Circle Extender

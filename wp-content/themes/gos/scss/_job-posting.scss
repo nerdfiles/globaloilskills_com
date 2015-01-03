@@ -45,7 +45,6 @@
     .wpcf7-form-control-wrap {
       margin-bottom: 1rem;
       text-align: center;
-      margin-top: 1rem;
       font-size: 3vh;
     }
     .wpcf7-list-item.first {
@@ -336,6 +335,7 @@
   float: right;
   padding: 1rem;
   border-bottom: 5px #ccc solid;
+  margin-bottom: 3vh;
   img { width: 100% !important; margin: 0 !important; max-width: 100% !important; }
 }
 
@@ -361,4 +361,8 @@
 }
 
 body.single .module--job-posting-summary {
+}
+
+.wpcf7-form {
+  margin-top: 3vh;
 }
