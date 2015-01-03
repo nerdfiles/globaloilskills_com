@@ -5321,7 +5321,7 @@ input, textarea {
   color: #b9b9b9;
   text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px; }
 
-.wfTabsContainer {
+#wpbody .wfTabsContainer {
   color: #444444; }
-  .wfTabsContainer h2 {
+  #wpbody .wfTabsContainer h2 {
     color: #444444; }
