@@ -5284,3 +5284,9 @@ html {
 
 #wp-admin-bar-wp-logo {
   display: none; }
+
+#login_error {
+  color: #111111; }
+  #login_error a, #login_error a:link {
+    text-decoration: none;
+    color: #28608a !important; }

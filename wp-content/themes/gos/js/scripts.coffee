@@ -49,6 +49,10 @@
   if (searchInput and HTML.body.getAttribute('class').indexOf('single') == -1)
     searchInput.setAttribute 'placeholder', 'Search Job Postings'
 
+  $wpcf7 = $('.wpcf7').detach()
+  if $wpcf7.length == 1
+    $wpcf7.closest('.post-content').attach $wpcf7
+
   ###
   Utility Functions
   ###
@@ -62,20 +66,21 @@
     if el.classList
       el.classList.toggle(className)
     else
-        classes = el.className.split(' ')
-        existingIndex = -1
-        for i in classes
-          i--
-          if classes[i] == className
-            existingIndex = i
+      classes = el.className.split(' ')
+      existingIndex = -1
+      for i in classes
+        i--
+        if classes[i] == className
+          existingIndex = i
 
-        if (existingIndex >= 0)
-          classes.splice(existingIndex, 1)
-        else
-          classes.push(className)
+      if (existingIndex >= 0)
+        classes.splice(existingIndex, 1)
+      else
+        classes.push(className)
 
+    if classes
       el.className = classes.join(' ')
-      return
+    return
 
   clicker = () ->
     elem = @
@@ -139,7 +144,7 @@
       $.ajax({
         url: "http://#{window.location.hostname}/api/user/user_metadata/"
       }).done (data) ->
-        if not generatedEmail.length
+        if generatedEmail.length == 1
           emailNameAttribute = generatedEmail.getAttribute('name')
           if emailNameAttribute
             generatedEmail.setAttribute 'value', data.user_email

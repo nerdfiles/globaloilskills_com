@@ -356,3 +356,12 @@ html {
 #wp-admin-bar-wp-logo {
   display: none;
 }
+
+#login_error {
+  a, a:link {
+    text-decoration: none;
+    color: #28608A !important; }
+
+  color: #111;
+}
+

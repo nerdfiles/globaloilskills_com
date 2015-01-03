@@ -180,7 +180,7 @@
         float: right;
       }
       & > p {
-        margin: 0 2rem .5rem;
+        margin: 0 1.5rem .5rem;
       }
     }
     .entry-content,
@@ -338,9 +338,9 @@
   border-bottom: 5px #ccc solid;
   img { width: 100% !important; margin: 0 !important; max-width: 100% !important; }
 }
+
 .module--job-posting-summary {
   border-bottom: 1rem #ccc dashed;
-  margin-bottom: 1rem;
   dt {
     font-variant: small-caps;
     text-transform: lowercase;
@@ -358,4 +358,7 @@
     @include shift(.5);
     @include span-columns(6);
   }
+}
+
+body.single .module--job-posting-summary {
 }

@@ -231,6 +231,7 @@ input[type="submit"] {
       z-index: -1;
     }
   }
+
 }
 
 .comment-body {
@@ -283,4 +284,8 @@ input[type="submit"] {
 
 #wp-admin-bar-wp-logo {
   display: none;
+}
+
+textarea {
+  width: 100%;
 }

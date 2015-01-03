@@ -69,6 +69,8 @@
           $incentives = get_post_meta(get_the_ID(), 'incentives', true);
         ?>
 
+        <?php the_content(); ?>
+
         <aside class="module--job-posting-summary">
 
         <div class="inner">
@@ -201,8 +203,6 @@
       </aside>
 
       <?php } ?>
-
-      <?php the_content(); ?>
 
       <!--<a href="<?php the_permalink(); ?>"><?php _e( 'Read more &raquo;', 'gos' ); ?></a>-->
 
