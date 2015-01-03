@@ -5250,7 +5250,8 @@ p ~ h1 {
   margin-top: 3vh; }
 
 body.single-job_posting .page-content article.job_posting h1.post-title {
-  margin-left: 1.5rem; }
+  margin-left: 1.5rem;
+  margin-right: 1.5rem; }
 
 .wpcf7-response-output {
   margin-left: -8.58896%;
