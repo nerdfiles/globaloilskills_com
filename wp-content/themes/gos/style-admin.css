@@ -5294,5 +5294,5 @@ html {
 #editable-post-name {
   color: #111111; }
 
-input, textarea {
-  outline: none; }
+input:focus, textarea:focus {
+  outline: none !important; }
