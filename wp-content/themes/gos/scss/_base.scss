@@ -107,3 +107,7 @@ body.single-job_posting .page-content article.job_posting {
     content: "\f03b";
   }
 }
+
+#wp-admin-bar-wp-logo {
+  display: none !important;
+}

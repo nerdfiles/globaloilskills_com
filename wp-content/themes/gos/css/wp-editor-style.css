@@ -95,6 +95,9 @@ body.single-job_posting .page-content article.job_posting {
   display: block;
   content: "\f03b"; }
 
+#wp-admin-bar-wp-logo {
+  display: none !important; }
+
 /******************************************************************************\
 	Settings
 \******************************************************************************/
