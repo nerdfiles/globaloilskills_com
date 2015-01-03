@@ -50,9 +50,9 @@
 
     <?php if ( is_singular() || is_tax() || is_front_page() || is_category() || is_archive() || is_search() ) : ?>
 
-        <?php
-          if ('' != get_post_meta(get_the_ID(), 'baseSalary', true)) {
+        <?php the_content(); ?>
 
+        <?php
           $baseSalary = get_post_meta(get_the_ID(), 'baseSalary', true);
           $currency = get_post_meta(get_the_ID(), 'currency', true);
           $position_title = get_post_meta(get_the_ID(), 'position_title', true);
@@ -69,14 +69,12 @@
           $incentives = get_post_meta(get_the_ID(), 'incentives', true);
         ?>
 
-        <?php the_content(); ?>
-
         <aside class="module--job-posting-summary">
 
         <div class="inner">
 
           <dl>
-
+            <?php if (isset($baseSalary) && $baseSalary != ''): ?>
             <dt>
               Base Salary
             </dt>
@@ -88,7 +86,10 @@
                 <?php echo $currency; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($position_title && $position_title != '')): ?>
             <dt>
               Position Title
             </dt>
@@ -97,7 +98,10 @@
               <?php echo $position_title; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($hiringOrganization && $hiringOrganization != '')): ?>
             <dt>
               Hiring Organization
             </dt>
@@ -106,7 +110,10 @@
               <?php echo $hiringOrganization; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($datePosted && $datePosted != '')): ?>
             <dt>
               Date Posted
             </dt>
@@ -115,7 +122,10 @@
               <?php echo $datePosted; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($workHours && $workHours != '')): ?>
             <dt>
               Work Hours
             </dt>
@@ -124,7 +134,10 @@
               <?php echo $workHours; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($specialCommitments && $specialCommitments != '')): ?>
             <dt>
               Special Commitments
             </dt>
@@ -133,7 +146,10 @@
               <?php echo $specialCommitments; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($skills && $skills != '')): ?>
             <dt>
               Skills
             </dt>
@@ -142,7 +158,10 @@
               <?php echo $skills; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($responsibilities && $responsibilities != '')): ?>
             <dt>
               Responsibilities
             </dt>
@@ -151,7 +170,10 @@
               <?php echo $responsibilities; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($qualifications && $qualifications != '')): ?>
             <dt>
               Qualifications
             </dt>
@@ -160,7 +182,10 @@
               <?php echo $qualifications; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($benefits && $benefits != '')): ?>
             <dt>
               Benefits
             </dt>
@@ -169,7 +194,10 @@
               <?php echo $benefits; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($experienceRequirements && $experienceRequirements != '')): ?>
             <dt>
               Experience Requirements
             </dt>
@@ -178,7 +206,10 @@
               <?php echo $experienceRequirements; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
+
+            <?php if (isset($incentives && $incentives != '')): ?>
             <dt>
               Incentives
             </dt>
@@ -187,22 +218,23 @@
               <?php echo $incentives; ?>
               </span>
             </dd>
+            <?php endif; ?>
 
 
-            <dt>
-              Education Requirements
-            </dt>
-            <dd>
-              <span class="value">
-              <?php echo $educationRequirements; ?>
-              </span>
-            </dd>
+            <?php if (isset($educationRequirements && $educationRequirements != '')): ?>
+              <dt>
+                Education Requirements
+              </dt>
+              <dd>
+                <span class="value">
+                <?php echo $educationRequirements; ?>
+                </span>
+              </dd>
+            <?php endif; ?>
 
           </dl>
         </div>
       </aside>
-
-      <?php } ?>
 
       <!--<a href="<?php the_permalink(); ?>"><?php _e( 'Read more &raquo;', 'gos' ); ?></a>-->
 

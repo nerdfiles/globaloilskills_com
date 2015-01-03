@@ -51,7 +51,9 @@
 
   $wpcf7 = $('.wpcf7').detach()
   if $wpcf7.length == 1
-    $wpcf7.closest('.post-content').attach $wpcf7
+    $postContent = $wpcf7.closest('.post-content')
+    $afterPostContent = $('.module--job-posting-summary')
+    $afterPostContent.after $wpcf7
 
   ###
   Utility Functions
@@ -99,11 +101,12 @@
     #return _o.join(' ')
 
   $email = HTML.query('#search-2')
-  if ($email.length)
+  if $email.length == 1
     $email.setAttribute 'data-check-email', ''
 
   someInputs$ = doc.querySelector "#{input()}[type=submit]"
-  someInputs$.setAttribute 'data-input-roster', ''
+  if someInputs$
+    someInputs$.setAttribute 'data-input-roster', ''
 
   uPosts = HTML.query('.widget_ultimate_posts')
   uPosts.each((el, i, all) ->

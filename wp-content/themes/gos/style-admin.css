@@ -5290,3 +5290,9 @@ html {
   #login_error a, #login_error a:link {
     text-decoration: none;
     color: #28608a !important; }
+
+#editable-post-name {
+  color: #111111; }
+
+input, textarea {
+  outline: none; }
