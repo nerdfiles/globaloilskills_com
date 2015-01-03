@@ -145,34 +145,30 @@ body.home {
 
     &:after {
       content: "Join us in real-time collaboration";
-      font-weight: 700;
+      border-top: 3px #199ca9 solid;
+      font-weight: 500;
       font-variant: small-caps;
+      font-family: 'Raleway';
       text-transform: lowercase;
       position: absolute;
-      left: 1%;
+      left: 0;
+      padding-left: 1%;
       font-style: italic;
       font-size: 2rem;
-      text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+      text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px,
       rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
-      rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
+      rgba(0,0,0,0.3) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
       color: #199CA9;
       color: #fff;
-
-
+      bottom: -50vh;
 
       @include media($small) {
-        bottom: -34vh;
-        /*bottom: -30%;*/
       }
 
       @include media($medium) {
-        bottom: -34vh;
-        /*bottom: -30%;*/
       }
 
       @include media($large) {
-        bottom: -34vh;
-        /*bottom: -70%;*/
       }
     }
 

@@ -315,6 +315,7 @@ div.wpcf7 {
     position: relative;
     &:after {
       content: "Your piece, our board";
+      font-family: 'Raleway', sans-serif;
       position: absolute;
       font-style: italic;
       text-align: right;
@@ -322,23 +323,21 @@ div.wpcf7 {
       color: #199CA9;
       color: #fff;
 
-      text-shadow: -1px 0px rgba(0, 0, 0, 0.1), 0px -1px rgba(0, 0, 0, 0.1), 0px 1px rgba(255, 255, 255, 0.1), -1px -1px rgba(0, 0, 0, 0.1);
+      text-shadow: -1px 0px rgba(0, 0, 0, 0.3), 0px -1px rgba(0, 0, 0, 0.3), 0px 1px rgba(255, 255, 255, 0.1), -1px -1px rgba(0, 0, 0, 0.3);
 
-      font-weight: 700;
+      font-weight: 500;
       font-variant: small-caps;
       text-transform: lowercase;
+      right: 10%;
+      bottom: -50vh;
+      width: 100%;
+      border-top: 3px #199ca9 solid;
 
       @include media($small) {
-        right: 10%;
-        bottom: -30%;
       }
       @include media($medium) {
-        right: 10%;
-        bottom: -40%;
       }
       @include media($large) {
-        right: 10%;
-        bottom: -80%;
       }
     }
   }
