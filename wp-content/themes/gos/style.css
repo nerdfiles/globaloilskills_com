@@ -6003,7 +6003,7 @@ body.home {
       text-shadow: rgba(0, 0, 0, 0.3) -1px 0, rgba(0, 0, 0, 0.3) 0 -1px, rgba(255, 255, 255, 0.1) 1px 0, rgba(255, 255, 255, 0.1) 0 1px, rgba(0, 0, 0, 0.3) -1px -1px, rgba(255, 255, 255, 0.1) 1px 1px;
       color: #199ca9;
       color: white;
-      bottom: -50vh; }
+      bottom: -250px; }
       @media screen and (max-width: 480px) { }
       @media screen and (min-width: 481px) { }
       @media screen and (min-width: 769px) { }
@@ -7343,7 +7343,7 @@ div.wpcf7 {
       font-variant: small-caps;
       text-transform: lowercase;
       right: 10%;
-      bottom: -50vh;
+      bottom: -250px;
       width: 100%;
       border-top: 3px #199ca9 solid; }
       @media screen and (max-width: 480px) { }
