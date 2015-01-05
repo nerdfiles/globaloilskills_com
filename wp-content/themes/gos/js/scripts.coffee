@@ -147,7 +147,9 @@
       $.ajax({
         url: "http://#{window.location.hostname}/api/user/user_metadata/"
       }).done (data) ->
-        if generatedEmail.length == 1
+        if generatedEmail
+          if generatedEmail.length == 0
+            return
           emailNameAttribute = generatedEmail.getAttribute('name')
           if emailNameAttribute
             generatedEmail.setAttribute 'value', data.user_email
