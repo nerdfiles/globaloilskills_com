@@ -11,7 +11,7 @@ class JSON_API_Application_Controller {
     $sep = "\r\n";
     $httpPath = 'http://' . $hostname . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name;
     $full_path = "Full Path: " . $document_root . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name;
-    $url = "URL: " . $httpPath;
+    $url = "Resum&eacute; URL: ";
     $url = $url . $sep . "<a href='" . $httpPath . "'>$httpPath</a>";
     $post_title = $_POST['post_title'];
 
@@ -31,7 +31,7 @@ class JSON_API_Application_Controller {
      */
 
     $data = wp_strip_all_tags( $_POST['post_content'] ) .
-        $sep . $user_id . $sep . $url;
+        $sep . 'User: ' . $user_id . $sep . $url;
 
     $application_submission = array(
       // The post title should be a template model that combines:
