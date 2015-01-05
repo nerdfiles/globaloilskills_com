@@ -5098,13 +5098,29 @@ body.single-job_posting .page-content article.job_posting {
     left: 50%;
     margin-left: -13vh; }
 
-.ajax-loader:after {
-  font-family: 'FontAwesome', sans-serif;
-  display: block;
-  content: "\f03b"; }
+.ajax-loader {
+  display: none; }
+  .ajax-loader:after {
+    font-family: 'FontAwesome', sans-serif;
+    display: block;
+    content: "\f03b"; }
 
 #wp-admin-bar-wp-logo {
   display: none !important; }
+
+div.wpcf7-response-output {
+  margin: 0; }
+
+
+.wpcf7-validation-errors {
+  background-color: #f7e700; }
+
+.wpcf7-mail-sent-ok {
+  background-color: #398f14;
+  color: white; }
+
+div.wpcf7-display-none {
+  padding: 0; }
 
 /******************************************************************************\
 	Settings
@@ -5550,10 +5566,12 @@ body.single-job_posting .page-content {
         background-color: #cccccc; }
     body.single-job_posting .page-content article.job_posting .user--role {
       display: none; }
-    body.single-job_posting .page-content article.job_posting .post-content .attachment-full {
-      float: right; }
-    body.single-job_posting .page-content article.job_posting .post-content > p {
-      margin: 0 1.5rem 0.5rem; }
+    body.single-job_posting .page-content article.job_posting div.post-content {
+      margin-bottom: 0; }
+      body.single-job_posting .page-content article.job_posting div.post-content .attachment-full {
+        float: right; }
+      body.single-job_posting .page-content article.job_posting div.post-content > p {
+        margin: 0 1.5rem 0.5rem; }
     body.single-job_posting .page-content article.job_posting .entry-content, body.single-job_posting .page-content article.job_posting .schema_job_posting {
       margin: 0 !important;
       padding: 0 0.5rem 1rem !important;
@@ -5846,10 +5864,12 @@ body.home {
           display: none; }
       body.home .home-widgets .widget article.job_posting .user--role {
         display: none; }
-      body.home .home-widgets .widget article.job_posting .post-content .attachment-full {
-        float: right; }
-      body.home .home-widgets .widget article.job_posting .post-content > p {
-        margin: 0 1.5rem 0.5rem; }
+      body.home .home-widgets .widget article.job_posting div.post-content {
+        margin-bottom: 0; }
+        body.home .home-widgets .widget article.job_posting div.post-content .attachment-full {
+          float: right; }
+        body.home .home-widgets .widget article.job_posting div.post-content > p {
+          margin: 0 1.5rem 0.5rem; }
       body.home .home-widgets .widget article.job_posting .entry-content, body.home .home-widgets .widget article.job_posting .schema_job_posting {
         margin: 0 !important;
         padding: 0 0.5rem 1rem !important;
@@ -6395,10 +6415,12 @@ body.home {
           display: none; }
       .footer-after-content-widgets .widget article.job_posting .user--role {
         display: none; }
-      .footer-after-content-widgets .widget article.job_posting .post-content .attachment-full {
-        float: right; }
-      .footer-after-content-widgets .widget article.job_posting .post-content > p {
-        margin: 0 1.5rem 0.5rem; }
+      .footer-after-content-widgets .widget article.job_posting div.post-content {
+        margin-bottom: 0; }
+        .footer-after-content-widgets .widget article.job_posting div.post-content .attachment-full {
+          float: right; }
+        .footer-after-content-widgets .widget article.job_posting div.post-content > p {
+          margin: 0 1.5rem 0.5rem; }
       .footer-after-content-widgets .widget article.job_posting .entry-content, .footer-after-content-widgets .widget article.job_posting .schema_job_posting {
         margin: 0 !important;
         padding: 0 0.5rem 1rem !important;

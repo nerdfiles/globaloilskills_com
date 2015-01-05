@@ -101,6 +101,7 @@ body.single-job_posting .page-content article.job_posting {
 }
 
 .ajax-loader {
+  display: none;
   &:after {
     font-family: 'FontAwesome', sans-serif;
     display: block;
@@ -110,4 +111,19 @@ body.single-job_posting .page-content article.job_posting {
 
 #wp-admin-bar-wp-logo {
   display: none !important;
+}
+
+div.wpcf7-response-output {
+  margin: 0;
+}
+.wpcf7-display-none {}
+.wpcf7-validation-errors {
+  background-color: #F7E700;
+}
+.wpcf7-mail-sent-ok {
+  background-color: #398F14;
+  color: #fff;
+}
+div.wpcf7-display-none {
+  padding: 0;
 }

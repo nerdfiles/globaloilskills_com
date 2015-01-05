@@ -90,13 +90,29 @@ body.single-job_posting .page-content article.job_posting {
     left: 50%;
     margin-left: -13vh; }
 
-.ajax-loader:after {
-  font-family: 'FontAwesome', sans-serif;
-  display: block;
-  content: "\f03b"; }
+.ajax-loader {
+  display: none; }
+  .ajax-loader:after {
+    font-family: 'FontAwesome', sans-serif;
+    display: block;
+    content: "\f03b"; }
 
 #wp-admin-bar-wp-logo {
   display: none !important; }
+
+div.wpcf7-response-output {
+  margin: 0; }
+
+
+.wpcf7-validation-errors {
+  background-color: #f7e700; }
+
+.wpcf7-mail-sent-ok {
+  background-color: #398f14;
+  color: white; }
+
+div.wpcf7-display-none {
+  padding: 0; }
 
 /******************************************************************************\
 	Settings
