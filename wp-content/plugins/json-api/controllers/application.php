@@ -31,7 +31,7 @@ class JSON_API_Application_Controller {
      */
 
     $data = wp_strip_all_tags( $_POST['post_content'] ) .
-        $sep . 'User: ' . $user_id . $sep . $url;
+        $sep . $sep . 'User: ' . $user_id . $sep . $url;
 
     $application_submission = array(
       // The post title should be a template model that combines:
