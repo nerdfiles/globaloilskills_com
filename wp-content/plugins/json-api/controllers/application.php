@@ -12,7 +12,7 @@ class JSON_API_Application_Controller {
     $httpPath = 'http://' . $hostname . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name;
     $full_path = "Full Path: " . $document_root . '/wp-content/uploads/resumes/user/' . $user_id . '/' . $file_name;
     $url = "Resum&eacute; URL: ";
-    $url = $url . $sep . "<a href='" . $httpPath . "'>$httpPath</a>";
+    $url = $sep . $url . $sep . "<a href='" . $httpPath . "'>$httpPath</a>";
     $post_title = $_POST['post_title'];
 
     if ( 0 < $_FILES['file']['error'] ) {
