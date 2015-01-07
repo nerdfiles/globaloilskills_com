@@ -5337,3 +5337,7 @@ input, textarea {
 
 .postbox-container {
   width: 100% !important; }
+
+.wp-admin.post-php .shortcode-wrap {
+  position: absolute;
+  left: -9999px; }
