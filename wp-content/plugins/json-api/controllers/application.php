@@ -1,10 +1,7 @@
 <?php
 class JSON_API_Application_Controller {
   public function create_application() {
-    global $current_user;
-    get_currentuserinfo();
     $user_id = get_current_user_id();
-    $user_email = $current_user->user_email;
     $post_type = 'application';
     $hostname = $_SERVER['HTTP_HOST'];
     $document_root = $_SERVER["DOCUMENT_ROOT"];
@@ -34,7 +31,7 @@ class JSON_API_Application_Controller {
      */
 
     $data = wp_strip_all_tags( $_POST['post_content'] ) .
-        $sep . $sep . 'User: ' . $user_email . $sep . $url;
+        $sep . $sep . 'User: ' . $user_id . $sep . $url;
 
     $application_submission = array(
       // The post title should be a template model that combines:

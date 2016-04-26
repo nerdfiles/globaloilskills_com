@@ -119,3 +119,4 @@ myHybridAppFolder/
 tags
 style.css.old
 ../../plugins/membermouse/includes/mm-constants.php
+*.pyc
